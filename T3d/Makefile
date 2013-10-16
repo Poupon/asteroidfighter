@@ -1,0 +1,71 @@
+TARGET=libT3d.a
+
+SRCS = \
+	T3dBox.cc \
+	T3dFontRaster.cc \
+	T3dLoadImg.cc \
+	T3dTransf.cc \
+	T3dCalcul.cc \
+	T3dLoadBmp.cc \
+	T3dPrimitiv.cc \
+	T3dVect3D.cc	\
+	T3dColor.cc \
+	T3dLoadGif.cc \
+	T3dTexture.cc
+
+OBJS =  $(SRCS:.cc=.o)
+
+
+HDRS = $(SRCS:.cc=.h)
+
+
+
+# ---------------------------------------------------
+
+CFLAGS= 
+
+CINCLUDE= -I. -I.. -I/usr/openwin/include  -I${DIR_OPENGL_INC} -I${DIR_GLUT_INC} -I${DIR_PLIB_INC}
+
+
+
+# ---------------------------------------------------
+
+all:: start	
+
+all:: $(OBJS)
+
+all::	$(TARGET)
+
+start:
+		rm  -f $(TARGET)
+
+clean::
+		rm	 -f *.o	*.a
+
+
+
+# ---------------------------------------------------
+# Compilation
+.cc.o:
+		$(COMPILO) $(CFLAGS) $(CINCLUDE)  -c $*.cc 
+ 
+
+# ---------------------------------------------------
+# Library
+
+$(TARGET):
+		rm -f $(TARGET) 
+	 	ar cq $(TARGET) $(OBJS)
+		ranlib $(TARGET)
+
+
+# ---------------------------------------------------
+# Depends
+DEPEND = makedepend
+
+ALLDEFINES=$CINCLUDE
+
+depend:: $(SRCS) $(HDRS)
+	$(DEPEND)  -s "# DO NOT DELETE" -- $(ALLDEFINES) -- $(SRCS)
+dependlocal:: $(SRCS) $(HEADERS)
+	$(DEPEND)  -s "# DO NOT DELETE" -- $(ALLDEFINES) -- $(SRCS)
