@@ -314,10 +314,17 @@ WorldGame::InitSprite()
 	SpriteExplosion::Init();
 }
 //---------------------------------------------------
+
+PSoundId sOceanSound=PBadSoundId;
+
+
 void
 WorldGame::InitSound( const char* pPathSound)
 {
 	TheWorldGame->setMySoundLibrary( new SoundLibrary(256, pPathSound ));
+
+		sOceanSound = TheWorldGame->getMySoundLibrary()->loadSample( "ocean.wav" );
+
 	Pilot::InitSound(TheWorldGame);
 	ActionsShip::InitSound(TheWorldGame);
 	WeaponsMaker::InitSound(TheWorldGame);
