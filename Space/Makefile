@@ -26,7 +26,8 @@ HDRS = $(SRCS:.cc=.h)
 
 CFLAGS=  -DPUI_WIN -DSL_SOUND
 
-CINCLUDE=-I. -I.. -I/usr/openwin/include  -I${DIR_OPENGL_INC} -I${DIR_GLUT_INC} -I${DIR_PLIB_INC}
+CINCLUDE=-I. -I.. 
+# -I/usr/openwin/include  -I${DIR_OPENGL_INC} -I${DIR_GLUT_INC} -I${DIR_PLIB_INC}
 
 # ---------------------------------------------------
 
@@ -48,7 +49,7 @@ start:
 # ---------------------------------------------------
 # Compilation
 .cc.o:
-		$(COMPILO) $(CFLAGS) $(CINCLUDE) -c  $*.cc 
+		gcc $(CFLAGS) $(CINCLUDE) -c  $*.cc 
  
 
 # ---------------------------------------------------

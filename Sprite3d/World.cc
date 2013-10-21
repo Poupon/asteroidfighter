@@ -132,6 +132,11 @@ void World::drawLiveSprite()
 	}
 }
 //-------------------------------------------------
+void World::reshapeWorld(int pWidth, int pHeight)
+{
+	
+}
+//-------------------------------------------------
 // Determine si un des sprites intersecte avec une zone
 
 Sprite3d*

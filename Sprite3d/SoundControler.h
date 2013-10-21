@@ -24,6 +24,7 @@ public:
 	SoundControler( int pRate=8000, int pSafetyMargin=0.128f );
 	
 	int playSample ( slSample *pSample, int pPriority = 1, slPreemptMode pMode = SL_SAMPLE_ABORT ) ;
+	int loopSample ( slSample *pSample, int pPriority = 1, slPreemptMode pMode = SL_SAMPLE_ABORT ) ;
 	int playMusic (const char *pName, int pPriority = 1, slPreemptMode pMode = SL_SAMPLE_ABORT ) ;
 
 
@@ -38,7 +39,8 @@ public:
 //*************************************************
 
 
-#define PLAYSAMPLE(A)  SoundControler::sTheSoundControler->playSample(A)
-#define PLAYMUSIC(A)  SoundControler::sTheSoundControler->playMusic(A)
+#define PLAYSAMPLE(A) {if( SoundControler::sTheSoundControler) {SoundControler::sTheSoundControler->playSample(A);}}
+#define LOOPSAMPLE(A) {if( SoundControler::sTheSoundControler) {SoundControler::sTheSoundControler->loopSample(A);}}
+#define PLAYMUSIC(A)  {if( SoundControler::sTheSoundControler) {SoundControler::sTheSoundControler->playMusic(A);}}
 
 #endif
