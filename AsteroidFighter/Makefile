@@ -1,5 +1,5 @@
-# TARGET=AsteroidFighter
-TARGET=TestDev
+TARGET=AsteroidFighter
+# TARGET=TestDev
 
 SRCS = \
 	MainMenu.cc \
@@ -20,13 +20,17 @@ LDFLAGS=
 LIBPATHS=  -L../T3d -L../O3d -L../Sprite3d -L../U3d -L../Space  -L. \
 					  -L${DIR_PLIB}/lib  -L${DIR_OPENGL}/lib -L${DIR_GLUT_LIB} -L${DIR_X11_LIB}
 
-LIBS=  -lSpace -lU3d -lSprite3d -lO3d -lT3d   -lplibpuaux -lplibpu -lplibul  -lplibpw -lplibfnt -lplibsg -lplibul -lplibsl   -lGL -lGLU -lglut   -lstdc++   -lXmu -lXext -lXi -lX11  -lnsl -mt -lm 
+LIBS=  -lSpace -lU3d -lSprite3d -lO3d -lT3d   -lplibpuaux -lplibpu -lplibul  -lplibpw -lplibfnt -lplibsg -lplibul -lplibsl   -lGL -lGLU -lglut   -lstdc++   -lXext -lX11  -lnsl -lm 
+
+# LIBS=  -lSpace -lU3d -lSprite3d -lO3d -lT3d   -lplibpuaux -lplibpu -lplibul  -lplibpw -lplibfnt -lplibsg -lplibul -lplibsl   -lGL -lGLU -lglut   -lstdc++   -lXmu -lXext -lXi -lX11  -lnsl -mt -lm 
 
 
 # ---------------------------------------------------
 CFLAGS=  -DPUI_WIN -DSL_SOUND
 
-CINCLUDE=-I. -I.. -I/usr/openwin/include  -I${DIR_OPENGL}/include -I${DIR_GLUT}/include -I${DIR_PLIB}/include
+CINCLUDE=-I. -I..
+
+# -I/usr/openwin/include  -I${DIR_OPENGL}/include -I${DIR_GLUT}/include -I${DIR_PLIB}/include
 
 
 DEPEND = makedepend
@@ -51,7 +55,7 @@ clean::
 # ---------------------------------------------------
 # Compilation
 .cc.o:
-		$(COMPILO)  -pipe $(CFLAGS) $(CINCLUDE) -c  $*.cc 
+		gcc  -pipe $(CFLAGS) $(CINCLUDE) -c  $*.cc 
  
 
 # ---------------------------------------------------

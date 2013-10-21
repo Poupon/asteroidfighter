@@ -30,12 +30,12 @@ GLboolean	WorldControler::PuiInUse = GL_FALSE;
 
 float WorldControler::sTime = 0.0;
 
-#ifndef PC_WINDOWS || LINUX
+//#ifndef PC_WINDOWS || LINUX
 
-extern "C" {
-void __glutDefaultReshape(int width, int height);
-}
-#endif
+//extern "C" {
+	//void __glutDefaultReshape(int width, int height);
+//}
+//#endif
 
 
 float WorldControler::sRatio=1.0/25.0;
@@ -421,9 +421,9 @@ void WorldControler::Visibility( int pState )
 //----------------------------------
 void WorldControler::Reshape(int pWidth, int pHeight  )
 {
-#ifndef PC_WINDOWS || LINUX
-  __glutDefaultReshape(pWidth, pHeight);
-#endif
+	//#ifndef PC_WINDOWS || LINUX
+	//  __glutDefaultReshape(pWidth, pHeight);
+	//#endif
 
 	WC->cWidth = pWidth;
 	WC->cHeight = pHeight;
@@ -473,9 +473,9 @@ void WorldControler::InitCallback()
   glutIdleFunc(Idle);
 //	glutKeyboardUpFunc( KeyUp );
 
-#ifndef PC_WINDOWS  || LINUX
+//#ifndef PC_WINDOWS  || LINUX
 	glutReshapeFunc( Reshape );
-#endif
+	//#endif
 
   glutVisibilityFunc( Visibility );
   glutDisplayFunc(Display);

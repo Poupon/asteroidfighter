@@ -74,7 +74,7 @@ void SceneManager::setCurrentSceneTempo( float pLiveTime, GameFinish cGameFinish
 void 
 SceneManager::go(World* pWorld)
 {
-	sprintf( cStrInfo, "%d/%d | %s", cCurScene, cSceneVect.size(), cSceneVect[cCurScene]->getStrInfo() );
+	sprintf( cStrInfo, "%d/%ld | %s", cCurScene, cSceneVect.size(), cSceneVect[cCurScene]->getStrInfo() );
   cSceneVect[cCurScene]->resetLife();  // remet a jour l heure de creation
   pWorld->add(cSceneVect[cCurScene]);
 }
@@ -114,7 +114,7 @@ SceneManager::endScene()
 			return  0;
 		}
 
-	sprintf( cStrInfo, "%d/%d | %s", cCurScene, cSceneVect.size(), cSceneVect[cCurScene]->getStrInfo());
+	sprintf( cStrInfo, "%d/%ld | %s", cCurScene, cSceneVect.size(), cSceneVect[cCurScene]->getStrInfo());
 	cSceneVect[cCurScene]->resetLife();
 		
 	if( WorldControler::GetCurrentWorld())
