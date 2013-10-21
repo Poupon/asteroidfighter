@@ -1,0 +1,84 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: O3d - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\PHI~1.ANA\LOCALS~1\Temp\RSP1BA.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I "." /I ".." /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /Fp"Debug/O3d.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\Dev\3d\O3d\O3dKamera.cpp"
+"D:\Dev\3d\O3d\O3dObj.cpp"
+"D:\Dev\3d\O3d\O3dObjBezier.cpp"
+"D:\Dev\3d\O3d\O3dObjBSpline.cpp"
+"D:\Dev\3d\O3d\O3dObjBSplineSurf.cpp"
+"D:\Dev\3d\O3d\O3dObjLight.cpp"
+"D:\Dev\3d\O3d\O3dObjLine.cpp"
+"D:\Dev\3d\O3d\O3dObjNurbs.cpp"
+"D:\Dev\3d\O3d\O3dObjPoint.cpp"
+"D:\Dev\3d\O3d\O3dObjPrim.cpp"
+"D:\Dev\3d\O3d\O3dObjProps.cpp"
+"D:\Dev\3d\O3d\O3dObjShape.cpp"
+"D:\Dev\3d\O3d\O3dObjText.cpp"
+"D:\Dev\3d\O3d\O3dSelector.cpp"
+"D:\Dev\3d\O3d\O3dViewProps.cpp"
+"D:\Dev\3d\O3d\PToken.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\PHI~1.ANA\LOCALS~1\Temp\RSP1BA.tmp" 
+Creating temporary file "C:\DOCUME~1\PHI~1.ANA\LOCALS~1\Temp\RSP1BB.tmp" with contents
+[
+/nologo /out:"Debug\O3d.lib" 
+.\Debug\O3dKamera.obj
+.\Debug\O3dObj.obj
+.\Debug\O3dObjBezier.obj
+.\Debug\O3dObjBSpline.obj
+.\Debug\O3dObjBSplineSurf.obj
+.\Debug\O3dObjLight.obj
+.\Debug\O3dObjLine.obj
+.\Debug\O3dObjNurbs.obj
+.\Debug\O3dObjPoint.obj
+.\Debug\O3dObjPrim.obj
+.\Debug\O3dObjProps.obj
+.\Debug\O3dObjShape.obj
+.\Debug\O3dObjText.obj
+.\Debug\O3dSelector.obj
+.\Debug\O3dViewProps.obj
+.\Debug\PToken.obj
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\PHI~1.ANA\LOCALS~1\Temp\RSP1BB.tmp"
+<h3>Output Window</h3>
+Compiling...
+O3dKamera.cpp
+O3dObj.cpp
+O3dObjBezier.cpp
+O3dObjBSpline.cpp
+O3dObjBSplineSurf.cpp
+O3dObjLight.cpp
+O3dObjLine.cpp
+O3dObjNurbs.cpp
+O3dObjPoint.cpp
+d:\dev\3d\o3d\o3dobjpoint.cpp(124) : warning C4018: '<' : signed/unsigned mismatch
+O3dObjPrim.cpp
+O3dObjProps.cpp
+O3dObjShape.cpp
+O3dObjText.cpp
+c:\program files\microsoft visual studio\vc98\include\vector(39) : warning C4786: 'std::reverse_iterator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > * const *,std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,std::basic_string<char,std::char_traits<char>,std::allocator<char> > * const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > * const *,int>' : identifier was truncated to '255' characters in the debug information
+        c:\program files\microsoft visual studio\vc98\include\vector(39) : while compiling class-template member function '__thiscall std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *> >::std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *> >(const std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *> &)'
+c:\program files\microsoft visual studio\vc98\include\vector(39) : warning C4786: 'std::reverse_iterator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > * *,std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,std::basic_string<char,std::char_traits<char>,std::allocator<char> > * &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > * *,int>' : identifier was truncated to '255' characters in the debug information
+        c:\program files\microsoft visual studio\vc98\include\vector(39) : while compiling class-template member function '__thiscall std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *> >::std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *> >(const std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *> &)'
+O3dSelector.cpp
+c:\program files\microsoft visual studio\vc98\include\vector(39) : warning C4786: 'std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *> >::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *> >' : identifier was truncated to '255' characters in the debug information
+c:\program files\microsoft visual studio\vc98\include\vector(60) : warning C4786: 'std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *> >::~vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *> >' : identifier was truncated to '255' characters in the debug information
+O3dViewProps.cpp
+PToken.cpp
+Creating library...
+
+
+
+<h3>Results</h3>
+O3d.lib - 0 error(s), 5 warning(s)
+</pre>
+</body>
+</html>
