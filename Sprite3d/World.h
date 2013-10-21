@@ -127,7 +127,7 @@ public:
 
 	virtual void enterWorld(){;}
 	virtual void leaveWorld(){;}
-	virtual void reshapeWorld(int pWidth, int pHeight){;}
+	virtual void reshapeWorld(int pWidth, int pHeight);
 	
 
 	static GLboolean GetDistPilot( Sprite3d *pSprite,  Double3 & pDist );

@@ -38,6 +38,9 @@
 
 int sStartNiveau = 0;
 
+extern PSoundId sOceanSound;
+
+
 //****************************************************
 class GameWorldControler: public WorldControler{
 
@@ -158,6 +161,7 @@ int main(int argc, char **argv)
 	int lRate =60;
 	int lTest = 0;
 	int lSize = 10;
+	char *lData=NULL;
 
 	for( int i =1; i< argc; i++)
 	{
@@ -181,6 +185,10 @@ int main(int argc, char **argv)
 						lSize = atoi( ++pStr);
 						break;
 					}
+
+			case 'D': 
+				lData=++pStr;
+				break;
 			case 'T':
 				lTest = atoi(++pStr);
 				break;
@@ -224,6 +232,8 @@ slScheduler sched ( 8000 ) ;
 
 	SoundControler lSoundControler;
 
+	
+
 	Utils3d::Init( "AsteroidFighter 1.0", argc, argv, 80*lSize, 60*lSize);
 
 	GameWorldControler lWControl( lTest, lSize, 80*lSize, 60*lSize );
@@ -237,8 +247,16 @@ slScheduler sched ( 8000 ) ;
 	lWControl.mainWorld();
 
 
-
-    WorldGame::InitSound("Data/sound"); // Pour les sons notamment
+	if( lData )
+		{
+			std::string lDataSound( lData );
+			lDataSound += "/sound";
+			WorldGame::InitSound(lDataSound.c_str()); // Pour les sons notamment
+		}
+	else 
+		{
+			WorldGame::InitSound("sound"); // Pour les sons notamment
+		}
 
     ulSleep ( 1 ) ;
 		/*

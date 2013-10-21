@@ -15,8 +15,9 @@ SoundControler::SoundControler( int pRate, int pSafetyMargin)
 #ifdef SL_SOUND
 	if( !sNoSound )
 		{
-            cSlSheduller = new slScheduler( 8000);
-           // cSlSheduller->setSafetyMargin (pSafetyMargin);
+			cSlSheduller = new slScheduler( 8000);
+			//	cSlSheduller->setSafetyMargin (pSafetyMargin);
+			cSlSheduller->setSafetyMargin( 0.2);
 		}
 #endif
 
@@ -30,7 +31,8 @@ SoundControler::process()
 #ifdef SL_SOUND
 	if( !sNoSound && cSlSheduller )
 		{
-			cSlSheduller->update () ;
+			std::cout << "=== SoundControler::process ===" << std::endl;
+			cSlSheduller->dumpUpdate () ;
 		}
 #endif
 }
@@ -46,7 +48,26 @@ SoundControler::playSample ( slSample *pSample, int pPriority,slPreemptMode pMod
 #ifdef SL_SOUND
 	if( !sNoSound && cSlSheduller )
 		{
+			std::cout << "SoundControler::playSimple:" << std::hex << pSample << std::endl;
 		  return cSlSheduller->playSample( pSample, pPriority, pMode );
+		}
+
+	return -1;
+#endif
+}
+//------------------------------------------------
+int
+SoundControler::loopSample ( slSample *pSample, int pPriority,slPreemptMode pMode)
+{
+	if( pSample == NULL )
+		return -1;
+
+
+#ifdef SL_SOUND
+	if( !sNoSound && cSlSheduller )
+		{
+			std::cout << "SoundControler::playSimple:" << std::hex << pSample << std::endl;
+		  return cSlSheduller->loopSample( pSample, pPriority, pMode );
 		}
 
 	return -1;
@@ -56,12 +77,11 @@ SoundControler::playSample ( slSample *pSample, int pPriority,slPreemptMode pMod
 slSample*
 SoundControler::loadSample( const char* pName )
 {
-	std::cout << "SoundControler::loadSample :" << pName  << cSlSheduller << std::endl;
 
 #ifdef SL_SOUND
 	if( !sNoSound && cSlSheduller != NULL)
 		{
-	std::cout << "slSample" << std::endl;
+			std::cout << "SoundControler::loadSample :" << pName  << " " << cSlSheduller << "-->";
 			return new slSample( pName );
 		}
 #endif
@@ -74,6 +94,7 @@ SoundControler::playMusic ( const char *pName, int pPriority, slPreemptMode pMod
 #ifdef SL_SOUND
 	if( !sNoSound && cSlSheduller )
 		{
+			std::cout << "SoundControler::playMusic :" << pName  << " " << cSlSheduller << "-->";
 		  return cSlSheduller->playMusic( pName, pPriority, pMode );
 		}
 #endif
