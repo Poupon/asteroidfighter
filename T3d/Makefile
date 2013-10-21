@@ -19,14 +19,16 @@ OBJS =  $(SRCS:.cc=.o)
 HDRS = $(SRCS:.cc=.h)
 
 
-
+# /usr/lib/x86_64-linux-gnu
 # ---------------------------------------------------
 
 CFLAGS= 
 
-CINCLUDE= -I. -I.. -I/usr/openwin/include  -I${DIR_OPENGL_INC} -I${DIR_GLUT_INC} -I${DIR_PLIB_INC}
+CINCLUDE= -I. -I.. 
 
+# -I/usr/openwin/include   -I${DIR_OPENGL_INC} -I${DIR_GLUT_INC} -I${DIR_PLIB_INC}
 
+COMPILO=gcc
 
 # ---------------------------------------------------
 
