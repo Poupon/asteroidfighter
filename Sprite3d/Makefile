@@ -1,0 +1,76 @@
+TARGET=libSprite3d.a
+
+SRCS = \
+	Collision.cc \
+	ObjOdron.cc \
+	ObjPart.cc \
+	ObjText2d.cc \
+	ObjVect.cc \
+	Sprite3d.cc \
+	Sprite3dObj.cc \
+	Sprite3dPilot.cc \
+	Text2d.cc \
+	Utils3d.cc \
+	WorldControler.cc \
+	SoundControler.cc \
+	SoundLibrary.cc \
+	World.cc \
+	SceneManager.cc \
+	AnimatObj.cc \
+	Random.cc
+
+OBJS =  $(SRCS:.cc=.o)
+
+
+HDRS = $(SRCS:.cc=.h)
+
+
+# ---------------------------------------------------
+
+CFLAGS=  -DPUI_WIN -DSL_SOUND
+
+CINCLUDE=-I. -I.. -I/usr/openwin/include  -I${DIR_OPENGL_INC} -I${DIR_GLUT_INC} -I${DIR_PLIB_INC}
+
+
+# ---------------------------------------------------
+
+all:: start
+
+all:: $(OBJS)
+
+all::	$(TARGET)
+
+clean::
+		rm	-f  *.o	*.a
+
+
+start:
+	rm -f $(TARGET)
+
+
+
+# ---------------------------------------------------
+# Compilation
+.cc.o:
+		$(COMPILO) $(CFLAGS) $(CINCLUDE) -c  $*.cc 
+ 
+
+# ---------------------------------------------------
+# Library
+
+$(TARGET):
+		rm -f $(TARGET) 
+	 	ar cq $(TARGET) $(OBJS)
+		ranlib $(TARGET)
+
+
+# ---------------------------------------------------
+# Depends
+DEPEND = makedepend
+
+ALLDEFINES=$CINCLUDE
+
+depend:: $(SRCS) $(HDRS)
+	$(DEPEND)  -s "# DO NOT DELETE" -- $(ALLDEFINES) -- $(SRCS)
+dependlocal:: $(SRCS) $(HEADERS)
+	$(DEPEND)  -s "# DO NOT DELETE" -- $(ALLDEFINES) -- $(SRCS)
