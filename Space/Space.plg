@@ -1,0 +1,29 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Space - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\PHI~1.ANA\LOCALS~1\Temp\RSP1B4.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I ".." /I "." /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /Fp"Debug/Space.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\Dev\3d\Space\Pilot.cpp"
+"D:\Dev\3d\Space\WorldGame.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\PHI~1.ANA\LOCALS~1\Temp\RSP1B4.tmp" 
+Creating command line "link.exe -lib /nologo /out:"Debug\Space.lib"  .\Debug\ActionsShip.obj .\Debug\AsteroidesMaker.obj .\Debug\Pilot.obj .\Debug\SceneAsteroide.obj .\Debug\SceneAttack.obj .\Debug\SceneBase.obj .\Debug\ShipsMaker.obj .\Debug\WorldGame.obj "
+<h3>Output Window</h3>
+Compiling...
+Pilot.cpp
+WorldGame.cpp
+Creating library...
+
+
+
+<h3>Results</h3>
+Space.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

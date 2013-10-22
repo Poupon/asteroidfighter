@@ -1,0 +1,3256 @@
+# depslib dependency file v1.0
+1091662913 c:\user\dev\plib\src\fnt\fnt.cxx
+	"fntLocal.h"
+
+1036873641 c:\user\dev\plib\src\fnt\fntlocal.h
+	"fnt.h"
+
+1081252395 c:\user\dev\plib\src\fnt\fnt.h
+	<stdio.h>
+	"sg.h"
+	<OpenGL/gl.h>
+	<GL/gl.h>
+
+1185779924 c:\user\dev\plib\include\plib\sg.h
+	<stdio.h>
+	"ul.h"
+
+1185779925 c:\user\dev\plib\include\plib\ul.h
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<string.h>
+	<ctype.h>
+	<assert.h>
+	<windows.h>
+	<mmsystem.h>
+	<regstr.h>
+	<unistd.h>
+	<be/kernel/image.h>
+	<CodeFragments.h>
+	<unistd.h>
+	<unistd.h>
+	<unistd.h>
+	<dlfcn.h>
+	<fcntl.h>
+	<sys/param.h>
+	<assert.h>
+	<limits.h>
+	<math.h>
+	<float.h>
+	<errno.h>
+
+1076871083 c:\user\dev\plib\src\fnt\fntbitmap.cxx
+	"fnt.h"
+
+1038763306 c:\user\dev\plib\src\fnt\fnttxf.cxx
+	"fntLocal.h"
+	<agl.h>
+	<OpenGL/CGLCurrent.h>
+	<GL/glx.h>
+
+1095763555 c:\user\dev\plib\src\js\js.cxx
+	"js.h"
+
+1098312573 c:\user\dev\plib\src\js\js.h
+	"ul.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1105489346 c:\user\dev\plib\src\js\jsbsd.cxx
+	"js.h"
+	<sys/ioctl.h>
+	<sys/joystick.h>
+	<machine/joystick.h>
+	<usbhid.h>
+	<usb.h>
+	<libusbhid.h>
+	<usbhid.h>
+	<dev/usb/usb.h>
+	<dev/usb/usbhid.h>
+
+1098312573 c:\user\dev\plib\src\js\jslinux.cxx
+	"js.h"
+	<linux/joystick.h>
+	<sys/param.h>
+	<fcntl.h>
+	<sys/ioctl.h>
+
+1098312573 c:\user\dev\plib\src\js\jslinuxold.cxx
+	"js.h"
+	<linux/joystick.h>
+	<fcntl.h>
+	<sys/ioctl.h>
+
+1095763555 c:\user\dev\plib\src\js\jsmacos.cxx
+	"js.h"
+	<InputSprocket.h>
+
+1095763555 c:\user\dev\plib\src\js\jsmacosx.cxx
+	"js.h"
+	<mach/mach.h>
+	<IOKit/IOkitLib.h>
+	<IOKit/hid/IOHIDLib.h>
+	<mach/mach_error.h>
+	<IOKit/hid/IOHIDKeys.h>
+	<IOKit/IOCFPlugIn.h>
+	<CoreFoundation/CoreFoundation.h>
+	<IOKit/hidsystem/IOHIDUsageTables.h>
+	<Kernel/IOKit/hidsystem/IOHIDUsageTables.h>
+
+1095763555 c:\user\dev\plib\src\js\jsnone.cxx
+	"js.h"
+
+1102014716 c:\user\dev\plib\src\js\jswindows.cxx
+	"js.h"
+
+1030943143 c:\user\dev\plib\src\net\netbuffer.cxx
+	"netBuffer.h"
+
+1079889551 c:\user\dev\plib\src\net\netbuffer.h
+	"netChannel.h"
+
+1079887267 c:\user\dev\plib\src\net\netchannel.h
+	"netSocket.h"
+
+1080439104 c:\user\dev\plib\src\net\netsocket.h
+	"ul.h"
+	<errno.h>
+
+1079981090 c:\user\dev\plib\src\net\netchannel.cxx
+	"netChannel.h"
+
+1030943144 c:\user\dev\plib\src\net\netchat.cxx
+	"netChat.h"
+
+1030943144 c:\user\dev\plib\src\net\netchat.h
+	"netBuffer.h"
+
+1079887267 c:\user\dev\plib\src\net\netmessage.cxx
+	"netMessage.h"
+
+1079887267 c:\user\dev\plib\src\net\netmessage.h
+	"netBuffer.h"
+	<netinet/in.h>
+	<arpa/inet.h>
+
+1030943144 c:\user\dev\plib\src\net\netmonitor.cxx
+	"netMonitor.h"
+
+1079887267 c:\user\dev\plib\src\net\netmonitor.h
+	"netChat.h"
+
+1081251760 c:\user\dev\plib\src\net\netsocket.cxx
+	"netSocket.h"
+	<netinet/in.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<time.h>
+	<sys/time.h>
+	<unistd.h>
+	<netdb.h>
+	<fcntl.h>
+	<winsock.h>
+	<stdarg.h>
+
+1033157999 c:\user\dev\plib\src\psl\psl.cxx
+	"pslLocal.h"
+
+1033137906 c:\user\dev\plib\src\psl\psllocal.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"psl.h"
+	"ul.h"
+	"pslFileIO.h"
+	"pslOpcodes.h"
+	"pslSymbol.h"
+	"pslCompiler.h"
+	"pslContext.h"
+
+1081252395 c:\user\dev\plib\src\psl\psl.h
+	<stdio.h>
+	"ul.h"
+
+1041826214 c:\user\dev\plib\src\psl\pslfileio.h
+
+1032715516 c:\user\dev\plib\src\psl\pslopcodes.h
+
+1031336243 c:\user\dev\plib\src\psl\pslsymbol.h
+
+1091663857 c:\user\dev\plib\src\psl\pslcompiler.h
+
+1032724145 c:\user\dev\plib\src\psl\pslcontext.h
+
+1079644147 c:\user\dev\plib\src\psl\pslcodegen.cxx
+	"pslLocal.h"
+
+1041826213 c:\user\dev\plib\src\psl\pslcompiler.cxx
+	"pslLocal.h"
+	"ul.h"
+
+1032724145 c:\user\dev\plib\src\psl\pslcontext.cxx
+	"pslLocal.h"
+
+1032715516 c:\user\dev\plib\src\psl\psldump.cxx
+	"pslLocal.h"
+
+1032096773 c:\user\dev\plib\src\psl\pslerror.cxx
+	"pslLocal.h"
+
+1032715516 c:\user\dev\plib\src\psl\pslexpression.cxx
+	"pslLocal.h"
+
+1041826213 c:\user\dev\plib\src\psl\pslfileio.cxx
+	"pslLocal.h"
+
+1091663858 c:\user\dev\plib\src\psl\pslprogram.cxx
+	"pslLocal.h"
+
+1031519852 c:\user\dev\plib\src\psl\pslsymbols.cxx
+	"pslLocal.h"
+
+1032108353 c:\user\dev\plib\src\psl\psltoken.cxx
+	"pslLocal.h"
+
+1079892203 c:\user\dev\plib\src\puaux\puaux.cxx
+	"puAuxLocal.h"
+
+1079892301 c:\user\dev\plib\src\puaux\puauxlocal.h
+	"puAux.h"
+
+1095883775 c:\user\dev\plib\src\puaux\puaux.h
+	"pu.h"
+
+1185779924 c:\user\dev\plib\include\plib\pu.h
+	<stdio.h>
+	"fnt.h"
+	"ulRTTI.h"
+	"puGLUT.h"
+	"puPW.h"
+	"puFLTK.h"
+	"puSDL.h"
+	"puNative.h"
+
+1185779922 c:\user\dev\plib\include\plib\fnt.h
+	<stdio.h>
+	"sg.h"
+	<OpenGL/gl.h>
+	<GL/gl.h>
+
+1185779925 c:\user\dev\plib\include\plib\ulrtti.h
+	<string.h>
+	"ul.h"
+
+1185779924 c:\user\dev\plib\include\plib\puglut.h
+	"pu.h"
+	<GLUT/glut.h>
+	<GL/glut.h>
+
+1185779924 c:\user\dev\plib\include\plib\pupw.h
+	"pu.h"
+
+1185779924 c:\user\dev\plib\include\plib\pufltk.h
+	"pu.h"
+	<FL/Fl_Gl_Window.H>
+
+1185779924 c:\user\dev\plib\include\plib\pusdl.h
+	"pu.h"
+	<SDL/SDL.h>
+
+1185779924 c:\user\dev\plib\include\plib\punative.h
+	"pu.h"
+	<GL/glx.h>
+	<agl.h>
+	<OpenGL/CGLCurrent.h>
+
+1079892203 c:\user\dev\plib\src\puaux\puauxbislider.cxx
+	"puAuxLocal.h"
+
+1079892203 c:\user\dev\plib\src\puaux\puauxbisliderwithends.cxx
+	"puAuxLocal.h"
+
+1091664229 c:\user\dev\plib\src\puaux\puauxchooser.cxx
+	"puAuxLocal.h"
+
+1095883775 c:\user\dev\plib\src\puaux\puauxcombobox.cxx
+	"puAuxLocal.h"
+
+1091664229 c:\user\dev\plib\src\puaux\puauxcompass.cxx
+	"puAuxLocal.h"
+	<OpenGL/gl.h>
+	<GL/gl.h>
+
+1079892203 c:\user\dev\plib\src\puaux\puauxfileselector.cxx
+	"puAuxLocal.h"
+
+1079892203 c:\user\dev\plib\src\puaux\puauxlargeinput.cxx
+	"puAuxLocal.h"
+
+1079892203 c:\user\dev\plib\src\puaux\puauxscrollbar.cxx
+	"puAuxLocal.h"
+
+1079892203 c:\user\dev\plib\src\puaux\puauxselectbox.cxx
+	"puAuxLocal.h"
+
+1079892203 c:\user\dev\plib\src\puaux\puauxsliderwithinput.cxx
+	"puAuxLocal.h"
+
+1079892203 c:\user\dev\plib\src\puaux\puauxspinbox.cxx
+	"puAuxLocal.h"
+
+1079892203 c:\user\dev\plib\src\puaux\puauxtrislider.cxx
+	"puAuxLocal.h"
+
+1079892203 c:\user\dev\plib\src\puaux\puauxverticalmenu.cxx
+	"puAuxLocal.h"
+
+1076965774 c:\user\dev\plib\src\pui\pu.cxx
+	"puLocal.h"
+	<agl.h>
+	<OpenGL/CGLCurrent.h>
+	<GL/glx.h>
+
+1079892203 c:\user\dev\plib\src\pui\pulocal.h
+	"pu.h"
+
+1091664348 c:\user\dev\plib\src\pui\pu.h
+	<stdio.h>
+	"fnt.h"
+	"ulRTTI.h"
+	"puGLUT.h"
+	"puPW.h"
+	"puFLTK.h"
+	"puSDL.h"
+	"puNative.h"
+
+1076935743 c:\user\dev\plib\src\pui\puglut.h
+	"pu.h"
+	<GLUT/glut.h>
+	<GL/glut.h>
+
+1076978601 c:\user\dev\plib\src\pui\pupw.h
+	"pu.h"
+
+1076935743 c:\user\dev\plib\src\pui\pufltk.h
+	"pu.h"
+	<FL/Fl_Gl_Window.H>
+
+1076935743 c:\user\dev\plib\src\pui\pusdl.h
+	"pu.h"
+	<SDL/SDL.h>
+
+1076935743 c:\user\dev\plib\src\pui\punative.h
+	"pu.h"
+	<GL/glx.h>
+	<agl.h>
+	<OpenGL/CGLCurrent.h>
+
+1030943144 c:\user\dev\plib\src\pui\puarrowbutton.cxx
+	"puLocal.h"
+
+1030943145 c:\user\dev\plib\src\pui\pubislider.cxx
+	"puLocal.h"
+
+1091664348 c:\user\dev\plib\src\pui\pubox.cxx
+	"puLocal.h"
+
+1044636067 c:\user\dev\plib\src\pui\pubutton.cxx
+	"puLocal.h"
+
+1030943145 c:\user\dev\plib\src\pui\pubuttonbox.cxx
+	"puLocal.h"
+
+1077506212 c:\user\dev\plib\src\pui\pucombobox.cxx
+	"puLocal.h"
+
+1032626829 c:\user\dev\plib\src\pui\pudial.cxx
+	"puLocal.h"
+
+1030943145 c:\user\dev\plib\src\pui\pudialogbox.cxx
+	"puLocal.h"
+
+1038613309 c:\user\dev\plib\src\pui\pufilepicker.cxx
+	"puLocal.h"
+
+1074648760 c:\user\dev\plib\src\pui\pufileselector.cxx
+	"puLocal.h"
+
+1091664348 c:\user\dev\plib\src\pui\pufont.cxx
+	"puLocal.h"
+
+1030943145 c:\user\dev\plib\src\pui\puframe.cxx
+	"puLocal.h"
+
+1077506212 c:\user\dev\plib\src\pui\pugroup.cxx
+	"puLocal.h"
+
+1091664348 c:\user\dev\plib\src\pui\puinput.cxx
+	"puLocal.h"
+
+1033167453 c:\user\dev\plib\src\pui\puinputbase.cxx
+	"puLocal.h"
+
+1071612964 c:\user\dev\plib\src\pui\puinterface.cxx
+	"puLocal.h"
+
+1077506212 c:\user\dev\plib\src\pui\pulargeinput.cxx
+	"puLocal.h"
+
+1030943146 c:\user\dev\plib\src\pui\pulistbox.cxx
+	"puLocal.h"
+
+1076935743 c:\user\dev\plib\src\pui\pumenubar.cxx
+	"puLocal.h"
+
+1091664348 c:\user\dev\plib\src\pui\puobject.cxx
+	"puLocal.h"
+
+1030943146 c:\user\dev\plib\src\pui\puoneshot.cxx
+	"puLocal.h"
+
+1030943146 c:\user\dev\plib\src\pui\pupopup.cxx
+	"puLocal.h"
+
+1056623467 c:\user\dev\plib\src\pui\pupopupmenu.cxx
+	"puLocal.h"
+
+1032620396 c:\user\dev\plib\src\pui\purange.cxx
+	"puLocal.h"
+
+1032626829 c:\user\dev\plib\src\pui\puscrollbar.cxx
+	"puLocal.h"
+
+1077506212 c:\user\dev\plib\src\pui\puselectbox.cxx
+	"puLocal.h"
+
+1032620396 c:\user\dev\plib\src\pui\puslider.cxx
+	"puLocal.h"
+
+1044633663 c:\user\dev\plib\src\pui\puspinbox.cxx
+	"puLocal.h"
+
+1030943146 c:\user\dev\plib\src\pui\putext.cxx
+	"puLocal.h"
+
+1030943146 c:\user\dev\plib\src\pui\putrislider.cxx
+	"puLocal.h"
+
+1063133113 c:\user\dev\plib\src\pui\puvalue.cxx
+	"puLocal.h"
+
+1030943146 c:\user\dev\plib\src\pui\puverticalmenu.cxx
+	"puLocal.h"
+
+1076894788 c:\user\dev\plib\src\pw\pw.cxx
+	"ul.h"
+	"pw.h"
+
+1081291519 c:\user\dev\plib\src\pw\pw.h
+	<stdio.h>
+
+1081291519 c:\user\dev\plib\src\pw\pwmacosx.cxx
+	"ul.h"
+	<Carbon/Carbon.h>
+	<AGL/agl.h>
+	<Events.h>
+	<MacWindows.h>
+	<Dialogs.h>
+	<ToolUtils.h>
+	<Quickdraw.h>
+	<Menus.h>
+	<Gestalt.h>
+	<Appearance.h>
+	<Devices.h>
+	<CodeFragments.h>
+	<agl.h>
+	<DrawSprocket.h>
+	<stdlib.h>
+	<stdio.h>
+	"pw.h"
+
+1091663732 c:\user\dev\plib\src\pw\pwwindows.cxx
+	"ul.h"
+	<windows.h>
+	<GL/gl.h>
+	"pw.h"
+
+1081291519 c:\user\dev\plib\src\pw\pwx11.cxx
+	"ul.h"
+	"pw.h"
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<assert.h>
+	<X11/Xlib.h>
+	<X11/Xatom.h>
+	<X11/keysym.h>
+	<X11/cursorfont.h>
+	<X11/Xlib.h>
+	<X11/Xatom.h>
+	<GL/gl.h>
+	<GL/glx.h>
+	<X11/Xm/MwmUtil.h>
+
+1091664429 c:\user\dev\plib\src\sg\sg.cxx
+	"sg.h"
+
+1081252396 c:\user\dev\plib\src\sg\sg.h
+	<stdio.h>
+	"ul.h"
+
+1075682115 c:\user\dev\plib\src\sg\sgisect.cxx
+	"sg.h"
+
+1030943146 c:\user\dev\plib\src\sg\sgperlinnoise.cxx
+	<stdio.h>
+	<time.h>
+	<math.h>
+	"sg.h"
+
+1091664429 c:\user\dev\plib\src\sg\sgd.cxx
+	"sg.h"
+
+1030943146 c:\user\dev\plib\src\sg\sgdisect.cxx
+	"sg.h"
+
+1057325583 c:\user\dev\plib\src\sl\sldsp.cxx
+	"sl.h"
+	<errno.h>
+
+1081254746 c:\user\dev\plib\src\sl\sl.h
+	<stdio.h>
+	"slPortability.h"
+
+1053261904 c:\user\dev\plib\src\sl\slportability.h
+	"ul.h"
+	<stdio.h>
+	<stdlib.h>
+	<Sound.h>
+	<Timer.h>
+	<unix.h>
+	<Carbon/Carbon.h>
+	<fcntl.h>
+	<sys/stat.h>
+	<string.h>
+	<limits.h>
+	<math.h>
+	<linux/soundcard.h>
+	<sys/ioctl.h>
+	<machine/soundcard.h>
+	<soundcard.h>
+	<sys/audioio.h>
+	<audio.h>
+	<sys/audioio.h>
+	<sys/stropts.h>
+
+1081257963 c:\user\dev\plib\src\sl\slenvelope.cxx
+	"sl.h"
+
+1030943147 c:\user\dev\plib\src\sl\slmodplayer.cxx
+	"sl.h"
+	"slMODPrivate.h"
+	"slMODfile.h"
+
+1038613309 c:\user\dev\plib\src\sl\slmodprivate.h
+	"ul.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<fcntl.h>
+	<sys/stat.h>
+	<windows.h>
+	<io.h>
+	<unistd.h>
+
+1030943147 c:\user\dev\plib\src\sl\slmodfile.h
+
+1030943147 c:\user\dev\plib\src\sl\slmoddacio.cxx
+	"slMODPrivate.h"
+
+1054594184 c:\user\dev\plib\src\sl\slmodfile.cxx
+	"slMODPrivate.h"
+	"slMODfile.h"
+
+1030943147 c:\user\dev\plib\src\sl\slmodinst.cxx
+	"slMODPrivate.h"
+
+1030943147 c:\user\dev\plib\src\sl\slmodnote.cxx
+	"slMODPrivate.h"
+
+1081254746 c:\user\dev\plib\src\sl\slplayer.cxx
+	"sl.h"
+
+1076262075 c:\user\dev\plib\src\sl\slsample.cxx
+	"sl.h"
+	<math.h>
+
+1030943147 c:\user\dev\plib\src\sl\slsampleplayer.cxx
+	"sl.h"
+
+1053261904 c:\user\dev\plib\src\sl\slscheduler.cxx
+	"sl.h"
+
+1038613309 c:\user\dev\plib\src\sl\smmixer.cxx
+	"sm.h"
+
+1038613309 c:\user\dev\plib\src\sl\sm.h
+	"slPortability.h"
+
+1030943149 c:\user\dev\plib\src\ssgaux\ssgaux.cxx
+	"ssgAux.h"
+
+1056698115 c:\user\dev\plib\src\ssgaux\ssgaux.h
+	"ssg.h"
+	"ssgaShapes.h"
+	"ssgaParticleSystem.h"
+	"ssgaFire.h"
+	"ssgaWaveSystem.h"
+	"ssgaLensFlare.h"
+	"ssgaScreenDump.h"
+
+1185779924 c:\user\dev\plib\include\plib\ssg.h
+	<stdio.h>
+	"sg.h"
+	<OpenGL/gl.h>
+	<GL/gl.h>
+	"ssgconf.h"
+
+1185779924 c:\user\dev\plib\include\plib\ssgconf.h
+
+1030943149 c:\user\dev\plib\src\ssgaux\ssgashapes.h
+	"ssg.h"
+
+1030943149 c:\user\dev\plib\src\ssgaux\ssgaparticlesystem.h
+
+1030943149 c:\user\dev\plib\src\ssgaux\ssgafire.h
+	"ssgAux.h"
+
+1056698115 c:\user\dev\plib\src\ssgaux\ssgawavesystem.h
+	"ssgaShapes.h"
+
+1030943149 c:\user\dev\plib\src\ssgaux\ssgalensflare.h
+	"ssgaShapes.h"
+
+1104301180 c:\user\dev\plib\src\ssgaux\ssgascreendump.h
+
+1077719974 c:\user\dev\plib\src\ssgaux\ssgabillboards.cxx
+	<math.h>
+	"ssgaBillboards.h"
+
+1074699020 c:\user\dev\plib\src\ssgaux\ssgabillboards.h
+	"ssg.h"
+
+1064584460 c:\user\dev\plib\src\ssgaux\ssgacelestialbody.cxx
+	<math.h>
+	"ssgaSky.h"
+	"ssgaSphere.h"
+
+1064584460 c:\user\dev\plib\src\ssgaux\ssgasky.h
+	"ssg.h"
+
+1105272792 c:\user\dev\plib\src\ssgaux\ssgasphere.h
+	"ssg.h"
+
+1061930164 c:\user\dev\plib\src\ssgaux\ssgacloudlayer.cxx
+	"ssgaSky.h"
+
+1104301180 c:\user\dev\plib\src\ssgaux\ssgafire.cxx
+	"ssg.h"
+	"ssgAux.h"
+
+1030943149 c:\user\dev\plib\src\ssgaux\ssgalensflare.cxx
+	"ssgAux.h"
+	"../ssg/ssgLocal.h"
+
+1104301180 c:\user\dev\plib\src\ssg\ssglocal.h
+	"ssg.h"
+
+1104301180 c:\user\dev\plib\src\ssg\ssg.h
+	<stdio.h>
+	"sg.h"
+	<OpenGL/gl.h>
+	<GL/gl.h>
+	"ssgconf.h"
+
+1095160745 c:\user\dev\plib\src\ssg\ssgconf.h
+
+1030943149 c:\user\dev\plib\src\ssgaux\ssgalensflaretexture.cxx
+
+1041645355 c:\user\dev\plib\src\ssgaux\ssgaparticlesystem.cxx
+	"ssgAux.h"
+
+1030943149 c:\user\dev\plib\src\ssgaux\ssgapatch.cxx
+	"ssgAux.h"
+	<string.h>
+
+1104301180 c:\user\dev\plib\src\ssgaux\ssgascreendump.cxx
+	"ssgAux.h"
+	<string.h>
+	"ul.h"
+
+1030943149 c:\user\dev\plib\src\ssgaux\ssgashapes.cxx
+	"ssgAux.h"
+	<string.h>
+
+1064584460 c:\user\dev\plib\src\ssgaux\ssgasky.cxx
+	"ssgaSky.h"
+
+1064584460 c:\user\dev\plib\src\ssgaux\ssgaskydome.cxx
+	<math.h>
+	"ssgaSky.h"
+
+1059196579 c:\user\dev\plib\src\ssgaux\ssgasphere.cxx
+	"ul.h"
+	"ssgaSphere.h"
+
+1064584460 c:\user\dev\plib\src\ssgaux\ssgastars.cxx
+	"ssgaSky.h"
+
+1030943149 c:\user\dev\plib\src\ssgaux\ssgateapot.cxx
+	"ssgAux.h"
+	<string.h>
+
+1056698115 c:\user\dev\plib\src\ssgaux\ssgawavesystem.cxx
+	"ssgAux.h"
+	<string.h>
+
+1099085048 c:\user\dev\plib\src\ssg\ssg.cxx
+	"ssgLocal.h"
+	<agl.h>
+	<OpenGL/CGLCurrent.h>
+	<GL/glx.h>
+
+1099085433 c:\user\dev\plib\src\ssg\ssganimtransform.cxx
+	"ssgLocal.h"
+
+1036776907 c:\user\dev\plib\src\ssg\ssganimation.cxx
+	"ssgLocal.h"
+
+1030943147 c:\user\dev\plib\src\ssg\ssgaxistransform.cxx
+	"ssgLocal.h"
+
+1032049751 c:\user\dev\plib\src\ssg\ssgbase.cxx
+	"ssgLocal.h"
+
+1030943147 c:\user\dev\plib\src\ssg\ssgbasetransform.cxx
+	"ssgLocal.h"
+
+1076961072 c:\user\dev\plib\src\ssg\ssgbranch.cxx
+	"ssgLocal.h"
+
+1038837846 c:\user\dev\plib\src\ssg\ssgcontext.cxx
+	"ssgLocal.h"
+
+1030943148 c:\user\dev\plib\src\ssg\ssgcutout.cxx
+	"ssgLocal.h"
+
+1104301180 c:\user\dev\plib\src\ssg\ssgdlist.cxx
+	"ssgLocal.h"
+
+1095072576 c:\user\dev\plib\src\ssg\ssgentity.cxx
+	"ssgLocal.h"
+
+1032049751 c:\user\dev\plib\src\ssg\ssgio.cxx
+	"ssgLocal.h"
+
+1030943148 c:\user\dev\plib\src\ssg\ssginvisible.cxx
+	"ssgLocal.h"
+
+1035655255 c:\user\dev\plib\src\ssg\ssgisect.cxx
+	"ssgLocal.h"
+
+1095071638 c:\user\dev\plib\src\ssg\ssgleaf.cxx
+	"ssgLocal.h"
+
+1095070603 c:\user\dev\plib\src\ssg\ssglist.cxx
+	"ssgLocal.h"
+
+1074965145 c:\user\dev\plib\src\ssg\ssgload.cxx
+	"ssgLocal.h"
+
+1030943148 c:\user\dev\plib\src\ssg\ssgload3ds.cxx
+	"ssgLocal.h"
+	"ssg3ds.h"
+
+1030943147 c:\user\dev\plib\src\ssg\ssg3ds.h
+
+1105817806 c:\user\dev\plib\src\ssg\ssgloadac.cxx
+	"ssgLocal.h"
+	"ssgVertSplitter.h"
+
+1073997668 c:\user\dev\plib\src\ssg\ssgvertsplitter.h
+
+1102017390 c:\user\dev\plib\src\ssg\ssgloadasc.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+	"ssgParser.h"
+
+1083670515 c:\user\dev\plib\src\ssg\ssgloaderwriterstuff.h
+
+1096873886 c:\user\dev\plib\src\ssg\ssgparser.h
+
+1099086097 c:\user\dev\plib\src\ssg\ssgloadase.cxx
+	"ssgLocal.h"
+	"ssgParser.h"
+
+1096873886 c:\user\dev\plib\src\ssg\ssgloadatg.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+	"ssgParser.h"
+
+1030943148 c:\user\dev\plib\src\ssg\ssgloadbmp.cxx
+	"ssgLocal.h"
+
+1043865221 c:\user\dev\plib\src\ssg\ssgloaddof.cxx
+	"ssgLocal.h"
+
+1032049751 c:\user\dev\plib\src\ssg\ssgloaddxf.cxx
+	"ssgLocal.h"
+
+1050581412 c:\user\dev\plib\src\ssg\ssgloadflt.cxx
+	"ssg.h"
+	"ssgLoaderWriterStuff.h"
+	<unistd.h>
+	<stdlib.h>
+	<string.h>
+	<fcntl.h>
+	<stdio.h>
+	<sys/endian.h>
+	<time.h>
+	<sys/time.h>
+	<sys/stat.h>
+	<sys/mman.h>
+	<io.h>
+
+1096873886 c:\user\dev\plib\src\ssg\ssgloadiv.cxx
+	"ssgLocal.h"
+	"ssgParser.h"
+	"ssgLoaderWriterStuff.h"
+	"ssgLoadVRML.h"
+
+1083670515 c:\user\dev\plib\src\ssg\ssgloadvrml.h
+
+1030943148 c:\user\dev\plib\src\ssg\ssgloadm.cxx
+	<stdio.h>
+	"ssgLocal.h"
+
+1030943148 c:\user\dev\plib\src\ssg\ssgloadmd2.cxx
+	"ssgLocal.h"
+
+1105817806 c:\user\dev\plib\src\ssg\ssgloadmdl.cxx
+	"ssgLocal.h"
+	"ssgLoadMDL.h"
+	<iostream>
+
+1030943148 c:\user\dev\plib\src\ssg\ssgloadmdl.h
+
+1083671147 c:\user\dev\plib\src\ssg\ssgloadmdl_bgltexture.cxx
+	"ssgLocal.h"
+	"ssgMSFSPalette.h"
+
+1030943148 c:\user\dev\plib\src\ssg\ssgmsfspalette.h
+
+1032049752 c:\user\dev\plib\src\ssg\ssgloadobj.cxx
+	"ssgLocal.h"
+
+1096873886 c:\user\dev\plib\src\ssg\ssgloadoff.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+	"ssgParser.h"
+
+1096187248 c:\user\dev\plib\src\ssg\ssgloadpcx.cxx
+	"ssgLocal.h"
+	"pcx.h"
+
+1074961568 c:\user\dev\plib\src\ssg\pcx.h
+
+1030943148 c:\user\dev\plib\src\ssg\ssgloadpng.cxx
+	"ssgLocal.h"
+	<gl/glpng.h>
+
+1079260016 c:\user\dev\plib\src\ssg\ssgloadsgi.cxx
+	"ssgLocal.h"
+
+1030943148 c:\user\dev\plib\src\ssg\ssgloadssg.cxx
+	"ssgLocal.h"
+
+1030943148 c:\user\dev\plib\src\ssg\ssgloadstrip.cxx
+	"ssgLocal.h"
+
+1043884319 c:\user\dev\plib\src\ssg\ssgloadtga.cxx
+	"ssgLocal.h"
+
+1030943148 c:\user\dev\plib\src\ssg\ssgloadtri.cxx
+	"ssgLocal.h"
+
+1056698115 c:\user\dev\plib\src\ssg\ssgloadtexture.cxx
+	"ssgLocal.h"
+
+1096873886 c:\user\dev\plib\src\ssg\ssgloadvrml1.cxx
+	"ssgLocal.h"
+	"ssgParser.h"
+	"ssgLoaderWriterStuff.h"
+	"ssgLoadVRML.h"
+
+1102019199 c:\user\dev\plib\src\ssg\ssgloadx.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+	"ssgParser.h"
+
+1036874308 c:\user\dev\plib\src\ssg\ssgloadxplaneobj.cxx
+	<stdio.h>
+	<string.h>
+	"ssgLocal.h"
+
+1097069111 c:\user\dev\plib\src\ssg\ssgloaderwriterstuff.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1105272608 c:\user\dev\plib\src\ssg\ssgoptimiser.cxx
+	"ssgLocal.h"
+	"ssgVertSplitter.h"
+
+1096873800 c:\user\dev\plib\src\ssg\ssgparser.cxx
+	"ssgLocal.h"
+	"ssgParser.h"
+
+1030943148 c:\user\dev\plib\src\ssg\ssgrangeselector.cxx
+	"ssgLocal.h"
+
+1030943148 c:\user\dev\plib\src\ssg\ssgroot.cxx
+	"ssgLocal.h"
+
+1047133919 c:\user\dev\plib\src\ssg\ssgsave3ds.cxx
+	<stdio.h>
+	"ssgLocal.h"
+	"ssg3ds.h"
+
+1101886085 c:\user\dev\plib\src\ssg\ssgsaveac.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1096983505 c:\user\dev\plib\src\ssg\ssgsaveasc.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1095073916 c:\user\dev\plib\src\ssg\ssgsavease.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1030943148 c:\user\dev\plib\src\ssg\ssgsaveatg.cxx
+	<stdio.h>
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1030943148 c:\user\dev\plib\src\ssg\ssgsavedxf.cxx
+	"ssgLocal.h"
+
+1041645355 c:\user\dev\plib\src\ssg\ssgsaveflt.cxx
+	<stdio.h>
+	"ssgLocal.h"
+
+1105808371 c:\user\dev\plib\src\ssg\ssgsaveiv.cxx
+	<assert.h>
+	"ssgLocal.h"
+
+1030943148 c:\user\dev\plib\src\ssg\ssgsavem.cxx
+	<stdio.h>
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1030943148 c:\user\dev\plib\src\ssg\ssgsaveobj.cxx
+	"ssgLocal.h"
+
+1030943148 c:\user\dev\plib\src\ssg\ssgsaveoff.cxx
+	<stdio.h>
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1030943148 c:\user\dev\plib\src\ssg\ssgsaveqhi.cxx
+	<stdio.h>
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1030943148 c:\user\dev\plib\src\ssg\ssgsavetri.cxx
+	"ssgLocal.h"
+
+1030943148 c:\user\dev\plib\src\ssg\ssgsavevrml1.cxx
+	<stdio.h>
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1030943148 c:\user\dev\plib\src\ssg\ssgsavex.cxx
+	"ssgLocal.h"
+
+1030943148 c:\user\dev\plib\src\ssg\ssgselector.cxx
+	"ssgLocal.h"
+
+1075045804 c:\user\dev\plib\src\ssg\ssgsimplelist.cxx
+	"ssgLocal.h"
+
+1030943149 c:\user\dev\plib\src\ssg\ssgsimplestate.cxx
+	"ssgLocal.h"
+
+1069333265 c:\user\dev\plib\src\ssg\ssgstate.cxx
+	"ssgLocal.h"
+
+1095071314 c:\user\dev\plib\src\ssg\ssgstateselector.cxx
+	"ssgLocal.h"
+
+1030943149 c:\user\dev\plib\src\ssg\ssgstatetables.cxx
+	"ssgLocal.h"
+
+1075682115 c:\user\dev\plib\src\ssg\ssgstatistics.cxx
+	"ssgLocal.h"
+
+1030943149 c:\user\dev\plib\src\ssg\ssgstats.cxx
+	"ssgLocal.h"
+
+1030943149 c:\user\dev\plib\src\ssg\ssgtextrans.cxx
+	"ssgLocal.h"
+
+1030943149 c:\user\dev\plib\src\ssg\ssgtexture.cxx
+	"ssgLocal.h"
+
+1101886085 c:\user\dev\plib\src\ssg\ssgtransform.cxx
+	"ssgLocal.h"
+
+1104301180 c:\user\dev\plib\src\ssg\ssgtween.cxx
+	"ssgLocal.h"
+	"ul.h"
+
+1104301180 c:\user\dev\plib\src\ssg\ssgtweencontroller.cxx
+	"ssgLocal.h"
+
+1088091054 c:\user\dev\plib\src\ssg\ssgvtable.cxx
+	"ssgLocal.h"
+
+1079644147 c:\user\dev\plib\src\ssg\ssgvertsplitter.cxx
+	"ssgVertSplitter.h"
+	<math.h>
+	"sg.h"
+
+1101886085 c:\user\dev\plib\src\ssg\ssgvtxarray.cxx
+	"ssgLocal.h"
+
+1101886085 c:\user\dev\plib\src\ssg\ssgvtxtable.cxx
+	"ssgLocal.h"
+
+1104876617 c:\user\dev\plib\src\util\ul.cxx
+	"ul.h"
+	<sys/types.h>
+	<sys/stat.h>
+	<direct.h>
+	<dirent.h>
+
+1088091055 c:\user\dev\plib\src\util\ul.h
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<string.h>
+	<ctype.h>
+	<assert.h>
+	<windows.h>
+	<mmsystem.h>
+	<regstr.h>
+	<unistd.h>
+	<be/kernel/image.h>
+	<CodeFragments.h>
+	<unistd.h>
+	<unistd.h>
+	<unistd.h>
+	<dlfcn.h>
+	<fcntl.h>
+	<sys/param.h>
+	<assert.h>
+	<limits.h>
+	<math.h>
+	<float.h>
+	<errno.h>
+
+1038763308 c:\user\dev\plib\src\util\ulclock.cxx
+	<stdio.h>
+	<stdlib.h>
+	"ul.h"
+	<sys/time.h>
+	<time.h>
+
+1096716043 c:\user\dev\plib\src\util\ulerror.cxx
+	"ul.h"
+
+1030943149 c:\user\dev\plib\src\util\ullinkedlist.cxx
+	"ulLocal.h"
+
+1030943149 c:\user\dev\plib\src\util\ullocal.h
+	"ul.h"
+
+1038613310 c:\user\dev\plib\src\util\ullist.cxx
+	"ul.h"
+
+1032048139 c:\user\dev\plib\src\util\ulrtti.cxx
+	"ulRTTI.h"
+
+1032617174 c:\user\dev\plib\src\util\ulrtti.h
+	<string.h>
+	"ul.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\fnt\fnt.cxx
+	"fntLocal.h"
+
+1205201180 c:\user\programs\codeblocks\projects\plib-1.8.5\src\fnt\fntlocal.h
+	"fnt.h"
+
+1205201180 c:\user\programs\codeblocks\projects\plib-1.8.5\src\fnt\fnt.h
+	<stdio.h>
+	"sg.h"
+	<OpenGL/gl.h>
+	<GL/gl.h>
+
+1221036750 c:\user\programs\codeblocks\projects\plib-1.8.5\include\plib\sg.h
+	<stdio.h>
+	"ul.h"
+
+1221036751 c:\user\programs\codeblocks\projects\plib-1.8.5\include\plib\ul.h
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<string.h>
+	<ctype.h>
+	<assert.h>
+	<windows.h>
+	<mmsystem.h>
+	<regstr.h>
+	<unistd.h>
+	<be/kernel/image.h>
+	<CodeFragments.h>
+	<unistd.h>
+	<unistd.h>
+	<unistd.h>
+	<dlfcn.h>
+	<fcntl.h>
+	<sys/param.h>
+	<assert.h>
+	<limits.h>
+	<math.h>
+	<float.h>
+	<errno.h>
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\fnt\fntbitmap.cxx
+	"fnt.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\fnt\fnttxf.cxx
+	"fntLocal.h"
+	<agl.h>
+	<OpenGL/CGLCurrent.h>
+	<GL/glx.h>
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\js\js.cxx
+	"js.h"
+
+1205201181 c:\user\programs\codeblocks\projects\plib-1.8.5\src\js\js.h
+	"ul.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\js\jsbsd.cxx
+	"js.h"
+	<string.h>
+	<errno.h>
+	<sys/ioctl.h>
+	<sys/joystick.h>
+	<machine/joystick.h>
+	<usbhid.h>
+	<usb.h>
+	<libusbhid.h>
+	<usbhid.h>
+	<dev/usb/usb.h>
+	<dev/usb/usbhid.h>
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\js\jslinux.cxx
+	"js.h"
+	<linux/joystick.h>
+	<sys/param.h>
+	<fcntl.h>
+	<sys/ioctl.h>
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\js\jslinuxold.cxx
+	"js.h"
+	<linux/joystick.h>
+	<fcntl.h>
+	<sys/ioctl.h>
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\js\jsmacos.cxx
+	"js.h"
+	<InputSprocket.h>
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\js\jsmacosx.cxx
+	"js.h"
+	<mach/mach.h>
+	<IOKit/IOKitLib.h>
+	<IOKit/hid/IOHIDLib.h>
+	<mach/mach_error.h>
+	<IOKit/hid/IOHIDKeys.h>
+	<IOKit/IOCFPlugIn.h>
+	<CoreFoundation/CoreFoundation.h>
+	<IOKit/hidsystem/IOHIDUsageTables.h>
+	<Kernel/IOKit/hidsystem/IOHIDUsageTables.h>
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\js\jsnone.cxx
+	"js.h"
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\js\jswindows.cxx
+	"js.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\net\netbuffer.cxx
+	"netBuffer.h"
+
+1205201180 c:\user\programs\codeblocks\projects\plib-1.8.5\src\net\netbuffer.h
+	"netChannel.h"
+
+1205201180 c:\user\programs\codeblocks\projects\plib-1.8.5\src\net\netchannel.h
+	"netSocket.h"
+
+1205201180 c:\user\programs\codeblocks\projects\plib-1.8.5\src\net\netsocket.h
+	"ul.h"
+	<errno.h>
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\net\netchannel.cxx
+	"netChannel.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\net\netchat.cxx
+	"netChat.h"
+
+1205201180 c:\user\programs\codeblocks\projects\plib-1.8.5\src\net\netchat.h
+	"netBuffer.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\net\netmessage.cxx
+	"netMessage.h"
+
+1205201180 c:\user\programs\codeblocks\projects\plib-1.8.5\src\net\netmessage.h
+	"netBuffer.h"
+	<winsock2.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\net\netmonitor.cxx
+	"netMonitor.h"
+
+1205201180 c:\user\programs\codeblocks\projects\plib-1.8.5\src\net\netmonitor.h
+	"netChat.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\net\netsocket.cxx
+	"netSocket.h"
+	<netinet/in.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<time.h>
+	<sys/time.h>
+	<unistd.h>
+	<netdb.h>
+	<fcntl.h>
+	<winsock.h>
+	<stdarg.h>
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\psl\psl.cxx
+	"pslLocal.h"
+
+1205201184 c:\user\programs\codeblocks\projects\plib-1.8.5\src\psl\psllocal.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"psl.h"
+	"ul.h"
+	"pslFileIO.h"
+	"pslOpcodes.h"
+	"pslSymbol.h"
+	"pslCompiler.h"
+	"pslContext.h"
+
+1205201184 c:\user\programs\codeblocks\projects\plib-1.8.5\src\psl\psl.h
+	<stdio.h>
+	"ul.h"
+
+1205201184 c:\user\programs\codeblocks\projects\plib-1.8.5\src\psl\pslfileio.h
+
+1205201184 c:\user\programs\codeblocks\projects\plib-1.8.5\src\psl\pslopcodes.h
+
+1205201184 c:\user\programs\codeblocks\projects\plib-1.8.5\src\psl\pslsymbol.h
+
+1205201184 c:\user\programs\codeblocks\projects\plib-1.8.5\src\psl\pslcompiler.h
+
+1205201184 c:\user\programs\codeblocks\projects\plib-1.8.5\src\psl\pslcontext.h
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\psl\pslcodegen.cxx
+	"pslLocal.h"
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\psl\pslcompiler.cxx
+	"pslLocal.h"
+	"ul.h"
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\psl\pslcontext.cxx
+	"pslLocal.h"
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\psl\psldump.cxx
+	"pslLocal.h"
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\psl\pslerror.cxx
+	"pslLocal.h"
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\psl\pslexpression.cxx
+	"pslLocal.h"
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\psl\pslfileio.cxx
+	"pslLocal.h"
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\psl\pslprogram.cxx
+	"pslLocal.h"
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\psl\pslsymbols.cxx
+	"pslLocal.h"
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\psl\psltoken.cxx
+	"pslLocal.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\puaux\puaux.cxx
+	"puAuxLocal.h"
+
+1205201180 c:\user\programs\codeblocks\projects\plib-1.8.5\src\puaux\puauxlocal.h
+	"puAux.h"
+
+1205201180 c:\user\programs\codeblocks\projects\plib-1.8.5\src\puaux\puaux.h
+	"pu.h"
+
+1221036750 c:\user\programs\codeblocks\projects\plib-1.8.5\include\plib\pu.h
+	<stdio.h>
+	"fnt.h"
+	"ulRTTI.h"
+	"puGLUT.h"
+	"puPW.h"
+	"puFLTK.h"
+	"puSDL.h"
+	"puNative.h"
+
+1221036750 c:\user\programs\codeblocks\projects\plib-1.8.5\include\plib\fnt.h
+	<stdio.h>
+	"sg.h"
+	<OpenGL/gl.h>
+	<GL/gl.h>
+
+1221036751 c:\user\programs\codeblocks\projects\plib-1.8.5\include\plib\ulrtti.h
+	<string.h>
+	"ul.h"
+
+1221036750 c:\user\programs\codeblocks\projects\plib-1.8.5\include\plib\puglut.h
+	"pu.h"
+	<GLUT/glut.h>
+	<GL/freeglut.h>
+	<GL/glut.h>
+
+1221036750 c:\user\programs\codeblocks\projects\plib-1.8.5\include\plib\pupw.h
+	"pu.h"
+
+1221036750 c:\user\programs\codeblocks\projects\plib-1.8.5\include\plib\pufltk.h
+	"pu.h"
+	<FL/Fl_Gl_Window.H>
+
+1221036750 c:\user\programs\codeblocks\projects\plib-1.8.5\include\plib\pusdl.h
+	"pu.h"
+	"SDL.h"
+
+1221036750 c:\user\programs\codeblocks\projects\plib-1.8.5\include\plib\punative.h
+	"pu.h"
+	<GL/glx.h>
+	<agl.h>
+	<OpenGL/CGLCurrent.h>
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\puaux\puauxbislider.cxx
+	"puAuxLocal.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\puaux\puauxbisliderwithends.cxx
+	"puAuxLocal.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\puaux\puauxchooser.cxx
+	"puAuxLocal.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\puaux\puauxcombobox.cxx
+	"puAuxLocal.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\puaux\puauxcompass.cxx
+	"puAuxLocal.h"
+	<OpenGL/gl.h>
+	<GL/gl.h>
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\puaux\puauxfileselector.cxx
+	"puAuxLocal.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\puaux\puauxlargeinput.cxx
+	"puAuxLocal.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\puaux\puauxscrollbar.cxx
+	"puAuxLocal.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\puaux\puauxselectbox.cxx
+	"puAuxLocal.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\puaux\puauxsliderwithinput.cxx
+	"puAuxLocal.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\puaux\puauxspinbox.cxx
+	"puAuxLocal.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\puaux\puauxtrislider.cxx
+	"puAuxLocal.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\puaux\puauxverticalmenu.cxx
+	"puAuxLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\pu.cxx
+	"puLocal.h"
+	<agl.h>
+	<OpenGL/CGLCurrent.h>
+	<GL/glx.h>
+
+1205201183 c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\pulocal.h
+	"pu.h"
+
+1205201183 c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\pu.h
+	<stdio.h>
+	"fnt.h"
+	"ulRTTI.h"
+	"puGLUT.h"
+	"puPW.h"
+	"puFLTK.h"
+	"puSDL.h"
+	"puNative.h"
+
+1205201183 c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\puglut.h
+	"pu.h"
+	<GLUT/glut.h>
+	<GL/freeglut.h>
+	<GL/glut.h>
+
+1205201183 c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\pupw.h
+	"pu.h"
+
+1205201183 c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\pufltk.h
+	"pu.h"
+	<FL/Fl_Gl_Window.H>
+
+1205201183 c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\pusdl.h
+	"pu.h"
+	"SDL.h"
+
+1205201183 c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\punative.h
+	"pu.h"
+	<GL/glx.h>
+	<agl.h>
+	<OpenGL/CGLCurrent.h>
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\puarrowbutton.cxx
+	"puLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\pubox.cxx
+	"puLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\pubutton.cxx
+	"puLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\pubuttonbox.cxx
+	"puLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\pudial.cxx
+	"puLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\pudialogbox.cxx
+	"puLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\pufont.cxx
+	"puLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\puframe.cxx
+	"puLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\pugroup.cxx
+	"puLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\puinput.cxx
+	"puLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\puinputbase.cxx
+	"puLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\puinterface.cxx
+	"puLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\pulistbox.cxx
+	"puLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\pumenubar.cxx
+	"puLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\puobject.cxx
+	"puLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\puoneshot.cxx
+	"puLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\pupopup.cxx
+	"puLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\pupopupmenu.cxx
+	"puLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\purange.cxx
+	"puLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\puslider.cxx
+	"puLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\putext.cxx
+	"puLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pui\puvalue.cxx
+	"puLocal.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pw\pw.cxx
+	"ul.h"
+	"pw.h"
+
+1205201180 c:\user\programs\codeblocks\projects\plib-1.8.5\src\pw\pw.h
+	<stdio.h>
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pw\pwmacosx.cxx
+	"ul.h"
+	<Carbon/Carbon.h>
+	<AGL/agl.h>
+	<Events.h>
+	<MacWindows.h>
+	<Dialogs.h>
+	<ToolUtils.h>
+	<Quickdraw.h>
+	<Menus.h>
+	<Gestalt.h>
+	<Appearance.h>
+	<Devices.h>
+	<CodeFragments.h>
+	<agl.h>
+	<DrawSprocket.h>
+	<stdlib.h>
+	<stdio.h>
+	"pw.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pw\pwwindows.cxx
+	"ul.h"
+	<windows.h>
+	<GL/gl.h>
+	"pw.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\pw\pwx11.cxx
+	"ul.h"
+	"pw.h"
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<assert.h>
+	<X11/Xlib.h>
+	<X11/Xatom.h>
+	<X11/keysym.h>
+	<X11/cursorfont.h>
+	<X11/Xlib.h>
+	<X11/Xatom.h>
+	<GL/gl.h>
+	<GL/glx.h>
+	<X11/Xm/MwmUtil.h>
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\sg\sg.cxx
+	"sg.h"
+
+1205201180 c:\user\programs\codeblocks\projects\plib-1.8.5\src\sg\sg.h
+	<stdio.h>
+	"ul.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\sg\sgisect.cxx
+	"sg.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\sg\sgperlinnoise.cxx
+	<stdio.h>
+	<time.h>
+	<math.h>
+	"sg.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\sg\sgd.cxx
+	"sg.h"
+
+1205201180 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\sg\sgdisect.cxx
+	"sg.h"
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\sl\sldsp.cxx
+	"sl.h"
+	<errno.h>
+
+1205201184 c:\user\programs\codeblocks\projects\plib-1.8.5\src\sl\sl.h
+	<stdio.h>
+	"slPortability.h"
+
+1205201184 c:\user\programs\codeblocks\projects\plib-1.8.5\src\sl\slportability.h
+	"ul.h"
+	<stdio.h>
+	<stdlib.h>
+	<Sound.h>
+	<Timer.h>
+	<unix.h>
+	<Carbon/Carbon.h>
+	<fcntl.h>
+	<sys/stat.h>
+	<string.h>
+	<limits.h>
+	<math.h>
+	<linux/soundcard.h>
+	<sys/ioctl.h>
+	<sys/soundcard.h>
+	<soundcard.h>
+	<sys/audioio.h>
+	<audio.h>
+	<sys/audioio.h>
+	<sys/stropts.h>
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\sl\slenvelope.cxx
+	"sl.h"
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\sl\slmodplayer.cxx
+	"sl.h"
+	"slMODPrivate.h"
+	"slMODfile.h"
+
+1205201184 c:\user\programs\codeblocks\projects\plib-1.8.5\src\sl\slmodprivate.h
+	"ul.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<fcntl.h>
+	<sys/stat.h>
+	<windows.h>
+	<io.h>
+	<unistd.h>
+
+1205201184 c:\user\programs\codeblocks\projects\plib-1.8.5\src\sl\slmodfile.h
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\sl\slmoddacio.cxx
+	"slMODPrivate.h"
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\sl\slmodfile.cxx
+	"slMODPrivate.h"
+	"slMODfile.h"
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\sl\slmodinst.cxx
+	"slMODPrivate.h"
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\sl\slmodnote.cxx
+	"slMODPrivate.h"
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\sl\slplayer.cxx
+	"sl.h"
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\sl\slsample.cxx
+	"sl.h"
+	<math.h>
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\sl\slsampleplayer.cxx
+	"sl.h"
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\sl\slscheduler.cxx
+	"sl.h"
+
+1205201184 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\sl\smmixer.cxx
+	"sm.h"
+
+1205201184 c:\user\programs\codeblocks\projects\plib-1.8.5\src\sl\sm.h
+	"slPortability.h"
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgaux.cxx
+	"ssgAux.h"
+
+1205201181 c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgaux.h
+	"ssg.h"
+	"ssgaShapes.h"
+	"ssgaParticleSystem.h"
+	"ssgaFire.h"
+	"ssgaWaveSystem.h"
+	"ssgaLensFlare.h"
+	"ssgaScreenDump.h"
+
+1221036750 c:\user\programs\codeblocks\projects\plib-1.8.5\include\plib\ssg.h
+	<stdio.h>
+	"sg.h"
+	<OpenGL/gl.h>
+	<GL/gl.h>
+	"ssgconf.h"
+
+1221036751 c:\user\programs\codeblocks\projects\plib-1.8.5\include\plib\ssgconf.h
+
+1205201181 c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgashapes.h
+	"ssg.h"
+
+1205201181 c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgaparticlesystem.h
+
+1205201181 c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgafire.h
+	"ssgAux.h"
+
+1205201181 c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgawavesystem.h
+	"ssgaShapes.h"
+
+1205201181 c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgalensflare.h
+	"ssgaShapes.h"
+
+1205201181 c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgascreendump.h
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgabillboards.cxx
+	<math.h>
+	"ssgaBillboards.h"
+
+1205201181 c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgabillboards.h
+	"ssg.h"
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgacelestialbody.cxx
+	<math.h>
+	"ssgaSky.h"
+	"ssgaSphere.h"
+
+1205201181 c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgasky.h
+	"ssg.h"
+
+1205201181 c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgasphere.h
+	"ssg.h"
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgacloudlayer.cxx
+	"ssgaSky.h"
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgafire.cxx
+	"ssg.h"
+	"ssgAux.h"
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgalensflare.cxx
+	"ssgAux.h"
+	"../ssg/ssgLocal.h"
+
+1205201183 c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssglocal.h
+	"ssg.h"
+
+1205201183 c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssg.h
+	<stdio.h>
+	"sg.h"
+	<OpenGL/gl.h>
+	<GL/gl.h>
+	"ssgconf.h"
+
+1205201183 c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgconf.h
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgalensflaretexture.cxx
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgaparticlesystem.cxx
+	"ssgAux.h"
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgapatch.cxx
+	"ssgAux.h"
+	<string.h>
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgascreendump.cxx
+	"ssgAux.h"
+	<string.h>
+	"ul.h"
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgashapes.cxx
+	"ssgAux.h"
+	<string.h>
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgasky.cxx
+	"ssgaSky.h"
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgaskydome.cxx
+	<math.h>
+	"ssgaSky.h"
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgasphere.cxx
+	"ul.h"
+	"ssgaSphere.h"
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgastars.cxx
+	"ssgaSky.h"
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgateapot.cxx
+	"ssgAux.h"
+	<string.h>
+
+1205201181 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssgaux\ssgawavesystem.cxx
+	"ssgAux.h"
+	<string.h>
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssg.cxx
+	"ssgLocal.h"
+	<agl.h>
+	<OpenGL/CGLCurrent.h>
+	<GL/glx.h>
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssganimtransform.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssganimation.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgaxistransform.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgbase.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgbasetransform.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgbranch.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgcontext.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgcutout.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgdlist.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgentity.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgio.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssginvisible.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgisect.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgleaf.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssglist.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgload.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgload3ds.cxx
+	"ssgLocal.h"
+	"ssg3ds.h"
+
+1205201183 c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssg3ds.h
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadac.cxx
+	"ssgLocal.h"
+	"ssgVertSplitter.h"
+
+1205201183 c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgvertsplitter.h
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadasc.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+	"ssgParser.h"
+
+1205201183 c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloaderwriterstuff.h
+
+1205201183 c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgparser.h
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadase.cxx
+	"ssgLocal.h"
+	"ssgParser.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadatg.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+	"ssgParser.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadbmp.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloaddof.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloaddxf.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadflt.cxx
+	"ssg.h"
+	"ssgLoaderWriterStuff.h"
+	<unistd.h>
+	<stdlib.h>
+	<string.h>
+	<fcntl.h>
+	<stdio.h>
+	<sys/endian.h>
+	<time.h>
+	<sys/time.h>
+	<sys/stat.h>
+	<sys/mman.h>
+	<io.h>
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadiv.cxx
+	"ssgLocal.h"
+	"ssgParser.h"
+	"ssgLoaderWriterStuff.h"
+	"ssgLoadVRML.h"
+
+1205201183 c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadvrml.h
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadm.cxx
+	<stdio.h>
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadmd2.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadmdl.cxx
+	"ssgLocal.h"
+	"ssgLoadMDL.h"
+	<iostream>
+
+1205201183 c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadmdl.h
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadmdl_bgltexture.cxx
+	"ssgLocal.h"
+	"ssgMSFSPalette.h"
+
+1205201183 c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgmsfspalette.h
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadobj.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadoff.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+	"ssgParser.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadpcx.cxx
+	"ssgLocal.h"
+	"pcx.h"
+
+1205201183 c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\pcx.h
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadpng.cxx
+	"ssgLocal.h"
+	<gl/glpng.h>
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadsgi.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadssg.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadstrip.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadtga.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadtri.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadtexture.cxx
+	"ssgLocal.h"
+	<sys/stat.h>
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadvrml1.cxx
+	"ssgLocal.h"
+	"ssgParser.h"
+	"ssgLoaderWriterStuff.h"
+	"ssgLoadVRML.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadx.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+	"ssgParser.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloadxplaneobj.cxx
+	<stdio.h>
+	<string.h>
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgloaderwriterstuff.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgoptimiser.cxx
+	"ssgLocal.h"
+	"ssgVertSplitter.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgparser.cxx
+	"ssgLocal.h"
+	"ssgParser.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgrangeselector.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgroot.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgsave3ds.cxx
+	<stdio.h>
+	"ssgLocal.h"
+	"ssg3ds.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgsaveac.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgsaveasc.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgsavease.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgsaveatg.cxx
+	<stdio.h>
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgsavedxf.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgsaveflt.cxx
+	<stdio.h>
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgsaveiv.cxx
+	<assert.h>
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgsavem.cxx
+	<stdio.h>
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgsaveobj.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgsaveoff.cxx
+	<stdio.h>
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgsaveqhi.cxx
+	<stdio.h>
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgsavetri.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgsavevrml1.cxx
+	<stdio.h>
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgsavex.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgselector.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgsimplelist.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgsimplestate.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgstate.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgstateselector.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgstatetables.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgstatistics.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgstats.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgtextrans.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgtexture.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgtransform.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgtween.cxx
+	"ssgLocal.h"
+	"ul.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgtweencontroller.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgvtable.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgvertsplitter.cxx
+	"ssgVertSplitter.h"
+	<math.h>
+	"sg.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgvtxarray.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\ssg\ssgvtxtable.cxx
+	"ssgLocal.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\util\ul.cxx
+	"ul.h"
+	<sys/types.h>
+	<sys/stat.h>
+	<direct.h>
+	<dirent.h>
+
+1205201413 c:\user\programs\codeblocks\projects\plib-1.8.5\src\util\ul.h
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<string.h>
+	<ctype.h>
+	<assert.h>
+	<windows.h>
+	<mmsystem.h>
+	<regstr.h>
+	<unistd.h>
+	<be/kernel/image.h>
+	<CodeFragments.h>
+	<unistd.h>
+	<unistd.h>
+	<unistd.h>
+	<dlfcn.h>
+	<fcntl.h>
+	<sys/param.h>
+	<assert.h>
+	<limits.h>
+	<math.h>
+	<float.h>
+	<errno.h>
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\util\ulclock.cxx
+	<stdio.h>
+	<stdlib.h>
+	"ul.h"
+	<sys/time.h>
+	<time.h>
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\util\ulerror.cxx
+	"ul.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\util\ullinkedlist.cxx
+	"ulLocal.h"
+
+1205201183 c:\user\programs\codeblocks\projects\plib-1.8.5\src\util\ullocal.h
+	"ul.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\util\ullist.cxx
+	"ul.h"
+
+1205201183 source:c:\user\programs\codeblocks\projects\plib-1.8.5\src\util\ulrtti.cxx
+	"ulRTTI.h"
+
+1205201183 c:\user\programs\codeblocks\projects\plib-1.8.5\src\util\ulrtti.h
+	<string.h>
+	"ul.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\fnt\fnt.cxx
+	"fntLocal.h"
+
+1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\fnt\fntlocal.h
+	"fnt.h"
+
+1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\fnt\fnt.h
+	<stdio.h>
+	"sg.h"
+	<OpenGL/gl.h>
+	<GL/gl.h>
+
+1221036750 d:\dev\asteroidfighter\plib-1.8.5\include\plib\sg.h
+	<stdio.h>
+	"ul.h"
+
+1221036752 d:\dev\asteroidfighter\plib-1.8.5\include\plib\ul.h
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<string.h>
+	<ctype.h>
+	<assert.h>
+	<windows.h>
+	<mmsystem.h>
+	<regstr.h>
+	<unistd.h>
+	<be/kernel/image.h>
+	<CodeFragments.h>
+	<unistd.h>
+	<unistd.h>
+	<unistd.h>
+	<dlfcn.h>
+	<fcntl.h>
+	<sys/param.h>
+	<assert.h>
+	<limits.h>
+	<math.h>
+	<float.h>
+	<errno.h>
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\fnt\fntbitmap.cxx
+	"fnt.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\fnt\fnttxf.cxx
+	"fntLocal.h"
+	<agl.h>
+	<OpenGL/CGLCurrent.h>
+	<GL/glx.h>
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\js.cxx
+	"js.h"
+
+1205201182 d:\dev\asteroidfighter\plib-1.8.5\src\js\js.h
+	"ul.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\jsbsd.cxx
+	"js.h"
+	<string.h>
+	<errno.h>
+	<sys/ioctl.h>
+	<sys/joystick.h>
+	<machine/joystick.h>
+	<usbhid.h>
+	<usb.h>
+	<libusbhid.h>
+	<usbhid.h>
+	<dev/usb/usb.h>
+	<dev/usb/usbhid.h>
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\jslinux.cxx
+	"js.h"
+	<linux/joystick.h>
+	<sys/param.h>
+	<fcntl.h>
+	<sys/ioctl.h>
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\jslinuxold.cxx
+	"js.h"
+	<linux/joystick.h>
+	<fcntl.h>
+	<sys/ioctl.h>
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\jsmacos.cxx
+	"js.h"
+	<InputSprocket.h>
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\jsmacosx.cxx
+	"js.h"
+	<mach/mach.h>
+	<IOKit/IOKitLib.h>
+	<IOKit/hid/IOHIDLib.h>
+	<mach/mach_error.h>
+	<IOKit/hid/IOHIDKeys.h>
+	<IOKit/IOCFPlugIn.h>
+	<CoreFoundation/CoreFoundation.h>
+	<IOKit/hidsystem/IOHIDUsageTables.h>
+	<Kernel/IOKit/hidsystem/IOHIDUsageTables.h>
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\jsnone.cxx
+	"js.h"
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\jswindows.cxx
+	"js.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\net\netbuffer.cxx
+	"netBuffer.h"
+
+1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\net\netbuffer.h
+	"netChannel.h"
+
+1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\net\netchannel.h
+	"netSocket.h"
+
+1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\net\netsocket.h
+	"ul.h"
+	<errno.h>
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\net\netchannel.cxx
+	"netChannel.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\net\netchat.cxx
+	"netChat.h"
+
+1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\net\netchat.h
+	"netBuffer.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\net\netmessage.cxx
+	"netMessage.h"
+
+1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\net\netmessage.h
+	"netBuffer.h"
+	<winsock2.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\net\netmonitor.cxx
+	"netMonitor.h"
+
+1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\net\netmonitor.h
+	"netChat.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\net\netsocket.cxx
+	"netSocket.h"
+	<netinet/in.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<time.h>
+	<sys/time.h>
+	<unistd.h>
+	<netdb.h>
+	<fcntl.h>
+	<winsock.h>
+	<stdarg.h>
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\psl.cxx
+	"pslLocal.h"
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\psl\psllocal.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"psl.h"
+	"ul.h"
+	"pslFileIO.h"
+	"pslOpcodes.h"
+	"pslSymbol.h"
+	"pslCompiler.h"
+	"pslContext.h"
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\psl\psl.h
+	<stdio.h>
+	"ul.h"
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslfileio.h
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslopcodes.h
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslsymbol.h
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslcompiler.h
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslcontext.h
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslcodegen.cxx
+	"pslLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslcompiler.cxx
+	"pslLocal.h"
+	"ul.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslcontext.cxx
+	"pslLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\psldump.cxx
+	"pslLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslerror.cxx
+	"pslLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslexpression.cxx
+	"pslLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslfileio.cxx
+	"pslLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslprogram.cxx
+	"pslLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslsymbols.cxx
+	"pslLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\psltoken.cxx
+	"pslLocal.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puaux.cxx
+	"puAuxLocal.h"
+
+1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxlocal.h
+	"puAux.h"
+
+1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puaux.h
+	"pu.h"
+
+1221036750 d:\dev\asteroidfighter\plib-1.8.5\include\plib\pu.h
+	<stdio.h>
+	"fnt.h"
+	"ulRTTI.h"
+	"puGLUT.h"
+	"puPW.h"
+	"puFLTK.h"
+	"puSDL.h"
+	"puNative.h"
+
+1221036750 d:\dev\asteroidfighter\plib-1.8.5\include\plib\fnt.h
+	<stdio.h>
+	"sg.h"
+	<OpenGL/gl.h>
+	<GL/gl.h>
+
+1221036752 d:\dev\asteroidfighter\plib-1.8.5\include\plib\ulrtti.h
+	<string.h>
+	"ul.h"
+
+1221036750 d:\dev\asteroidfighter\plib-1.8.5\include\plib\puglut.h
+	"pu.h"
+	<GLUT/glut.h>
+	<GL/freeglut.h>
+	<GL/glut.h>
+
+1221036750 d:\dev\asteroidfighter\plib-1.8.5\include\plib\pupw.h
+	"pu.h"
+
+1221036750 d:\dev\asteroidfighter\plib-1.8.5\include\plib\pufltk.h
+	"pu.h"
+	<FL/Fl_Gl_Window.H>
+
+1221036750 d:\dev\asteroidfighter\plib-1.8.5\include\plib\pusdl.h
+	"pu.h"
+	"SDL.h"
+
+1221036750 d:\dev\asteroidfighter\plib-1.8.5\include\plib\punative.h
+	"pu.h"
+	<GL/glx.h>
+	<agl.h>
+	<OpenGL/CGLCurrent.h>
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxbislider.cxx
+	"puAuxLocal.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxbisliderwithends.cxx
+	"puAuxLocal.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxchooser.cxx
+	"puAuxLocal.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxcombobox.cxx
+	"puAuxLocal.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxcompass.cxx
+	"puAuxLocal.h"
+	<OpenGL/gl.h>
+	<GL/gl.h>
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxfileselector.cxx
+	"puAuxLocal.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxlargeinput.cxx
+	"puAuxLocal.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxscrollbar.cxx
+	"puAuxLocal.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxselectbox.cxx
+	"puAuxLocal.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxsliderwithinput.cxx
+	"puAuxLocal.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxspinbox.cxx
+	"puAuxLocal.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxtrislider.cxx
+	"puAuxLocal.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxverticalmenu.cxx
+	"puAuxLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pu.cxx
+	"puLocal.h"
+	<agl.h>
+	<OpenGL/CGLCurrent.h>
+	<GL/glx.h>
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\pui\pulocal.h
+	"pu.h"
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\pui\pu.h
+	<stdio.h>
+	"fnt.h"
+	"ulRTTI.h"
+	"puGLUT.h"
+	"puPW.h"
+	"puFLTK.h"
+	"puSDL.h"
+	"puNative.h"
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\pui\puglut.h
+	"pu.h"
+	<GLUT/glut.h>
+	<GL/freeglut.h>
+	<GL/glut.h>
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\pui\pupw.h
+	"pu.h"
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\pui\pufltk.h
+	"pu.h"
+	<FL/Fl_Gl_Window.H>
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\pui\pusdl.h
+	"pu.h"
+	"SDL.h"
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\pui\punative.h
+	"pu.h"
+	<GL/glx.h>
+	<agl.h>
+	<OpenGL/CGLCurrent.h>
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puarrowbutton.cxx
+	"puLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pubox.cxx
+	"puLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pubutton.cxx
+	"puLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pubuttonbox.cxx
+	"puLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pudial.cxx
+	"puLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pudialogbox.cxx
+	"puLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pufont.cxx
+	"puLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puframe.cxx
+	"puLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pugroup.cxx
+	"puLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puinput.cxx
+	"puLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puinputbase.cxx
+	"puLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puinterface.cxx
+	"puLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pulistbox.cxx
+	"puLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pumenubar.cxx
+	"puLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puobject.cxx
+	"puLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puoneshot.cxx
+	"puLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pupopup.cxx
+	"puLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pupopupmenu.cxx
+	"puLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\purange.cxx
+	"puLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puslider.cxx
+	"puLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\putext.cxx
+	"puLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puvalue.cxx
+	"puLocal.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\pw\pw.cxx
+	"ul.h"
+	"pw.h"
+
+1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\pw\pw.h
+	<stdio.h>
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\pw\pwmacosx.cxx
+	"ul.h"
+	<Carbon/Carbon.h>
+	<AGL/agl.h>
+	<Events.h>
+	<MacWindows.h>
+	<Dialogs.h>
+	<ToolUtils.h>
+	<Quickdraw.h>
+	<Menus.h>
+	<Gestalt.h>
+	<Appearance.h>
+	<Devices.h>
+	<CodeFragments.h>
+	<agl.h>
+	<DrawSprocket.h>
+	<stdlib.h>
+	<stdio.h>
+	"pw.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\pw\pwwindows.cxx
+	"ul.h"
+	<windows.h>
+	<GL/gl.h>
+	"pw.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\pw\pwx11.cxx
+	"ul.h"
+	"pw.h"
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<assert.h>
+	<X11/Xlib.h>
+	<X11/Xatom.h>
+	<X11/keysym.h>
+	<X11/cursorfont.h>
+	<X11/Xlib.h>
+	<X11/Xatom.h>
+	<GL/gl.h>
+	<GL/glx.h>
+	<X11/Xm/MwmUtil.h>
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\sg\sg.cxx
+	"sg.h"
+
+1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\sg\sg.h
+	<stdio.h>
+	"ul.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\sg\sgd.cxx
+	"sg.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\sg\sgdisect.cxx
+	"sg.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\sg\sgisect.cxx
+	"sg.h"
+
+1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\sg\sgperlinnoise.cxx
+	<stdio.h>
+	<time.h>
+	<math.h>
+	"sg.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\sldsp.cxx
+	"sl.h"
+	<errno.h>
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\sl\sl.h
+	<stdio.h>
+	"slPortability.h"
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\sl\slportability.h
+	"ul.h"
+	<stdio.h>
+	<stdlib.h>
+	<Sound.h>
+	<Timer.h>
+	<unix.h>
+	<Carbon/Carbon.h>
+	<fcntl.h>
+	<sys/stat.h>
+	<string.h>
+	<limits.h>
+	<math.h>
+	<linux/soundcard.h>
+	<sys/ioctl.h>
+	<sys/soundcard.h>
+	<soundcard.h>
+	<sys/audioio.h>
+	<audio.h>
+	<sys/audioio.h>
+	<sys/stropts.h>
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slenvelope.cxx
+	"sl.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slmoddacio.cxx
+	"slMODPrivate.h"
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\sl\slmodprivate.h
+	"ul.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<fcntl.h>
+	<sys/stat.h>
+	<windows.h>
+	<io.h>
+	<unistd.h>
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slmodfile.cxx
+	"slMODPrivate.h"
+	"slMODfile.h"
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\sl\slmodfile.h
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slmodinst.cxx
+	"slMODPrivate.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slmodnote.cxx
+	"slMODPrivate.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slmodplayer.cxx
+	"sl.h"
+	"slMODPrivate.h"
+	"slMODfile.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slplayer.cxx
+	"sl.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slsample.cxx
+	"sl.h"
+	<math.h>
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slsampleplayer.cxx
+	"sl.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slscheduler.cxx
+	"sl.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\smmixer.cxx
+	"sm.h"
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\sl\sm.h
+	"slPortability.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssg.cxx
+	"ssgLocal.h"
+	<agl.h>
+	<OpenGL/CGLCurrent.h>
+	<GL/glx.h>
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssglocal.h
+	"ssg.h"
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssg.h
+	<stdio.h>
+	"sg.h"
+	<OpenGL/gl.h>
+	<GL/gl.h>
+	"ssgconf.h"
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgconf.h
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssganimation.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssganimtransform.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgaxistransform.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgbase.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgbasetransform.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgbranch.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgcontext.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgcutout.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgdlist.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgentity.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssginvisible.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgio.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgisect.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgleaf.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssglist.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgload.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgload3ds.cxx
+	"ssgLocal.h"
+	"ssg3ds.h"
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssg3ds.h
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadac.cxx
+	"ssgLocal.h"
+	"ssgVertSplitter.h"
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgvertsplitter.h
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadasc.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+	"ssgParser.h"
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloaderwriterstuff.h
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgparser.h
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadase.cxx
+	"ssgLocal.h"
+	"ssgParser.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadatg.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+	"ssgParser.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadbmp.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloaddof.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloaddxf.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloaderwriterstuff.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadflt.cxx
+	"ssg.h"
+	"ssgLoaderWriterStuff.h"
+	<unistd.h>
+	<stdlib.h>
+	<string.h>
+	<fcntl.h>
+	<stdio.h>
+	<sys/endian.h>
+	<time.h>
+	<sys/time.h>
+	<sys/stat.h>
+	<sys/mman.h>
+	<io.h>
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadiv.cxx
+	"ssgLocal.h"
+	"ssgParser.h"
+	"ssgLoaderWriterStuff.h"
+	"ssgLoadVRML.h"
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadvrml.h
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadm.cxx
+	<stdio.h>
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadmd2.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadmdl.cxx
+	"ssgLocal.h"
+	"ssgLoadMDL.h"
+	<iostream>
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadmdl.h
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadmdl_bgltexture.cxx
+	"ssgLocal.h"
+	"ssgMSFSPalette.h"
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgmsfspalette.h
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadobj.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadoff.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+	"ssgParser.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadpcx.cxx
+	"ssgLocal.h"
+	"pcx.h"
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\pcx.h
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadpng.cxx
+	"ssgLocal.h"
+	<gl/glpng.h>
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadsgi.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadssg.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadstrip.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadtexture.cxx
+	"ssgLocal.h"
+	<sys/stat.h>
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadtga.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadtri.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadvrml1.cxx
+	"ssgLocal.h"
+	"ssgParser.h"
+	"ssgLoaderWriterStuff.h"
+	"ssgLoadVRML.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadx.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+	"ssgParser.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadxplaneobj.cxx
+	<stdio.h>
+	<string.h>
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgoptimiser.cxx
+	"ssgLocal.h"
+	"ssgVertSplitter.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgparser.cxx
+	"ssgLocal.h"
+	"ssgParser.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgrangeselector.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgroot.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsave3ds.cxx
+	<stdio.h>
+	"ssgLocal.h"
+	"ssg3ds.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveac.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveasc.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsavease.cxx
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveatg.cxx
+	<stdio.h>
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsavedxf.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveflt.cxx
+	<stdio.h>
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveiv.cxx
+	<assert.h>
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsavem.cxx
+	<stdio.h>
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveobj.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveoff.cxx
+	<stdio.h>
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveqhi.cxx
+	<stdio.h>
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsavetri.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsavevrml1.cxx
+	<stdio.h>
+	"ssgLocal.h"
+	"ssgLoaderWriterStuff.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsavex.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgselector.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsimplelist.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsimplestate.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgstate.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgstateselector.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgstatetables.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgstatistics.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgstats.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgtextrans.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgtexture.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgtransform.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgtween.cxx
+	"ssgLocal.h"
+	"ul.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgtweencontroller.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgvertsplitter.cxx
+	"ssgVertSplitter.h"
+	<math.h>
+	"sg.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgvtable.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgvtxarray.cxx
+	"ssgLocal.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgvtxtable.cxx
+	"ssgLocal.h"
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgabillboards.cxx
+	<math.h>
+	"ssgaBillboards.h"
+
+1205201182 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgabillboards.h
+	"ssg.h"
+
+1221036750 d:\dev\asteroidfighter\plib-1.8.5\include\plib\ssg.h
+	<stdio.h>
+	"sg.h"
+	<OpenGL/gl.h>
+	<GL/gl.h>
+	"ssgconf.h"
+
+1221036752 d:\dev\asteroidfighter\plib-1.8.5\include\plib\ssgconf.h
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgacelestialbody.cxx
+	<math.h>
+	"ssgaSky.h"
+	"ssgaSphere.h"
+
+1205201182 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgasky.h
+	"ssg.h"
+
+1205201182 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgasphere.h
+	"ssg.h"
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgacloudlayer.cxx
+	"ssgaSky.h"
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgafire.cxx
+	"ssg.h"
+	"ssgAux.h"
+
+1205201182 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgaux.h
+	"ssg.h"
+	"ssgaShapes.h"
+	"ssgaParticleSystem.h"
+	"ssgaFire.h"
+	"ssgaWaveSystem.h"
+	"ssgaLensFlare.h"
+	"ssgaScreenDump.h"
+
+1205201182 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgashapes.h
+	"ssg.h"
+
+1205201182 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgaparticlesystem.h
+
+1205201182 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgafire.h
+	"ssgAux.h"
+
+1205201182 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgawavesystem.h
+	"ssgaShapes.h"
+
+1205201182 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgalensflare.h
+	"ssgaShapes.h"
+
+1205201182 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgascreendump.h
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgalensflare.cxx
+	"ssgAux.h"
+	"../ssg/ssgLocal.h"
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgalensflaretexture.cxx
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgaparticlesystem.cxx
+	"ssgAux.h"
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgapatch.cxx
+	"ssgAux.h"
+	<string.h>
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgascreendump.cxx
+	"ssgAux.h"
+	<string.h>
+	"ul.h"
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgashapes.cxx
+	"ssgAux.h"
+	<string.h>
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgasky.cxx
+	"ssgaSky.h"
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgaskydome.cxx
+	<math.h>
+	"ssgaSky.h"
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgasphere.cxx
+	"ul.h"
+	"ssgaSphere.h"
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgastars.cxx
+	"ssgaSky.h"
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgateapot.cxx
+	"ssgAux.h"
+	<string.h>
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgaux.cxx
+	"ssgAux.h"
+
+1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgawavesystem.cxx
+	"ssgAux.h"
+	<string.h>
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\util\ul.cxx
+	"ul.h"
+	<sys/types.h>
+	<sys/stat.h>
+	<direct.h>
+	<dirent.h>
+
+1205201414 d:\dev\asteroidfighter\plib-1.8.5\src\util\ul.h
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<string.h>
+	<ctype.h>
+	<assert.h>
+	<windows.h>
+	<mmsystem.h>
+	<regstr.h>
+	<unistd.h>
+	<be/kernel/image.h>
+	<CodeFragments.h>
+	<unistd.h>
+	<unistd.h>
+	<unistd.h>
+	<dlfcn.h>
+	<fcntl.h>
+	<sys/param.h>
+	<assert.h>
+	<limits.h>
+	<math.h>
+	<float.h>
+	<errno.h>
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\util\ulclock.cxx
+	<stdio.h>
+	<stdlib.h>
+	"ul.h"
+	<sys/time.h>
+	<time.h>
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\util\ulerror.cxx
+	"ul.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\util\ullinkedlist.cxx
+	"ulLocal.h"
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\util\ullocal.h
+	"ul.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\util\ullist.cxx
+	"ul.h"
+
+1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\util\ulrtti.cxx
+	"ulRTTI.h"
+
+1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\util\ulrtti.h
+	<string.h>
+	"ul.h"
+
