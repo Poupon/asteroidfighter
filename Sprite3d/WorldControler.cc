@@ -30,12 +30,7 @@ GLboolean	WorldControler::PuiInUse = GL_FALSE;
 
 float WorldControler::sTime = 0.0;
 
-//#ifndef PC_WINDOWS || LINUX
 
-//extern "C" {
-	//void __glutDefaultReshape(int width, int height);
-//}
-//#endif
 
 
 float WorldControler::sRatio=1.0/25.0;
@@ -421,13 +416,10 @@ void WorldControler::Visibility( int pState )
 //----------------------------------
 void WorldControler::Reshape(int pWidth, int pHeight  )
 {
-	//#ifndef PC_WINDOWS || LINUX
-	//  __glutDefaultReshape(pWidth, pHeight);
-	//#endif
 
 	WC->cWidth = pWidth;
 	WC->cHeight = pHeight;
-	WC->cCurrentWorld->reshapeWorld( pWidth, pHeight );
+  glViewport(0, 0, (GLsizei) pWidth, (GLsizei) pHeight);
 }
 //--------------------------------
 void WorldControler::Animate( int p)
