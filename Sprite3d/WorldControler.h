@@ -29,7 +29,7 @@ protected:
 	int cFullScreen;
 
 public:
-	WorldControler( int pWidth, int pHeight );
+	WorldControler( int pWidth, int pHeight, int  pFullScreen );
 	virtual ~WorldControler();
 	virtual void quit();
 	virtual void mainWorld();

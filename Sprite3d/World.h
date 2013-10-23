@@ -2,6 +2,8 @@
 #ifndef h_World_h
 #define h_World_h
 
+#include <stdlib.h>
+#include <stdio.h>
 
 #include <T3d/T3dBox.h>
 #include <O3d/O3dObjProps.h>
@@ -65,8 +67,8 @@ public:
 
 	virtual void add( O3dObj *pObj ){ cLiveObj.push_back( pObj ); }
 	virtual void add( Sprite3d *pSprite );
-	
-	
+
+
 	WorldControler * getMyControler() { return cMyControler;}
 	void setMyControler(WorldControler *pControl) { cMyControler=pControl;}
 
@@ -79,7 +81,7 @@ public:
 	SoundLibrary* getMySoundLibrary() { return cMySoundLibrary; }
 
 	T3dBox & getBox()	{ return cBox; 	}
-	
+
 	virtual void setPilot( Sprite3dPilot *pPilot )	{		cPilot = pPilot;	}
 	virtual Sprite3dPilot *getPilot() { return cPilot; }
 	virtual void setKamera( O3dKamera *pKamera )   	{ cKamera= pKamera;	}
@@ -128,7 +130,7 @@ public:
 	virtual void enterWorld(){;}
 	virtual void leaveWorld(){;}
 	virtual void reshapeWorld(int pWidth, int pHeight);
-	
+
 
 	static GLboolean GetDistPilot( Sprite3d *pSprite,  Double3 & pDist );
 	static GLboolean GetPositionWithoutCollision( int pInteract,Double3& pPos, int pSize, int pLimitX, int pLimitY=0, int pLimitZ=0, int pNbTry=10, float pMarge=1.5 );
