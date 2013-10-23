@@ -5,3 +5,4 @@
 syntax: glob
 AsteroidFighter.exe
 glut32.dll
+.hgignore.orig
