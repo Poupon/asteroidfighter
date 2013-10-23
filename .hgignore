@@ -1,11 +1,3 @@
-/*/*.o/
-\* \*.o\
-/*.exe/
-/freeglut-2.8.1/
-syntax: glob
-OutputDebug/U3d/ContainersMaker.o
-AsteroidFighter.depend
-AsteroidFighter.exe
-/*/*/*.dll
-freeglut.dll
-OutputDebug/Sprite3d/SceneManager.o
+/*/.*\.o$
+/*/.*\.a$
+

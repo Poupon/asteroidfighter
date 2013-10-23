@@ -103,7 +103,9 @@
 1382378458 d:\dev\asteroidfighter\sprite3d\objodron.h
 	<O3d/O3dObj.h>
 
-1382378458 d:\dev\asteroidfighter\sprite3d\world.h
+1382542686 d:\dev\asteroidfighter\sprite3d\world.h
+	<stdlib.h>
+	<stdio.h>
 	<T3d/T3dBox.h>
 	<O3d/O3dObjProps.h>
 	<O3d/O3dKamera.h>
@@ -127,7 +129,7 @@
 	<T3d/T3dBox.h>
 	<Sprite3d/SoundControler.h>
 
-1382457493 d:\dev\asteroidfighter\sprite3d\soundcontroler.h
+1382543372 d:\dev\asteroidfighter\sprite3d\soundcontroler.h
 	<T3d/T3dBox.h>
 	<plib/sl.h>
 
@@ -215,7 +217,7 @@
 	<Sprite3d/World.h>
 	<Sprite3d/WorldControler.h>
 
-1382378458 d:\dev\asteroidfighter\sprite3d\worldcontroler.h
+1382544002 d:\dev\asteroidfighter\sprite3d\worldcontroler.h
 	<T3d/T3dBox.h>
 	<O3d/O3dObjProps.h>
 	<O3d/O3dKamera.h>
@@ -334,7 +336,7 @@
 	<stdio.h>
 	"ul.h"
 
-1382378457 source:d:\dev\asteroidfighter\asteroidfighter\main.cc
+1382544344 source:d:\dev\asteroidfighter\asteroidfighter\main.cc
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -422,7 +424,7 @@
 	<Sprite3d/World.h>
 	<Sprite3d/SceneManager.h>
 
-1382378457 source:d:\dev\asteroidfighter\asteroidfighter\mainmenu.cc
+1382545289 source:d:\dev\asteroidfighter\asteroidfighter\mainmenu.cc
 	<stdlib.h>
 	<time.h>
 	<T3d/T3dLoadImg.h>
@@ -583,7 +585,8 @@
 	<T3d/T3dType.h>
 	<iostream>
 
-1382378457 source:d:\dev\asteroidfighter\space\actionsship.cc
+1382542476 source:d:\dev\asteroidfighter\space\actionsship.cc
+	<stdlib.h>
 	<ActionsShip.h>
 	<Sprite3d/World.h>
 	<Sprite3d/ObjOdron.h>
@@ -605,7 +608,8 @@
 	<Sprite3d/AutoPtr.h>
 	<Sprite3d/Sprite3d.h>
 
-1382378457 source:d:\dev\asteroidfighter\space\asteroidesmaker.cc
+1382542499 source:d:\dev\asteroidfighter\space\asteroidesmaker.cc
+	<stdlib.h>
 	<Sprite3d/ObjPart.h>
 	<Sprite3d/Sprite3d.h>
 	<Sprite3d/Utils3d.h>
@@ -619,7 +623,8 @@
 	<AsteroidesMaker.h>
 	<Space/Def.h>
 
-1382378457 source:d:\dev\asteroidfighter\space\minesmaker.cc
+1382542524 source:d:\dev\asteroidfighter\space\minesmaker.cc
+	<stdlib.h>
 	<MinesMaker.h>
 	<T3d/T3dLoadImg.h>
 	<Sprite3d/World.h>
@@ -671,8 +676,9 @@
 1382378458 d:\dev\asteroidfighter\u3d\objprimpart.h
 	<Sprite3d/ObjPart.h>
 
-1382378457 source:d:\dev\asteroidfighter\space\scene.cc
+1382542558 source:d:\dev\asteroidfighter\space\scene.cc
 	<stdlib.h>
+	<stdio.h>
 	<Def.h>
 	<T3d/T3dLoadImg.h>
 	<T3d/T3dColor.h>
@@ -781,7 +787,8 @@
 	<Sprite3d/Sprite3dObj.h>
 	<Space/Scene.h>
 
-1382378457 source:d:\dev\asteroidfighter\space\shipsmaker.cc
+1382542607 source:d:\dev\asteroidfighter\space\shipsmaker.cc
+	<stdlib.h>
 	<ShipsMaker.h>
 	<T3d/T3dLoadImg.h>
 	<Sprite3d/World.h>
@@ -875,14 +882,14 @@
 	<Random.h>
 	<stdlib.h>
 
-1382378458 source:d:\dev\asteroidfighter\sprite3d\scenemanager.cc
+1382542196 source:d:\dev\asteroidfighter\sprite3d\scenemanager.cc
 	<SceneManager.h>
 	<Sprite3d/WorldControler.h>
 
-1382378458 source:d:\dev\asteroidfighter\sprite3d\soundcontroler.cc
+1382543349 source:d:\dev\asteroidfighter\sprite3d\soundcontroler.cc
 	<SoundControler.h>
 
-1382378458 source:d:\dev\asteroidfighter\sprite3d\soundlibrary.cc
+1382543666 source:d:\dev\asteroidfighter\sprite3d\soundlibrary.cc
 	<SoundControler.h>
 	<SoundLibrary.h>
 
@@ -937,7 +944,7 @@
 1382378458 d:\dev\asteroidfighter\t3d\t3dfontraster.h
 	<T3d/T3dFont.h>
 
-1382457493 source:d:\dev\asteroidfighter\sprite3d\worldcontroler.cc
+1382544300 source:d:\dev\asteroidfighter\sprite3d\worldcontroler.cc
 	<GL/glut.h>
 	<O3d/O3dKamera.h>
 	<T3d/T3dPrimitiv.h>
