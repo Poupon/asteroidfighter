@@ -38,6 +38,9 @@
 					<Add library="uuid" />
 					<Add library="odbc32" />
 					<Add library="odbccp32" />
+					<Add library="opengl32" />
+					<Add library="glu32" />
+					<Add library="winmm" />
 				</Linker>
 			</Target>
 			<Target title="Win32 Debug">
@@ -72,6 +75,9 @@
 					<Add library="uuid" />
 					<Add library="odbc32" />
 					<Add library="odbccp32" />
+					<Add library="opengl32" />
+					<Add library="glu32" />
+					<Add library="winmm" />
 				</Linker>
 			</Target>
 		</Build>
