@@ -18,12 +18,12 @@ SceneManager::~SceneManager()
 			delete cSceneVect[i];
 		}
 	cSceneVect.clear();
-} 
+}
 //------------------------------
-const char* 
+const char*
 SceneManager::getInfoScene(){
 	return cStrInfo;
-}
+}q
 //------------------------------
 void SceneManager::addScene( Sprite3d *pSprite, float pLiveTime )
 {
@@ -34,7 +34,7 @@ void SceneManager::addScene( Sprite3d *pSprite, float pLiveTime )
 
 	if( pLiveTime != -1 )
 		pSprite->SpriteFloat::set( SPRITE_LIFETIME, pLiveTime  );
-   
+
 
 	cSceneVect.push_back( pSprite );
 }
@@ -65,13 +65,13 @@ void SceneManager::setCurrentSceneTempo( float pLiveTime, GameFinish cGameFinish
 	cSceneVect[cCurScene]->MkSetUSER5( static_cast<float>(cGameFinish ));
 }
 //------------------------------
-// Lance la premiere scene du scenario, c'est la fin 
-// de la scene (kill -> endScene ) qui provoque 
-// l'execution de la scene suivante 
+// Lance la premiere scene du scenario, c'est la fin
+// de la scene (kill -> endScene ) qui provoque
+// l'execution de la scene suivante
 // la fin de la derniere scene provoque la fin du scenario
-// et donc la victoire 
+// et donc la victoire
 
-void 
+void
 SceneManager::go(World* pWorld)
 {
 	sprintf( cStrInfo, "%d/%ld | %s", cCurScene, cSceneVect.size(), cSceneVect[cCurScene]->getStrInfo() );
@@ -79,7 +79,7 @@ SceneManager::go(World* pWorld)
   pWorld->add(cSceneVect[cCurScene]);
 }
 //------------------------------
-void 
+void
 SceneManager::resetCurrentSceneFromBegin( Sprite3dPilot* pPilot )
 {
 	cWorld = WorldControler::GetCurrentWorld();
@@ -88,11 +88,11 @@ SceneManager::resetCurrentSceneFromBegin( Sprite3dPilot* pPilot )
 		{
 			cWorld->removeSprite( (Sprite3d*) pPilot );
 			cWorld->removeSprite( cSceneVect[cCurScene] );
-			
+
 			cWorld->killAllSprite();
-			
+
 			cSceneVect[cCurScene]->resetLife();  // remet a jour l heure de creation
-			
+
 			cWorld->add( (Sprite3d*) pPilot );
 			cWorld->add( cSceneVect[cCurScene]   );
 		}
@@ -116,7 +116,7 @@ SceneManager::endScene()
 
 	sprintf( cStrInfo, "%d/%ld | %s", cCurScene, cSceneVect.size(), cSceneVect[cCurScene]->getStrInfo());
 	cSceneVect[cCurScene]->resetLife();
-		
+
 	if( WorldControler::GetCurrentWorld())
 		WorldControler::Add(cSceneVect[cCurScene]);
 
@@ -124,7 +124,7 @@ SceneManager::endScene()
 	return 0;
 }
 //------------------------------
-GLboolean 
+GLboolean
 SceneManager::leaveWorld( Sprite3d &pMySprite, void*pParam )
 {
 	return GL_FALSE;  // Pour empecher la detruction, passage par kill oubligee
@@ -133,26 +133,26 @@ SceneManager::leaveWorld( Sprite3d &pMySprite, void*pParam )
 GLboolean SceneManager::kill( Sprite3d &pMySprite, void *pParam )
 {
 	std::cout << "SceneManager::kill" << std::endl;
-	
+
 	endScene();
 
 	switch( static_cast<int>(pMySprite.MkGetUSER5())  )
 		{
 		case GameOver:
 			sprintf( cStrInfo, "Game Over" );
-			WorldControler::GameOver(); 
+			WorldControler::GameOver();
 			return GL_TRUE;
 
 		case GameWinner:
 			sprintf( cStrInfo, "Win " );
-			WorldControler::GameWinner(); 
-			return GL_TRUE;				
+			WorldControler::GameWinner();
+			return GL_TRUE;
 		}
 	return GL_TRUE;
 }
 
 //------------------------------------------------
-void 
+void
 SceneManager::execDelete( Sprite3d* pToDel )
 {
 	std::cout << "SceneManager::execDelete" << std::endl;

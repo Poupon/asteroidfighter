@@ -43,6 +43,7 @@
 			<Add directory="../../MinGW/lib/Plib" />
 			<Add directory="plib-1.8.5/include" />
 			<Add directory="plib-1.8.5/lib" />
+			<Add directory="glut-3.7" />
 		</Compiler>
 		<Linker>
 			<Add library="plib-1.8.5\lib\libplib.a" />

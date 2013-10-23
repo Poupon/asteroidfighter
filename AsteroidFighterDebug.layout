@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="All" />
+	<File name="T3d\T3dType.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1153" topLine="33" />
+		</Cursor>
+	</File>
 	<File name="Space\WorldGame.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="513" topLine="301" />
@@ -11,9 +16,9 @@
 			<Cursor1 position="866" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="T3d\T3dType.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="U3d\WeaponsMaker.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1153" topLine="33" />
+			<Cursor1 position="17424" topLine="526" />
 		</Cursor>
 	</File>
 	<File name="Sprite3d\WorldControler.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -21,9 +26,9 @@
 			<Cursor1 position="602" topLine="19" />
 		</Cursor>
 	</File>
-	<File name="U3d\WeaponsMaker.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Sprite3d\SceneManager.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="17424" topLine="526" />
+			<Cursor1 position="485" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

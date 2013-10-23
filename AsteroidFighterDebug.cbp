@@ -45,7 +45,7 @@
 		<Compiler>
 			<Add option="-g" />
 			<Add option="-fpermissive" />
-			<Add option="-DUL_WIN32=1 -DUL_MSVC=1 -DOPENGLUT_STATIC" />
+			<Add option="-DUL_WIN32=1 -DUL_MSVC=1 -DOPENGLUT_STATIC  -DSL_SOUND" />
 			<Add directory="." />
 			<Add directory="AsteroidFighter" />
 			<Add directory="Space" />
