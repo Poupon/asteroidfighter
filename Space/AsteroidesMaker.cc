@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 #include <Sprite3d/ObjPart.h>
 #include <Sprite3d/Sprite3d.h>
 #include <Sprite3d/Utils3d.h>
@@ -7,8 +9,8 @@
 #include <Sprite3d/ObjOdron.h>
 
 #include <WorldGame.h>
- 
-#include <U3d/SpriteExplosion.h> 
+
+#include <U3d/SpriteExplosion.h>
 
 #include <T3d/T3dLoadImg.h>
 
@@ -30,8 +32,8 @@ cColorCristal1(  0.8, 0.4, 0.2, 0.05),
   cColorCristal2(  0.8, 0.5, 0.8, 0.15)
 {
   TheAsteroidesMaker = this;
-	
-  
+
+
   cPropsSnow.ObjPropsFloat4::set( MATERIAL, cColorSnow );
   cPropsIce.ObjPropsFloat4::set( MATERIAL, cColorIce );
 
@@ -68,7 +70,7 @@ AsteroidesMaker::makeAsteroideSnow(float pSz, int pFacette )
 {
 	ObjVect* lOvect = new ObjVect;
 	O3dObj * lObj;
-	
+
 	lOvect->push_back( (lObj=new ObjOdron(  pSz, pFacette) ));
 
 	for( int i=0; i< pSz*0.2; i++)
@@ -77,7 +79,7 @@ AsteroidesMaker::makeAsteroideSnow(float pSz, int pFacette )
 	 Double3 lD3( randf(pSz), randf(pSz),randf(pSz));
 	 lObj->getTransf().TransfDouble3::set( POS, lD3 );
 	}
-	
+
 	lOvect->setRadius( pSz );
 	lOvect->setObjProps( &cPropsSnow);
 	return lOvect;
@@ -89,9 +91,9 @@ AsteroidesMaker::makeAsteroideCristal(float pSz, int pFacette )
 {
 	ObjVect* lOvect = new ObjVect;
 	O3dObj * lObj;
-	
 
-	
+
+
 	for( int i =3; i < pSz+2; i +=2)
 	{
       lOvect->push_back( (lObj=new ObjOdron(  -i, pFacette) ));
@@ -99,7 +101,7 @@ AsteroidesMaker::makeAsteroideCristal(float pSz, int pFacette )
  	 Double3 lD3( randf(360), randf(360),randf(360));
 	 lObj->getTransf().TransfDouble3::set( ANGLE, lD3 );
     }
- /*   
+ /*
 	for( int i =3; i < 4; i++ )
 	{
 	  lOvect->push_back( (lObj=new ObjOdron(  pSz-i*5, pFacette) ));
@@ -124,10 +126,10 @@ O3dObj*
 AsteroidesMaker::makeAsteroideIce( float pSz, int pFacette )
 {
 	O3dObj * lObj = new ObjOdron(  pSz, pFacette);
-	
+
 	lObj->setRadius( pSz );
 	lObj->setObjProps( &cPropsIce);
-	return lObj; 
+	return lObj;
 }
 //----------------------------------------------
 Sprite3d*
@@ -160,7 +162,7 @@ AsteroidesMaker::makeSpriteAsteroide( EnumAsteroides pType, float pSz, int pFace
 		sp  = new Sprite3dObj( makeAsteroideIce( pSz, pFacette));
   }
 	sp->SpriteFloat::set( ASTEROIDE_TYPE, pType );
-	
+
 	// Comme chaque object est unique il doit etre detruit a la mort du sprite
   sp->setDeepDestroy(GL_TRUE);
 
@@ -170,24 +172,24 @@ AsteroidesMaker::makeSpriteAsteroide( EnumAsteroides pType, float pSz, int pFace
   sp->SpriteFloat::set( SPRITE_MAX_LIFE_POINT, pSz*2 );
   sp->SpriteFloat::set( SPRITE_DESTROY_POINT, 1+pSz/4 );
   sp->SpriteLong::set ( SPRITE_TYPE, ASTEROIDE );
-   
+
   return sp;
 }
 //------------------------------------------------
-GLboolean 
+GLboolean
 AsteroidesMaker::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void *pParam )
 {
-	
+
 	if( pSprite.getDefMask() == InteractObstacle )
-	{			
+	{
 		return GL_TRUE;
 
-		if(  pMySprite.getObjectId() != pSprite.cLastColId 
+		if(  pMySprite.getObjectId() != pSprite.cLastColId
 		|| pSprite.getObjectId() != pMySprite.cLastColId)
 		{
 			Double3 speed1( pMySprite.SpriteDouble3::get( SPRITE_SPEED ));
 			Double3 speed2( pSprite.SpriteDouble3::get( SPRITE_SPEED ) );
-			
+
 			pMySprite.getTransf().TransfDouble3::get( POS ) -= speed1;
 			pSprite.getTransf().TransfDouble3::get( POS ) -= speed2;
 
@@ -255,7 +257,7 @@ AsteroidesMaker::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void *pParam
 			pMySprite.SpriteDouble3::set( SPRITE_SPEED, erg1 );
 			pSprite.SpriteDouble3::set( SPRITE_SPEED, erg2 );
 */
-		
+
 
 			pSprite.cLastColId = pMySprite.getObjectId();
 			pMySprite.cLastColId = pSprite.getObjectId();
@@ -268,7 +270,7 @@ AsteroidesMaker::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void *pParam
 			{
 				pMySprite.SpriteDouble3::set( SPRITE_SPEED, speed2 );
 				pSprite.SpriteDouble3::set( SPRITE_SPEED, speed1 );
-			}			
+			}
 			if( diff > 1.33  )
 			{
 				speed2.inverse();
@@ -307,12 +309,12 @@ AsteroidesMaker::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void *pParam
 		}
 		for( int i = 0; i < pSz; i++ )
 		{
-			float sz = randp(pSz);	
+			float sz = randp(pSz);
 
-			if( sz < 1.0 )	
+			if( sz < 1.0 )
 				continue;
 
-			
+
  			int w = rand()%2+1;
 
 			long lType = (long)pMySprite.SpriteFloat::get( ASTEROIDE_TYPE );

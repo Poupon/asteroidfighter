@@ -45,8 +45,8 @@ int   WorldControler::sKeyModifiers=0;
 int   WorldControler::sOldKeyModifiers=0;
 
 //**************************************
-WorldControler::WorldControler(int pWidth, int pHeight)
-	:cFullScreen(0),
+WorldControler::WorldControler(int pWidth, int pHeight, int  pFullScreen)
+	:cFullScreen(pFullScreen),
     cPause(0),
 	cCurrentWorld( NULL),
 	cGame(NULL),
@@ -63,6 +63,8 @@ WorldControler::WorldControler(int pWidth, int pHeight)
 	sCurrentFont = T3dFont::DefaultFont;
 	WC = this;
 
+	if(cFullScreen == 1);
+        glutFullScreen(	);
 }
 //--------------------------------
 WorldControler::~WorldControler()
