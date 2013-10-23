@@ -1,3 +1,7 @@
 /*/.*\.o$
 /*/.*\.a$
-
+/*/.*\.exe$
+/*/.*\.dll$
+syntax: glob
+AsteroidFighter.exe
+glut32.dll
