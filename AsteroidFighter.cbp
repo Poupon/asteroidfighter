@@ -12,15 +12,14 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Option projectResourceIncludeDirsRelation="1" />
+			</Target>
+			<Target title="Debug">
+				<Option output="AsteroidFighter" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
 				<Compiler>
-					<Add option="-DUL_WIN32=1 -DUL_MSVC=1 -DSL_SOUND" />
-					<Add directory="../freeglut-2.8.1/include" />
-					<Add directory="plib-1.8.5/include" />
+					<Add option="-g" />
 				</Compiler>
-				<Linker>
-					<Add directory="freeglut-2.8.1/Release" />
-					<Add directory="plib-1.8.5/lib" />
-				</Linker>
 			</Target>
 		</Build>
 		<VirtualTargets>
@@ -29,8 +28,10 @@
 		<Compiler>
 			<Add option="-O3" />
 			<Add option="-O" />
-			<Add option="-DUL_WIN32=1 -DUL_MSVC=1" />
-			<Add option="-DSL_SOUND" />
+			<Add option="-fpermissive" />
+			<Add option="-DUL_WIN32=1 -DUL_MSVC=1 -DOPENGLUT_STATIC -DPUI_WIN" />
+			<Add option="-DWIN32" />
+			<Add option="-DOPENGLUT_STATIC" />
 			<Add option="-DPUI_WIN" />
 			<Add option="-DPC_WINDOWS" />
 			<Add directory="." />
@@ -40,129 +41,336 @@
 			<Add directory="Sprite3d" />
 			<Add directory="O3d" />
 			<Add directory="T3d" />
-			<Add directory="../../MinGW/lib/Plib" />
 			<Add directory="plib-1.8.5/include" />
-			<Add directory="plib-1.8.5/lib" />
-			<Add directory="glut-3.7" />
+			<Add directory="freeglut-2.8.1/include" />
 		</Compiler>
 		<Linker>
-			<Add library="plib-1.8.5\lib\libplib.a" />
+			<Add library="winmm" />
+			<Add library="plib" />
+			<Add library="freeglut" />
 			<Add library="opengl32" />
 			<Add library="glu32" />
-			<Add library="freeglut-2.8.1\ReleaseStatic\libfreeglut_static.a" />
-			<Add directory="../plib/lib" />
-			<Add directory="../../MinGW/lib/plib" />
 			<Add directory="Output/AsteroidFighter" />
 			<Add directory="Output/O3d" />
 			<Add directory="Output/Space" />
 			<Add directory="Output/Sprite3d" />
 			<Add directory="Output/T3d" />
 			<Add directory="Output/U3d" />
+			<Add directory="freeglut-2.8.1/Release" />
+			<Add directory="plib-1.8.5/lib" />
 		</Linker>
-		<Unit filename="AsteroidFighter/Help.cc" />
-		<Unit filename="AsteroidFighter/Help.h" />
-		<Unit filename="AsteroidFighter/MainMenu.cc" />
-		<Unit filename="AsteroidFighter/MainMenu.h" />
-		<Unit filename="AsteroidFighter/main.cc" />
-		<Unit filename="O3d/O3dKamera.cc" />
-		<Unit filename="O3d/O3dObj.cc" />
-		<Unit filename="O3d/O3dObjBSpline.cc" />
-		<Unit filename="O3d/O3dObjBSplineSurf.cc" />
-		<Unit filename="O3d/O3dObjBezier.cc" />
-		<Unit filename="O3d/O3dObjFacet.cc" />
-		<Unit filename="O3d/O3dObjLight.cc" />
-		<Unit filename="O3d/O3dObjLine.cc" />
-		<Unit filename="O3d/O3dObjNurbs.cc" />
-		<Unit filename="O3d/O3dObjPLibFont.cc" />
-		<Unit filename="O3d/O3dObjPoint.cc" />
-		<Unit filename="O3d/O3dObjPrim.cc" />
-		<Unit filename="O3d/O3dObjProps.cc" />
-		<Unit filename="O3d/O3dObjShape.cc" />
-		<Unit filename="O3d/O3dObjText.cc" />
-		<Unit filename="O3d/O3dSelector.cc" />
-		<Unit filename="O3d/O3dViewProps.cc" />
-		<Unit filename="O3d/PToken.cc" />
-		<Unit filename="Space/ActionsShip.cc" />
-		<Unit filename="Space/AsteroidesMaker.cc" />
-		<Unit filename="Space/MinesMaker.cc" />
-		<Unit filename="Space/Pilot.cc" />
-		<Unit filename="Space/Scene.cc" />
-		<Unit filename="Space/SceneAsteroide.cc" />
-		<Unit filename="Space/SceneAttack.cc" />
-		<Unit filename="Space/SceneBase.cc" />
-		<Unit filename="Space/SceneBase.h" />
-		<Unit filename="Space/SceneGrotte.cc" />
-		<Unit filename="Space/SceneLife.cc" />
-		<Unit filename="Space/ShipsMaker.cc" />
-		<Unit filename="Space/ShipsMaker.h" />
-		<Unit filename="Space/WorldGame.cc" />
-		<Unit filename="Sprite3d/Action.h" />
-		<Unit filename="Sprite3d/AnimatObj.cc" />
-		<Unit filename="Sprite3d/Collision.cc" />
-		<Unit filename="Sprite3d/ObjOdron.cc" />
-		<Unit filename="Sprite3d/ObjPart.cc" />
-		<Unit filename="Sprite3d/ObjPrim.cc" />
-		<Unit filename="Sprite3d/ObjText.cc" />
-		<Unit filename="Sprite3d/ObjText2d.cc" />
-		<Unit filename="Sprite3d/ObjVect.cc" />
-		<Unit filename="Sprite3d/Random.cc" />
-		<Unit filename="Sprite3d/SceneManager.cc" />
-		<Unit filename="Sprite3d/SceneManager.h" />
-		<Unit filename="Sprite3d/SoundControler.cc" />
-		<Unit filename="Sprite3d/SoundLibrary.cc" />
-		<Unit filename="Sprite3d/Sprite3d.cc" />
-		<Unit filename="Sprite3d/Sprite3d.h" />
-		<Unit filename="Sprite3d/Sprite3dObj.cc" />
-		<Unit filename="Sprite3d/Sprite3dObj.h" />
-		<Unit filename="Sprite3d/Sprite3dPilot.cc" />
-		<Unit filename="Sprite3d/Sprite3dPilot.h" />
-		<Unit filename="Sprite3d/Text2d.cc" />
-		<Unit filename="Sprite3d/Utils3d.cc" />
-		<Unit filename="Sprite3d/Utils3d.h" />
-		<Unit filename="Sprite3d/World.cc" />
-		<Unit filename="Sprite3d/World.h" />
-		<Unit filename="Sprite3d/WorldControler.cc" />
-		<Unit filename="Sprite3d/WorldControler.h" />
-		<Unit filename="T3d/T3dBox.cc" />
-		<Unit filename="T3d/T3dBox.h" />
-		<Unit filename="T3d/T3dCalcul.cc" />
-		<Unit filename="T3d/T3dCalcul.h" />
-		<Unit filename="T3d/T3dColor.cc" />
-		<Unit filename="T3d/T3dColor.h" />
-		<Unit filename="T3d/T3dFont.h" />
-		<Unit filename="T3d/T3dFontRaster.cc" />
-		<Unit filename="T3d/T3dFontRaster.h" />
-		<Unit filename="T3d/T3dLoadBmp.cc" />
-		<Unit filename="T3d/T3dLoadGif.cc" />
-		<Unit filename="T3d/T3dLoadImg.cc" />
-		<Unit filename="T3d/T3dLoadImg.h" />
-		<Unit filename="T3d/T3dPrimitiv.cc" />
-		<Unit filename="T3d/T3dPrimitiv.h" />
-		<Unit filename="T3d/T3dTab.h" />
-		<Unit filename="T3d/T3dTexture.cc" />
-		<Unit filename="T3d/T3dTexture.h" />
-		<Unit filename="T3d/T3dTransf.cc" />
-		<Unit filename="T3d/T3dTransf.h" />
-		<Unit filename="T3d/T3dType.h" />
-		<Unit filename="T3d/T3dVect3D.cc" />
-		<Unit filename="T3d/T3dVect3D.h" />
-		<Unit filename="T3d/TVectType.h" />
-		<Unit filename="U3d/Banniere.cc" />
-		<Unit filename="U3d/Banniere.h" />
-		<Unit filename="U3d/BonusMaker.cc" />
-		<Unit filename="U3d/BonusMaker.h" />
-		<Unit filename="U3d/ContainersMaker.cc" />
-		<Unit filename="U3d/ContainersMaker.h" />
-		<Unit filename="U3d/ObjPrimPart.cc" />
-		<Unit filename="U3d/ObjPrimPart.h" />
-		<Unit filename="U3d/Sky.cc" />
-		<Unit filename="U3d/Sky.h" />
-		<Unit filename="U3d/SpriteExplosion.cc" />
-		<Unit filename="U3d/SpriteExplosion.h" />
-		<Unit filename="U3d/Tourelle.cc" />
-		<Unit filename="U3d/Tourelle.h" />
-		<Unit filename="U3d/WeaponsMaker.cc" />
-		<Unit filename="U3d/WeaponsMaker.h" />
+		<Unit filename="AsteroidFighter/Help.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="AsteroidFighter/Help.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="AsteroidFighter/MainMenu.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="AsteroidFighter/MainMenu.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="AsteroidFighter/main.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="O3d/O3dKamera.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="O3d/O3dObj.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="O3d/O3dObjBSpline.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="O3d/O3dObjBSplineSurf.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="O3d/O3dObjBezier.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="O3d/O3dObjFacet.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="O3d/O3dObjLight.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="O3d/O3dObjLine.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="O3d/O3dObjNurbs.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="O3d/O3dObjPLibFont.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="O3d/O3dObjPoint.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="O3d/O3dObjPrim.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="O3d/O3dObjProps.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="O3d/O3dObjShape.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="O3d/O3dObjText.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="O3d/O3dSelector.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="O3d/O3dViewProps.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="O3d/PToken.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Space/ActionsShip.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Space/AsteroidesMaker.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Space/MinesMaker.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Space/Pilot.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Space/Scene.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Space/SceneAsteroide.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Space/SceneAttack.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Space/SceneBase.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Space/SceneBase.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Space/SceneGrotte.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Space/SceneLife.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Space/ShipsMaker.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Space/ShipsMaker.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Space/WorldGame.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/Action.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/AnimatObj.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/Collision.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/ObjOdron.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/ObjPart.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/ObjPrim.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/ObjText.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/ObjText2d.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/ObjVect.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/Random.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/SceneManager.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/SceneManager.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/SoundControler.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/SoundLibrary.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/Sprite3d.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/Sprite3d.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/Sprite3dObj.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/Sprite3dObj.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/Sprite3dPilot.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/Sprite3dPilot.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/Text2d.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/Utils3d.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/Utils3d.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/World.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/World.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/WorldControler.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Sprite3d/WorldControler.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dBox.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dBox.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dCalcul.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dCalcul.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dColor.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dColor.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dFont.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dFontRaster.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dFontRaster.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dLoadBmp.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dLoadGif.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dLoadImg.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dLoadImg.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dPrimitiv.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dPrimitiv.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dTab.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dTexture.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dTexture.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dTransf.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dTransf.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dType.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dVect3D.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/T3dVect3D.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="T3d/TVectType.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="U3d/Banniere.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="U3d/Banniere.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="U3d/BonusMaker.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="U3d/BonusMaker.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="U3d/ContainersMaker.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="U3d/ContainersMaker.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="U3d/ObjPrimPart.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="U3d/ObjPrimPart.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="U3d/Sky.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="U3d/Sky.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="U3d/SpriteExplosion.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="U3d/SpriteExplosion.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="U3d/Tourelle.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="U3d/Tourelle.h">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="U3d/WeaponsMaker.cc">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="U3d/WeaponsMaker.h">
+			<Option target="default" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<debugger />
