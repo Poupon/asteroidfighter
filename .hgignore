@@ -1,0 +1,5 @@
+/*/*.o/
+/freeglut-2.8.1/
+syntax: glob
+OutputDebug/U3d/ContainersMaker.o
+AsteroidFighter.depend
