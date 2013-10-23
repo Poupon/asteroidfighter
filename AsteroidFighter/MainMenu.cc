@@ -146,13 +146,13 @@ MainMenu::initStart(int pNiveau)
 
 	pY += lStep;
 
-	pY += lStep;	AfficheLine( pX, pY, "Use spacebar to recharge Field" );
-	pY += lStep;	AfficheLine( pX, pY, "Use middle mouse  button or 'A' to warp to cursor position" );
+	pY += lStep;	AfficheLine( pX, pY, "Use spacebar to partial recharge Field (use energy)" );
+	pY += lStep;	AfficheLine( pX, pY, "Use middle mouse button or 'A'to warp to cursor position(use energy)");
 	pY += lStep;	AfficheLine( pX, pY, "Use left  mouse button or '1' to fire with energy weapon" );
 	pY += lStep;	AfficheLine( pX, pY, "Use right mouse button or '2' to fire with rocket weapon" );
 	pY += lStep;	AfficheLine( pX, pY, "Use CTRL  with mouse button for side fire" );
-	pY += lStep;	AfficheLine( pX, pY, "Use SHIFT with mouse button for side and front fire" );
-
+	pY += lStep;	AfficheLine( pX, pY, "Use SHIFT with mouse button for top fire" );
+	pY += lStep;	AfficheLine( pX, pY, "Use ALT   with mouse button for top, side and front fire" );
 	/*
 	{
   O3dObjText2d* lObjText = new O3dObjText2d( WorldControler::sCurrentFont, 16, 3, "<Command>" );

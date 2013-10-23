@@ -10,9 +10,10 @@ SoundControler* SoundControler::sTheSoundControler = NULL;
 //*************************************************
 
 SoundControler::SoundControler( int pRate, int pSafetyMargin)
-	:cSlSheduller(NULL)
 {
-#ifdef SL_SOUND
+#ifdef SL_SOUNDcshed
+	:cSlSheduller =  NULL,
+
 	if( !sNoSound )
 		{
 			cSlSheduller = new slScheduler( 8000);
@@ -29,7 +30,7 @@ void
 SoundControler::process()
 {
 #ifdef SL_SOUND
-	if( !sNoSound && cSlSheduller )
+	if( !sNoSound && cSSL_SOUNDlSheduller )
 		{
 			std::cout << "=== SoundControler::process ===" << std::endl;
 			cSlSheduller->dumpUpdate () ;
@@ -38,14 +39,15 @@ SoundControler::process()
 }
 
 //------------------------------------------------
+#ifdef SL_SOUND
 int
-SoundControler::playSample ( slSample *pSample, int pPriority,slPreemptMode pMode)
+SoundControler::playSample ( slSample *pSample, int pPriority, slPreemptMode pMode)
 {
 	if( pSample == NULL )
 		return -1;
 
 
-#ifdef SL_SOUND
+
 	if( !sNoSound && cSlSheduller )
 		{
 			std::cout << "SoundControler::playSimple:" << std::hex << pSample << std::endl;
@@ -53,9 +55,10 @@ SoundControler::playSample ( slSample *pSample, int pPriority,slPreemptMode pMod
 		}
 
 	return -1;
-#endif
 }
+#endif
 //------------------------------------------------
+#ifdef SL_SOUND
 int
 SoundControler::loopSample ( slSample *pSample, int pPriority,slPreemptMode pMode)
 {
@@ -63,7 +66,7 @@ SoundControler::loopSample ( slSample *pSample, int pPriority,slPreemptMode pMod
 		return -1;
 
 
-#ifdef SL_SOUND
+
 	if( !sNoSound && cSlSheduller )
 		{
 			std::cout << "SoundControler::playSimple:" << std::hex << pSample << std::endl;
@@ -71,14 +74,16 @@ SoundControler::loopSample ( slSample *pSample, int pPriority,slPreemptMode pMod
 		}
 
 	return -1;
-#endif
 }
+#endif
+
 //------------------------------------------------
+
 slSample*
 SoundControler::loadSample( const char* pName )
 {
-
 #ifdef SL_SOUND
+
 	if( !sNoSound && cSlSheduller != NULL)
 		{
 			std::cout << "SoundControler::loadSample :" << pName  << " " << cSlSheduller << "-->";
@@ -87,18 +92,21 @@ SoundControler::loadSample( const char* pName )
 #endif
 	return NULL;
 }
+
 //------------------------------------------------
+#ifdef SL_SOUND
 int
 SoundControler::playMusic ( const char *pName, int pPriority, slPreemptMode pMode)
 {
-#ifdef SL_SOUND
+
 	if( !sNoSound && cSlSheduller )
 		{
 			std::cout << "SoundControler::playMusic :" << pName  << " " << cSlSheduller << "-->";
 		  return cSlSheduller->playMusic( pName, pPriority, pMode );
 		}
-#endif
+
 
 	return 0;
 }
+#endif
 //*************************************************

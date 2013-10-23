@@ -49,8 +49,8 @@ class GameWorldControler: public WorldControler{
 	O3dObjProps* cGen;
 
 public:
-	GameWorldControler( int lTest, int pSize, int pWidth, int pHeight)
-		:WorldControler( pWidth, pHeight ),
+	GameWorldControler( int lTest, int pSize, int pWidth, int pHeight, bool pFullScreen)
+		:WorldControler( pWidth, pHeight, pFullScreen ),
 		 cSize( pSize )		,
 		 cMax( 300, 200, 100 ),
 		 cGen(NULL)
@@ -162,6 +162,7 @@ int main(int argc, char **argv)
 	int lTest = 0;
 	int lSize = 10;
 	char *lData=NULL;
+	bool lFullScreen = true;
 
 	for( int i =1; i< argc; i++)
 	{
@@ -172,6 +173,9 @@ int main(int argc, char **argv)
 				case 'G' :
 					WorldControler::sDebug =1;
 					break;
+                case 'f' :
+                    lFullScreen = false;
+                    break;
 
 				case 'F' :
 					{
@@ -186,7 +190,7 @@ int main(int argc, char **argv)
 						break;
 					}
 
-			case 'D': 
+			case 'D':
 				lData=++pStr;
 				break;
 			case 'T':
@@ -232,11 +236,11 @@ slScheduler sched ( 8000 ) ;
 
 	SoundControler lSoundControler;
 
-	
+
 
 	Utils3d::Init( "AsteroidFighter 1.0", argc, argv, 80*lSize, 60*lSize);
 
-	GameWorldControler lWControl( lTest, lSize, 80*lSize, 60*lSize );
+	GameWorldControler lWControl( lTest, lSize, 80*lSize, 60*lSize, lFullScreen );
 	WorldControler::SetRate( lRate );
 
 
@@ -253,7 +257,7 @@ slScheduler sched ( 8000 ) ;
 			lDataSound += "/sound";
 			WorldGame::InitSound(lDataSound.c_str()); // Pour les sons notamment
 		}
-	else 
+	else
 		{
 			WorldGame::InitSound("sound"); // Pour les sons notamment
 		}

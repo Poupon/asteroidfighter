@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 #include <MinesMaker.h>
 
 #include <T3d/T3dLoadImg.h>
@@ -50,33 +52,33 @@ MinesMaker::makeModul( float pSz )
 //-------------------------------------------------------
 //-------------------------------------------------------
 Sprite3d*
-MinesMaker::makeMine( MineType pMineType, int pMaxLife, float  pSpin, 
-										 float pMaxSpeed, float pMaxDeltaV, float pReactivity ) 
+MinesMaker::makeMine( MineType pMineType, int pMaxLife, float  pSpin,
+										 float pMaxSpeed, float pMaxDeltaV, float pReactivity )
 {
 	Double3 lSpin( pSpin, 0, 0);
-	
+
 	Sprite3dObj* lSp = new Sprite3dObj();
 	ObjVect *lVect = new ObjVect();
 	int lSz = 3;
-	
+
 	O3dObj* lObj=NULL;
 	switch( pMineType  )
-		{				
-		case MINE_LASER : 
+		{
+		case MINE_LASER :
 		case MINE_ION :
 			{
 				lSz = 4;
-				
+
 				T3dBox lBox( -70, -70, -70,  70,  70, 70 );
-				
+
 				Tourelle* lTour  = makeModul( lSz*0.3 );
-				lTour->set( lSp,  0.6,  FIRE_DIRECT, (pMineType == MINE_LASER ? WEAPON_PLASMA_RED : WEAPON_ION ),	
+				lTour->set( lSp,  0.6,  FIRE_DIRECT, (pMineType == MINE_LASER ? WEAPON_PLASMA_RED : WEAPON_ION ),
 										lBox, InteractEnemy, InteractEnemyWeapon);
 			lVect->add(  lTour );
-			lObj =lVect;	
+			lObj =lVect;
 			}
 
-		case MINE_1 : 
+		case MINE_1 :
 			{
 				O3dObj* lCore = new O3dObjPrim( O3dObjPrim::PrimSphere, lSz, 6, 8 );
 				lCore->setObjProps( &cPropsMine );
@@ -89,7 +91,7 @@ MinesMaker::makeMine( MineType pMineType, int pMaxLife, float  pSpin,
 				lVect->add( lField );
 				lVect->setRadius( lSz*4 );
 
-				lObj =lVect;	
+				lObj =lVect;
 			}
 			break;
 
@@ -101,7 +103,7 @@ MinesMaker::makeMine( MineType pMineType, int pMaxLife, float  pSpin,
 	lSp->setO3dObj( lObj );
 
 	lSp->setMask( InteractEnemy, InteractEnemyWeapon);
-	lSp->setAction( SPRITE_ACTION_COLLISION, TheMinesMaker ); 
+	lSp->setAction( SPRITE_ACTION_COLLISION, TheMinesMaker );
 	lSp->setAction( SPRITE_ACTION_ANIMATE, TheMinesMaker );
 
 
@@ -115,15 +117,15 @@ MinesMaker::makeMine( MineType pMineType, int pMaxLife, float  pSpin,
 
 	lSp->setDeepDestroy(GL_TRUE);
 
-	return lSp;	
+	return lSp;
 }
 
 //----------------------------------------------
-GLboolean 
+GLboolean
 MinesMaker::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void * pParam )
 {
 	//	std::cout << "MinesMaker::collision" << std::endl;
-	
+
 	ObjVect* lObjVect = (ObjVect*)((Sprite3dObj&)pMySprite).getObj();
 
 	for( std::vector <O3dObj*>::iterator iter = lObjVect->begin(); iter != lObjVect->end(); ++iter )
@@ -131,7 +133,7 @@ MinesMaker::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void * pParam )
 			//			std::cout << "-"  <<  std::flush;
 			(*iter)->setAnimateOn( GL_FALSE ); // comme il est detruit c'est normal ! et il risque d'y avoir des ptr sur pMySprite
 		}
-	
+
 	int max = static_cast<long>(randp(5)+3);
 	for( int j=0; j< max; j++)
 		{
@@ -148,7 +150,7 @@ MinesMaker::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void * pParam )
 		}
 
 	lObjVect->clear();
-	
+
 	WorldControler::KillSprite( &pMySprite );
 
 
@@ -157,12 +159,12 @@ MinesMaker::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void * pParam )
 	return GL_TRUE;
 }
 //----------------------------------------------
-GLboolean 
+GLboolean
 MinesMaker::animate( Sprite3d &pMySprite, void * pParam )
 {
 	////	Float4 lColor	cPropsMineField.ObjPropsFloat4::get( MATERIAL );
 
-	
+
 	return GL_TRUE;
 }
 //----------------------------------------------

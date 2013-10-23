@@ -23,11 +23,12 @@ SoundLibrary::~SoundLibrary(  )
 	cMaxSound = 0;
 }
 */
-//------------------------------------------------	
+//------------------------------------------------
 
-PSoundId 
+PSoundId
 SoundLibrary::loadSample ( const char* pName )
 {
+#ifdef SL_SOUND
 	if( SoundControler::sTheSoundControler == NULL ||  SoundControler::sTheSoundControler->sNoSound )
 		return PBadSoundId;
 
@@ -62,23 +63,26 @@ SoundLibrary::loadSample ( const char* pName )
 	std::cout << " id: " << cNbSound << std::endl;
 
 	cVectSound[cNbSound++] = lSample;
-
-	return cNbSound-1;	
+#endif
+	return cNbSound-1;
 }
 
 //------------------------------------------------
 
-slSample* 
+slSample*
 SoundLibrary::getSample( PSoundId pSoundId)
 {
-
+#ifdef SL_SOUND
 	if( pSoundId == PBadSoundId || pSoundId >= cNbSound ){
 	std::cout << "SoundLibrary::getSample " << pSoundId << " : NULL" << std::endl;
 		return NULL;
 	}
 	std::cout << "SoundLibrary::getSample " << pSoundId << " : "  <<cVectSound[pSoundId] << std::endl;
-	
+
 	return cVectSound[pSoundId];
+#else
+    return -1;
+#endif
 }
 
 //*************************************************

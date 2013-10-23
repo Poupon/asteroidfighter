@@ -1,4 +1,6 @@
 #include <stdlib.h>
+#include <stdio.h>
+
 #include <Def.h>
 
 #include <T3d/T3dLoadImg.h>
@@ -21,12 +23,12 @@
 
 
 //*****************************************
-Scene::Scene( const char* pName, int pHardness,  
+Scene::Scene( const char* pName, int pHardness,
 							float pInterval,
 							float  pH, float pV )
 :Sprite3dObj(  new ObjOdron( 30, 0)),
  cHardness(pHardness),
- cInterval( pInterval ), 
+ cInterval( pInterval ),
  cH( pH ),
  cV( pV ),
  cName(pName)
@@ -34,15 +36,15 @@ Scene::Scene( const char* pName, int pHardness,
 	sprintf( cStrInfo, "Hard:%d Time:%5.2f %s", cHardness, cInterval, cName.data() );
 }
 //------------------------
-GLboolean 
+GLboolean
 Scene::animate()
 {
   Sprite3d::animate();
   return GL_FALSE;
 }
 //------------------------
-const char* 
+const char*
 Scene::getStrInfo(){
-	return cStrInfo;	
+	return cStrInfo;
 }
 //*****************************************

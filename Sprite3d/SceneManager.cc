@@ -23,7 +23,7 @@ SceneManager::~SceneManager()
 const char*
 SceneManager::getInfoScene(){
 	return cStrInfo;
-}q
+}
 //------------------------------
 void SceneManager::addScene( Sprite3d *pSprite, float pLiveTime )
 {

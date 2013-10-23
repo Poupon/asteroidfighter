@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 #include <ShipsMaker.h>
 
 #include <T3d/T3dLoadImg.h>
@@ -16,7 +18,7 @@
 #include <U3d/WeaponsMaker.h>
 #include <U3d/SpriteExplosion.h>
 #include <U3d/BonusMaker.h>
- 
+
 #include <Space/Def.h>
 
 #include <math.h>
@@ -32,7 +34,7 @@ ShipsMaker::ShipsMaker()
  //cColorFan( 0.3, 0.3, 0.5, 1.0),
  cColorModul( 0.2, 0.5, 0.6, 1.0 ),
  cColorSoute( 0.1, 0.8, 0.8, 1.0),
- cColorFan( 0.3, 0.9, 0.7, 1.0), 
+ cColorFan( 0.3, 0.9, 0.7, 1.0),
  cColorFire( 0.3, 0.2, 0.3, 0.1),
  cColorDome( 0.3, 0.5, 0.6, 0.3 )
 {
@@ -45,10 +47,10 @@ ShipsMaker::ShipsMaker()
 	caTexBlindage = new T3dTexture("textures/9.gif" );
 	cPropsBlindage.setTexture( caTexBlindage );
 
-	
+
 	caTexSpin = new T3dTexture("textures/32.gif" );
 	cPropsSpin.setTexture( caTexSpin );
-	
+
 	caTexBleue = new T3dTexture("textures/32.gif" );
 	cPropsBleue.setTexture( caTexBleue );
 
@@ -164,11 +166,11 @@ ShipsMaker::makeShip1( float pSz, Sprite3dObj* pSp, EnumWeapons pWeapon, int pNi
 {
 	ObjVect *lVect = new ObjVect;
 	float lLg = pSz*3;
-	
+
 	O3dObj* lGrid1 = makeGrid( pSz*0.5,  lLg );
 	lGrid1->getTransf().TransfDouble3::get( POS )[2] = -lLg*1.2;
 	lVect->add( lGrid1 );
-	
+
 	Tourelle* lMod1 = makeModul( pSz );
 	T3dBox lBox( -150, -30, -100, 0, 30,  100 );
 	lMod1->set( pSp, 0.5, FIRE_FRONT, pWeapon,  lBox, InteractEnemy, InteractEnemyWeapon );
@@ -176,11 +178,11 @@ ShipsMaker::makeShip1( float pSz, Sprite3dObj* pSp, EnumWeapons pWeapon, int pNi
 //	lMod1->getTransf().TransfDouble3::get( POS )[2] = lLg*0.8;
 	lVect->add( lMod1 );
 
-		
+
 	O3dObj* lReact;
 	lVect->add( (lReact = makeReactor( pSz)) );
 	lReact->getTransf().TransfDouble3::get( POS )[2] = -lLg*1.4;
-	
+
 
 	lVect->getTransf().TransfDouble3::get( ANGLE ) [1] = -90;
 	lVect->setRadius( pSz*3 );
@@ -207,7 +209,7 @@ ShipsMaker::makeShip2( float pSz, Sprite3dObj* pSp, int pNiveau )
 
 	ObjVect *lVect = makeShip1( pSz, pSp, lWeapon1, pNiveau );
 	float lLg = pSz*1.8;
-	
+
 	O3dObj* lSoute = makeSoute( pSz*0.5,  lLg );
 	lSoute->MkGetPOS()[2] = -lLg*1.6;
 	lSoute->MkGetPOS()[1] = pSz*0.7;
@@ -229,7 +231,7 @@ ShipsMaker::makeShip3( float pSz, Sprite3dObj* pSp, int pNiveau )
 
 	if( pNiveau == 1 ){
 		lWeapon1 = WEAPON_PLASMA;
-		lWeapon2 = WEAPON_ROCKET;	
+		lWeapon2 = WEAPON_ROCKET;
 	} else
 	if( pNiveau ==  2 ){
 		lWeapon1 = WEAPON_PLASMA2;
@@ -254,7 +256,7 @@ ShipsMaker::makeShip3( float pSz, Sprite3dObj* pSp, int pNiveau )
 
 	Tourelle* lMod1  = makeModul( pSz*0.8 );
 	T3dBox lBox( -100, -100, -100,0,   100, 100 );
-	lMod1->set( pSp,  0.7,  FIRE_DIRECT, lWeapon2,	
+	lMod1->set( pSp,  0.7,  FIRE_DIRECT, lWeapon2,
 							lBox, InteractEnemy, InteractEnemyWeapon);
 
 	lMod1->MkGetPOS()[2] = -lLg*0.5;
@@ -262,7 +264,7 @@ ShipsMaker::makeShip3( float pSz, Sprite3dObj* pSp, int pNiveau )
 	lVect->add( lMod1 );
 
 	Tourelle* lMod2  = makeModul( pSz*0.8 );
-	lMod2->set( pSp, 0.71,  FIRE_DIRECT, lWeapon2, 
+	lMod2->set( pSp, 0.71,  FIRE_DIRECT, lWeapon2,
 							lBox, InteractEnemy, InteractEnemyWeapon);
 
 	lMod2->MkGetPOS()[2] = -lLg*0.5;
@@ -286,24 +288,24 @@ ShipsMaker::makeInterceptor( float pSz, Sprite3dObj* pSp, int pNiveau )
 	}
 
 	ObjVect *lVect = new ObjVect();
-	
+
 	O3dObj* lFan1 = makeFan(pSz, 0, 6);
 	lFan1->MkGetPOS()[2] = pSz;
-	
-	lVect->add( lFan1 );	
+
+	lVect->add( lFan1 );
 
 	O3dObj* lFan2 = makeFan( pSz, 0, 6);
 	lFan2->MkGetPOS()[2] = -pSz;
-	lVect->add( lFan2 );	
+	lVect->add( lFan2 );
 
 	O3dObj* lGrid1 = makeGrid( pSz*0.2,  2*pSz );
 	lGrid1->MkGetPOS()[2] = -pSz;
-	lVect->add( lGrid1 );	
+	lVect->add( lGrid1 );
 
 	O3dObj* lGrid2 = makeGrid( pSz*0.2,  2*pSz );
 	lGrid2->MkGetANGLE() [1] = 90;
 	lGrid2->MkGetPOS()[0] = -pSz;
-	lVect->add( lGrid2 );	
+	lVect->add( lGrid2 );
 
 	O3dObj* lReact = makeReactor( pSz*0.5);
 	lReact->MkGetANGLE() [1] = 90;
@@ -313,7 +315,7 @@ ShipsMaker::makeInterceptor( float pSz, Sprite3dObj* pSp, int pNiveau )
 
 	Tourelle* lMod1 = makeModul( pSz*0.4 );
 	T3dBox lBox( -150, -20,  -100, 0, 20,   100 );
-	lMod1->set( pSp, 0.2, FIRE_FRONT, lWeapon1, 
+	lMod1->set( pSp, 0.2, FIRE_FRONT, lWeapon1,
 							lBox, InteractEnemy, InteractEnemyWeapon);
 	lMod1->MkGetPOS()[0] = pSz;
 
@@ -377,7 +379,7 @@ ShipsMaker::makeTorpilleur( float pSz, Sprite3dObj* pSp, int pNiveau )
 
 	Tourelle* lMod1 = makeModul( pSz*0.25 );
 	T3dBox lBox( -150, -20,  -100, 0, 20,   100 );
-	lMod1->set( pSp, 0.4, FIRE_FRONT, lWeapon1, 
+	lMod1->set( pSp, 0.4, FIRE_FRONT, lWeapon1,
 							lBox, InteractEnemy, InteractEnemyWeapon);
 
 	lMod1->MkGetPOS()[1] = -pSz*0.3;
@@ -386,12 +388,12 @@ ShipsMaker::makeTorpilleur( float pSz, Sprite3dObj* pSp, int pNiveau )
 	lVect->add( lMod1  );
 
 	Tourelle* lMod2 = makeModul( pSz*0.25 );
-	lMod2->set( pSp, 0.4, FIRE_FRONT, lWeapon1, 
+	lMod2->set( pSp, 0.4, FIRE_FRONT, lWeapon1,
 							lBox, InteractEnemy, InteractEnemyWeapon);
 
 	if( pNiveau >= 2 ){
 		Tourelle* lMod3 = makeModul( pSz*0.3 );
-		lMod3->set( pSp, 0.4, FIRE_FRONT, lWeapon2, 
+		lMod3->set( pSp, 0.4, FIRE_FRONT, lWeapon2,
 								lBox, InteractEnemy, InteractEnemyWeapon);
 		lMod3->MkGetPOS()[1] = pSz*0.3;
 		lMod3->MkGetPOS()[2] = pSz*0.3;
@@ -421,7 +423,7 @@ ShipsMaker::makeMegaCroiseur(float pSz, Sprite3dObj* pSp, int pNiveau)
 	EnumWeapons lWeapon1 = WEAPON_PLASMA_RED;
 	EnumWeapons lWeapon2 = WEAPON_SMALL_ROCKET;
 	EnumWeapons lWeapon3 = WEAPON_SMALL_MISSILE;
-	
+
  	if( pNiveau == 1 ){
 		lWeapon0 = WEAPON_PLASMA;
 		lWeapon1 = WEAPON_PLASMA_GREEN;
@@ -462,7 +464,7 @@ ShipsMaker::makeMegaCroiseur(float pSz, Sprite3dObj* pSp, int pNiveau)
 	lCore3->MkGetPOS()[0] = pSz*0.3;
 	lCore3->MkGetPOS()[1] = -pSz*0.4;
 	lVect->add( lCore3 );
-	
+
 	lCore3 = new O3dObjPrim( O3dObjPrim::PrimSphere, pSz, 9, 12 );
 	lCore3->MkGetSCALE()[0] =1.0;
 	lCore3->MkGetSCALE()[1] =1.0;
@@ -470,30 +472,30 @@ ShipsMaker::makeMegaCroiseur(float pSz, Sprite3dObj* pSp, int pNiveau)
 	lCore3->MkGetPOS()[0] = pSz*0.3;
 	lCore3->MkGetPOS()[1] = pSz*0.4;
 	lVect->add( lCore3 );
-	
+
 // Tourelles
 	T3dBox lBoxFire( -120, -120, -120, 120,  120,  120 );
 	Tourelle* lTour ;
-	
+
     lTour = makeModul( pSz*0.2 );
-	lTour->set( pSp, 0.5, FIRE_FRONT, lWeapon0, 
+	lTour->set( pSp, 0.5, FIRE_FRONT, lWeapon0,
 							lBoxFire, InteractEnemy, InteractEnemyWeapon );
 	lTour->MkGetPOS()[0] = -pSz*2;
 	lVect->add(  lTour );
     lTour = makeModul( pSz*0.2 );
-	lTour->set( pSp, 0.5, FIRE_FRONT, lWeapon0, 
+	lTour->set( pSp, 0.5, FIRE_FRONT, lWeapon0,
 							lBoxFire, InteractEnemy, InteractEnemyWeapon );
 	lTour->MkGetPOS()[1] = pSz;
 	lVect->add(  lTour );
     lTour = makeModul( pSz*0.2 );
-	lTour->set( pSp, 0.5, FIRE_FRONT, lWeapon0, 
+	lTour->set( pSp, 0.5, FIRE_FRONT, lWeapon0,
 							lBoxFire, InteractEnemy, InteractEnemyWeapon );
 	lTour->MkGetPOS()[1] = pSz*1.5;
 	lVect->add(  lTour );
 
 
     lTour = makeModul( pSz*0.2 );
-	lTour->set( pSp, 1.0, FIRE_DIRECT, lWeapon1, 
+	lTour->set( pSp, 1.0, FIRE_DIRECT, lWeapon1,
 							lBoxFire, InteractEnemy, InteractEnemyWeapon );
 	lTour->MkGetPOS()[0] = -pSz;
 	lTour->MkGetPOS()[1] = -pSz;
@@ -501,14 +503,14 @@ ShipsMaker::makeMegaCroiseur(float pSz, Sprite3dObj* pSp, int pNiveau)
 
 
     lTour = makeModul( pSz*0.2 );
-	lTour->set( pSp, 1.5, FIRE_FRONT, lWeapon2, 
+	lTour->set( pSp, 1.5, FIRE_FRONT, lWeapon2,
 							lBoxFire, InteractEnemy, InteractEnemyWeapon );
 	lTour->MkGetPOS()[0] = pSz;
 	lVect->add(  lTour );
 
 
     lTour = makeModul( pSz*0.2 );
-	lTour->set( pSp, 1.5, FIRE_DIRECT, lWeapon3, 
+	lTour->set( pSp, 1.5, FIRE_DIRECT, lWeapon3,
 							lBoxFire, InteractEnemy, InteractEnemyWeapon );
 	lTour->MkGetPOS()[0] = pSz;
 	lTour->MkGetPOS()[1] = pSz;
@@ -526,7 +528,7 @@ ShipsMaker::makeMegaCroiseur(float pSz, Sprite3dObj* pSp, int pNiveau)
 	lDome->MkGetSCALE()[0] =1.5;
 	lDome->MkGetPOS()[0] = pSz*0.5;
 	lDome->MkGetPOS()[1] = pSz*0.3;
-	lDome->MkGetPOS()[2] = pSz*0.6; 
+	lDome->MkGetPOS()[2] = pSz*0.6;
 	lVect->add( lDome );
 
 	lDome = new O3dObjPrim( O3dObjPrim::PrimSphere, pSz*.3, 7, 7 );
@@ -537,7 +539,7 @@ ShipsMaker::makeMegaCroiseur(float pSz, Sprite3dObj* pSp, int pNiveau)
 	lDome->MkGetPOS()[2] = -pSz*0.6;
 	lVect->add( lDome );
 
-	
+
 	lDome = new O3dObjPrim( O3dObjPrim::PrimSphere, pSz*.3, 7, 7 );
 	lDome->setObjProps( &cPropsDome );
 	lDome->MkGetSCALE()[0] =1.5;
@@ -612,7 +614,7 @@ ShipsMaker::makeMegaCroiseur(float pSz, Sprite3dObj* pSp, int pNiveau)
 
 
 
-	
+
 	lVect->setRadius( pSz*2);
 
 	lVect->MkGetANGLE()[0] = randp(180);
@@ -634,7 +636,7 @@ ShipsMaker::makeCroiseur( float pSz, Sprite3dObj* pSp, int pNiveau)
 	EnumWeapons lWeapon2 = WEAPON_SMALL_ROCKET;
 
 	ObjVect *lVect = new ObjVect();
-	
+
 	O3dObj* lCore = new O3dObjPrim( O3dObjPrim::PrimSphere, pSz, 9, 12 );
 	lCore->MkGetSCALE()[1] =0.25;
 	lCore->MkGetSCALE()[0] =1.25;
@@ -662,28 +664,28 @@ ShipsMaker::makeCroiseur( float pSz, Sprite3dObj* pSp, int pNiveau)
 	T3dBox lBox2( -120, -120, -120, 120,  120,  120 );
 
 	Tourelle* lMod1 = makeModul( pSz*0.15 );
-	lMod1->set( pSp, 1.0, FIRE_DIRECT, lWeapon1, 
+	lMod1->set( pSp, 1.0, FIRE_DIRECT, lWeapon1,
 							lBox2, InteractEnemy, InteractEnemyWeapon );
 	lMod1->MkGetPOS()[2] = pSz;
 	lVect->add(  lMod1 );
 
 	if( pNiveau > 1 ){
 		Tourelle* lMod2 = makeModul( pSz*0.2);
-		lMod2->set( pSp, 0.8, FIRE_DIRECT, lWeapon1, 
+		lMod2->set( pSp, 0.8, FIRE_DIRECT, lWeapon1,
 								lBox2, InteractEnemy, InteractEnemyWeapon );
 		lMod2->MkGetPOS()[2] = -(pSz);
 		lVect->add(  lMod2 );
 	}
 	if( pNiveau > 2 ){
 		Tourelle* lMod2 = makeModul( pSz*0.2);
-		lMod2->set( pSp, 0.8, FIRE_DIRECT, lWeapon2, 
+		lMod2->set( pSp, 0.8, FIRE_DIRECT, lWeapon2,
 								lBox2, InteractEnemy, InteractEnemyWeapon );
 		lMod2->MkGetPOS()[0] = -(pSz);
 		lVect->add(  lMod2 );
 	}
-	
+
 	lVect->setRadius( pSz +2);
-	
+
 
 	return lVect;
 }
@@ -708,7 +710,7 @@ ShipsMaker::makeCuirasse( float pSz, Sprite3dObj* pSp, int pNiveau)
 
 
 	ObjVect *lVect = new ObjVect();
-	
+
 	O3dObj* lCore = new O3dObjPrim( O3dObjPrim::PrimSphere, pSz, 9, 12 );
 	lCore->setObjProps( &cPropsBlindage );
 	lCore->MkGetANGLE()[1] = 90;
@@ -728,14 +730,14 @@ ShipsMaker::makeCuirasse( float pSz, Sprite3dObj* pSp, int pNiveau)
 	T3dBox lBox3( -60, -60, -60, 60,  60,  60 );
 
 	Tourelle* lTour = makeModul( pSz*0.1 );
-	lTour->set( pSp, 0.4, FIRE_DIRECT, lWeapon1, 
+	lTour->set( pSp, 0.4, FIRE_DIRECT, lWeapon1,
 							lBox2, InteractEnemy, InteractEnemyWeapon );
 	lTour->MkGetPOS()[0] = pSz;
 	lVect->add(  lTour );
 
 	if( pNiveau > 0 ){
 		lTour = makeModul( pSz*0.1 );
-		lTour->set( pSp, 0.4, FIRE_DIRECT, lWeapon1, 
+		lTour->set( pSp, 0.4, FIRE_DIRECT, lWeapon1,
 								lBox2, InteractEnemy, InteractEnemyWeapon );
 		lTour->getTransf().TransfDouble3::get( POS )[0] = -pSz;
 		lTour->MkGetPOS()[0] = -pSz;
@@ -744,7 +746,7 @@ ShipsMaker::makeCuirasse( float pSz, Sprite3dObj* pSp, int pNiveau)
 
 
 	lTour = makeModul( pSz*0.15 );
-	lTour->set( pSp, 1.0, FIRE_DIRECT, WEAPON_PLASMA_GREEN, 
+	lTour->set( pSp, 1.0, FIRE_DIRECT, WEAPON_PLASMA_GREEN,
 							lBox3, InteractEnemy, InteractEnemyWeapon );
 	lTour->getTransf().TransfDouble3::get( POS )[1] = -pSz;
 	lTour->MkGetPOS()[0] = -pSz;
@@ -752,7 +754,7 @@ ShipsMaker::makeCuirasse( float pSz, Sprite3dObj* pSp, int pNiveau)
 
 	if( pNiveau > 1 ){
 		lTour = makeModul( pSz*0.15 );
-		lTour->set( pSp, 1.0, FIRE_DIRECT, WEAPON_PLASMA_GREEN, 
+		lTour->set( pSp, 1.0, FIRE_DIRECT, WEAPON_PLASMA_GREEN,
 								lBox3, InteractEnemy, InteractEnemyWeapon );
 		lTour->getTransf().TransfDouble3::get( POS )[1] = -pSz;
 		lTour->MkGetPOS()[0] = -pSz;
@@ -784,12 +786,12 @@ ShipsMaker::makeBaseTore( float pSz, Sprite3dObj* pSp, int pNiveau)
 		lWeapon1 = WEAPON_PLASMA2;
 		lWeapon2 = WEAPON_PLASMA_BLUE;
 		lWeapon3 = WEAPON_BIG_MISSILE;
-	} 
+	}
 
- 
-	
+
+
 	ObjVect *lVect = new ObjVect();
-	
+
 	O3dObj* lTore = new O3dObjPrim( O3dObjPrim::PrimTorus, pSz, 9, 20, pSz*0.2 );
 	lTore->setObjProps( &cPropsGrid );
 	lVect->add( lTore );
@@ -830,16 +832,16 @@ ShipsMaker::makeBaseTore( float pSz, Sprite3dObj* pSp, int pNiveau)
 	lTour->getTransf().TransfDouble3::get( POS )[0] = -pSz;
 	lVect->add( lTour );
 
-		
+
 	lTour = makeModul( pSz*0.2 );
-	lTour->set( pSp, 0.2, FIRE_DIRECT, lWeapon1, 
+	lTour->set( pSp, 0.2, FIRE_DIRECT, lWeapon1,
 							lBox2, InteractEnemy, InteractEnemyWeapon );
 	lTour->getTransf().TransfDouble3::get( POS )[1] = -pSz;
 	lVect->add(  lTour );
 
 
 	lTour = makeModul( pSz*0.2 );
-	lTour->set( pSp, 0.2, FIRE_DIRECT, lWeapon3, 
+	lTour->set( pSp, 0.2, FIRE_DIRECT, lWeapon3,
 							lBox2, InteractEnemy, InteractEnemyWeapon );
 	lTour->getTransf().TransfDouble3::get( POS )[0] = -pSz;
 	lTour->getTransf().TransfDouble3::get( POS )[1] = -pSz;
@@ -847,7 +849,7 @@ ShipsMaker::makeBaseTore( float pSz, Sprite3dObj* pSp, int pNiveau)
 
 	if( pNiveau >= 2 ){
 		lTour = makeModul( pSz*0.2 );
-		lTour->set( pSp, 0.2, FIRE_DIRECT, lWeapon1, 
+		lTour->set( pSp, 0.2, FIRE_DIRECT, lWeapon1,
 								lBox2, InteractEnemy, InteractEnemyWeapon );
 		lTour->getTransf().TransfDouble3::get( POS )[1] = pSz;
 		lVect->add(  lTour );
@@ -861,9 +863,9 @@ ShipsMaker::makeBaseTore( float pSz, Sprite3dObj* pSp, int pNiveau)
 //---------------- Creation Haut niveau ------------
 //--------------------------------------------------
 Sprite3d*
-ShipsMaker::makeShip( ShipType pShipType, int pMaxLife, float  pSpin, 
+ShipsMaker::makeShip( ShipType pShipType, int pMaxLife, float  pSpin,
 											float pMaxSpeed, float pMaxDeltaV, float pReactivity, int pNiveau,
-											ShipAction pShipAction ) 
+											ShipAction pShipAction )
 {
 	Double3 lSpin( pSpin, 0, 0);
 
@@ -871,32 +873,32 @@ ShipsMaker::makeShip( ShipType pShipType, int pMaxLife, float  pSpin,
 
 	O3dObj* lObj=NULL;
 	switch( pShipType  )
-		{			
-		case SHIP1 : lObj =  makeShip1( 3, lSp, WEAPON_PLASMA, pNiveau  ); 
+		{
+		case SHIP1 : lObj =  makeShip1( 3, lSp, WEAPON_PLASMA, pNiveau  );
 			break;
 
-		case SHIP2 : lObj =  makeShip2( 3, lSp, pNiveau );  
+		case SHIP2 : lObj =  makeShip2( 3, lSp, pNiveau );
 			break;
 
-		case SHIP3 : lObj =  makeShip3( 3, lSp, pNiveau );  
+		case SHIP3 : lObj =  makeShip3( 3, lSp, pNiveau );
 			break;
 
-		case INTERCEPTOR : lObj =  makeInterceptor( 3, lSp, pNiveau ); 
+		case INTERCEPTOR : lObj =  makeInterceptor( 3, lSp, pNiveau );
 			break;
 
-		case TORPILLEUR : lObj =  makeTorpilleur( 6, lSp, pNiveau ); 
+		case TORPILLEUR : lObj =  makeTorpilleur( 6, lSp, pNiveau );
 			break;
 
-		case CROISEUR : lObj =  makeCroiseur( 6+pNiveau, lSp, pNiveau ); 
+		case CROISEUR : lObj =  makeCroiseur( 6+pNiveau, lSp, pNiveau );
 			break;
 
-		case CUIRASSE : lObj  =  makeCuirasse( 10+pNiveau, lSp, pNiveau ); 
+		case CUIRASSE : lObj  =  makeCuirasse( 10+pNiveau, lSp, pNiveau );
 			break;
 
-		case BASE_TORE : lObj =  makeBaseTore( 15+pNiveau, lSp, pNiveau ); 
+		case BASE_TORE : lObj =  makeBaseTore( 15+pNiveau, lSp, pNiveau );
 			break;
 
-		case MEGA_CROISEUR : lObj =  makeMegaCroiseur( 16+pNiveau, lSp, pNiveau ); 
+		case MEGA_CROISEUR : lObj =  makeMegaCroiseur( 16+pNiveau, lSp, pNiveau );
 		lSpin[0]= pSpin*4;
 			break;
 
@@ -908,7 +910,7 @@ ShipsMaker::makeShip( ShipType pShipType, int pMaxLife, float  pSpin,
 	lSp->setO3dObj( lObj );
 
 	lSp->setMask( InteractEnemy, InteractEnemyWeapon);
-	lSp->setAction( SPRITE_ACTION_COLLISION, TheShipsMaker ); 
+	lSp->setAction( SPRITE_ACTION_COLLISION, TheShipsMaker );
 	lSp->setAction( SPRITE_ACTION_ANIMATE, TheShipsMaker );
 
 
@@ -918,12 +920,12 @@ ShipsMaker::makeShip( ShipType pShipType, int pMaxLife, float  pSpin,
 
 	lSp->SpriteLong::set(  SPRITE_TYPE, ALIEN_SHIP );
 	lSp->SpriteDouble3::set( SPRITE_SPIN, lSpin  );
-	
+
 	lSp->SpriteFloat::set( SHIP_MAX_SPEED,   pMaxSpeed );
 	lSp->SpriteFloat::set( SHIP_MAX_DELTA_V, pMaxDeltaV );
 	lSp->SpriteFloat::set( SHIP_REACTIVITY,  pReactivity );
 
-	lSp->SpriteFloat::set( SHIP_ACTION, pShipAction ); 
+	lSp->SpriteFloat::set( SHIP_ACTION, pShipAction );
 
 
 	lSp->setDeepDestroy(GL_TRUE);
