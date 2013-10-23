@@ -21,15 +21,16 @@ class SoundControler{
 
 public:
 	SoundControler( int pRate=8000, int pSafetyMargin=0.128f );
-	
+
 #ifdef SL_SOUND
 	int playSample ( slSample *pSample, int pPriority = 1, slPreemptMode pMode = SL_SAMPLE_ABORT ) ;
 	int loopSample ( slSample *pSample, int pPriority = 1, slPreemptMode pMode = SL_SAMPLE_ABORT ) ;
 	int playMusic (const char *pName, int pPriority = 1, slPreemptMode pMode = SL_SAMPLE_ABORT ) ;
 #else
-	int playSample ( slSample *pSample, int pPriority = 1 ) ;
-	int loopSample ( slSample *pSample, int pPriority = 1 ) ;
-	int playMusic (const char *pName, int pPriority = 1 ) ;
+#define slSample char
+	int playSample ( slSample *pSample, int pPriority = 1 ){return -1 ;}
+	int loopSample ( slSample *pSample, int pPriority = 1 ) {return -1 ;}
+	int playMusic (const char *pName, int pPriority = 1 ) {return -1 ;}
 #endif
 
 	slSample* loadSample( const char* pName );
