@@ -131,8 +131,8 @@ MainMenu::initStart(int pNiveau)
  // lCentre->getTransf().TransfDouble3::set( POS, lPos );
 
 
-	int pX = -50;
-	int pY = 100;
+	int pX = -110;
+	int pY =  90;
 	int lStep = -8;
 
 	AfficheLine( pX, pY, "****** Quick help* ******" );
@@ -430,6 +430,7 @@ MainMenu::enterWorld()
 	cGentileBox->getSize( &lWidth, &lHeight );
 
 	//	if( SoundControler::sNoSound == GL_FALSE )
+	/*
 		{
 						puText* cTextSound = new puText( lX+ lWidth+lStepX*2 , lY);
 						cTextSound->setLabel("Soundewrwerjewrwejrkewj  w;rlwerwerkwekr  " );
@@ -444,6 +445,7 @@ MainMenu::enterWorld()
 			else
 				cMuteSoundButton->setValue( 0 );
 		}
+		*/
 
 	lY += lStepY+lHeight;
 
