@@ -8,3 +8,5 @@ glut32.dll
 .hgignore.orig
 AsteroidFighter - Copie.exe
 AsteroidFighter.depend
+freeglut-2.8.1/src/.deps/.*\.Plo
+freeglut-2.8.1/src/.deps/libglut_la-freeglut_xinput.Plo
