@@ -81,7 +81,7 @@ SoundLibrary::getSample( PSoundId pSoundId)
 
 	return cVectSound[pSoundId];
 #else
-    return -1;
+    return NULL;
 #endif
 }
 

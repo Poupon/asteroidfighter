@@ -70,6 +70,7 @@ WorldGame::initStart( int pNiveau )
 	// Mettre une scene d'intro !!!
 
 	int lDureGen = 20; //40;
+	WorldGame::GlobalScroll = -20;
 
 	if( pNiveau == 0 )
 		{

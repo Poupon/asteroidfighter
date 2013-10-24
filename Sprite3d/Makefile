@@ -27,7 +27,8 @@ HDRS = $(SRCS:.cc=.h)
 
 # ---------------------------------------------------
 
-CFLAGS=  -DPUI_WIN -DSL_SOUND
+CFLAGS=  -DPUI_WIN  ${CC_DEBUG}
+# -DSL_SOUND
 
 CINCLUDE=-I. -I.. -DLINUX
 

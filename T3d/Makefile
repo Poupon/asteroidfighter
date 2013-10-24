@@ -22,7 +22,7 @@ HDRS = $(SRCS:.cc=.h)
 # /usr/lib/x86_64-linux-gnu
 # ---------------------------------------------------
 
-CFLAGS= 
+CFLAGS=  ${CC_DEBUG}
 
 CINCLUDE= -I. -I..
 
