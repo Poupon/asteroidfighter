@@ -28,11 +28,11 @@
 #include <Help.h>
 
 
-#include <O3d/O3dObjPLibFont.h> 
+#include <O3d/O3dObjPLibFont.h>
 
 
 //**************************************
-Help::Help( int pSize, WorldControler* pControl, O3dKamera* pKamera, Double3& pMax, 
+Help::Help( int pSize, WorldControler* pControl, O3dKamera* pKamera, Double3& pMax,
 						O3dObjProps *pProps)
 :World(pControl, pKamera, pMax, pProps)	,
  cColorTextNormal( 1.0, 1.0, 1.0, 1.0 ),
@@ -41,13 +41,13 @@ Help::Help( int pSize, WorldControler* pControl, O3dKamera* pKamera, Double3& pM
 	cPropsTextNormal.ObjPropsFloat4::set( MATERIAL, cColorTextNormal );
 }
 //-----------------------------
-void 
+void
 Help::mouseMove( int pX, int pY )
 {
   std::cout << "Help::mouseMove" << std::endl;
 }
 //-----------------------------
-void 
+void
 Help::mouseButton( int pButton, int pState, int pX, int pY)
 {
 	/*
@@ -56,10 +56,10 @@ Help::mouseButton( int pButton, int pState, int pX, int pY)
 	WorldControler::GetCurrentWorld()->getKamera()->getProject( WorldControler::GetCurrentWorld()->getPilot()->getTransf().get( POS),  lPos );
 	lPos[0] = pX;
 	lPos[1] = pY;
-	
+
 	WorldControler::GetCurrentWorld()->getKamera()->getUnProject( lPos, lResult );
 
-	std::cout << "Help::mouseButton:" << pX << " " << pY << " -> " 
+	std::cout << "Help::mouseButton:" << pX << " " << pY << " -> "
 						<<  lResult[0] << "," << lResult[1] << "," << lResult[2] << std::endl;
 
 	Sprite3d* lSprite =  isSpriteIntersect( lResult, 5, InteractObstacle );
@@ -69,23 +69,23 @@ Help::mouseButton( int pButton, int pState, int pX, int pY)
 	}
 	*/
 }
-//----------------------------- 
-long 
+//-----------------------------
+long
 Help::userAction( Sprite3d &pMySprite, void*pParam0, void*pParam1, void*pParam2 )
 {
 	//	std::cout << "UserAction -> " << (char*) pParam0 << ":"<< (long) pParam1 << ":" <<  (long) pParam2 << std::endl;
 		return 666;
 }
 //-----------------------------
-/*void 
+/*void
 Help::AfficheLine( int pX, int pY, const char* pStr ){
 
-	O3dObjText* lObjText = new O3dObjText( WorldControler::sCurrentFont, pStr ); 		
+	O3dObjText* lObjText = new O3dObjText( WorldControler::sCurrentFont, pStr );
 	Sprite3dObj* lText = new  Sprite3dObj( lObjText );
-		
+
 	Double3 lPos( pX, pY, 0.0 );
 	lText->getTransf().TransfDouble3::set( POS, lPos );
-	
+
 	lText->setObjProps( &cPropsTextNormal );
 	add( lText );
 
@@ -93,38 +93,38 @@ Help::AfficheLine( int pX, int pY, const char* pStr ){
 
 	if( sTimesRoman == NULL )
 		 sTimesRoman = new fntTexFont( "Times-Roman.txf" );
-	
+
 	O3dObjPLibFont* lObjText2 = new O3dObjPLibFont( *sTimesRoman, 4, pStr );
 
-	//	O3dObjText2d* lObjText = new O3dObjText2d( WorldControler::sCurrentFont, 16, 3, pStr ); 		
+	//	O3dObjText2d* lObjText = new O3dObjText2d( WorldControler::sCurrentFont, 16, 3, pStr );
 	Sprite3dObj* lText2 = new  Sprite3dObj( lObjText2 );
-		
+
 	Double3 lPos2( pX-30, pY, 0.0 );
 	lText2->getTransf().TransfDouble3::set( POS, lPos2 );
-	
+
 	lText2->setObjProps( &cPropsTextNormal );
 	add( lText2 );
 
 }
 */
 //-----------------------------
-void 
+void
 Help::AfficheLine( int pX, int pY, const char* pStr ){
-	
+
 	static fntTexFont  *sFont = NULL;
-	
+
 	if( sFont == NULL )
 		//		sFont = new fntTexFont( "Times-Roman.txf" );
 					sFont = new fntTexFont( "font/Helvetica.txf" );
-	
+
 	O3dObjPLibFont* lObjText = new O3dObjPLibFont( *sFont, 5, pStr );
-	
-	//	O3dObjText2d* lObjText = new O3dObjText2d( WorldControler::sCurrentFont, 16, 3, pStr ); 		
+
+	//	O3dObjText2d* lObjText = new O3dObjText2d( WorldControler::sCurrentFont, 16, 3, pStr );
 	Sprite3dObj* lText = new  Sprite3dObj( lObjText );
-	
+
 	Double3 lPos( pX, pY, 0.0 );
 	lText->getTransf().TransfDouble3::set( POS, lPos );
-	
+
 	cPropsTextNormal.ObjPropsFloat4::set( MATERIAL, cColorTextNormal );
 	lText->setObjProps( &cPropsTextNormal );
 	add( lText );
@@ -135,17 +135,17 @@ Help::makeAsteroide( EnumAsteroides pType, int pX, int pY, int pSz ){
 
 	Sprite3d* lSp;
 	Double3 lSpinAster( 10, -15, 5 );
-	
+
 	lSp=TheAsteroidesMaker->makeSpriteAsteroide( pType, pSz, 2 );
 	lSp->MkSetSPIN( lSpinAster );
 	lSp->MkGetPOS()[0] = pX;
 	lSp->MkGetPOS()[1] = pY;
 	lSp->MkGetPOS()[2] = 0;
 	lSp->setAction( SPRITE_USER_ACTION, this, const_cast<char*>("Asteroide") );
-	lSp->setAction( SPRITE_ACTION_COLLISION, NULL ); 
+	lSp->setAction( SPRITE_ACTION_COLLISION, NULL );
 	lSp->setAction( SPRITE_ACTION_ANIMATE,   NULL );
 	add( lSp );
-	
+
 }
 //-----------------------------
 void
@@ -160,35 +160,35 @@ Help::initSprite( Sprite3d* pSp, int pX, int pY )
 		pSp->MkGetPOS()[1] = pY;
 		pSp->MkGetPOS()[2] = 0;
 		//		pSp->setMask( InteractObstacle, InteractObstacle);
-		pSp->setAction( SPRITE_ACTION_COLLISION, NULL ); 
+		pSp->setAction( SPRITE_ACTION_COLLISION, NULL );
 		pSp->setAction( SPRITE_ACTION_ANIMATE, NULL );
 
 		add( pSp );
 }
 //-----------------------------
-void 
+void
 Help::makeShip( ShipType pType, int pX, int pY, int pSz )
-{	
+{
 	Sprite3d* 	lSp = TheShipsMaker->makeShip( pType, 40, 100, 0, 0, 0, 1 );
 	//		pSp->setAction( SPRITE_USER_ACTION, this, const_cast<char*>("Croiseur") );
 	initSprite( lSp, pX, pY );
 }
 //-----------------------------
-void 
+void
 Help::makeBonus( EnumBonus pType, int pX, int pY, int pSz )
 {
 	Sprite3d* lSp = TheBonusMaker->makeSpriteBonus( 2, pType, 0, 0, 1);
 	initSprite( lSp, pX, pY );
 }
 //-----------------------------
-void 
+void
 Help::makeMine( MineType pType, int pX, int pY, int pSz )
 {
 	Sprite3d* lSp = TheMinesMaker->makeMine( pType, 5, 0);
 	initSprite( lSp, pX, pY );
 }
 //-----------------------------
-void 
+void
 Help::makeWeapon( EnumWeapons pType, int pX, int pY, int pSz )
 {
 	T3dTransf lTransfNull;
@@ -197,23 +197,23 @@ Help::makeWeapon( EnumWeapons pType, int pX, int pY, int pSz )
 	initSprite( lSp, pX, pY );
 }
 //-----------------------------
-GLboolean 
+GLboolean
 Help::initStart(int pNiveau)
 {
   add( new Sky( 10*cSize, cSize*100 ) );
 
 	Sprite3d* lSp;
-	
-  
+
+
 
 	int pX = -115;
-	int pX2 = -30;
-	int pY = 90; 
+	int pX2 = -40;
+	int pY = 90;
 	int lYStep = -30;
 	int lXStep = 30;
 
 	//	AfficheLine( pX, pY, "<<< All Object >>>" );
-	//	pY += lYStep;	
+	//	pY += lYStep;
 
 	{
 		AfficheLine( pX, pY, "Asteroides" );
@@ -233,7 +233,7 @@ Help::initStart(int pNiveau)
 		makeAsteroide( ASTEROIDE_PIERRE, lX, pY, lSz );
 	}
 
-	pY += lYStep;	
+	pY += lYStep;
 
 	{
 		int lX = pX2;
@@ -248,29 +248,28 @@ Help::initStart(int pNiveau)
 		makeShip( SHIP2, lX, pY, 0 );
 		lX += lXStep;
 		makeShip( SHIP3, lX, pY, 0 );
-		lX += lXStep;		
+		lX += lXStep;
 		makeShip( TORPILLEUR, lX, pY, 0 );
 	}
 
-	pY += lYStep*1.5;	
+	pY += lYStep*1.5;
 
 	{
 		int lX = pX2;
 
 		AfficheLine( pX, pY, "Cruiser,Dreadnought," );
-		AfficheLine( pX, pY-6, "Starbase" );
+		AfficheLine( pX, pY-6, "Starbase, Mother ship" );
 
 		makeShip( CROISEUR, lX, pY, 0 );
-		lX += lXStep*1.5;
+		lX += lXStep*0.8;
 		makeShip( CUIRASSE, lX, pY, 0 );
-		lX += lXStep*1.5;
+		lX += lXStep*1.2;
 		makeShip( BASE_TORE, lX, pY, 0 );
-		lX += lXStep;
-		lX += lXStep;
+		lX += lXStep*1.8;
 		makeShip( MEGA_CROISEUR, lX, pY, 0 );
 	}
 
-	pY += lYStep;	
+	pY += lYStep;
 
 	{
 		int lX = pX2;
@@ -284,7 +283,7 @@ Help::initStart(int pNiveau)
 		lX += lXStep/2;
 		makeBonus( CONTAINER_UPGRAD, lX, pY, 0 );
 	}
-	pY += lYStep;	
+	pY += lYStep;
 
 	{
 		int lX = pX2;
@@ -294,7 +293,7 @@ Help::initStart(int pNiveau)
 		makeMine( MINE_ION, lX, pY, 0 );
 		lX += lXStep;
 	}
-	pY += lYStep;	
+	pY += lYStep;
 	{
 		int lX = pX2;
 		AfficheLine( pX, pY, "Weapons" );
@@ -328,12 +327,12 @@ Help::initStart(int pNiveau)
 	//  Double3 lGrow( 4, 4, 4 );
 	//  lPilot->MkSetSCALE( lGrow );
 	lPilot->setAction( SPRITE_ACTION_ANIMATE, NULL );
-	lPilot->setAction( SPRITE_ACTION_COLLISION, NULL ); 
+	lPilot->setAction( SPRITE_ACTION_COLLISION, NULL );
 	lPilot->setAction( SPRITE_USER_ACTION, this, const_cast<char*>("Pilot") );
 	lPilot->SpriteFloat::set( SPRITE_LIFE_POINT, 999999999 ); // Pour neutraliser les deplacement
-		
+
   add( lPilot );
-  setPilot( lPilot ); 
+  setPilot( lPilot );
 	*/
   return GL_TRUE;
 }
