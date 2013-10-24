@@ -1,6 +1,8 @@
 #include <SceneManager.h>
 #include <Sprite3d/WorldControler.h>
 
+#include <Sprite3d/Scene.h>
+
 
 // **************************************
 SceneManager::SceneManager()
@@ -13,10 +15,18 @@ SceneManager::SceneManager()
 //------------------------------
 SceneManager::~SceneManager()
 {
-	for( unsigned int i=0; i<  cSceneVect.size(); i++ )
+	/* Bug ! (les scene sont peut deja detruite ? 
+	std::cout << "~SceneManager " << cSceneVect.size() << std::endl;
+		for( unsigned int i=0; i<  cSceneVect.size(); i++ )
 		{
-			delete cSceneVect[i];
-		}
+			std::cout << "~SceneManager " << i << " " << cSceneVect[i]->getStrName() << std::endl;
+			if( cSceneVect[i] != NULL ){
+				delete cSceneVect[i];
+				cSceneVect[i] = NULL;
+			}
+			}
+		std::cout << "~SceneManager end" << std::endl;
+	*/
 	cSceneVect.clear();
 }
 //------------------------------

@@ -96,6 +96,9 @@ public:
 
 public:
 	Sprite3d( float cRadius, float pLifeTime=-1.0 );
+  virtual ~Sprite3d();
+	virtual const char*  getStrName() { return ""; }
+
 	virtual void drawObj( O3dViewProps & pVProps, O3dObjProps *pObjProps )	{;	}
 	virtual void makeDraw( O3dViewProps& pVProps, O3dObjProps* pObjProps);
 	

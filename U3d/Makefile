@@ -17,7 +17,7 @@ HDRS = $(SRCS:.cc=.h)
 
 # ---------------------------------------------------
 
-CFLAGS= 
+CFLAGS= ${CC_DEBUG}
 
 CINCLUDE=-I. -I..
 # -I/usr/openwin/include  -I${DIR_OPENGL_INC} -I${DIR_GLUT_INC} -I${DIR_PLIB_INC}

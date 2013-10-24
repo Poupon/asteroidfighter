@@ -28,7 +28,7 @@ HDRS = $(SRCS:.cc=.h)
 
 # ---------------------------------------------------
 
-CFLAGS= 
+CFLAGS=  ${CC_DEBUG}
 
 CINCLUDE=-I. -I.. 
 

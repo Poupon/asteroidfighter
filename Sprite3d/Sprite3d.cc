@@ -23,6 +23,9 @@ Sprite3d::Sprite3d( float cRadius, float pLifeTime )
 	}
 }
 //----------------------------------
+Sprite3d::~Sprite3d(){
+}
+//----------------------------------
 void 
 Sprite3d::resetLife()
 {

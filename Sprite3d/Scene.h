@@ -22,11 +22,12 @@ protected:
 
 public:
 	Scene( const char* pName, int pHardness, float  pInterval, float pH, float pV );
-	virtual~Scene(){;}
+	virtual~Scene(){std::cout << "~Scene " << cName << std::endl;}
 
 	virtual GLboolean animate();
 	virtual GLboolean leaveWorld() { return GL_FALSE;}
 
+	virtual const char*  getStrName() { return cName.c_str(); }
 	std::string& getName() { return cName; }
 	int          getHardness() { return cHardness; }
 	float        getInterval() { return cInterval; }

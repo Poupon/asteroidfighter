@@ -26,7 +26,7 @@ LIBS=  -lSpace -lU3d -lSprite3d -lO3d -lT3d   -lplibpuaux -lplibpu -lplibul  -lp
 
 
 # ---------------------------------------------------
-CFLAGS=  -DPUI_WIN -DSL_SOUND
+CFLAGS=  -DPUI_WIN -DSL_SOUND  ${CC_DEBUG}
 
 CINCLUDE=-I. -I..
 
