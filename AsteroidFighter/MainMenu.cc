@@ -291,6 +291,10 @@ MainMenu::MyButtonCb( puObject * pObject)
 {
   std::cout <<  "MyButtonCb :" << pObject->getValue() << std::endl;
 
+	if( pObject == TheMainMenu->cReadAutoBox ){
+        	TheMainMenu->getMyControler()->startFile();
+	}
+
 
 	if( pObject == TheMainMenu->cGentileBox )
         WorldControler::sDifficultyLevel = 0;
@@ -429,6 +433,10 @@ MainMenu::enterWorld()
 	cGentileBox->setCallback( MyButtonCb ) ;
 	cGentileBox->getSize( &lWidth, &lHeight );
 
+    cReadAutoBox= new puOneShot( lX, lY, "SReadAuto Save" );
+	cReadAutoBox->setCallback( MyButtonCb ) ;
+	cReadAutoBox->getSize( &lWidth, &lHeight );
+
 	//	if( SoundControler::sNoSound == GL_FALSE )
 	/*
 		{
@@ -472,6 +480,11 @@ MainMenu::leaveWorld()
 	//	if( cQuickHelp )
 	//		puDeleteObject ( cQuickHelp );
 	//	cQuickHelp = NULL;
+
+	if(cReadAutoBox )
+		puDeleteObject(  cReadAutoBox);
+		cReadAutoBox= NULL;
+
 
 
 	if(cGentileBox )

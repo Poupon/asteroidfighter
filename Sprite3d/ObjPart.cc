@@ -10,9 +10,9 @@
 #include <Random.h>
 
 //------------------------------------------------
-// Optimisation posible : definir un allocateur pour 
+// Optimisation posible : definir un allocateur pour
 // ObjPart (redefinir new/delete)
-// 
+//
 // Changer le tableau pour reutiliser les emplacements libre
 // (faire un chainage des emplacements libres)
 
@@ -29,8 +29,8 @@ ObjPart::Part::Part( )
 GLboolean
 ObjPart::Part::animate( )
 {
-	float lTime = WorldControler::GetTime()-cTime; 
-//	cout << WorldControler::GetTime() << "-" << cTime <<"=" << lTime 
+	float lTime = WorldControler::GetTime()-cTime;
+//	cout << WorldControler::GetTime() << "-" << cTime <<"=" << lTime
 //			<< "   " << PartFloat::get(SIZE) << endl;
 
 	if( (  PartFloat::get(PART_LIFETIME)!= -1.0 && lTime >= PartFloat::get(PART_LIFETIME))
@@ -41,7 +41,7 @@ ObjPart::Part::animate( )
 
 		return GL_FALSE; // On le dit au moteur
 	}
- 
+
 	if( PartDouble3::getFlag( PART_SPEED ) )
 	{
 		PartDouble3::get( PART_POSITION ) += PartDouble3::get( PART_SPEED );
@@ -49,7 +49,7 @@ ObjPart::Part::animate( )
 
 	if( PartDouble3::getFlag( PART_ACCELERATION ) )
 	{
-		PartDouble3::get( PART_SPEED)+= PartDouble3::get(PART_ACCELERATION);		
+		PartDouble3::get( PART_SPEED)+= PartDouble3::get(PART_ACCELERATION);
 	}
 
 	if( PartFloat::getFlag( PART_GROW ) )
@@ -79,7 +79,7 @@ ObjPart::Part::animate( )
 }
 //--------------------------
 void ObjPart::Part::draw( O3dViewProps& pVProps, O3dObjProps* pObjProps )
-{	
+{
 	if( cInLife == GL_FALSE )
 		return;
 
@@ -103,8 +103,8 @@ ObjPart::ObjPart( float cRadius, ObjPart::Part* pPrototype )
 	 cPrototype( pPrototype ),
 	 cFree(NULL),
 	 cNbLifePart(0),
-	 cForceTransparency(GL_FALSE ),
-	 cMemNumber( 0 )
+     cMemNumber( 0 ),
+	 cForceTransparency(GL_FALSE )
 {
 	if( cPrototype == NULL )
 		cPrototype = new ObjPart::Part;
@@ -118,12 +118,12 @@ ObjPart::~ObjPart()
 		}
 
 	cVectPart.clear();
-	
+
 	delete cPrototype;
 }
 //--------------------------
 inline ObjPart::Part *
-ObjPart::allocPart()  
+ObjPart::allocPart()
 {
 
 	Part* lPart= cFree;
@@ -149,7 +149,7 @@ ObjPart::allocPart()
 	return lPart;
 }
 //----------------------------
-inline	void     
+inline	void
 ObjPart::freePart( ObjPart::Part *pPart)
 {
 	cNbLifePart--;
@@ -162,7 +162,7 @@ ObjPart::freePart( ObjPart::Part *pPart)
 	// 	cout << "freePart:" << pPart << endl;
 }
 //----------------------------------------------
-void 
+void
 ObjPart::init(  float pLifeTime, float pSize, int pNb, int pStartCycle, GLboolean pForceTransparency )
 {
 	ObjPartFloat::set( PART_SIZE, pSize );
@@ -171,7 +171,7 @@ ObjPart::init(  float pLifeTime, float pSize, int pNb, int pStartCycle, GLboolea
 	cMemNumber = ObjPartInt::get( PART_GEN_NUMBER );
 
 
-	// Demarrage a chaud du moteur 
+	// Demarrage a chaud du moteur
 	if( pNb )
 	{
 		if( ObjPartInt::getFlag( PART_RAND_NUMBER ))
@@ -191,7 +191,7 @@ ObjPart::init(  float pLifeTime, float pSize, int pNb, int pStartCycle, GLboolea
 			}
 	}
 
-}	
+}
 //----------------------------------------------
 #define SET_VAL( TYPE, TYPE_RAND, VAR )  \
  Double3 VAR;  \
@@ -203,7 +203,7 @@ ObjPart::init(  float pLifeTime, float pSize, int pNb, int pStartCycle, GLboolea
 	{ \
 		VAR += randDouble3( ObjPartDouble3::get( TYPE_RAND )); \
 	} \
-	lPart->PartDouble3::set( TYPE, VAR ); 
+	lPart->PartDouble3::set( TYPE, VAR );
 
 #define SET_VALDYN( TYPE, TYPE_RAND, VAR ) \
  Double3 VAR; \
@@ -222,7 +222,7 @@ ObjPart::init(  float pLifeTime, float pSize, int pNb, int pStartCycle, GLboolea
 	}
 
 
-void 
+void
 ObjPart::generateOnePart()
 {
 	ObjPart::Part* lPart = allocPart();
@@ -269,7 +269,7 @@ ObjPart::generateOnePart()
 	}
 	lPart->PartFloat::set( PART_LIFETIME, lLifeTime );
 
-	
+
 	float lSize = ObjPartFloat::get( PART_SIZE );
 	if( ObjPartFloat::getFlag( PART_SIZE_RAND ) )
 	{
@@ -277,7 +277,7 @@ ObjPart::generateOnePart()
 	}
 	lPart->PartFloat::set( PART_SIZE, lSize );
 
-	 
+
 	float lGrow =0.0;
 	if( ObjPartFloat::getFlag(PART_GROW))
 		lGrow = ObjPartFloat::get( PART_GROW );
@@ -294,10 +294,10 @@ ObjPart::generateOnePart()
 
 
 
-	
+
 	if( lPart->initPart() == GL_FALSE )
 		freePart( lPart );
-} 
+}
 //--------------------------
 GLboolean ObjPart::animate()
 {
@@ -312,7 +312,7 @@ GLboolean ObjPart::animate()
 						}
 				}
 		}
-	
+
 	if( ObjPartInt::getFlag( PART_GEN_NUMBER ) || ObjPartInt::getFlag( PART_RAND_NUMBER )  )
 		{
 			int total = 0;
@@ -321,7 +321,7 @@ GLboolean ObjPart::animate()
 			if( gen_var != 0 )
 				{
 					int gen_number = ObjPartInt::get( PART_GEN_VAR_NUMBER ) + gen_var;
-					ObjPartInt::set( PART_GEN_NUMBER, gen_number );					
+					ObjPartInt::set( PART_GEN_NUMBER, gen_number );
 				}
 
 			if(  ObjPartInt::getFlag( PART_DISPERSION_NUMBER ))
@@ -329,7 +329,7 @@ GLboolean ObjPart::animate()
 					int gen_number = 	ObjPartInt::get( PART_GEN_NUMBER );
 					gen_number += static_cast<int>(randf( ObjPartInt::get( PART_RAND_NUMBER ) ));
 
-					if( gen_number > cMemNumber + ObjPartInt::get( PART_DISPERSION_NUMBER ))						
+					if( gen_number > cMemNumber + ObjPartInt::get( PART_DISPERSION_NUMBER ))
 						gen_number = cMemNumber + ObjPartInt::get( PART_DISPERSION_NUMBER );
 					else
 						if(  gen_number < cMemNumber - ObjPartInt::get( PART_DISPERSION_NUMBER ))
@@ -343,19 +343,19 @@ GLboolean ObjPart::animate()
 				{
 					if( ObjPartInt::getFlag( PART_GEN_NUMBER ))
 						total += ObjPartInt::get( PART_GEN_NUMBER );
-			
+
 					if( ObjPartInt::getFlag( PART_RAND_NUMBER ))
-						total += static_cast<int>(randf( ObjPartInt::get( PART_RAND_NUMBER ) ));					
+						total += static_cast<int>(randf( ObjPartInt::get( PART_RAND_NUMBER ) ));
 				}
-			
+
 			// ATTENTION total PEUT DEVENIR EGAL A 0 SI LE NOMBRE DE PARTICULE EST TROP GRAND
 			// PREVOIR UN AUTRE SYSTEME
-			
-			//		cout << "Part:" << cNbLifePart << "/" << cVectPart.size() 
+
+			//		cout << "Part:" << cNbLifePart << "/" << cVectPart.size()
 			//				 << " New:" << total << "->" << total*WorldControler::GetRatio() << endl;
-			
+
 			total = static_cast<int> (total*WorldControler::GetRatio());
-			
+
 			for( int i = 0; i < total; i++ )
 				{
 					generateOnePart();
@@ -363,7 +363,7 @@ GLboolean ObjPart::animate()
 
 		}
 
-	
+
 	return GL_TRUE;
 }
 //--------------------------
@@ -379,12 +379,12 @@ void ObjPart::draw( O3dViewProps& pVProps, O3dObjProps* pObjProps)
 
 
 	if( cForceTransparency )
-		{			
+		{
 			glEnable( GL_BLEND );
 			glDepthMask( GL_FALSE );
 			glBlendFunc( GL_SRC_ALPHA, GL_ONE );
 		}
-	
+
 
 	for( VPart::iterator iter = cVectPart.begin(); iter != cVectPart.end(); ++iter )
 	{
@@ -394,7 +394,7 @@ void ObjPart::draw( O3dViewProps& pVProps, O3dObjProps* pObjProps)
 				glDepthMask( GL_FALSE );
 				glBlendFunc( GL_SRC_ALPHA, GL_ONE );
 			}
-	
+
 
 		(*iter)->draw(pVProps, pObjProps );
 
@@ -404,18 +404,18 @@ void ObjPart::draw( O3dViewProps& pVProps, O3dObjProps* pObjProps)
 				glDepthMask( GL_TRUE );
 				glDisable( GL_BLEND );
 				glEnable( GL_LIGHTING );
-			}		
+			}
 	}
 
 	if( cForceTransparency )
-		{			
+		{
 			glDepthMask( GL_TRUE );
 			glDisable( GL_BLEND );
 			glEnable( GL_LIGHTING );
 		}
 }
 //*****************************************
-void 
+void
 BaseObjPart::draw( O3dViewProps& pVProps, O3dObjProps* pObjProps )
 {
 	if( cInLife == GL_FALSE )
@@ -426,7 +426,7 @@ BaseObjPart::draw( O3dViewProps& pVProps, O3dObjProps* pObjProps )
 
 	lTransf.set( POS,   PartDouble3::get( PART_POSITION ) );
 	lTransf.set( ANGLE, PartDouble3::get( PART_ANGLE ) );
-	
+
 	double lSize = PartFloat::get( PART_SIZE );
   lTransf.get( SCALE )[0] =  lSize;
   lTransf.get( SCALE )[1] =  lSize;
@@ -434,13 +434,13 @@ BaseObjPart::draw( O3dViewProps& pVProps, O3dObjProps* pObjProps )
 
 	{
 		glPushMatrix();
-		
+
 		lTransf.exec();
-		
+
 		glColor4fv( PartFloat4::get( PART_COLOR ));
-		
+
 		draw();
-		
+
 		glPopMatrix();
 	}
 }
@@ -453,40 +453,40 @@ Float3 sNormTri(-0.707107, -0, 0.707107);
 
 //---------------------------
 void FacetPart::draw( )
-{	
+{
 	glBegin( GL_POLYGON );
 
 	//	Utils3d::Normal( sPtTri1, sPtTri2, sPtTri3, sNormTri );
 	/*	cout << "lNorm:"
-			 <<  sNormTri[0] << ", " 
-			 <<  sNormTri[1] << ", " 
+			 <<  sNormTri[0] << ", "
+			 <<  sNormTri[1] << ", "
 			 <<  sNormTri[2] << endl;
 	*/
 
 	glNormal3fv( sNormTri );
 	glVertex3fv( sPtTri1 );
-	
+
 	//	glNormal3fv( sNormTri );
 	glVertex3fv( sPtTri2 );
-	
+
 	//	glNormal3fv( sNormTri );
 	glVertex3fv( sPtTri3 );
-	
+
 	glEnd();
 }
 //*****************************************
-void 
+void
 SpherePart::draw()
-{	
+{
 	static GLUquadricObj *quadObj = NULL;
 	if( quadObj == NULL )
 		quadObj = gluNewQuadric();
 
-	double lSize = PartFloat::get( PART_SIZE );
+//	double lSize = PartFloat::get( PART_SIZE );
 
 	gluQuadricDrawStyle(quadObj, GLU_FILL);
 	gluQuadricNormals(quadObj, GLU_SMOOTH);
-	gluSphere(quadObj, 1, cNb, cNb);	
+	gluSphere(quadObj, 1, cNb, cNb);
 }
- 
+
 //*****************************************

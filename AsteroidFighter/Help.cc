@@ -35,8 +35,8 @@
 Help::Help( int pSize, WorldControler* pControl, O3dKamera* pKamera, Double3& pMax,
 						O3dObjProps *pProps)
 :World(pControl, pKamera, pMax, pProps)	,
- cColorTextNormal( 1.0, 1.0, 1.0, 1.0 ),
- cSize( pSize )
+ cSize( pSize ),
+ cColorTextNormal( 1.0, 1.0, 1.0, 1.0 )
 {
 	cPropsTextNormal.ObjPropsFloat4::set( MATERIAL, cColorTextNormal );
 }
@@ -202,7 +202,7 @@ Help::initStart(int pNiveau)
 {
   add( new Sky( 10*cSize, cSize*100 ) );
 
-	Sprite3d* lSp;
+//	Sprite3d* lSp;
 
 
 

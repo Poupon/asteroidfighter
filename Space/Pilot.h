@@ -1,11 +1,14 @@
 #ifndef h_Pilot_h
 #define h_Pilot_h
 
+#include <istream>
+#include <ostream>
+
 #include <Sprite3d/Sprite3dPilot.h>
 #include <Sprite3d/ObjPart.h>
 #include <Sprite3d/AutoPtr.h>
 
-#include <Sprite3d/Action.h> 
+#include <Sprite3d/Action.h>
 
 
 class WorldGame;
@@ -34,7 +37,7 @@ class Pilot :  public  Sprite3dPilot, public Action
 	AutoPtr<O3dObj>   caObjShield2;
 
 	AutoPtr<ObjPart>  caObjFire;
-	
+
 	AutoPtr<T3dTexture> caTexCore;
 	AutoPtr<ObjPart> caObjRecharge;
 
@@ -54,10 +57,10 @@ class Pilot :  public  Sprite3dPilot, public Action
 	long  cLevelField;
 	long  cLevelMotor;
 	long  cLevelWarp;
-	
+
 	long  cScore;
 
-	
+
 	GLboolean cWarpBegin;
 
 	float cXDecalKamera;
@@ -65,7 +68,8 @@ class Pilot :  public  Sprite3dPilot, public Action
 
 public:
 	Pilot();
-
+     void write( std::ostream & pOs);
+     bool read( std::istream & pIs );
 
 protected:
 	void firePhaser();
@@ -79,7 +83,7 @@ protected:
 	virtual GLboolean collision( Sprite3d &pMySprite, Sprite3d &pSprite, void *pParam );
 	virtual GLboolean kill( Sprite3d &pMySprite, void*pParam );
 
-	
+
 	virtual void drawControl();
 	virtual GLboolean animate();
     void scrollKamera();

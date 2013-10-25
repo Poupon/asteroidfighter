@@ -58,8 +58,149 @@ Pilot::InitSound( World* pWorld)
 	sSoundLaser = pWorld->getMySoundLibrary()->loadSample( "PilotLaser.wav" );
 	sSoundFireMissile = pWorld->getMySoundLibrary()->loadSample( "PilotLaunchMissile.wav" );
 }
+//-----------------------------------
+static const char* sStrPilot = "(Pilot";
+static const char* sStrLevPhaser ="LevelPhaser";
+static const char* sStrLevLauncher ="LevelLauncher";
+static const char* sStrLevField ="LevelField";
+static const char* sStrLevMotor ="LevelMotor";
+static const char* sStrMaxErg ="MaxErg";
+static const char* sStrMaxRocket ="MaxRocket";
+static const char* sStrLife ="Life";
+static const char* sStrField ="Field";
+static const char* sStrErg ="Erg";
+static const char* sStrRocket ="Rocket";
+static const char* sStrScore ="Score";
+//-----------------------------------
 
+void Pilot::write( std::ostream & pOs){
 
+    int lField = SpriteFloat::get( SPRITE_LIFE_POINT );
+
+    pOs << sStrPilot << ' '
+        << sStrLevPhaser << ' ' << cLevelPhaser << ' '
+        << sStrLevLauncher << ' ' << cLevelLauncher << ' '
+        << sStrLevField << ' '     << cLevelField << ' '
+        << sStrLevMotor << ' ' << cLevelMotor << ' '
+        << sStrMaxErg << ' ' << cMaxErg<< ' '
+        << sStrMaxRocket << ' ' << cMaxRocket << ' '
+        << sStrLife      << ' ' << cNbLife << ' '
+        << sStrField << ' ' << lField << ' '
+        << sStrRocket << ' ' << cRocket<< ' '
+        << sStrErg     << ' ' << cErg<< ' '
+        << sStrScore   << ' ' << cScore << ' '
+        << ")";
+ }
+//-----------------------------------
+bool Pilot::read( std::istream & pIs ){
+
+    std::string lTmpStr;
+
+	long  lErg=0;
+	long  lRocket=0;
+	long  lNbLife=0;
+	long  lGold=0;
+	long  lField=0;
+
+	long  lMaxErg=0;
+	long  lMaxRocket=0;
+
+	long  lLevelPhaser=0;
+	long  lLevelLauncher=0;
+
+	long  lLevelField=0;
+	long  lLevelMotor=0;
+	long  lScore = 0;
+//	long  lLevelWarp;
+
+    pIs >> lTmpStr;
+
+    std::cout << "read " << lTmpStr << std::endl;
+
+    if( lTmpStr.compare( sStrPilot ) != 0 )
+        return false;
+
+    pIs >> lTmpStr;
+    if( lTmpStr.compare( sStrLevPhaser ) != 0 )
+        return false;
+    pIs >> lLevelPhaser;
+
+     pIs >> lTmpStr;
+    if( lTmpStr.compare( sStrLevLauncher ) != 0 )
+        return false;
+    pIs >> lLevelLauncher;
+
+     pIs >> lTmpStr;
+    if( lTmpStr.compare( sStrLevField ) != 0 )
+        return false;
+    pIs >> lLevelField;
+
+     pIs >> lTmpStr;
+    if( lTmpStr.compare( sStrLevMotor ) != 0 )
+        return false;
+    pIs >> lLevelMotor;
+
+     pIs >> lTmpStr;
+    if( lTmpStr.compare( sStrMaxErg ) != 0 )
+        return false;
+    pIs >> lMaxErg;
+
+     pIs >> lTmpStr;
+    if( lTmpStr.compare( sStrMaxRocket ) != 0 )
+        return false;
+    pIs >> lMaxRocket;
+
+     pIs >> lTmpStr;
+    if( lTmpStr.compare( sStrLife ) != 0 )
+        return false;
+    pIs >> lNbLife;
+
+     pIs >> lTmpStr;
+    if( lTmpStr.compare( sStrField ) != 0 )
+        return false;
+    pIs >> lField;
+
+     pIs >> lTmpStr;
+    if( lTmpStr.compare( sStrRocket ) != 0 )
+        return false;
+    pIs >> lRocket;
+
+     pIs >> lTmpStr;
+    if( lTmpStr.compare( sStrErg ) != 0 )
+        return false;
+    pIs >> lErg;
+
+     pIs >> lTmpStr;
+    if( lTmpStr.compare( sStrScore ) != 0 )
+        return false;
+    pIs >> lScore;
+
+    cErg =lErg;
+    cRocket = lRocket;
+	cNbLife = lNbLife;
+	//cGold;
+
+    SpriteFloat::set( SPRITE_LIFE_POINT, lField );
+
+	cMaxErg = lMaxErg;
+	cMaxRocket = lMaxRocket;
+
+	cLevelPhaser = lLevelPhaser;
+	cLevelLauncher = lLevelLauncher;
+
+	cLevelField = lLevelField;
+	cLevelMotor = lLevelMotor;
+	//cLevelWarp;
+
+	cScore = lScore;
+
+/*
+     pIs >> lTmpStr;
+    if( lTmpStr.compare(  ) != 0 )
+        return false;
+    pIs >> ;
+*/
+ }
 //**********************************************
 Pilot::Pilot( )
 	:Sprite3dPilot( NULL ),
@@ -463,7 +604,7 @@ Pilot::warp()
 	 //    SoundControler::sTheSoundControler->playSample(
 	 //     WorldControler::WC->getCurrentWorld()->getMySoundLibrary()->getSample(sSoundWarp));
 
-	 
+
 	 if( cWarpBegin == GL_FALSE )
 		 {
 			 PLAYSAMPLE( GETSAMPLE( sSoundWarp ));
@@ -1074,7 +1215,7 @@ Pilot::fireRocket()
 
 	// PLAYSAM	// Mettre un son differend selon la puissance du tir !
 	PLAYSAMPLE( GETSAMPLE( sSoundFireMissile ));
-	
+
 
 
 	//	TheWeaponsMaker->makeSprite(  &getTransf(), cLevelLauncher, WEAPON_ROCKET, InteractAllied ,  InteractAlliedWeapon);
@@ -1338,19 +1479,19 @@ Pilot::drawControl()
 	T3dColor::Yellow();
 	sprintf( tmp, "Fuel %ld", cErg );
 	WorldControler::sCurrentFont->displayAt( lX, lY, lZ, tmp);
-	lX += 50;
+	lX += 40;
 	//	lY -= 10;
 
 	T3dColor::LightBlue();
 	sprintf(tmp, "Rocket %ld", cRocket );
 	WorldControler::sCurrentFont->displayAt( lX, lY, lZ, tmp);
-	lX += 50;
+	lX += 40;
 	//	lY -= 10;
 
 	T3dColor::Pink();
 	sprintf(tmp, "Shield %ld", (long)SpriteFloat::get( SPRITE_LIFE_POINT ));
 	WorldControler::sCurrentFont->displayAt( lX, lY, lZ, tmp);
-	lX += 50;
+	lX += 40;
 
 	//	T3dColor::Yellow();
 	//	sprintf(tmp,"%ld", cGold);
@@ -1360,13 +1501,13 @@ Pilot::drawControl()
 	T3dColor::Red();
 	sprintf(tmp,"Life:%ld", cNbLife);
 	WorldControler::sCurrentFont->displayAt( lX, lY, lZ, tmp);
-	lX += 50;
+	lX += 40;
 	//	lY -= 10;
 
 	T3dColor::White();
 	sprintf(tmp,"Score:%ld", cScore);
 	WorldControler::sCurrentFont->displayAt( lX, lY, lZ, tmp);
-	lX += 50;
+	//lX += 40;
 	//	lY -= 10;
 
 
@@ -1590,7 +1731,7 @@ Pilot::key( unsigned char key, int x, int y )
 			transfertErgToField();
 			break;
 
-			
+
 		case 'q':
 		case 'Q':
 		case 'a':
@@ -1598,7 +1739,7 @@ Pilot::key( unsigned char key, int x, int y )
 			if( cWarpBegin == GL_FALSE )
 				cWarpBegin = GL_TRUE;
 			else
-				cWarpBegin = GL_FALSE;				
+				cWarpBegin = GL_FALSE;
 			warp();
 			break;
 

@@ -57,7 +57,7 @@ int LoadBMP(T3dLoadImage& context, const char* pStr)
   pic = NULL;
   fp=fopen(pStr,"r");
   if (!fp) {  std::cerr << "Couldn't open file"; return T3dLoadImage::T3D_IMG_ERROR; }
-  
+
   fseek(fp, 0L, 2);      /* figure out the file size */
   filesize = ftell(fp);
   fseek(fp, 0L, 0);
@@ -99,7 +99,7 @@ int LoadBMP(T3dLoadImage& context, const char* pStr)
   }
 
   DEBUG {
-    fprintf(stderr,"\nLoadBMP:\tbfSize=%d, bfOffBits=%d\n",bfSize,bfOffBits);
+    fprintf(stderr,"\nLoadBMP:\tbfSize=%ld, bfOffBits=%ld\n",bfSize,bfOffBits);
     fprintf(stderr,"\t\tbiSize=%d, biWidth=%d, biHeight=%d, biPlanes=%d\n",
 	    biSize, biWidth, biHeight, biPlanes);
     fprintf(stderr,"\t\tbiBitCount=%d, biCompression=%d, biSizeImage=%d\n",
@@ -112,7 +112,7 @@ int LoadBMP(T3dLoadImage& context, const char* pStr)
     { std::cout << "Error reading file"; goto ERROR; }
 
   /* error checking */
-  if ((biBitCount!=1 && biBitCount!=4 && biBitCount!=8 && biBitCount!=24) || 
+  if ((biBitCount!=1 && biBitCount!=4 && biBitCount!=8 && biBitCount!=24) ||
       biPlanes!=1 || biCompression>BI_RLE4) {
     std::cout << "File format error.";
     goto ERROR;
@@ -145,7 +145,7 @@ int LoadBMP(T3dLoadImage& context, const char* pStr)
       if (!os2File) getc(fp);         /* unused */
     }
 
-    if (ferror(fp)) 
+    if (ferror(fp))
       { std::cout << "Error reading file"; goto ERROR; }
   }
 
@@ -189,7 +189,7 @@ if (rv) std::cout << "File appears truncated.";
  ERROR:
   fclose(fp);
   return T3dLoadImage::T3D_IMG_ERROR;
-}  
+}
 
 
 /*******************************************/
@@ -208,7 +208,7 @@ static INT32 loadBMP1(FILE *fp, byte *pic, INT32 w, INT32 h)
 	c = getc(fp);
 	bitnum = 0;
       }
-      
+
       if (j<w) {
 	*pp++ = (c & 0x80) ? 1 : 0;
 	c <<= 1;
@@ -218,7 +218,7 @@ static INT32 loadBMP1(FILE *fp, byte *pic, INT32 w, INT32 h)
   }
 
   return (ferror(fp));
-}  
+}
 
 
 
@@ -254,7 +254,7 @@ static INT32 loadBMP4(FILE *fp, byte *pic, INT32 w, INT32 h, INT32 comp)
   }
 
   else if (comp == BI_RLE4) {  /* read RLE4 compressed data */
-    x = y = 0;  
+    x = y = 0;
     pp = pic + x + (h-y-1)*w;
 
     while (y<h) {
@@ -262,7 +262,7 @@ static INT32 loadBMP4(FILE *fp, byte *pic, INT32 w, INT32 h, INT32 comp)
 
       if (c) {                                   /* encoded mode */
 	c1 = getc(fp);
-	for (i=0; i<c; i++,x++,pp++) 
+	for (i=0; i<c; i++,x++,pp++)
 	  *pp = (i&1) ? (c1 & 0x0f) : ((c1>>4)&0x0f);
       }
 
@@ -271,7 +271,7 @@ static INT32 loadBMP4(FILE *fp, byte *pic, INT32 w, INT32 h, INT32 comp)
 
 	if      (c == 0x00) {                    /* end of line */
 	  x=0;  y++;  pp = pic + x + (h-y-1)*w;
-	} 
+	}
 
 	else if (c == 0x01) break;               /* end of pic */
 
@@ -286,21 +286,21 @@ static INT32 loadBMP4(FILE *fp, byte *pic, INT32 w, INT32 h, INT32 comp)
 	    if ((i&1) == 0) c1 = getc(fp);
 	    *pp = (i&1) ? (c1 & 0x0f) : ((c1>>4)&0x0f);
 	  }
-	  
+
 	  if (((c&3)==1) || ((c&3)==2)) getc(fp);  /* read pad byte */
 	}
       }  /* escape processing */
       if (ferror(fp)) break;
     }  /* while */
   }
-  
+
   else {
     std::cout << "Unknown BMP compression type";
   }
 
   if (ferror(fp)) rv = 1;
   return rv;
-}  
+}
 
 
 
@@ -327,7 +327,7 @@ static INT32 loadBMP8(FILE *fp, byte *pic, INT32 w, INT32 h, INT32 comp)
   }
 
   else if (comp == BI_RLE8) {  /* read RLE8 compressed data */
-    x = y = 0;  
+    x = y = 0;
     pp = pic + x + (h-y-1)*w;
 
     while (y<h) {
@@ -343,7 +343,7 @@ static INT32 loadBMP8(FILE *fp, byte *pic, INT32 w, INT32 h, INT32 comp)
 
 	if      (c == 0x00) {                    /* end of line */
 	  x=0;  y++;  pp = pic + x + (h-y-1)*w;
-	} 
+	}
 
 	else if (c == 0x01) break;               /* end of pic */
 
@@ -358,21 +358,21 @@ static INT32 loadBMP8(FILE *fp, byte *pic, INT32 w, INT32 h, INT32 comp)
 	    c1 = getc(fp);
 	    *pp = c1;
 	  }
-	  
+
 	  if (c & 1) getc(fp);  /* odd length run: read an extra pad byte */
 	}
       }  /* escape processing */
       if (ferror(fp)) break;
     }  /* while */
   }
-  
+
   else {
     std::cout <<  "Unknown BMP compression type";
   }
 
   if (ferror(fp)) rv = 1;
   return rv;
-}  
+}
 
 /*******************************************/
 static unsigned INT32 getshort(FILE *fp)
@@ -389,7 +389,7 @@ static unsigned INT32 getint(FILE *fp)
   INT32 c, c1, c2, c3;
   c = getc(fp);  c1 = getc(fp);  c2 = getc(fp);  c3 = getc(fp);
   return ((unsigned INT32) c) +
-         (((unsigned INT32) c1) << 8) + 
+         (((unsigned INT32) c1) << 8) +
 	 (((unsigned INT32) c2) << 16) +
 	 (((unsigned INT32) c3) << 24);
 }

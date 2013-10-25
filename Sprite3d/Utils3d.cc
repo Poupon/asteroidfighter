@@ -15,7 +15,7 @@ void Utils3d::Init(const char *pName, int argc, char **argv, int pWidth, int pHe
 {
   glutInit(&argc, argv);  /* initialize glut, processing
                              arguments */
- 
+
   glutInitWindowSize( pWidth, pHeight );
   glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH | GLUT_DOUBLE);
   glutCreateWindow(pName);
@@ -79,14 +79,14 @@ void Utils3d::Init(const char *pName, int argc, char **argv, int pWidth, int pHe
 //--------------------------------
 void Utils3d::Reshape( int pWidth, int pHeight )
 {
-  int size = (pWidth < pHeight?pWidth:pHeight);
+ // int size = (pWidth < pHeight?pWidth:pHeight);
 
   WorldControler::WC->setSize( pWidth, pHeight );
- 
+
 
   //glViewport((width - size) / 2, (height - size) / 2, size, size);
-  
-  
+
+
   glViewport( 0, 0, pWidth, pHeight);
   if(	WorldControler::WC->getFullScreen() == 0 ) // suite bug FullScreen sur windows
   {
@@ -106,25 +106,25 @@ void Utils3d::Normal( Float3 &p1, Float3 &p2, Float3 &p3, Float3 & pNorm )
   float px1, py1, pz1 ;
   float px2, py2, pz2 ;
   float px3, py3, pz3 ;
-  
+
   float absvec ;
-  
+
   px1 = p1[0] ;
   py1 = p1[1] ;
   pz1 = p1[2] ;
-  
+
   px2 = p2[0] ;
   py2 = p2[1] ;
   pz2 = p2[2] ;
-  
+
   px3 = p3[0] ;
   py3 = p3[1] ;
   pz3 = p3[2] ;
-  
+
   coa = -(py1 * (pz2-pz3) + py2*(pz3-pz1) + py3*(pz1-pz2)) ;
   cob = -(pz1 * (px2-px3) + pz2*(px3-px1) + pz3*(px1-px2)) ;
   coc = -(px1 * (py2-py3) + px2*(py3-py1) + px3*(py1-py2)) ;
-  
+
  // Normalisation
   absvec = sqrt ((float)((coa *coa) + (cob *cob) + (coc *coc)));
 
@@ -227,7 +227,7 @@ void Utils3d::Subdivide3(  Float3 &v1, Float3 &v2, Float3 &v3, long depth, float
 //	Normalize( v23 );
 //	Normalize( v31 );
 
-	
+
 	depth--;
 	Subdivide3( v1, v12, v31, depth, pFact );
 	Subdivide3( v2, v23, v12, depth , pFact);
@@ -276,9 +276,9 @@ void Utils3d::DrawTriangleTex( Float3 & v1, Float3 & v2,  Float3 & v3,
 		Normal( v1, v2, v3, lNorm );
 
 //		cout << "t1:" << t1[0] << "," << t1[1]
-//  		<< " t2:" << t2[0] << "," << t2[1] 
+//  		<< " t2:" << t2[0] << "," << t2[1]
 //  		<< " t3:" << t3[0] << "," << t3[1] <<endl;
- 
+
 
 //		glNormal3fv( lNorm );
 		glNormal3fv( v1 );
@@ -353,12 +353,12 @@ void Utils3d::Subdivide3Tex(  Float3 &v1, Float3 &v2, Float3 &v3,
 	}
 
 
-	
+
 //	Normalize( v12 );
 //	Normalize( v23 );
 //	Normalize( v31 );
 
-	
+
 	depth--;
 	Subdivide3Tex(  v1, v12, v31,  t1, t12, t31, depth, pFact );
 	Subdivide3Tex(  v2, v23, v12,  t2, t23, t12, depth, pFact );

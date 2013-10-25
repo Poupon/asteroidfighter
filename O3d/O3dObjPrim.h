@@ -30,30 +30,30 @@ class O3dObjPrim : public O3dObj
 	protected:
 
 	EnumObjPrim cObjType;
-  
+
 
 	float cInRadius;
 	int cSlices;
 	int cStacks;
 	float cTop;
 	float cEnd;
-	
+
 
 	public:
 		O3dObjPrim( EnumObjPrim pObjType, float pRadius, int  pSlices=1, int pStacks=1, float pInRadius=1.0, float pTop=0.0, float pEnd=0.0 )
 		:O3dObj( pRadius ),
 		cObjType(pObjType),
-		cSlices( pSlices ),
-		cStacks( pStacks ),
 		cInRadius( pInRadius ),
-		cTop( pTop ), 
+        cSlices( pSlices ),
+		cStacks( pStacks ),
+		cTop( pTop ),
 		cEnd( pEnd )
 		{
 			cUseList = GL_TRUE;
 		}
 	virtual void drawObj( O3dViewProps& pVProps, O3dObjProps* pObjProps);
-		
+
 };
 
 
-#endif 
+#endif

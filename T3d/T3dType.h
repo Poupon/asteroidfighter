@@ -31,6 +31,7 @@ template <> inline TVectType<GLdouble, 3> ::TVectType( GLdouble A, GLdouble B, G
 	cVect[ 0 ] = A;
 	cVect[ 1 ] = B;
 	cVect[ 2 ] = C;
+	(void)D;
 }
 
 typedef TVectType<GLdouble,4>  Double4;
@@ -47,6 +48,8 @@ template <> inline TVectType<GLfloat, 2> ::TVectType( GLfloat A, GLfloat B, GLfl
 {
 	cVect[ 0 ] = A;
 	cVect[ 1 ] = B;
+	(void)C;
+    (void)D;
 }
 typedef TVectType<GLfloat,3> Float3;
 template <> inline TVectType<GLfloat, 3> ::TVectType( GLfloat A, GLfloat B, GLfloat C, GLfloat D )
@@ -54,7 +57,8 @@ template <> inline TVectType<GLfloat, 3> ::TVectType( GLfloat A, GLfloat B, GLfl
 	cVect[ 0 ] = A;
 	cVect[ 1 ] = B;
 	cVect[ 2 ] = C;
-}
+    (void)D;
+    }
 typedef TVectType<GLfloat,4> Float4;
 template <> inline TVectType<GLfloat, 4> ::TVectType( GLfloat A, GLfloat B, GLfloat C, GLfloat D )
 {
@@ -69,6 +73,8 @@ template <> inline TVectType<GLint, 2> ::TVectType( GLint A, GLint B, GLint C, G
 {
 	cVect[ 0 ] = A;
 	cVect[ 1 ] = B;
+    (void)C;
+    (void)D;
 }
 typedef TVectType<GLint,3> Int3;
 template <> inline TVectType<GLint, 3> ::TVectType( GLint A, GLint B, GLint C, GLint D )
@@ -76,6 +82,7 @@ template <> inline TVectType<GLint, 3> ::TVectType( GLint A, GLint B, GLint C, G
 	cVect[ 0 ] = A;
 	cVect[ 1 ] = B;
 	cVect[ 2 ] = C;
+   (void)D;
 }
 typedef TVectType<GLint,4> Int4;
 template <> inline TVectType<GLint, 4> ::TVectType( GLint A, GLint B, GLint C, GLint D )

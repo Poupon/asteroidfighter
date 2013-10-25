@@ -17,12 +17,12 @@ PTokenizer::PTokenizer()
 /*    PTokenizer::IsInStr ...                                          */
 /*    renvoit GL_TRUE si le caractere appartient a la chaine           */
 /*---------------------------------------------------------------------*/
-GLboolean 
+GLboolean
 PTokenizer::IsInStr( char c, const char* str )
-{ 
+{
   	while( *str )
 	{
-		if( *str++ == c ) 
+		if( *str++ == c )
 		{
 			return(GL_TRUE);
 		}
@@ -36,7 +36,7 @@ PTokenizer::IsInStr( char c, const char* str )
 PTokenString::PTokenString( const char* str )
 : in0((char*)NULL)
 {
-  this->PTokenString::operator =(str);   
+  this->PTokenString::operator =(str);
 }
 
 /*---------------------------------------------------------------------*/
@@ -53,17 +53,17 @@ PTokenString::~PTokenString()
 /*---------------------------------------------------------------------*/
 /*    PTokenString::operator= ...                                      */
 /*---------------------------------------------------------------------*/
-PTokenString& 
+PTokenString&
 PTokenString::operator=( const char* str )
 {
 	current_line = 0;
 
   	if( in0 )
-	{ 
-		delete [] in0; 
+	{
+		delete [] in0;
 		in0 = 0;
 	}
-  
+
   	if( str == NULL )
 	{
 		in0 = in = new char[1];
@@ -74,7 +74,7 @@ PTokenString::operator=( const char* str )
 		in0 = in = new char[::strlen(str)+1];
 		::strcpy( in, str );
 	}
-  
+
   	out = 0;
   	if( *in == '\0' )
 	{
@@ -85,14 +85,14 @@ PTokenString::operator=( const char* str )
     	bad = GL_FALSE;
 	}
   	sep =0;
-  
+
   return *this;
 }
 
 /*---------------------------------------------------------------------*/
 /*    PTokenString::eat ...                                            */
 /*---------------------------------------------------------------------*/
-void 
+void
 PTokenString::eat( const char* toeat )
 {
   	while( *in )
@@ -108,7 +108,7 @@ PTokenString::eat( const char* toeat )
 		{
 			break;
 		}
-	} 
+	}
 }
 
 /*------------------------------------------------------------------------------------*/
@@ -122,9 +122,9 @@ PTokenString::eat( const char* toeat )
 /* le separateur trouve est consomme.                                                 */
 /* En fin de fichier la fonction renvoit NULL.                                        */
 /*------------------------------------------------------------------------------------*/
-const char* 
+const char*
 PTokenString::next(const char* forend,  // caracteres de fin
-															 const char* toeat,   // caractere a eliminer au debut 
+															 const char* toeat,   // caractere a eliminer au debut
 															 const char  escape )
 {
   	if( bad )
@@ -134,12 +134,12 @@ PTokenString::next(const char* forend,  // caracteres de fin
 
   	register char c;
 	register int memc=-1;
-  
+
   	while( *in )
 	{
 		if( *in == '\n' )
 			current_line++;
-		
+
 		if( IsInStr( *in, toeat ))
 		{
 			in++;
@@ -149,22 +149,22 @@ PTokenString::next(const char* forend,  // caracteres de fin
 			break;
 		}
 	}
-  
+
   	out = in;
-  
+
   	if( *in == '\0' )
-	{ 
-		bad = GL_TRUE; 
-		out = (char*)0; 
-		return(NULL); 
+	{
+		bad = GL_TRUE;
+		out = (char*)0;
+		return(NULL);
 	}
-  
+
   	while( (c=*in) && !(IsInStr( c, forend ) && memc != escape) )
 	{
 		if( *in == '\n' )
 			current_line++;
 
-		if( c == escape && memc != escape ) 
+		if( c == escape && memc != escape )
 		{
 			memc = c;
 		}
@@ -172,7 +172,7 @@ PTokenString::next(const char* forend,  // caracteres de fin
 		{
 			memc = *in;
 		}
-		
+
 		in++;
 	}
 
@@ -180,8 +180,8 @@ PTokenString::next(const char* forend,  // caracteres de fin
 		current_line++;
 
 	if( *in == '\0' )
-	{ 
-		bad = GL_TRUE; 
+	{
+		bad = GL_TRUE;
 	}
 
   	sep = c;
@@ -203,7 +203,7 @@ void PTokenString::advance( int nb )
 		if( *in == '\n' )			current_line++;
 		in++;
 	}
- 
+
   out = in;
 }
 
@@ -236,42 +236,42 @@ PTokenStream::~PTokenStream()
 /* Avance dans le fichier tant que les caracteres appartiennent        */
 /* a toeat, renvoit le premier caractere different                     */
 /*---------------------------------------------------------------------*/
-void 
+void
 PTokenStream::eat( const char* toeat )
 {
   	char c;
-  
+
   	while( IS.good() && !IS.eof() && (c=IS.get()) )
 	{
 		if( c == '\n' )			current_line++;
 
-		if( !IsInStr( c, toeat )) 
+		if( !IsInStr( c, toeat ))
 		{
 			IS.putback(c);
 			break;
 		}
-	}	
+	}
 }
 
 /*---------------------------------------------------------------------*/
 /*    PTokenStream::next ...                                           */
 /*---------------------------------------------------------------------*/
-const char* 
+const char*
 PTokenStream::next( const char* forend,  // caracteres de fin
 															 const char* toeat,    // caractere a eliminer au debut
 															 const char escape )   // caractere d'echapement
 {
-  	char c;
-  
+  	char c=0;
+
   	int posbuf=0;
-  
+
   	if( buffer == NULL )
 	{
 		buffer = (char*)malloc( max_size+1 );
 	}
-  
+
   	eat( toeat );
-  
+
 	if( !IS.good() || IS.eof() )
 	{
 		free( buffer );
@@ -279,15 +279,15 @@ PTokenStream::next( const char* forend,  // caracteres de fin
 		sep   = '\0';
 		return (char*)0;
 	}
-  
+
   	int memc = -1;
 
   	while( !IS.eof() && IS.good() && (c=IS.get()) && !(IsInStr( c, forend ) && memc != escape))
-	{    	
+	{
 		if( c == '\n' )
 			current_line++;
 
-		if( c == escape && memc != escape ) 
+		if( c == escape && memc != escape )
 		{
 			memc = c;
 		}
@@ -295,31 +295,31 @@ PTokenStream::next( const char* forend,  // caracteres de fin
 		{
 			memc = buffer[posbuf++] = c;
 		}
-		
+
 		if( posbuf >= max_size )
 		{
 			max_size += 256;
-			buffer = (char*)realloc( buffer, max_size +1 );     
+			buffer = (char*)realloc( buffer, max_size +1 );
 		}
 	}
-  
+
 	if( c == '\n' )
 		current_line++;
 
 	sep = c;
   	buffer[posbuf] = '\0';
-  
+
 	return buffer;
 }
 
 /*---------------------------------------------------------------------*/
 /*    PTokenStream::advance ...                                        */
 /*---------------------------------------------------------------------*/
-void 
+void
 PTokenStream::advance( int nb )
 {
   	char c;
-  
+
   	while( !IS.eof() && IS.good() && (c=IS.get()) && nb--> 0 )
 	{
 		if( c == '\n' )
@@ -330,7 +330,7 @@ PTokenStream::advance( int nb )
 /*---------------------------------------------------------------------*/
 /*    PTokenStream::remaind ...                                        */
 /*---------------------------------------------------------------------*/
-char* 
+char*
 PTokenStream::remaind()
 {
   	char c;
@@ -358,7 +358,7 @@ PTokenStream::remaind()
 /*---------------------------------------------------------------------*/
 /*    PTokenStream::FreeDetach ...                                     */
 /*---------------------------------------------------------------------*/
-void 
+void
 PTokenStream::FreeDetach( char* ptr )
 {
   	free( ptr );

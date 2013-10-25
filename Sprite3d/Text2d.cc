@@ -6,9 +6,9 @@
 //***************************************
 Text2d::Text2d( T3dFont *pFont, int pW, int pH, const char *pStr )
 :cString( pStr ),
+cFont(pFont),
 cW( pW ),
-cH( pH ),
-cFont(pFont)
+cH( pH )
 {
 }
 //------------------------------------

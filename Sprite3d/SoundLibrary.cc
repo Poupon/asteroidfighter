@@ -8,8 +8,8 @@
 
 SoundLibrary::SoundLibrary( long pMaxSound, const char* pBasePath)
 	:cMaxSound(pMaxSound),
-	 cBasePath( pBasePath ),
-	 cNbSound(0)
+	 cNbSound(0),
+    cBasePath( pBasePath )
 {
 	cVectSound = new slSample*[cMaxSound];
 }
