@@ -20,7 +20,7 @@ public:
 
 	WorldGame( int pSize, WorldControler* pControl, O3dKamera* pKamera, Double3& pMax,  O3dObjProps *pProps=NULL);
     ~WorldGame();
-	virtual GLboolean initStart( int pNiveau=0 );
+	virtual GLboolean initStart( int pNiveau=0, const char* pNameFile =NULL  );
 	void freeRessources();
 	virtual void gameOver();
 	virtual int userEvent( void* pUserData );
@@ -28,6 +28,7 @@ public:
 	SceneManager* getSceneManager() { return cSceneManager; }
 	virtual const char* getInfoLeveL();
 	Sprite3d* makeBanniere( const char* pName, Float4 pColor, float pLiveTime );
+	virtual void saveStateToFile( const char* pName );
 
 public:
 	static void InitSound( const char* pSoundPath );

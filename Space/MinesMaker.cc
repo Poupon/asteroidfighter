@@ -109,7 +109,7 @@ MinesMaker::makeMine( MineType pMineType, int pMaxLife, float  pSpin,
 
 	lSp->SpriteFloat::set( SPRITE_LIFE_POINT, pMaxLife );
 	lSp->SpriteFloat::set( SPRITE_MAX_LIFE_POINT, pMaxLife );
-	lSp->SpriteFloat::set( SPRITE_DESTROY_POINT, pMaxLife*3);
+	lSp->SpriteFloat::set( SPRITE_DESTROY_POINT, pMaxLife*5);
 
 	lSp->SpriteLong::set(  SPRITE_TYPE, ALIEN_SHIP );
 	lSp->SpriteDouble3::set( SPRITE_SPIN, lSpin  );

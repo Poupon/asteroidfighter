@@ -2,6 +2,7 @@
 #define _MainMenu_h
 
 
+
 #include <Sprite3d/AutoPtr.h>
 
 #include <Sprite3d/Sprite3dObj.h>
@@ -39,14 +40,15 @@ public:
 	virtual void mouseButton( int pButton, int pState, int pX, int pY);
 	virtual void mouseMove( int pX, int pY );
 
-	virtual GLboolean initStart(int pNiveau=1);
+	virtual GLboolean initStart(int pNiveau=1, const char*pFile=NULL);
 	virtual long userAction( Sprite3d &pMySprite, void*pParam0, void*pParam1, void*pParam2 );
 	void AfficheLine( int pX, int pY, const char* pStr );
 	virtual void enterWorld();
 	virtual void leaveWorld();
 	virtual void reshapeWorld(int pWidth, int pHeight);
 
-    static void MyButtonCb( puObject * pObject);
+	static void MyReadFileCb( puObject * pObject);
+	static void MyButtonCb( puObject * pObject);
 protected:
     puOneShot* cReadAutoBox;
 
@@ -56,6 +58,8 @@ protected:
 	puOneShot* cMediumBox;
 	puOneShot* cHardBox;
 	puOneShot* cExtremeBox;
+
+  puaFileSelector* cReadSavBox;
 
 	puButton* cMuteSoundButton;
 	int  cDifficulty;

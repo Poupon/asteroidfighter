@@ -106,7 +106,7 @@ MainMenu::AfficheLine( int pX, int pY, const char* pStr ){
 }
 //-----------------------------
 GLboolean
-MainMenu::initStart(int pNiveau)
+MainMenu::initStart(int pNiveau, const char* pFile)
 {
 
 	//  Sprite3dObj* lCentre = new Sprite3dObj( new ObjOdron( 60, 0));
@@ -284,17 +284,41 @@ MainMenu::initStart(int pNiveau)
 
   return GL_TRUE;
 }
+//------------------------------------------------
 
+void
+MainMenu::MyReadFileCb( puObject * pObject)
+{	
+	char *lStr;
+	pObject->getValue( &lStr );
+
+	//	std::cout << "MainMenu::MyFileReadCb " << pObject << ":" << lStr 						<< std::endl;
+	
+	std::string lStrFileSav( lStr );
+
+	puDeleteObject( TheMainMenu->cReadSavBox );
+	TheMainMenu->cReadSavBox = NULL;
+
+	if( lStrFileSav.empty() == false ){
+		TheMainMenu->getMyControler()->start( 0, lStrFileSav.c_str() );
+	}
+}
 //------------------------------------------------
 void
 MainMenu::MyButtonCb( puObject * pObject)
 {
   std::cout <<  "MyButtonCb :" << pObject->getValue() << std::endl;
 
+	
 	if( pObject == TheMainMenu->cReadAutoBox ){
-        	TheMainMenu->getMyControler()->startFile();
+		
+		TheMainMenu->cReadSavBox = new puaFileSelector( 10, 50, 1000, 500, 2, "Sav", "Read saved game" );
+		
+		TheMainMenu->cReadSavBox->setCallback( MyReadFileCb ) ;
+	
+		//		glutPostRedisplay();
+		return;
 	}
-
 
 	if( pObject == TheMainMenu->cGentileBox )
         WorldControler::sDifficultyLevel = 0;
@@ -433,9 +457,14 @@ MainMenu::enterWorld()
 	cGentileBox->setCallback( MyButtonCb ) ;
 	cGentileBox->getSize( &lWidth, &lHeight );
 
-    cReadAutoBox= new puOneShot( lX, lY, "SReadAuto Save" );
+	lY += lStepY+lHeight;
+	lY += lStepY+lHeight;
+
+  cReadAutoBox= new puOneShot( lX, lY, "Read Save game" );
 	cReadAutoBox->setCallback( MyButtonCb ) ;
 	cReadAutoBox->getSize( &lWidth, &lHeight );
+
+
 
 	//	if( SoundControler::sNoSound == GL_FALSE )
 	/*
@@ -454,6 +483,8 @@ MainMenu::enterWorld()
 				cMuteSoundButton->setValue( 0 );
 		}
 		*/
+
+
 
 	lY += lStepY+lHeight;
 
@@ -510,6 +541,10 @@ MainMenu::leaveWorld()
 	if( cMuteSoundButton )
 		puDeleteObject( cMuteSoundButton );
 	cMuteSoundButton = NULL;
+
+	if( cReadAutoBox )
+		puDeleteObject( cReadAutoBox );
+	cReadAutoBox = NULL;
 
 	WorldControler::PuiInUse = GL_FALSE;
 }

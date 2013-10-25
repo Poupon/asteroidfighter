@@ -44,6 +44,90 @@ int WorldControler::sDebug =0;
 int   WorldControler::sKeyModifiers=0;
 int   WorldControler::sOldKeyModifiers=0;
 
+
+
+//--------------------------------
+// Pas au point ! -> plantage
+
+
+static puDialogBox* sSavDialogBox = NULL;
+static puInput* sSavInputBox = NULL;
+static puOneShot* sOkBox = NULL;
+
+void go_away_callback ( puObject * pObject )
+{
+	std::cout << "go_away_callback" << std::endl;
+
+	//	puDeleteObject( sSavInputBox ) ;
+
+	// On recupere les frappes pour WorldController
+
+	glutSpecialFunc( WorldControler::SpecialKey );
+  glutKeyboardFunc(WorldControler::Key);
+ 
+
+	if( pObject == sOkBox ){
+		char * lStr = sSavInputBox->getDisplayedText();
+		std::cout << "Ok : " << lStr << std::endl;
+		if( WorldControler::WC != NULL && WorldControler::GetGameWorld() != NULL)
+			WorldControler::GetGameWorld()->saveStateToFile(lStr);
+	} else {
+		std::cout << "Cancel" << std::endl;
+	}
+	sSavDialogBox->close();
+	//	puDeleteObject( sSavDialogBox) ;
+	//  sSavDialogBox = NULL ;
+}
+
+void text_ok_callback(  puObject * puObject){
+	std::cout << "saisie" << std::endl;
+}
+void my_keyboard_func ( unsigned char key, int x, int y )
+{
+	puKeyboard ( key, PU_DOWN ) ;
+	glutPostRedisplay () ;
+}
+void my_special_func ( int special_key, int x, int y )
+{
+	puKeyboard ( special_key + PU_KEY_GLUT_SPECIAL_OFFSET, PU_DOWN ) ;
+	glutPostRedisplay () ;
+}
+
+void
+saveLastLevel(){
+
+	if( sSavDialogBox == NULL )
+		{			
+			sSavDialogBox  = new puDialogBox( 450, 150);
+			
+			new puFrame ( 0, 0, 600, 200 ) ;
+			(new puText  ( 10, 150 ))->setLabel ( "Save current level" ) ;
+			
+			sSavInputBox = new puInput ( 10, 100, 500, 150 );
+			sSavInputBox->acceptInput();
+			sSavInputBox->setValidData("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-.");
+
+			//		sSavInputBox->setLabel( "toto" );
+			//		sSavInputBox-> setCallback ( text_ok_callback);
+			
+			puOneShot *cancel = new puOneShot ( 50, 30, "Cancel" ) ;
+			puOneShot *sOkBox= new puOneShot ( 300, 30, "OK" ) ;
+	
+			sOkBox-> makeReturnDefault ( TRUE ) ;
+			sOkBox-> setCallback( go_away_callback ) ;
+			cancel-> setCallback( go_away_callback ) ;
+		}
+	
+	// On recupere les frappes pour pu 
+	glutSpecialFunc( my_special_func );
+  glutKeyboardFunc(my_keyboard_func);
+	
+	sSavDialogBox->close() ;
+  sSavDialogBox->reveal() ;
+}
+//--------------------------------
+
+
 //**************************************
 WorldControler::WorldControler(int pWidth, int pHeight, bool pFullScreen)
 	:cCurrentWorld( NULL),
@@ -122,12 +206,12 @@ WorldControler::resume()
 }
 //--------------------------------
 void
-WorldControler::start()
+WorldControler::start( int pLevel, const char* pFileNameSav)
 {
 	if( cCurrentWorld == cMainWorld )
 	{
 		cGame->freeRessources();
-		cGame->initStart();
+		cGame->initStart( pLevel, pFileNameSav);
 		setCurrent( cGame );
 	}
 }
@@ -302,6 +386,13 @@ WorldControler::Key( unsigned char pKey, int pX, int pY )
 			WC->helpWorld();
 			break;
 
+		case 'S':
+		case 's':
+			// Pas au point ! -> plantage
+			//			WC->mainWorld();
+			//			saveLastLevel();
+			break;
+
 		case 'F':
 		case 'f':
 			if( WC->cFullScreen == 0)
@@ -315,14 +406,15 @@ WorldControler::Key( unsigned char pKey, int pX, int pY )
 				WC->cFullScreen = 0;
 			}
 			break;
-
+			/*
 	case 'S':
 	case 's':
 		if( SoundControler::sMute == GL_TRUE )
 			SoundControler::sMute = GL_FALSE;
 		else
 			SoundControler::sMute = GL_TRUE;
-
+			break;
+			*/
 
 		case 'R':
 		case 'r':

@@ -19,6 +19,9 @@ protected:
 
 	World* cWorld;
 
+
+	void internalGo(World* pWorld);
+
 public:
 	SceneManager();
 	virtual~SceneManager();
@@ -26,7 +29,7 @@ public:
      void write( std::ostream & pOs);
      bool read( std::istream & pIs );
     void saveStateToFile( const char* pName );
-
+		void restoreStateFromFile( World* pWorld, const char* pName );
 	void go(World*pWorld);
 	void addScene( Sprite3d* pSprite, float pLiveTime=-1 );
 	void addSceneTempo( float pLiveTime, GameFinish cGameFinish=GameContinue );

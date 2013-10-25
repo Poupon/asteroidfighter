@@ -94,6 +94,8 @@ protected:
 public:
 	long cLastColId;
 
+	virtual int getSpriteType() { return 0; }
+
 public:
 	Sprite3d( float cRadius, float pLifeTime=-1.0 );
   virtual ~Sprite3d();

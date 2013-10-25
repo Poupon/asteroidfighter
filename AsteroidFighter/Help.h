@@ -32,7 +32,7 @@ public:
 	void mouseMove( int pX, int pY );
 	void mouseButton( int pButton, int pState, int pX, int pY);
 
-	GLboolean initStart(int pNiveau=1);
+	GLboolean initStart(int pNiveau=1, const char*pFile=NULL);
 	long userAction( Sprite3d &pMySprite, void*pParam0, void*pParam1, void*pParam2 );
 	void AfficheLine( int pX, int pY, const char* pStr );
 
