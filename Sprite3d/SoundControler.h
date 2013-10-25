@@ -28,9 +28,9 @@ public:
 	int playMusic (const char *pName, int pPriority = 1, slPreemptMode pMode = SL_SAMPLE_ABORT ) ;
 #else
 #define slSample char
-	int playSample ( slSample *pSample, int pPriority = 1 ){return -1 ;}
-	int loopSample ( slSample *pSample, int pPriority = 1 ) {return -1 ;}
-	int playMusic (const char *pName, int pPriority = 1 ) {return -1 ;}
+	int playSample ( slSample *pSample, int pPriority = 1 ){ (void)pSample; (void)pPriority; return -1 ;}
+	int loopSample ( slSample *pSample, int pPriority = 1 ) {(void)pSample; (void)pPriority;return -1 ;}
+	int playMusic (const char *pName, int pPriority = 1 ) {(void)pName; (void)pPriority;return -1 ;}
 #endif
 
 	slSample* loadSample( const char* pName );

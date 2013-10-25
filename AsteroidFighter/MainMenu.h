@@ -48,6 +48,9 @@ public:
 
     static void MyButtonCb( puObject * pObject);
 protected:
+    puOneShot* cReadAutoBox;
+
+
 	puOneShot* cGentileBox;
 	puOneShot* cEasyBox;
 	puOneShot* cMediumBox;

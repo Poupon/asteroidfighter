@@ -25,7 +25,7 @@
 SceneGrotte *SceneGrotte::TheSceneGrotte = NULL;
 
 //**************************************
-SceneGrotte::SceneGrotte( const char* pName, EnumAsteroides pTypeAsteroide, int pHardness, Double3& lPos, 
+SceneGrotte::SceneGrotte( const char* pName, EnumAsteroides pTypeAsteroide, int pHardness, Double3& lPos,
 								float pInterval, float pIntervalParoi, int pSizeParoi, float  pH, float pV )
 :Scene( pName, pHardness, pInterval, pH, pV ),
  cIntervalParoi( pIntervalParoi ),
@@ -33,15 +33,15 @@ SceneGrotte::SceneGrotte( const char* pName, EnumAsteroides pTypeAsteroide, int 
  cTypeAsteroide(pTypeAsteroide),
  cFirstTime(GL_TRUE)
 {
-  TheSceneGrotte = this;  
+  TheSceneGrotte = this;
 
-   
+
   //===== Initialisation des props du generateur =====
   Float4 mat1(   0.8, 0.4, 0.5, 1.0 );
 
   caPropsGen = new O3dObjProps;
   caPropsGen->ObjPropsFloat4::set( MATERIAL, mat1 );
- 
+
 
 	caGenTexture = new T3dTexture( "textures/1.gif"  );
   caPropsGen->setTexture( caGenTexture );
@@ -67,7 +67,7 @@ SceneGrotte::~SceneGrotte()
 }
 
 //------------------------
-void 
+void
 SceneGrotte::makeAsteroide(  Double3& pPos, int pSz, GLboolean pIndestructible ){
 	Sprite3d *sp;
 
@@ -77,7 +77,7 @@ SceneGrotte::makeAsteroide(  Double3& pPos, int pSz, GLboolean pIndestructible )
 
  	Double3 lAngle(randf(360), randf(360), randf(360));
  	Double3 lScale( 1.0+randf(0.2), 1.0+randf(0.2), 1.0+randf(0.2));
-	
+
 	sp = TheAsteroidesMaker->makeSpriteAsteroide( cTypeAsteroide, pSz, lFacette );
 
 
@@ -87,26 +87,26 @@ SceneGrotte::makeAsteroide(  Double3& pPos, int pSz, GLboolean pIndestructible )
 			sp->SpriteFloat::set( SPRITE_LIFE_POINT, 9999999 );
 			sp->setAction( SPRITE_ACTION_COLLISION, NULL );
 		}
-	
+
 	sp->getTransf().TransfDouble3::set( POS,   pPos );
 	sp->getTransf().TransfDouble3::set( ANGLE, lAngle );
 	sp->getTransf().TransfDouble3::set( SCALE, lScale );
-	
+
 	Double3 lD3 ( WorldGame::GlobalScroll, 0, 0);
-	sp->SpriteDouble3::set( SPRITE_SPEED, lD3); 
-	WorldControler::Add( sp  );	
+	sp->SpriteDouble3::set( SPRITE_SPEED, lD3);
+	WorldControler::Add( sp  );
 }
 //------------------------
-void 
+void
 SceneGrotte::makeFloor( int pH ){
 
 	int lSz = (rand() % cSizeParoi) + cSizeParoi;
-	
-	Double3 lPos(  getTransf().TransfDouble3::get(POS)[0]+(lSz>>1), pH+(lSz>>1), 0 );	
+
+	Double3 lPos(  getTransf().TransfDouble3::get(POS)[0]+(lSz>>1), pH+(lSz>>1), 0 );
 	makeAsteroide( lPos, (int)(lSz+randf(1)), GL_TRUE );
 }
 //------------------------
-void 
+void
 SceneGrotte::makeWall(int pMin, int pMax, GLboolean pIndestructible, float pSpeedX, float pDeltaX, float pAleaX ){
 
 	float cX=0;
@@ -116,7 +116,7 @@ SceneGrotte::makeWall(int pMin, int pMax, GLboolean pIndestructible, float pSpee
 
 		if( pMin < pMax ) {
 			if( i <= pMin )
-				break; 
+				break;
 			i -=cSizeParoi>>1 ;
 		}
 		else {
@@ -124,32 +124,32 @@ SceneGrotte::makeWall(int pMin, int pMax, GLboolean pIndestructible, float pSpee
 				break;
 			i +=cSizeParoi>>1 ;
 		}
-		
+
 		int lSz = (int) randf(cSizeParoi>>2) + cSizeParoi;
-		Double3 lPos(  getTransf().TransfDouble3::get(POS)[0]+cX+(lSz>>2), i+(lSz>>2), randf(lSz>>2) );	
+		Double3 lPos(  getTransf().TransfDouble3::get(POS)[0]+cX+(lSz>>2), i+(lSz>>2), randf(lSz>>2) );
 
 		cX += pSpeedX + randf( pAleaX );
 		pSpeedX += pDeltaX ;
-		
+
 		makeAsteroide( lPos, lSz, pIndestructible );
 	}
 }
 
 //------------------------
-void 
+void
 SceneGrotte::makeArtefact() {
-	
+
 	int sz = 25;
-	
+
 	Double3 pos;
   pos[0] = getTransf().TransfDouble3::get(POS)[0];
 	pos[ 1 ] = cH;
   pos[ 2 ] = 0;
-	 
+
 	std::cout << "SceneGrotte::makeArtefact " << std::endl;
-	
+
   SpriteFloat::set( SPRITE_TIMER1,  WorldControler::GetTime() );
-	
+
 	if( World::GetPositionWithoutCollision( InteractObstacle, pos, sz, 0, (int)cH ) == GL_FALSE){
 		//	std::cout << "SceneGrotte::makeArtefact collision" << std::endl;
 		return;
@@ -164,9 +164,9 @@ SceneGrotte::makeArtefact() {
   if( p<= 8 )
 		{
 			Double3 lD3( randf( 75 ), randf( 75 ), randf( 75 ));
-			sp = TheBonusMaker->makeSpriteBonus( CONTAINER, 
+			sp = TheBonusMaker->makeSpriteBonus( CONTAINER,
 																					 InteractBonus, InteractBonus, 1);
-			
+
 			sp->SpriteDouble3::set( SPRITE_SPIN, lD3);
 		}
   else 	if( p <= 30 )
@@ -179,7 +179,7 @@ SceneGrotte::makeArtefact() {
 		{
 			sp = MAKE_SHIP1(cHardness);
 		}
-  else	if( p <= 90 ) 
+  else	if( p <= 90 )
 		{
 			sp = MAKE_SHIP2(cHardness);
 		}
@@ -191,9 +191,9 @@ SceneGrotte::makeArtefact() {
 
 	if( sp ) {
 		Double3 lD3 ( WorldGame::GlobalScroll, 0, 0);
-		sp->SpriteDouble3::set( SPRITE_SPEED, lD3); 
+		sp->SpriteDouble3::set( SPRITE_SPEED, lD3);
 		sp->getTransf().TransfDouble3::set( POS, pos );
-	
+
 		WorldControler::Add( sp  );
 	}
 
@@ -201,35 +201,35 @@ SceneGrotte::makeArtefact() {
 
 }
 //------------------------
-GLboolean 
+GLboolean
 SceneGrotte::animate() {
 
 	Scene::animate();
 
 	Sprite3d *sp;
-	
+
 	float lCurrentTime = WorldControler::GetTime();
-	
+
 	// generation des parois de la grotte
-	
+
 	if( ( lCurrentTime-SpriteFloat::get( SPRITE_TIMER2)) >= cIntervalParoi )
 		{
 			if( cFirstTime ){
 				makeWall(  (((int)cH)>>2)+cSizeParoi,  (int)cH, GL_TRUE,  -8, 1, 2 );
 				makeWall( (-((int)cH)>>2)-cSizeParoi, (int)-cH, GL_TRUE,  -8, 1, 2 );
-				cFirstTime = GL_FALSE; 
-				
+				cFirstTime = GL_FALSE;
+
 			SpriteFloat::set( SPRITE_TIMER3, lCurrentTime+3 + randp(2));
 			}
-			
+
 
 		if( ( lCurrentTime-SpriteFloat::get( SPRITE_TIMER3)) >= 0 )
 			{
-				SpriteFloat::set( SPRITE_TIMER3, lCurrentTime+5 + randf(2));	
-				
+				SpriteFloat::set( SPRITE_TIMER3, lCurrentTime+5 + randf(2));
+
 
 				float lHauteur = randp( cH-cSizeParoi*4 )+cSizeParoi;
-				
+
 				float lDeriveX ;
 				if(  lHauteur> ((int)cH)>>1 )
 					lDeriveX= randf(0.4);
@@ -244,22 +244,22 @@ SceneGrotte::animate() {
 					lCorrectX = randp( -lDeriveX/25 );
 
 
-				if( randf(1)< 0 )				
+				if( randf(1)< 0 )
 					makeWall( (int) -lHauteur,  (int)cH, GL_FALSE, lDeriveX, lCorrectX, randf(1) );
 				else
-					makeWall( (int)lHauteur,   (int)-cH, GL_FALSE, lDeriveX, lCorrectX, randf(1) );								
+					makeWall( (int)lHauteur,   (int)-cH, GL_FALSE, lDeriveX, lCorrectX, randf(1) );
 			}
 
 		makeFloor( (int)cH );
 		makeFloor( (int)-cH );
 		SpriteFloat::set( SPRITE_TIMER2,  WorldControler::GetTime() );
 	}
- 
-	
+
+
   if( ( WorldControler::GetTime()-SpriteFloat::get( SPRITE_TIMER1)) < cInterval )
 	  return GL_FALSE;
-	
-	
+
+
 	makeArtefact();
 
   return GL_FALSE;
@@ -267,8 +267,8 @@ SceneGrotte::animate() {
 //------------------------
 GLboolean SceneGrotte::leaveWorld()
 {
-		makeWall(  ((int)cH)>>2+cSizeParoi,(int)  cH, 6, -1, 2 );
-		makeWall( -((int)cH)>>2-cSizeParoi,(int) -cH, 6, -1, 2 );
+		makeWall(  (((int)cH)>>2)+cSizeParoi,(int)  cH, 6, -1, 2 );
+		makeWall( -(((int)cH)>>2)-cSizeParoi,(int) -cH, 6, -1, 2 );
 
 	return GL_FALSE;
 }

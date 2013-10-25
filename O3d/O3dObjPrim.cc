@@ -22,7 +22,7 @@ doughnut(GLfloat r, GLfloat R, GLint nsides, GLint rings)
 
   theta = 0.0;
   cosTheta = 1.0;
-  sinTheta = 0.0; 
+  sinTheta = 0.0;
   for (i = rings - 1; i >= 0; i--) {
     theta1 = theta + ringDelta;
     cosTheta1 = cos(theta1);
@@ -242,15 +242,15 @@ teapot(GLint grid, GLdouble scale, GLenum type)
 
 void O3dObjPrim::drawObj( O3dViewProps& pVProps, O3dObjProps* pObjProps)
 {
-	GLboolean lSkeleton = pObjProps->ObjPropsBool::get(DRAW_OBJ_SKELETON);
-	GLboolean lSolid = pObjProps->ObjPropsBool::get( DRAW_OBJ_SKELETON );
+//	GLboolean lSkeleton = pObjProps->ObjPropsBool::get(DRAW_OBJ_SKELETON);
+//	GLboolean lSolid = pObjProps->ObjPropsBool::get( DRAW_OBJ_SKELETON );
 
 
 	static GLUquadricObj *quadObj = NULL;
 
 	if( quadObj == NULL )
 		{
-			
+
 		 quadObj = gluNewQuadric();
 		 gluQuadricTexture( quadObj,	GL_TRUE );
 		}
@@ -270,7 +270,7 @@ void O3dObjPrim::drawObj( O3dViewProps& pVProps, O3dObjProps* pObjProps)
 			glVertex3f( 0.0, 0.0, 0.0 );
 			glEnd();
 		break;
- 
+
 		case PrimSphere:
 			if( pObjProps->ObjPropsBool::get(DRAW_OBJ_SKELETON) )
 			{

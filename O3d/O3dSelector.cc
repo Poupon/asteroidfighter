@@ -58,7 +58,7 @@ O3dSelector::begin( O3dViewProps* pViewProps, O3dKamera* pKamera, int pX, int pY
 
 void
 O3dSelector::finish()
-{	
+{
 	glFlush();
 	cNbSelect = glRenderMode( GL_RENDER );
 
@@ -75,7 +75,7 @@ O3dSelector::finish()
 		 *ptr++; // z1
 		 *ptr++; //z2
 
-		GLuint mem = SELECT_NONE;
+//		GLuint mem = SELECT_NONE;
 
 		// On ne prend que le dernier objets
 		if( i == (cNbSelect - 1) )
@@ -135,7 +135,7 @@ O3dSelector::pushSelect( long pObjId, GLuint pFlag )
 {
 	if( cRestrictedObjectId != -1  && pObjId != cRestrictedObjectId )
 		return;
-	
+
 	switch( pFlag )
 	{
 		case SELECT_OBJECT:
@@ -154,7 +154,7 @@ O3dSelector::pushSelect( long pObjId, GLuint pFlag )
 			cDepth++;
 			break;
 
-		case SELECT_NONE:			
+		case SELECT_NONE:
 			break;
 
 		default:
@@ -196,9 +196,9 @@ O3dSelector::popSelect( long pObjId, GLuint pFlag)
 			cDepth--;
 			// printf( "%d\tpopSelect SELECT_NONE %ld\n", cDepth, pObjId);
 			break;
-		
+
 		default:
-			glPopName();   
+			glPopName();
 			cDepth--;
 			// printf( "%d\tpopSelect SELECT_VAL %ld\n", cDepth, pObjId);
 	}

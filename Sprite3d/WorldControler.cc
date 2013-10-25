@@ -45,25 +45,24 @@ int   WorldControler::sKeyModifiers=0;
 int   WorldControler::sOldKeyModifiers=0;
 
 //**************************************
-WorldControler::WorldControler(int pWidth, int pHeight, int  pFullScreen)
-	:cFullScreen(pFullScreen),
-    cPause(0),
-	cCurrentWorld( NULL),
-	cGame(NULL),
+WorldControler::WorldControler(int pWidth, int pHeight, bool pFullScreen)
+	:cCurrentWorld( NULL),
 	cMainWorld(NULL),
+	cGame(NULL),
 	cMouseX(-1),
 	cMouseY(-1),
 	cWidth(pWidth),
 	cHeight(pHeight),
 	cLeftButtonDown(GL_FALSE),
 	cMiddleButtonDown (GL_FALSE),
-	 cRightButtonDown( GL_FALSE)
-
+    cRightButtonDown( GL_FALSE),
+    cPause(0),
+    cFullScreen(pFullScreen)
 {
 	sCurrentFont = T3dFont::DefaultFont;
 	WC = this;
 
-	if(cFullScreen == 1);
+	if(cFullScreen);
         glutFullScreen(	);
 }
 //--------------------------------
@@ -77,6 +76,9 @@ void
 WorldControler::Add( Sprite3d* pSprite) {
 		WC->cCurrentWorld->add( pSprite );
 }
+//--------------------------------
+
+
 //--------------------------------
 void
 WorldControler::setSize( int pWidth, int pHeight)

@@ -5,11 +5,11 @@
 //*************************************************
 AnimatObj::AnimatObj( Sprite3d* pSprite,	float pDelay,  O3dObj* pObj )
 	:cMySprite( pSprite ),
-	 cLastTime(0),
 	 cDelay( pDelay ),
+	 cLastTime(0),
 	 cAnimateOn(GL_TRUE)
 {
-		if( pObj )		add( pObj ); 
+		if( pObj )		add( pObj );
 }
 //-----------------------------------------------
 GLboolean
@@ -20,10 +20,10 @@ AnimatObj::animate()
 
 	if( cAnimateOn == GL_FALSE || ( WorldControler::GetTime()-cLastTime) < cDelay )
 	  return GL_FALSE;
-	
+
 
 	animateFinal();
-	
+
 	cLastTime = WorldControler::GetTime();
 
 	return GL_TRUE;
@@ -35,8 +35,8 @@ AnimatObj::set(  Sprite3d* pSprite, float pDelay,  O3dObj* pObj)
 	cMySprite = pSprite;
 	cDelay    = pDelay;
 
-	if( pObj )		
-		add( pObj ); 
+	if( pObj )
+		add( pObj );
 }
 
 //*************************************************

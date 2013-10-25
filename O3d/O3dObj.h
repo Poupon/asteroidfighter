@@ -50,7 +50,7 @@ public:
 
 	long getObjectId()	{ return cId; 	}
 
-	void setObjProps( O3dObjProps *pObjProps ){ cObjProps = pObjProps; }		 
+	void setObjProps( O3dObjProps *pObjProps ){ cObjProps = pObjProps; }
 	O3dObjProps *getObjProps() {return cObjProps; }
 
 
@@ -60,7 +60,7 @@ public:
 	virtual void draw( O3dViewProps& pVProps, O3dObjProps* pObjProps);
 	virtual void drawId( O3dViewProps &pVProps, O3dObjProps *pObjProps );
 	virtual void drawForSelectComponents( O3dViewProps & pVProps, O3dObjProps *pObjProps );
-	virtual void drawSelectedComponents( O3dViewProps &pVProps, O3dObjProps *pObjProps)	{;	}
+	virtual void drawSelectedComponents( O3dViewProps &pVProps, O3dObjProps *pObjProps)	{ (void)pVProps;(void)pObjProps;}
 
 	virtual float getRadius()	{ return cRadius;	}
 	virtual void setRadius( float pRadius ) { cRadius = pRadius; }
@@ -77,7 +77,7 @@ public:
 
 	T3dBox &getMinMaxBox(){ return cBox; }
 	virtual GLboolean animate()	{ return GL_TRUE; }
-	virtual void setAnimateOn(GLboolean pAnim=GL_TRUE){;}	
+	virtual void setAnimateOn(GLboolean pAnim=GL_TRUE){;}
 
 	virtual void makeMinMaxBox()	{;	}
 	virtual O3dObj *findObjectById( long pId )	{ if( pId == cId ) return this; return NULL; 	}

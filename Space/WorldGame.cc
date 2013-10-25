@@ -200,6 +200,7 @@ WorldGame::initStart( int pNiveau )
   add( lPilot );
   setPilot( lPilot );
 
+METTRE LA MISE A JOUR DEPUIS LE FICHIOER ICI
 
   add( new Sky( 10*cSize, cSize*100 ) );
   return GL_TRUE;

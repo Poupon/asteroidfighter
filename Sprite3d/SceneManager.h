@@ -23,6 +23,9 @@ public:
 	SceneManager();
 	virtual~SceneManager();
 
+     void write( std::ostream & pOs);
+     bool read( std::istream & pIs );
+    void saveStateToFile( const char* pName );
 
 	void go(World*pWorld);
 	void addScene( Sprite3d* pSprite, float pLiveTime=-1 );

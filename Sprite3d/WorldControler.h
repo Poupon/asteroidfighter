@@ -29,7 +29,7 @@ protected:
 	int cFullScreen;
 
 public:
-	WorldControler( int pWidth, int pHeight, int  pFullScreen );
+	WorldControler( int pWidth, int pHeight, bool pFullScreen );
 	virtual ~WorldControler();
 	virtual void quit();
 	virtual void mainWorld();
@@ -41,6 +41,8 @@ public:
 	void setMainWorld( World* pMainWorld ) { cMainWorld = pMainWorld; cMainWorld->setMyControler(this);}
 	void setHelpWorld( World* pHelpWorld ) { cHelpWorld = pHelpWorld; cHelpWorld->setMyControler(this);}
 
+    void write( std::ostream & pOs);
+    bool read( std::istream & pIs );
 
 	virtual void closeWindows(){;}
 	virtual void openWindows() {;}

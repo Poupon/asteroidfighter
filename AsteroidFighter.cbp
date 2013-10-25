@@ -28,7 +28,12 @@
 		<Compiler>
 			<Add option="-O3" />
 			<Add option="-O" />
-			<Add option="-fpermissive" />
+			<Add option="-pedantic" />
+			<Add option="-Wextra" />
+			<Add option="-Wall" />
+			<Add option="-pg" />
+			<Add option="-g" />
+			<Add option="-fpermissive -Wno-unused-parameter" />
 			<Add option="-DUL_WIN32=1 -DUL_MSVC=1 -DOPENGLUT_STATIC -DPUI_WIN" />
 			<Add option="-DWIN32" />
 			<Add option="-DOPENGLUT_STATIC" />
@@ -45,6 +50,7 @@
 			<Add directory="freeglut-2.8.1/include" />
 		</Compiler>
 		<Linker>
+			<Add option="-pg -lgmon" />
 			<Add library="winmm" />
 			<Add library="plib" />
 			<Add library="freeglut" />
@@ -140,6 +146,7 @@
 		<Unit filename="Space/Pilot.cc">
 			<Option target="default" />
 		</Unit>
+		<Unit filename="Space/Pilot.h" />
 		<Unit filename="Space/Scene.cc">
 			<Option target="default" />
 		</Unit>
@@ -227,9 +234,7 @@
 		<Unit filename="Sprite3d/Sprite3dPilot.cc">
 			<Option target="default" />
 		</Unit>
-		<Unit filename="Sprite3d/Sprite3dPilot.h">
-			<Option target="default" />
-		</Unit>
+		<Unit filename="Sprite3d/Sprite3dPilot.h" />
 		<Unit filename="Sprite3d/Text2d.cc">
 			<Option target="default" />
 		</Unit>

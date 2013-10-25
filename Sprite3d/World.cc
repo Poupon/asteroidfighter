@@ -23,18 +23,18 @@ RemoveSprite(  Sprite3d *pSp,  VSprite3d& vect )
 {
 	for( VSprite3d::iterator iter = vect.begin(); iter != vect.end(); iter++ )
 		if( *iter == pSp )
-			vect.erase( iter );				
+			vect.erase( iter );
 }
 
 //**************************************
 
 World::World( WorldControler *pControl, O3dKamera* pKamera, Double3& pMax, O3dObjProps*pProps )
 :cPilot( NULL ),
- cBox( pMax, pMax ),
  cProps( pProps ),
  cMyControler(pControl),
  cKamera(pKamera),
- cOverlayOpen( GL_FALSE )
+ cOverlayOpen( GL_FALSE ),
+ cBox( pMax, pMax )
 {
 	for( int i = 0; i < 3; i++ )
 	{
@@ -48,41 +48,41 @@ World::~World()
 	empty();
 }
 //--------------------------------
-void 
-World::add( Sprite3d *pSprite ){ 
-	cNewSprite.push_back( pSprite ); 	
+void
+World::add( Sprite3d *pSprite ){
+	cNewSprite.push_back( pSprite );
 }
 //--------------------------------
-void 
+void
 World::empty()
 {
 	killAllSprite(); // y compris cPilot
 	cPilot = NULL;
 }
 //--------------------------------
-void 
+void
 World::gameOver()
 {
 	//	cPilot = NULL;
 }
 //--------------------------------
-void 
+void
 World::gameWinner()
 {
 	//	cPilot = NULL;
 }
 //--------------------------------
-GLboolean 
+GLboolean
 World::initOverlay()
 {
 	int transparent, red, white;
-	
+
 	//	glutInitDisplayMode(GLUT_SINGLE | GLUT_INDEX);
 	int overlaySupport = glutLayerGet(GLUT_OVERLAY_POSSIBLE);
 
-	if (overlaySupport) 
+	if (overlaySupport)
 		{
-			
+
 			glutEstablishOverlay();
 			glutHideOverlay();
 			transparent = glutLayerGet(GLUT_TRANSPARENT_INDEX);
@@ -95,7 +95,7 @@ World::initOverlay()
 			////////			glutReshapeFunc(reshape);
 			cOverlayOpen = GL_TRUE;
 
-		} 
+		}
 	else
 		{
 			std::cout << "Overlay failed" << std::endl;
@@ -106,15 +106,15 @@ World::initOverlay()
 //--------------------------------
 //----------- DRAW --------------
 //--------------------------------
-void World::drawWorld() 
+void World::drawWorld()
 {
   if( cPilot )
-		cPilot->drawControl();	
+		cPilot->drawControl();
 
   cKamera->exec();
 //	  T3dPrimitiv::DrawRepere( 120, 1 );
 	//	T3dPrimitiv::DrawGrid( 100, 10 );
-	
+
  // cLiveObj.drawObj( getProps() );
   drawLiveSprite();
 
@@ -134,7 +134,7 @@ void World::drawLiveSprite()
 //-------------------------------------------------
 void World::reshapeWorld(int pWidth, int pHeight)
 {
-	
+
 }
 //-------------------------------------------------
 // Determine si un des sprites intersecte avec une zone
@@ -147,13 +147,13 @@ World::isSpriteIntersect( Double3 pPos, float pRadius, unsigned int pMmask_Att)
 		unsigned int mask_Def = (*iter)->getDefMask();
 		if( (mask_Def & pMmask_Att) )
 		{
- 
+
 			if( (*iter)->intersect( pPos, pRadius ) == GL_TRUE )
 				return (*iter);
 		}
 		else {
 		}
-		
+
 	}
 	return NULL;
 }
@@ -168,13 +168,13 @@ World::isSpriteIntersectXY( Double3 pPos, float pRadius, unsigned int pMmask_Att
 		unsigned int mask_Def = (*iter)->getDefMask();
 		if( (mask_Def & pMmask_Att) )
 		{
- 
+
 			if( (*iter)->intersectXY( pPos, pRadius ) == GL_TRUE )
 				return (*iter);
 		}
 		else {
 		}
-		
+
 	}
 	return NULL;
 }
@@ -185,7 +185,7 @@ World::isSpriteIntersectXY( Double3 pPos, float pRadius, unsigned int pMmask_Att
 extern int lNbCalcul;
 
 void World::animateLiveSprite()
-{	
+{
 	//	std::cout << "World::animateLiveSprite " << cNewSprite.size() << std::endl;
 
 
@@ -210,13 +210,13 @@ void World::animateLiveSprite()
 	// Detection et resolution des collisions
     Collision::SimpleDetection( cLiveSprite );
 
-//	int   lDim[2]={ 0, 1 }; 
+//	int   lDim[2]={ 0, 1 };
 //	int   lNbDiv[2]={ 10, 10 };
 //	cout << "***********************************" <<endl;
 //	Collision::SpatialDetection( cLiveSprite, &lDim[0], cBox.getMin(), cBox.getMax(), &lNbDiv[0], 2 );
 //	cout << "Collision " << cLiveSprite.size() << "/" << lNbCalcul <<endl;
 
-	
+
 		// Elimination logique des Sprite sortie du monde
 	for( std::vector <Sprite3d*>::iterator iter3 = cLiveSprite.begin(); iter3 != cLiveSprite.end(); ++iter3 )
 	{
@@ -236,7 +236,7 @@ void World::animateLiveSprite()
 			for( VSprite3d::iterator iter5 = cLiveSprite.begin(); iter5 != cLiveSprite.end(); iter5++ )
 			{
 				if( *iter4 == *iter5 )
-				{					
+				{
 					delete( *iter5 );
 					*iter5 = NULL;
 					cLiveSprite.erase( iter5 );
@@ -270,7 +270,7 @@ void World::killAllSprite()
 #ifndef PC_WINDOWS
 	for( std::vector < Sprite3d *> ::iterator iter = cNewSprite.begin(); iter != cNewSprite.end(); ++iter )
 		deleteSprite( *iter );
-		
+
 	for( std::vector < Sprite3d *> ::iterator iter2 = cLiveSprite.begin(); iter2 != cLiveSprite.end(); ++iter2 )
 		deleteSprite( *iter2 );
 
@@ -280,7 +280,7 @@ void World::killAllSprite()
 	cNewSprite.clear();
 	cLiveSprite.clear();
 	cDeadSprite.clear();
-	
+
 }
 //--------------------------------
 void World::animateWorld()
@@ -299,7 +299,7 @@ void World::mouseMove( int pX, int pY )
 //--------------------------------
 void World::key( unsigned char pKey, int pX, int pY )
 {
-	if( cPilot )	
+	if( cPilot )
 		cPilot->key( pKey, pX, pY );
 }
 //--------------------------------
@@ -311,27 +311,27 @@ void World::mouseButton( int pButton, int pState, int pX, int pY)
 //--------------------------------
 void
 World::setPilot( int pX, int pY )
-{		
+{
 	if( cPilot )
 		cPilot->mouseMove( pX, pY );
 }
 
 //--------------------------------
-void 
+void
 World::setPilotKey(unsigned char pKey, int pX, int pY  )
 {
 	if( cPilot )
 		cPilot->key( pKey, pX, pY );
 }
 //--------------------------------
-void 
+void
 World::setPilotSpecialKey(unsigned char pKey, int pX, int pY  )
 {
 	if( cPilot )
 		cPilot->key( pKey, pX, pY );
 }
 //--------------------------------
-void 
+void
 World::setPilotKeyUp(unsigned char pKey, int pX, int pY  )
 {
 	if( cPilot )
@@ -363,7 +363,7 @@ World::GetPositionWithoutCollision( int pInteract, Double3& pPos, int pSize, int
 
 		if( pLimitZ != 0 )
 			pPos[ 2 ] = (rand()%(pLimitZ << 1))-pLimitZ;
-		
+
 		if( WorldControler::GetCurrentWorld()->isSpriteIntersect( pPos, pSize*pMarge, pInteract ) == NULL ){
 			return GL_TRUE;
 		}

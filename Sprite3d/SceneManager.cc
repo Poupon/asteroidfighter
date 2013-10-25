@@ -2,6 +2,10 @@
 #include <Sprite3d/WorldControler.h>
 
 #include <Sprite3d/Scene.h>
+#include <Space/Pilot.h>
+
+#include <fstream>
+#include <sstream>
 
 
 // **************************************
@@ -15,18 +19,18 @@ SceneManager::SceneManager()
 //------------------------------
 SceneManager::~SceneManager()
 {
-	/* Bug ! (les scene sont peut deja detruite ? 
-	std::cout << "~SceneManager " << cSceneVect.size() << std::endl;
-		for( unsigned int i=0; i<  cSceneVect.size(); i++ )
-		{
-			std::cout << "~SceneManager " << i << " " << cSceneVect[i]->getStrName() << std::endl;
-			if( cSceneVect[i] != NULL ){
-				delete cSceneVect[i];
-				cSceneVect[i] = NULL;
-			}
-			}
-		std::cout << "~SceneManager end" << std::endl;
-	*/
+	// Bug ! (les scene sont peut deja detruite ?
+	//std::cout << "~SceneManager " << cSceneVect.size() << std::endl;
+	//	for( unsigned int i=0; i<  cSceneVect.size(); i++ )
+		//{
+		//	std::cout << "~SceneManager " << i << " " << cSceneVect[i]->getStrName() << std::endl;
+		//	if( cSceneVect[i] != NULL ){
+		//		delete cSceneVect[i];
+		//		cSceneVect[i] = NULL;
+	//		}
+	//		}
+	//	std::cout << "~SceneManager end" << std::endl;
+
 	cSceneVect.clear();
 }
 //------------------------------
@@ -74,7 +78,126 @@ void SceneManager::setCurrentSceneTempo( float pLiveTime, GameFinish cGameFinish
 	cSceneVect[cCurScene]->SpriteFloat::set( SPRITE_LIFETIME, pLiveTime );
 	cSceneVect[cCurScene]->MkSetUSER5( static_cast<float>(cGameFinish ));
 }
-//------------------------------
+//----------------------------------------------------------
+static const char* sStrLevel = "(Level";
+static const char* sStrScene = "Scene";
+static const char* sStrTime  = "Time";
+static const char* sStrDifficulty  = "Difficulty";
+
+
+void
+SceneManager::write( std::ostream & pOs){
+
+    pOs << sStrLevel << ' '
+        << sStrScene << ' ' << cCurScene  << ' '
+        << sStrTime << ' ' << (long)WorldControler::sTime << ' '
+        << sStrDifficulty << ' ' << WorldControler::sDifficultyLevel << ' '
+        << ')';
+
+}
+//-------------
+bool
+SceneManager::read( std::istream & pIs ){
+
+    std::string lTmpStr;
+
+    long lCurScene = 0;
+    long lTime =0;
+
+    pIs >> lTmpStr;
+    std::cout << "read " << lTmpStr << std::endl;
+
+    if( lTmpStr.compare( sStrLevel ) != 0 )
+        return false;
+
+    pIs >> lTmpStr;
+    if( lTmpStr.compare( sStrScene ) != 0 )
+        return false;
+    pIs >> lCurScene;
+
+    pIs >> lTmpStr;
+    if( lTmpStr.compare( sStrTime ) != 0 )
+        return false;
+    pIs >> lTime;
+
+    cCurScene = lCurScene;
+    WorldControler::sTime = lTime;
+
+    return true;
+}
+//-------------
+static const char* sDirSav = "Sav";
+static const char* sAutoSavFile = "autosave";
+static int sSavNum=0;
+
+//-------------
+void
+SceneManager::restoreStateFromFile( const char* pName ){
+
+    std::ostringstream lStrFile(sDirSav);
+
+    lStrFile << sDirSav <<'/';
+    lStrFile << pName;
+ //   lStrFile << '_';
+ //   lStrFile << ".sav" ;
+
+std::cout << "*** restoreStateFromFile " << lStrFile.str() << std::endl;
+
+    if( Pilot::ThePilot == NULL )
+            return;
+
+    std::ifstream lFis( lStrFile.str().c_str());
+    if( lFis.bad())
+        return;
+
+    if( read( lFis )== false ){
+        std::cout << "read scene fail" << std::endl;
+            return ;
+    }
+
+    if( Pilot::ThePilot->read(lFos)== false ){
+        std::cout << "read pilot fail" << std::endl;
+            return ;
+    }
+
+
+    lFos.close();
+}
+//-------------
+void
+SceneManager::saveStateToFile( const char* pName ){
+
+std::cout << "SceneManager::saveStateToFile " << pName << std::endl;
+
+    std::ostringstream lStrFile(sDirSav);
+
+    lStrFile << sDirSav <<'/';
+    lStrFile << pName;
+    lStrFile << '_';
+    lStrFile << sSavNum++;
+    lStrFile << ".sav" ;
+
+
+std::cout << "\tsaveStateToFile " << lStrFile.str() << std::endl;
+
+    if( Pilot::ThePilot == NULL )
+            return;
+
+    std::ofstream lFos( lStrFile.str().c_str());
+    if( lFos.bad())
+        return;
+
+std::cout << "\tsaveStateToFile ok " << lStrFile.str() << std::endl;
+
+    write( lFos );
+    lFos << std::endl;
+
+    Pilot::ThePilot->write(lFos);
+    lFos << std::endl;
+
+    lFos.close();
+}
+//-----------------------------------------------------------
 // Lance la premiere scene du scenario, c'est la fin
 // de la scene (kill -> endScene ) qui provoque
 // l'execution de la scene suivante
@@ -84,7 +207,7 @@ void SceneManager::setCurrentSceneTempo( float pLiveTime, GameFinish cGameFinish
 void
 SceneManager::go(World* pWorld)
 {
-	sprintf( cStrInfo, "%d/%ld | %s", cCurScene, cSceneVect.size(), cSceneVect[cCurScene]->getStrInfo() );
+  sprintf( cStrInfo, "%d/%d | %s", cCurScene, cSceneVect.size(), cSceneVect[cCurScene]->getStrInfo() );
   cSceneVect[cCurScene]->resetLife();  // remet a jour l heure de creation
   pWorld->add(cSceneVect[cCurScene]);
 }
@@ -124,7 +247,10 @@ SceneManager::endScene()
 			return  0;
 		}
 
-	sprintf( cStrInfo, "%d/%ld | %s", cCurScene, cSceneVect.size(), cSceneVect[cCurScene]->getStrInfo());
+    saveStateToFile(sAutoSavFile);
+
+
+	sprintf( cStrInfo, "%d/%d | %s", cCurScene, cSceneVect.size(), cSceneVect[cCurScene]->getStrInfo());
 	cSceneVect[cCurScene]->resetLife();
 
 	if( WorldControler::GetCurrentWorld())

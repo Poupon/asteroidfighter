@@ -70,7 +70,7 @@
 
 #elif defined(__APPLE__)
 
-#define UL_MAC_OSX   1 
+#define UL_MAC_OSX   1
 
 #elif defined(__linux__)
 
@@ -163,7 +163,7 @@
 /* SGI machines seem to suffer from a lack of FLT_EPSILON so... */
 
 #ifndef FLT_EPSILON
-#define FLT_EPSILON 1.19209290e-07f        
+#define FLT_EPSILON 1.19209290e-07f
 #endif
 
 #ifndef DBL_EPSILON
@@ -206,7 +206,7 @@ class ulClock
   double delta ;
   double last_time ;
   double max_delta ;
-  
+
 #ifdef UL_WIN32
   static double res ;
   static int perf_timer ;
@@ -226,7 +226,7 @@ public:
 #endif
     start     = getRawTime () ;
     now       = 0.0 ;
-    max_delta = 0.2 ; 
+    max_delta = 0.2 ;
     delta     = 0.0000001 ;  /* Faked so stoopid programs won't div0 */
     last_time = 0.0 ;
   }
@@ -319,7 +319,7 @@ char* ulMakePath( char* path, const char* dir, const char* fname );
 
 bool ulFileExists ( const char *fileName ) ;
 
-void ulFindFile( char *filenameOutput, const char *path, 
+void ulFindFile( char *filenameOutput, const char *path,
 											  const char * tfnameInput, const char *sAPOM ) ;
 
 
@@ -333,19 +333,19 @@ static const int _ulEndianTest = 1;
 
 inline void ulEndianSwap(unsigned int *x)
 {
-  *x = (( *x >> 24 ) & 0x000000FF ) | 
-       (( *x >>  8 ) & 0x0000FF00 ) | 
-       (( *x <<  8 ) & 0x00FF0000 ) | 
+  *x = (( *x >> 24 ) & 0x000000FF ) |
+       (( *x >>  8 ) & 0x0000FF00 ) |
+       (( *x <<  8 ) & 0x00FF0000 ) |
        (( *x << 24 ) & 0xFF000000 ) ;
 }
 
-  
+
 inline void ulEndianSwap(unsigned short *x)
 {
-  *x = (( *x >>  8 ) & 0x00FF ) | 
+  *x = (( *x >>  8 ) & 0x00FF ) |
        (( *x <<  8 ) & 0xFF00 ) ;
 }
-  
+
 
 inline void ulEndianSwap(float *x) { ulEndianSwap((unsigned int   *)x); }
 inline void ulEndianSwap(int   *x) { ulEndianSwap((unsigned int   *)x); }
@@ -534,7 +534,7 @@ inline size_t ulEndianWriteBigFloat(FILE *f, float x) {
 
 
 /*
-  Windoze/BEOS code based on contribution from Sean L. Palmer 
+  Windoze/BEOS code based on contribution from Sean L. Palmer
 */
 
 
@@ -556,7 +556,7 @@ public:
 
   void *getFuncAddress ( const char *funcname )
   {
-    return (void *) GetProcAddress ( handle, funcname ) ; //lint !e611
+    return (void*)GetProcAddress ( handle, funcname ); //lint !e611
   }
 
   ~ulDynamicLibrary ()
@@ -736,40 +736,40 @@ protected:
   unsigned int total ;  /* The total number of entities in the list */
   unsigned int limit ;  /* The current limit on number of entities  */
   unsigned int next  ;  /* The next entity when we are doing getNext ops */
- 
+
   void **entity_list ;  /* The list. */
- 
+
   void sizeChk (void) ;
- 
+
 public:
- 
+
   ulList ( int init_max = 1 ) ;
   virtual ~ulList (void) ;
- 
+
   void *getEntity ( unsigned int n )
   {
     next = n + 1 ;
     return ( n >= total ) ? (void *) NULL : entity_list [ n ] ;
   }
- 
+
   virtual void addEntity ( void *entity ) ;
   virtual void addEntityBefore ( int n, void *entity ) ;
   virtual void removeEntity ( unsigned int n ) ;
- 
+
   void removeAllEntities () ;
- 
+
   void removeEntity ( void *entity )
   {
     removeEntity ( searchForEntity ( entity ) ) ;
   }
- 
+
   virtual void replaceEntity ( unsigned int n, void *new_entity ) ;
- 
+
   void replaceEntity ( void *old_entity, void *new_entity )
   {
     replaceEntity ( searchForEntity ( old_entity ), new_entity ) ;
   }
- 
+
   void *getNextEntity   (void) { return getEntity ( next ) ; }
 
   int   getNumEntities  (void) const { return total ; }
