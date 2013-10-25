@@ -25,7 +25,8 @@ BonusMaker::BonusMaker()
  cColorField(0.3, 0., 0.3, 0.5 ),
  cColorLife(0.8, 0.2, 0.2, 0.5 ),
  cColorGold(0.4, 0.4, 0.4, 0.5 ),
- cColorUpgrad(1, 1, 1, 0.9 )
+ cColorUpgrad(1, 1, 1, 0.9 ),
+ cColorUpgradField( 0.5, 0.5, 0., 0.2 )
 {
 	TheBonusMaker = this;
 	
@@ -50,6 +51,8 @@ BonusMaker::BonusMaker()
 	cPropsSkeleton.ObjPropsFloat4::set( MATERIAL, Yellow4);
 	cPropsSkeleton.ObjPropsBool::set(DRAW_OBJ_SKELETON, 1);
 	cPropsSkeleton.ObjPropsBool::set(DRAW_OBJ_SOLID, 0);
+
+	cPropsUpgradField.ObjPropsFloat4::set( MATERIAL, cColorUpgradField);
 
 	for( int i=0; i<MAX_BONUS;i++)
 		cObjBonus[i] = makeBonus( 2+i );
@@ -97,11 +100,17 @@ BonusMaker::makeUpgrad( float pSz )
 	
 	lObjVect->push_back( lObj1);	
 	lObjVect->push_back( lObj2 );	
-	
+
+	O3dObj* lField = new O3dObjPrim( O3dObjPrim::PrimSphere, pSz, 6, 8 );
+	lField->setObjProps( &cPropsUpgradField );
+	lObjVect->add( lField );
+
+
 	// Pourquoi setUseList( GL_FALSE) ? Couleurs ???? 
 	
 	lObj1->setUseList( GL_FALSE);
 	lObj2->setUseList( GL_FALSE);
+	lField->setUseList( GL_FALSE);
 	lObjVect->setUseList( GL_FALSE);
 	
 	lObjVect->setRadius( pSz);

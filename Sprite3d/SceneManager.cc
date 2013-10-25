@@ -1,11 +1,12 @@
 #include <SceneManager.h>
 #include <Sprite3d/WorldControler.h>
 
-#include <Sprite3d/Scene.h>
+//#include <Sprite3d/Scene.h>
 #include <Space/Pilot.h>
 
 #include <fstream>
 #include <sstream>
+#include <iomanip>
 
 
 // **************************************
@@ -83,7 +84,13 @@ static const char* sStrLevel = "(Level";
 static const char* sStrScene = "Scene";
 static const char* sStrTime  = "Time";
 static const char* sStrDifficulty  = "Difficulty";
+static const char* sStrNumSav  = "NumSav";
 
+//-------------
+static const char* sDirSav = "Sav";
+static const char* sAutoSavFile = "AutoSave";
+static int sSavNum=1;
+//-------------
 
 void
 SceneManager::write( std::ostream & pOs){
@@ -92,7 +99,8 @@ SceneManager::write( std::ostream & pOs){
         << sStrScene << ' ' << cCurScene  << ' '
         << sStrTime << ' ' << (long)WorldControler::sTime << ' '
         << sStrDifficulty << ' ' << WorldControler::sDifficultyLevel << ' '
-        << ')';
+        << sStrNumSav << ' ' << sSavNum << ' '
+       << ')';
 
 }
 //-------------
@@ -105,63 +113,82 @@ SceneManager::read( std::istream & pIs ){
     long lTime =0;
 
     pIs >> lTmpStr;
-    std::cout << "read " << lTmpStr << std::endl;
+    std::cout << "read <" << lTmpStr << ">" <<std::endl;
+		
 
     if( lTmpStr.compare( sStrLevel ) != 0 )
         return false;
 
+
     pIs >> lTmpStr;
+    std::cout << "read <" << lTmpStr << ">" <<std::endl;
     if( lTmpStr.compare( sStrScene ) != 0 )
         return false;
     pIs >> lCurScene;
 
+
     pIs >> lTmpStr;
-    if( lTmpStr.compare( sStrTime ) != 0 )
+     std::cout << "read <" << lTmpStr << ">" <<std::endl;
+   if( lTmpStr.compare( sStrTime ) != 0 )
         return false;
     pIs >> lTime;
 
+
+    pIs >> lTmpStr;
+     std::cout << "read <" << lTmpStr << ">" <<std::endl;
+   if( lTmpStr.compare( sStrDifficulty ) != 0 )
+        return false;
+
+ 	 pIs >> WorldControler::sDifficultyLevel;
+
+   pIs >> lTmpStr;
+     std::cout << "read <" << lTmpStr << ">" <<std::endl;
+   if( lTmpStr.compare( sStrNumSav ) != 0 )
+        return false;
+
+ 	 pIs >> sSavNum;
+
+
+	 pIs >> lTmpStr; // la parenthese
+
     cCurScene = lCurScene;
-    WorldControler::sTime = lTime;
+		////// !!!!!!!!!!!    WorldControler::sTime = lTime;
 
     return true;
 }
-//-------------
-static const char* sDirSav = "Sav";
-static const char* sAutoSavFile = "autosave";
-static int sSavNum=0;
 
 //-------------
 void
-SceneManager::restoreStateFromFile( const char* pName ){
+SceneManager::restoreStateFromFile( World* pWorld,  const char* pName ){
 
     std::ostringstream lStrFile(sDirSav);
 
-    lStrFile << sDirSav <<'/';
-    lStrFile << pName;
- //   lStrFile << '_';
- //   lStrFile << ".sav" ;
-
-std::cout << "*** restoreStateFromFile " << lStrFile.str() << std::endl;
+		std::cout << "*** restoreStateFromFile " << pName << std::endl;
 
     if( Pilot::ThePilot == NULL )
             return;
 
-    std::ifstream lFis( lStrFile.str().c_str());
-    if( lFis.bad())
-        return;
+    std::ifstream lFis( pName );
+    if( lFis.fail()){
+			std::cout << "Opening " << pName << " failed !" << std::endl;
+			return;
+		}
 
     if( read( lFis )== false ){
         std::cout << "read scene fail" << std::endl;
             return ;
     }
 
-    if( Pilot::ThePilot->read(lFos)== false ){
+    if( Pilot::ThePilot->read(lFis)== false ){
         std::cout << "read pilot fail" << std::endl;
             return ;
     }
 
 
-    lFos.close();
+    lFis.close();
+
+
+		internalGo( pWorld );
 }
 //-------------
 void
@@ -173,8 +200,8 @@ std::cout << "SceneManager::saveStateToFile " << pName << std::endl;
 
     lStrFile << sDirSav <<'/';
     lStrFile << pName;
-    lStrFile << '_';
-    lStrFile << sSavNum++;
+		lStrFile << '_';
+		lStrFile << std::setfill('0') << std::setw(3) <<  sSavNum++;
     lStrFile << ".sav" ;
 
 
@@ -205,11 +232,23 @@ std::cout << "\tsaveStateToFile ok " << lStrFile.str() << std::endl;
 // et donc la victoire
 
 void
-SceneManager::go(World* pWorld)
+SceneManager::internalGo(World* pWorld)
 {
-  sprintf( cStrInfo, "%d/%d | %s", cCurScene, cSceneVect.size(), cSceneVect[cCurScene]->getStrInfo() );
+
+	std::cout << "SceneManager::go " << cCurScene << '/' <<  cSceneVect.size() << ' ' <<  cSceneVect[cCurScene]->getStrInfo() << std::endl;
+
+  sprintf( cStrInfo, "%d/%lu | %s", cCurScene, cSceneVect.size(), cSceneVect[cCurScene]->getStrInfo() );
   cSceneVect[cCurScene]->resetLife();  // remet a jour l heure de creation
   pWorld->add(cSceneVect[cCurScene]);
+}
+//------------------------------
+void
+SceneManager::go(World* pWorld)
+{
+	sSavNum =1;
+
+	internalGo( pWorld);
+
 }
 //------------------------------
 void
@@ -247,10 +286,11 @@ SceneManager::endScene()
 			return  0;
 		}
 
+	if( cSceneVect[cCurScene]->getSpriteType() > 0 )
     saveStateToFile(sAutoSavFile);
 
 
-	sprintf( cStrInfo, "%d/%d | %s", cCurScene, cSceneVect.size(), cSceneVect[cCurScene]->getStrInfo());
+	sprintf( cStrInfo, "%d/%lu | %s", cCurScene, cSceneVect.size(), cSceneVect[cCurScene]->getStrInfo());
 	cSceneVect[cCurScene]->resetLife();
 
 	if( WorldControler::GetCurrentWorld())

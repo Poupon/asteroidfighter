@@ -51,16 +51,18 @@ WorldGame::~WorldGame()
 //---------------------------------------------------
 const char*
 WorldGame::getInfoLeveL(){
-	sprintf( cInfoLevel, cSceneManager->getInfoScene() );
+	strcpy(  cInfoLevel, cSceneManager->getInfoScene() );
+	//	sprintf( cInfoLevel, cSceneManager->getInfoScene() );
 	return cInfoLevel;
 }
 //---------------------------------------------------
 GLboolean
-WorldGame::initStart( int pNiveau )
+WorldGame::initStart( int pNiveau, const char* pNameFileSav )
 {
+	std::cout << "WorldGame::initStart " << pNiveau << " " << pNameFileSav << std::endl;
+
   Double3 lGenPos( 160.0, 0.0, 0.0 );
 	Float4 lBanColor( 0.6, 0.6, 0.9, 0.4 ) ;
-
 
 	// We must allocate all in the heap because on restart, we must
 	// forget all.
@@ -71,6 +73,7 @@ WorldGame::initStart( int pNiveau )
 
 	int lDureGen = 20; //40;
 	WorldGame::GlobalScroll = -20;
+	
 
 	if( pNiveau == 0 )
 		{
@@ -89,7 +92,8 @@ WorldGame::initStart( int pNiveau )
 					cSceneManager->addSceneTempo(3);
 					cSceneManager->addScene( makeBanniere( "textures/NextLevel.gif", lBanColor, 3), 4);
 					cSceneManager->addSceneTempo(3);
-					WorldGame::GlobalScroll -= 1;
+					WorldGame::GlobalScroll -= 1;  // NE DOIT PAS MARCHER CAR GLOBAL IL FAUDRAIT METTRE UN SCROLL par Scene
+					// Ou memoriser le GlobalScroll a la creation de chque scene puis ensuite celle ci le positionner
 				}
 
 
@@ -189,18 +193,21 @@ WorldGame::initStart( int pNiveau )
 			*/
 		}
 
-	// Mettre une scene de reusite
-
-  cSceneManager->go(this);
 
 
   Pilot *lPilot = new Pilot();
   lPilot->getTransf().TransfDouble3::get(POS)[ 0 ] = -YSizeWorld;
 
   add( lPilot );
+
   setPilot( lPilot );
 
-METTRE LA MISE A JOUR DEPUIS LE FICHIOER ICI
+	if( pNameFileSav != NULL )
+		cSceneManager->restoreStateFromFile( this, pNameFileSav );
+	else
+		cSceneManager->go(this);
+
+
 
   add( new Sky( 10*cSize, cSize*100 ) );
   return GL_TRUE;
@@ -245,7 +252,7 @@ WorldGame::gameOver()
 	// Faire qq chose !
 }
 
-//------------------------------
+//------------------------------<
 // Pour laisser du temps entre deux scenes
 
 Sprite3d*
@@ -302,6 +309,14 @@ WorldGame::userEvent( void *pUserData)
 	((WorldGame*)WorldControler::GetGameWorld())->getSceneManager()->addSceneTempo( 25, SceneManager::GameWinner  );
 
  return 1;
+}
+//---------------------------------------------------
+void 
+WorldGame::saveStateToFile( const char* pName ){
+	if( cSceneManager != NULL )
+		{
+			cSceneManager->saveStateToFile( pName );
+		}
 }
 //---------------------------------------------------
 void

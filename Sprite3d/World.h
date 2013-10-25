@@ -68,6 +68,7 @@ public:
 	virtual void add( O3dObj *pObj ){ cLiveObj.push_back( pObj ); }
 	virtual void add( Sprite3d *pSprite );
 
+	virtual void saveStateToFile( const char* pName ){;};
 
 	WorldControler * getMyControler() { return cMyControler;}
 	void setMyControler(WorldControler *pControl) { cMyControler=pControl;}
@@ -119,7 +120,7 @@ public:
 	virtual void setPilotSpecialKey(unsigned char pKey, int pX, int pY  );
 
 
-	virtual GLboolean initStart(int pNiveau=0)=0;
+	virtual GLboolean initStart(int pNiveau=0, const char* pFileNameSav=NULL)=0;
 	virtual void freeRessources() {;}
 	virtual void empty();
 	virtual void gameOver();

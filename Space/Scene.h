@@ -24,6 +24,7 @@ protected:
 public:
 	Scene( const char* pName, int pHardness, float  pInterval, float pH, float pV );
 	virtual~Scene(){;}
+	virtual int getSpriteType() { return 1; }
 
 	virtual GLboolean animate();
 	virtual GLboolean leaveWorld() { return GL_FALSE;}

@@ -198,7 +198,7 @@ Help::makeWeapon( EnumWeapons pType, int pX, int pY, int pSz )
 }
 //-----------------------------
 GLboolean
-Help::initStart(int pNiveau)
+Help::initStart(int pNiveau, const char* pFile)
 {
   add( new Sky( 10*cSize, cSize*100 ) );
 

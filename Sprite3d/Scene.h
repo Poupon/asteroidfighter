@@ -10,7 +10,7 @@
 #include <Sprite3d/Sprite3dObj.h>
 
 
-//**************************************
+**************************************
 class Scene : public Sprite3dObj
 {
 protected:
@@ -27,11 +27,12 @@ public:
 	virtual GLboolean animate();
 	virtual GLboolean leaveWorld() { return GL_FALSE;}
 
+
+
 	virtual const char*  getStrName() { return cName.c_str(); }
 	std::string& getName() { return cName; }
 	int          getHardness() { return cHardness; }
 	float        getInterval() { return cInterval; }
-};
-//**************************************
+*************************************
 
 #endif

@@ -38,6 +38,7 @@ public:
 	Float4		cColorLife;
 	Float4		cColorGold;
 	Float4		cColorUpgrad;
+	Float4		cColorUpgradField;
 
 	O3dObjProps cPropsErg;
 	O3dObjProps cPropsRocket;
@@ -47,6 +48,7 @@ public:
 	O3dObjProps cPropsUpgrad;
 
 	O3dObjProps cPropsSkeleton;
+	O3dObjProps cPropsUpgradField;
 
 	static const int MAX_BONUS=4;
 
