@@ -440,27 +440,21 @@ WorldControler::Key( unsigned char pKey, int pX, int pY )
     switch( pKey )
 	{
 		case 'X':
-		case 'x':
 			lKam.TransfDouble3::get( ANGLE )[0] += 15;
 			break;
-		case 'w':
-		case 'W':
+		case 'x':
 			lKam.TransfDouble3::get( ANGLE )[0] -= 15;
 			break;
-		case 'y':
 		case 'Y':
 			lKam.TransfDouble3::get( ANGLE )[1] += 15;
 			break;
-		case 't':
-		case 'T':
+		case 'y':
 			lKam.TransfDouble3::get( ANGLE )[1] -= 15;
 			break;
-		case 'e':
-		case 'E':
+		case 'Z':
 			lKam.TransfDouble3::get( ANGLE )[2] += 15;
 			break;
 		case 'z':
-		case 'Z':
 			lKam.TransfDouble3::get( ANGLE )[2] -= 15;
 			break;
 	}

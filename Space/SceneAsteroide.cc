@@ -26,7 +26,7 @@ SceneAsteroide *SceneAsteroide::TheSceneAsteroide = NULL;
 
 //**************************************
 SceneAsteroide::SceneAsteroide( const char* pName, EnumAsteroides pTypeAsteroide, int pHardness, Double3& lPos, 
-								float pInterval, float  pH, float pV )
+																float pInterval, float  pH, float pV )
 :Scene( pName, pHardness, pInterval, pH, pV ),
 cTypeAsteroide(pTypeAsteroide)
 {
