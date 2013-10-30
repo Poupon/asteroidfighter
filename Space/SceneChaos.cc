@@ -69,7 +69,7 @@ SceneChaos::~SceneChaos()
 
 //------------------------
 void 
-SceneChaos::makeAsteroide(  Double3& pPos, int pSz, GLboolean pIndestructible ){
+SceneChaos::makeAsteroide(  Double3& pPos, int pSz, GLboolean pIndestructible, float pVY ){
 	Sprite3d *sp;
 
 	int lFacette = rand()%2+1;
@@ -81,6 +81,8 @@ SceneChaos::makeAsteroide(  Double3& pPos, int pSz, GLboolean pIndestructible ){
 	
 	sp = TheAsteroidesMaker->makeSpriteAsteroide( cTypeAsteroide, pSz, lFacette );
 
+	Double3 lSpin3( randf( 75 ), randf( 75 ), randf( 75 ));
+	sp->SpriteDouble3::set( SPRITE_SPIN,  lSpin3 );
 
 	if( pIndestructible == GL_TRUE )
 		{
@@ -93,7 +95,7 @@ SceneChaos::makeAsteroide(  Double3& pPos, int pSz, GLboolean pIndestructible ){
 	sp->getTransf().TransfDouble3::set( ANGLE, lAngle );
 	sp->getTransf().TransfDouble3::set( SCALE, lScale );
 	
-	Double3 lD3 ( WorldGame::GlobalScroll, 0, 0);
+	Double3 lD3 ( WorldGame::GlobalScroll, pVY, 0);
 	sp->SpriteDouble3::set( SPRITE_SPEED, lD3); 
 	WorldControler::Add( sp  );	
 }
@@ -104,13 +106,15 @@ SceneChaos::makeFloor( int pH ){
 	int lSz = (rand() % cSizeParoi) + cSizeParoi;
 	
 	Double3 lPos(  getTransf().TransfDouble3::get(POS)[0]+(lSz>>1), pH+(lSz>>1), 0 );	
-	makeAsteroide( lPos, (int)(lSz+randf(1)), GL_TRUE );
+	makeAsteroide( lPos, (int)(lSz+randf(1)), GL_TRUE, 0 );
 }
 //------------------------
 void 
 SceneChaos::makeWall(int pMin, int pMax, GLboolean pIndestructible, float pSpeedX, float pDeltaX, float pAleaX ){
 
 	float cX=0;
+
+	float vY = randf(WorldGame::GlobalScroll*0.2f);
 
 	for( int i=pMax;;){
 
@@ -132,7 +136,7 @@ SceneChaos::makeWall(int pMin, int pMax, GLboolean pIndestructible, float pSpeed
 		cX += pSpeedX + randf( pAleaX );
 		pSpeedX += pDeltaX ;
 		
-		makeAsteroide( lPos, lSz, pIndestructible );
+		makeAsteroide( lPos, lSz, pIndestructible, vY );
 	}
 }
 

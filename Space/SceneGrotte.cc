@@ -92,6 +92,12 @@ SceneGrotte::makeAsteroide(  Double3& pPos, int pSz, GLboolean pIndestructible )
 	sp->getTransf().TransfDouble3::set( ANGLE, lAngle );
 	sp->getTransf().TransfDouble3::set( SCALE, lScale );
 
+	if( cTypeAsteroide == PLASMA_SOLAIRE ){
+		Double3 lSpin3( randf( 75 ), randf( 75 ), randf( 75 ));
+		sp->SpriteDouble3::set( SPRITE_SPIN,  lSpin3 );
+	}
+
+
 	Double3 lD3 ( WorldGame::GlobalScroll, 0, 0);
 	sp->SpriteDouble3::set( SPRITE_SPEED, lD3);
 	WorldControler::Add( sp  );
@@ -169,23 +175,27 @@ SceneGrotte::makeArtefact() {
 
 			sp->SpriteDouble3::set( SPRITE_SPIN, lD3);
 		}
-  else 	if( p <= 30 )
+  else 	if( p <= 20 )
 			sp = MAKE_MINE_1;
-  else 	if( p <= 50 )
+  else 	if( p <= 30 )
 			sp = MAKE_MINE_LASER;
-  else 	if( p <= 70 )
+  else 	if( p <= 50 )
 			sp = MAKE_MINE_ION;
-	else if( p <= 80)
+	else if( p <= 70)
 		{
 			sp = MAKE_SHIP1(cHardness);
 		}
-  else	if( p <= 90 )
+  else	if( p <= 80 )
 		{
 			sp = MAKE_SHIP2(cHardness);
 		}
-	else	if( p <= 100 )
+	else	if( p <= 90 )
 		{
 			sp = MAKE_SHIP3(cHardness);
+		}
+	else	
+		{
+			sp = MAKE_CUIRASSE1;
 		}
 
 

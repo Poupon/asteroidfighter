@@ -25,11 +25,11 @@ AsteroidesMaker* TheAsteroidesMaker=NULL;
 // **********************************************************
 AsteroidesMaker::AsteroidesMaker()
 :cColorGrey(  0.5, 0.5, 0.5, 1.0 ),
-cColorSnow(  0.6, 0.6, 1.0, 1.0 ),
+ cColorSnow(  0.6, 0.6, 1.0, 1.0 ),
  cColorIce(  0.6, 0.6, 1.0, 0.5),
-//cColorCristal1(  0.3, 0.4, 0.8, 0.05),
-cColorCristal1(  0.8, 0.4, 0.2, 0.05),
-  cColorCristal2(  0.8, 0.5, 0.8, 0.15)
+ cColorCristal(  0.3, 0.4, 0.8, 0.05),
+ cColorPlasmaSolaire1(  0.8, 0.4, 0.2, 0.05),
+ cColorPlasmaSolaire2(  0.8, 0.5, 0.8, 0.15)
 {
   TheAsteroidesMaker = this;
 
@@ -37,8 +37,10 @@ cColorCristal1(  0.8, 0.4, 0.2, 0.05),
   cPropsSnow.ObjPropsFloat4::set( MATERIAL, cColorSnow );
   cPropsIce.ObjPropsFloat4::set( MATERIAL, cColorIce );
 
-  cPropsCristal1.ObjPropsFloat4::set( MATERIAL, cColorCristal1 );
-  cPropsCristal2.ObjPropsFloat4::set( MATERIAL, cColorCristal2 );
+  cPropsCristal.ObjPropsFloat4::set( MATERIAL, cColorCristal );
+
+  cPropsPlasmaSolaire1.ObjPropsFloat4::set( MATERIAL, cColorPlasmaSolaire1 );
+  cPropsPlasmaSolaire2.ObjPropsFloat4::set( MATERIAL, cColorPlasmaSolaire2 );
 
 
  // cPropsLune.ObjPropsFloat4::set( MATERIAL, cColorGrey );
@@ -97,27 +99,34 @@ AsteroidesMaker::makeAsteroideCristal(float pSz, int pFacette )
 	for( int i =3; i < pSz+2; i +=2)
 	{
       lOvect->push_back( (lObj=new ObjOdron(  -i, pFacette) ));
-      lObj->setObjProps( &cPropsCristal1);
+      lObj->setObjProps( &cPropsCristal);
  	 Double3 lD3( randf(360), randf(360),randf(360));
 	 lObj->getTransf().TransfDouble3::set( ANGLE, lD3 );
     }
- /*
-	for( int i =3; i < 4; i++ )
-	{
-	  lOvect->push_back( (lObj=new ObjOdron(  pSz-i*5, pFacette) ));
- 	 Double3 lD3( randf(360), randf(360),randf(360));
-	 lObj->getTransf().TransfDouble3::set( ANGLE, lD3 );
-    }
-     */
-//	for( int i=0; i< pSz*0.5; i++)
-/*	{
-		lOvect->push_back( (lObj=new ObjOdron( randp( pSz*0.3)+1, (int) randp( 3)+1 )));
-		Double3 lD3( randf(pSz*0.6)+1, randf(pSz*0.6)+1,randf(pSz*0.6)+1);
-	    lObj->getTransf().TransfDouble3::set( POS, lD3 );
-	}
-	*/
+ 
 	lOvect->setRadius( pSz );
-	lOvect->setObjProps( &cPropsCristal2);
+	lOvect->setObjProps( &cPropsCristal);
+	return lOvect;
+}
+//----------------------------------------------
+ObjVect*
+AsteroidesMaker::makePlasmaSolaire(float pSz, int pFacette )
+{
+	ObjVect* lOvect = new ObjVect;
+	O3dObj * lObj;
+
+
+
+	for( int i =3; i < pSz+2; i +=2)
+	{
+      lOvect->push_back( (lObj=new ObjOdron(  -i, pFacette) ));
+      lObj->setObjProps( &cPropsPlasmaSolaire1);
+ 	 Double3 lD3( randf(360), randf(360),randf(360));
+	 lObj->getTransf().TransfDouble3::set( ANGLE, lD3 );
+    }
+
+	lOvect->setRadius( pSz );
+	lOvect->setObjProps( &cPropsPlasmaSolaire2);
 	return lOvect;
 }
 
@@ -156,6 +165,9 @@ AsteroidesMaker::makeSpriteAsteroide( EnumAsteroides pType, float pSz, int pFace
 		break;
 	case ASTEROIDE_CRISTAL:
 		sp  = new Sprite3dObj( makeAsteroideCristal( pSz, pFacette));
+		break;
+	case PLASMA_SOLAIRE:
+		sp  = new Sprite3dObj( makePlasmaSolaire( pSz, pFacette));
 		break;
 	case ASTEROIDE_ICE:
   default:
@@ -197,91 +209,13 @@ AsteroidesMaker::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void *pParam
 			speed1 /= WorldControler::GetRatio();
 			speed2 /= WorldControler::GetRatio();
 
-		//	diff = pMySprite.getRadius()/pSprite.getRadius();
-		//	if( diff >
-/*
-			if( speed1[ 0 ]*speed2[ 0 ]>0 )
-			{
-			}
-			else
-			{
-				speed1[ 0 ] = -speed1[ 0 ];
-				speed2[0]  = -speed2[0];
-			}
-
-			if( speed1[ 1 ]*speed2[ 1 ]>0 )
-			{
-			}
-			else
-			{
-				speed1[ 1 ] = -speed1[ 1 ];
-				speed2[1]  = -speed2[1];
-			}
-			*/
-/*
-
-			//cout << "speed1:" ; print(//cout, speed1) << endl;
-			//cout << "speed2:" ; print(//cout, speed2) << endl;
-
-			Double3 erg1( speed1 );
-			Double3 erg2( speed2 );
-			//cout << "Radius1:"<< pMySprite.getRadius() <<endl;
-			//cout << "Radius2:"<<  pSprite.getRadius() <<endl;
- 			erg1 *= pMySprite.getRadius();
- 			erg2 *= pSprite.getRadius();
-
-			//cout << "erg1:" ; print(//cout, erg1) << endl;
-			//cout << "erg2:" ; print(//cout, erg2) << endl;
-
-			Double3 don1( erg1 );
-			Double3 don2( erg2 );
-			don1 /= 2;
-			don2 /= 2;
-
-			//cout << "don1:" ; print(//cout, don1) << endl;
-			//cout << "don2:" ; print(//cout, don2) << endl;
-
-			erg1 -= don1;
-			erg2 -= don2;
-			erg1 += don2;
-			erg2 += don1;
-			//cout << "erg1:" ; print(//cout, erg1) << endl;
-			//cout << "erg2:" ; print(//cout, erg2 )<< endl;
-
-			erg1 /= pMySprite.getRadius();
-			erg2 /= pSprite.getRadius();
-
-			//cout << "erg1:" ; print(//cout, erg1) << endl;
-			//cout << "erg2:" ; print(//cout, erg2) << endl;
-
-			pMySprite.SpriteDouble3::set( SPRITE_SPEED, erg1 );
-			pSprite.SpriteDouble3::set( SPRITE_SPEED, erg2 );
-*/
-
 
 			pSprite.cLastColId = pMySprite.getObjectId();
 			pMySprite.cLastColId = pSprite.getObjectId();
 
 			pMySprite.SpriteDouble3::set( SPRITE_SPEED, speed1 );
 			pSprite.SpriteDouble3::set( SPRITE_SPEED, speed2 );
-/*
-			float diff = pMySprite.getRadius()/pSprite.getRadius();
-			if( diff < 1.33 || diff > 0.75)
-			{
-				pMySprite.SpriteDouble3::set( SPRITE_SPEED, speed2 );
-				pSprite.SpriteDouble3::set( SPRITE_SPEED, speed1 );
-			}
-			if( diff > 1.33  )
-			{
-				speed2.inverse();
-				pSprite.SpriteDouble3::set( SPRITE_SPEED, speed2 );
-			}
-			else
-			{
-				speed1.inverse();
-				pMySprite.SpriteDouble3::set( SPRITE_SPEED, speed1 );
-			}
-*/
+
 		}
 		return GL_TRUE;
 	}
@@ -304,9 +238,14 @@ AsteroidesMaker::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void *pParam
 		int pSz = static_cast< int>(pMySprite.getRadius()*0.6);
 		if( pSz > 30 )
 		{
-			std::cout << "***************** pSz=" << pSz << std::endl;
+			//		std::cout << "***************** pSz=" << pSz << std::endl;
 			pSz = 30;
 		}
+
+		//	Double3 lSpinMother( pMySprite.SpriteDouble3::get(SPRITE_SPIN  ));
+
+
+
 		for( int i = 0; i < pSz; i++ )
 		{
 			float sz = randp(pSz);
@@ -325,6 +264,12 @@ AsteroidesMaker::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void *pParam
 
 			 Double3 v3( randf(WorldGame::GlobalScroll)+WorldGame::GlobalScroll , randf(WorldGame::GlobalScroll), 0.0 );
 			 sp->SpriteDouble3::set( SPRITE_SPEED, v3 );
+
+			 Double3 lSpin3( randf( 75 ), randf( 75 ), randf( 75 ));
+			 sp->SpriteDouble3::set( SPRITE_SPIN,  lSpin3);
+			 //sp->SpriteDouble3::set( SPRITE_SPIN,  lSpinMother);
+
+
 			 sp->Sprite3d::animate();
 			 sp->Sprite3d::animate();
 			 sp->Sprite3d::animate();
@@ -335,7 +280,9 @@ AsteroidesMaker::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void *pParam
 	}
 	else
 	{
-		pMySprite.SpriteDouble3::get( SPRITE_SPEED)[0] =  pMySprite.SpriteDouble3::get( SPRITE_SPEED )[0]*0.95;
+		pMySprite.SpriteDouble3::get( SPRITE_SPEED)[0] =  pMySprite.SpriteDouble3::get( SPRITE_SPEED )[0]*0.90;
+		pMySprite.SpriteDouble3::get( SPRITE_SPEED)[1] =  pMySprite.SpriteDouble3::get( SPRITE_SPEED )[1]*0.90;
+		pMySprite.SpriteDouble3::get( SPRITE_SPEED)[2] =  pMySprite.SpriteDouble3::get( SPRITE_SPEED )[2]*0.90;
 	}
 	return GL_TRUE;
 }

@@ -108,7 +108,7 @@ GLboolean SceneAttack::animate()
 				sp = MAKE_TORPILLEUR1;	
 			else 	if( cHardness < 4 )
 				sp = MAKE_TORPILLEUR2;	
-			else if( cHardness < 6 )
+			else 
 				sp = MAKE_TORPILLEUR3;	
 		}
 	else	if( p <= 110)	
@@ -117,8 +117,8 @@ GLboolean SceneAttack::animate()
 				sp = MAKE_CROISEUR1;	
 			else 	if( cHardness < 4 )
 				sp = MAKE_CROISEUR2;						
-			else if( cHardness < 6 )
-					sp = MAKE_CROISEUR2;						
+			else 
+					sp = MAKE_CROISEUR3;						
 		}
 	else 						
 		{

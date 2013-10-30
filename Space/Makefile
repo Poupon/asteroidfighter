@@ -9,6 +9,7 @@ SRCS = \
 	SceneAsteroide.cc \
 	SceneAttack.cc \
 	SceneGrotte.cc \
+	SceneHammerAnvil.cc \
 	SceneChaos.cc \
 	SceneLife.cc \
 	SceneBase.cc \
