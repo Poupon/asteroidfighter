@@ -1,0 +1,63 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: T3D - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Philippe\LOCALS~1\Temp\RSP5.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I "." /I ".." /I "c:/DEV/3D/glut" /I "c:/DEV/3D/glut/T3D" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /Fp"Debug/T3D.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\DEV\3d\T3D\T3DBox.cpp"
+"C:\DEV\3d\T3D\T3DCalcul.cpp"
+"C:\DEV\3d\T3D\T3DColor.cpp"
+"C:\DEV\3d\T3D\T3dFontRaster.cpp"
+"C:\DEV\3d\T3D\T3DLoadBmp.cpp"
+"C:\DEV\3d\T3D\T3DLoadGif.cpp"
+"C:\DEV\3d\T3D\T3DLoadImg.cpp"
+"C:\DEV\3d\T3D\T3DPrimitiv.cpp"
+"C:\DEV\3d\T3D\T3DTexture.cpp"
+"C:\DEV\3d\T3D\T3DTransf.cpp"
+"C:\DEV\3d\T3D\T3DVect3D.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Philippe\LOCALS~1\Temp\RSP5.tmp" 
+Creating temporary file "C:\DOCUME~1\Philippe\LOCALS~1\Temp\RSP6.tmp" with contents
+[
+/nologo /out:"Debug\T3D.lib" 
+.\Debug\T3DBox.obj
+.\Debug\T3DCalcul.obj
+.\Debug\T3DColor.obj
+.\Debug\T3dFontRaster.obj
+.\Debug\T3DLoadBmp.obj
+.\Debug\T3DLoadGif.obj
+.\Debug\T3DLoadImg.obj
+.\Debug\T3DPrimitiv.obj
+.\Debug\T3DTexture.obj
+.\Debug\T3DTransf.obj
+.\Debug\T3DVect3D.obj
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\Philippe\LOCALS~1\Temp\RSP6.tmp"
+<h3>Output Window</h3>
+Compiling...
+T3DBox.cpp
+T3DCalcul.cpp
+T3DColor.cpp
+T3dFontRaster.cpp
+c:\dev\3d\t3d\t3dfontraster.cpp(63) : warning C4018: '<' : signed/unsigned mismatch
+T3DLoadBmp.cpp
+T3DLoadGif.cpp
+T3DLoadImg.cpp
+T3DPrimitiv.cpp
+T3DTexture.cpp
+T3DTransf.cpp
+T3DVect3D.cpp
+Creating library...
+
+
+
+<h3>Results</h3>
+T3D.lib - 0 error(s), 1 warning(s)
+</pre>
+</body>
+</html>
