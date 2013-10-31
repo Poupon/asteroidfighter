@@ -16,7 +16,8 @@ enum EnumAsteroides{
 	ASTEROIDE_ICE, 
 	ASTEROIDE_MARS, 
 	ASTEROIDE_WATER,
-	ASTEROIDE_CRISTAL
+	ASTEROIDE_CRISTAL,
+	PLASMA_SOLAIRE
 };
 
 //************************************************************
@@ -25,8 +26,9 @@ class AsteroidesMaker : public Action
 	Float4               cColorGrey;
 	Float4               cColorSnow;
 	Float4               cColorIce;
-	Float4               cColorCristal1;
-	Float4               cColorCristal2;
+	Float4               cColorCristal;
+	Float4               cColorPlasmaSolaire1;
+	Float4               cColorPlasmaSolaire2;
 	
 
 	AutoPtr<T3dTexture>  caTexLune;
@@ -40,8 +42,9 @@ class AsteroidesMaker : public Action
 	O3dObjProps cPropsSnow;
 	O3dObjProps cPropsIce;
 
-	O3dObjProps cPropsCristal1;
-	O3dObjProps cPropsCristal2;
+	O3dObjProps cPropsCristal;
+	O3dObjProps cPropsPlasmaSolaire1;;
+	O3dObjProps cPropsPlasmaSolaire2;;
 
 	O3dObjProps cPropsGen;
 
@@ -52,6 +55,7 @@ public:
  	ObjVect*  makeAsteroideSnow( float pSz, int pFacette );
  	O3dObj* makeAsteroideIce( float pSz, int pFacette );
  	ObjVect* makeAsteroideCristal( float pSz, int pFacette );
+ 	ObjVect* makePlasmaSolaire( float pSz, int pFacette );
 	Sprite3d* makeSpriteAsteroide( EnumAsteroides pType, float pSize, int pFacette );
 
 	GLboolean collision( Sprite3d &pMySprite, Sprite3d &pSprite, void * pParam );
