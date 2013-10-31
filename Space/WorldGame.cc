@@ -10,6 +10,11 @@
 #include <SceneAttack.h>
 #include <SceneGrotte.h>
 #include <SceneLife.h>
+#include <SceneHammerAnvil.h>
+#include <SceneArtifice.h>
+#include <SceneChaos.h>
+
+
 #include <Pilot.h>
 #include <Def.h>
 #include <WorldGame.h>
@@ -56,23 +61,23 @@ WorldGame::getInfoLeveL(){
 	return cInfoLevel;
 }
 //---------------------------------------------------
+// C'est la que l'on prepare l'ensemble des niveaux du jeu
+
 GLboolean
 WorldGame::initStart( int pNiveau, const char* pNameFileSav )
 {
 	std::cout << "WorldGame::initStart " << pNiveau << " " << pNameFileSav << std::endl;
 
   Double3 lGenPos( 160.0, 0.0, 0.0 );
+  Double3 lGenPos2( 0.0, 100, 0.0 );
 	Float4 lBanColor( 0.6, 0.6, 0.9, 0.4 ) ;
 
-	// We must allocate all in the heap because on restart, we must
-	// forget all.
 
 	cSceneManager = new SceneManager();
-	std::cout << "WorldGame::initStart" << std::endl;
 	// Mettre une scene d'intro !!!
-
 	int lDureGen = 20; //40;
-	WorldGame::GlobalScroll = -20;
+
+	WorldGame::GlobalScroll = -20;  // la vitesse de scolling horizontal de base
 	
 
 	if( pNiveau == 0 )
@@ -83,8 +88,11 @@ WorldGame::initStart( int pNiveau, const char* pNameFileSav )
 					WorldGame::GlobalScroll -= pNiveau;
 				}
 		}	//			std::cout << "pNiveau:" << pNiveau << std::endl;
+
+	int duree=1000;
 	for( cLevel=pNiveau; cLevel< pNiveau+8+WorldControler::sDifficultyLevel*2; cLevel++ )		// acceleration a chaque niveau !!!
 		{
+
 			//			std::cout << "pLevel:" << cLevel << std::endl;
 			// Message NEXT LEVEL
 			if( cLevel!= pNiveau )
@@ -95,80 +103,144 @@ WorldGame::initStart( int pNiveau, const char* pNameFileSav )
 					WorldGame::GlobalScroll -= 1;  // NE DOIT PAS MARCHER CAR GLOBAL IL FAUDRAIT METTRE UN SCROLL par Scene
 					// Ou memoriser le GlobalScroll a la creation de chque scene puis ensuite celle ci le positionner
 				}
+			duree = lDureGen+cLevel*3;
 
 
-			if( cLevel > 6 )
+
+			if( cLevel > 5 )
 				cSceneManager->addScene( new SceneLife( lGenPos, YSizeWorld, 20.0f ),  0.5 );
+			
 
-			int duree = lDureGen+cLevel*3;
-
-
-
-
-
-			cSceneManager->addScene( new SceneAsteroide( "Asteroide Water", ASTEROIDE_WATER, cLevel, lGenPos, 0.3f, YSizeWorld, 20.0f ),  duree );
-			cSceneManager->addSceneTempo(5);
-			cSceneManager->addScene( new SceneAttack( "Attack 1", cLevel, lGenPos, 1, YSizeWorld, 30.0f ), duree);
+			//*************************** WATER ***************************
+			cSceneManager->addScene( new SceneAsteroide( "Asteroid field", ASTEROIDE_WATER, cLevel, lGenPos, 0.3f, YSizeWorld, 20.0f ),  duree );
 			cSceneManager->addSceneTempo(5);
 
 			if( cLevel == 0 )
 				continue;
 
-			cSceneManager->addScene(new SceneGrotte( "Into Asteroide Water", ASTEROIDE_WATER, cLevel, lGenPos, 1, 0.4, 15, YSizeWorld, 50.0f ),duree );
+			cSceneManager->addScene( new SceneAttack( "Confrontation", cLevel, lGenPos, 1, YSizeWorld, 30.0f ), duree);
 			cSceneManager->addSceneTempo(5);
+
 
 			if( cLevel == 1 )
 				continue;
 
-			cSceneManager->addScene( new SceneAttack( "Attack 2",cLevel, lGenPos, 1, YSizeWorld, 30.0 ), duree);
+			cSceneManager->addScene(new SceneGrotte( "Inside asteroid", ASTEROIDE_WATER, cLevel, lGenPos, 1, 0.4, 15, YSizeWorld, 50.0f ), duree );
 			cSceneManager->addSceneTempo(5);
-			cSceneManager->addScene( new SceneAsteroide( "Asteroide Water",ASTEROIDE_ICE, cLevel, lGenPos, 0.3, YSizeWorld, 20.0 ), duree);
+			//**************************************************************
+
+
+
+			cSceneManager->addScene( new SceneAttack( "Confrontation",cLevel, lGenPos, 1, YSizeWorld, 30.0 ), duree);
+			cSceneManager->addSceneTempo(5);
+
+
+
+			//****************************  ICE  ***************************
+			cSceneManager->addScene( new SceneAsteroide( "Asteroid field",ASTEROIDE_ICE, cLevel, lGenPos, 0.3, YSizeWorld, 20.0 ), duree);
 			cSceneManager->addSceneTempo(5);
 			if( cLevel == 2 )
 				continue;
 
-			cSceneManager->addScene(new SceneGrotte( "Into Asteroide Ice", ASTEROIDE_ICE,  cLevel, lGenPos, 1.2, 0.7, 13, YSizeWorld, 50.0 ), duree);
+			cSceneManager->addScene(new SceneGrotte( "Inside asteroid", ASTEROIDE_ICE,  cLevel, lGenPos, 1.2, 0.7, 13, YSizeWorld, 50.0 ), duree);
 			cSceneManager->addSceneTempo(5);
+			//**************************************************************
+
+
 
 			if( cLevel == 3 )
 				continue;
 
 
-			cSceneManager->addScene( new SceneAsteroide( "Asteroide Snow", ASTEROIDE_SNOW, cLevel, lGenPos, 0.3f, YSizeWorld, 20.0f ), duree);
+			cSceneManager->addScene( new SceneAttack( "Confrontation",cLevel, lGenPos, 1, YSizeWorld, 30.0 ), duree);
 			cSceneManager->addSceneTempo(5);
-			cSceneManager->addScene(new SceneGrotte( "Into Asteroide Snow", ASTEROIDE_SNOW, cLevel , lGenPos, 1.5, 0.6, 15, YSizeWorld, 50.0 ), duree);
+
+
+
+			//**************************** SNOW ***************************
+			cSceneManager->addScene( new SceneAsteroide( "Asteroid field", ASTEROIDE_SNOW, cLevel, lGenPos, 0.3f, YSizeWorld, 20.0f ), duree);
 			cSceneManager->addSceneTempo(5);
+			cSceneManager->addScene(new SceneGrotte( "Inside asteroid", ASTEROIDE_SNOW, cLevel , lGenPos, 1.5, 0.6, 15, YSizeWorld, 50.0 ), duree);
+			cSceneManager->addSceneTempo(5);
+			//**************************************************************
+
+
 
 			if( cLevel == 4 )
 				continue;
 
 
-			cSceneManager->addScene( new SceneAttack( "Attack 3", cLevel, lGenPos, 1, YSizeWorld, 30.0 ), duree);
-			cSceneManager->addScene( new SceneAsteroide( "Asteroide Mars", ASTEROIDE_MARS, cLevel, lGenPos, 0.3, (int)YSizeWorld, 20.0 ), duree );
+			cSceneManager->addScene( new SceneAttack( "Confrontation", cLevel, lGenPos, 1, YSizeWorld, 30.0 ), duree);
 			cSceneManager->addSceneTempo(5);
-			cSceneManager->addScene(new SceneGrotte( "Into Asteroide Mars", ASTEROIDE_MARS, cLevel , lGenPos, 0.9, 0.5, 14, YSizeWorld, 50.0 ), duree);
+
+
+			//**************************** STONE ***************************
+
+			cSceneManager->addScene( new SceneAsteroide( "Asteroide field", ASTEROIDE_MARS, cLevel, lGenPos, 0.3, (int)YSizeWorld, 20.0 ), duree );
 			cSceneManager->addSceneTempo(5);
+			cSceneManager->addScene(new SceneGrotte( "Into asteroide ", ASTEROIDE_MARS, cLevel , lGenPos, 0.9, 0.5, 14, YSizeWorld, 50.0 ), duree);
+			cSceneManager->addSceneTempo(5);
+			//**************************************************************
 
 			if( cLevel == 5 )
 				continue;
 
 
-		 	cSceneManager->addScene( new SceneAttack( "Attack 4", cLevel, lGenPos, 1, YSizeWorld, 30.0 ), duree);
-			cSceneManager->addScene( new SceneAsteroide( "Asteroide Cristal", ASTEROIDE_CRISTAL, cLevel, lGenPos, 0.3, YSizeWorld, 20.0 ), duree );
+		 	cSceneManager->addScene( new SceneAttack( "Confrontation", cLevel, lGenPos, 1, YSizeWorld, 30.0 ), duree);
 			cSceneManager->addSceneTempo(5);
-			cSceneManager->addScene(new SceneGrotte( "Into Asteroide Cristal", ASTEROIDE_CRISTAL,  cLevel, lGenPos, 1.1, 0.6, 14, YSizeWorld, 50.0 ), duree);
+
+			//**************************** CRISTAL ***************************
+
+			cSceneManager->addScene( new SceneAsteroide( "Asteroide field", ASTEROIDE_CRISTAL, cLevel, lGenPos, 0.3, (int)YSizeWorld, 20.0 ), duree );
 			cSceneManager->addSceneTempo(5);
+			cSceneManager->addScene(new SceneGrotte( "Into asteroide ", ASTEROIDE_CRISTAL, cLevel , lGenPos, 0.9, 0.5, 14, YSizeWorld, 50.0 ), duree);
+
+			cSceneManager->addSceneTempo(5);
+
+
+			//**************************************************************
+
+
 			if( cLevel == 6 )
 				continue;
 
-			cSceneManager->addScene( new SceneAttack( "Attack 5", cLevel, lGenPos, 1, YSizeWorld, 30.0), duree);
-			cSceneManager->addScene( new SceneBase( "Attack Base", cLevel, lGenPos, 1, YSizeWorld, 20.0, (int)BASE_TORE ), duree);
 
-			if( cLevel == 7 )
-				continue;
+		 	cSceneManager->addScene( new SceneAttack( "Confrontation", cLevel, lGenPos, 1, YSizeWorld, 30.0 ), duree);
+			cSceneManager->addSceneTempo(5);
 
-			cSceneManager->addSceneTempo(10);
-			cSceneManager->addScene( new SceneBase( "Attack Base", cLevel, lGenPos, 1, YSizeWorld, 20.0, (int)MEGA_CROISEUR ), duree);
+
+
+			cSceneManager->addScene( new SceneLife( lGenPos, YSizeWorld, 20.0f ),  0.5 );
+			cSceneManager->addSceneTempo(5);
+
+
+			//*********************** PLASMA_SOLAIRE ***********************
+
+			cSceneManager->addScene( new SceneAsteroide( "Asteroid field", PLASMA_SOLAIRE, cLevel, lGenPos, 0.3, YSizeWorld, 20.0 ), duree );
+			cSceneManager->addSceneTempo(5);
+
+			cSceneManager->addScene( new SceneHammerAnvil( "Hammer and anvil", PLASMA_SOLAIRE, cLevel, lGenPos2, 0.3f, YSizeWorld, 20.0f ),  duree );
+			cSceneManager->addSceneTempo(5);
+
+
+			cSceneManager->addScene( new SceneChaos( "Chaos",  PLASMA_SOLAIRE, cLevel, lGenPos, 1, 0.4, 15, YSizeWorld, 50.0f ), duree );
+
+			cSceneManager->addScene(new SceneGrotte( "Inside Asteroid", PLASMA_SOLAIRE,  cLevel, lGenPos, 1.1, 0.6, 14, YSizeWorld, 50.0 ), duree);
+
+			cSceneManager->addScene( new SceneChaos( "Chaos",  PLASMA_SOLAIRE, cLevel, lGenPos, 1, 0.4, 15, YSizeWorld, 50.0f ), duree );
+			cSceneManager->addScene( new SceneHammerAnvil( "Hammer and anvil", PLASMA_SOLAIRE, cLevel, lGenPos2, 0.3f, YSizeWorld, 20.0f ),  duree );
+
+			cSceneManager->addScene( new SceneAsteroide( "Asteroid field", PLASMA_SOLAIRE, cLevel, lGenPos, 0.3, YSizeWorld, 20.0 ), duree );	
+
+
+		
+			cSceneManager->addScene( new SceneAttack( "Confrontation", cLevel, lGenPos, 3, YSizeWorld, 30.0), duree);
+
+			//		if( cLevel == 7 )
+			//	continue;
+
+			//	cSceneManager->addSceneTempo(10);
+			//			cSceneManager->addScene( new SceneBase( "Base", cLevel, lGenPos, 1, YSizeWorld, 20.0, (int)MEGA_CROISEUR ), duree);
 
 			// Mettre un vrai boss de niveau
 			// Mettre une scene de fin de niveau !!!
@@ -192,6 +264,8 @@ WorldGame::initStart( int pNiveau, const char* pNameFileSav )
 			}
 			*/
 		}
+
+			cSceneManager->addScene( new SceneBase( "Last battle", cLevel, lGenPos, 1, YSizeWorld, 20.0, (int)BASE_TORE ), duree);
 
 
 

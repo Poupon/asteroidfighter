@@ -63,12 +63,16 @@ GLboolean SceneBase::animate()
 
 	 
   SpriteFloat::set( SPRITE_TIMER1,  WorldControler::GetTime());
- 
+
   Double3 pos;
   pos[0] = getTransf().TransfDouble3::get(POS)[0]-40;
   pos[ 2 ] = 0;
   pos[ 1 ] = randf( cH -30 );
- 
+
+ 	if( World::GetPositionWithoutCollision( InteractObstacle, pos, 10, 0, cH ) == GL_FALSE){
+		return GL_FALSE;
+	}
+
  
   Sprite3d *sp=NULL;
 
@@ -105,18 +109,18 @@ GLboolean SceneBase::animate()
 	*/
 	else 
 		{
-            if( cShipType == BASE_TORE )
-            {
-			if( cHardness < 5 )
-				sp = MAKE_BASE1; 	
+			if( cShipType == BASE_TORE ) {
+            
+				if( cHardness < 5 )
+					sp = MAKE_BASE1; 	
+				else
+					if( cHardness < 8 )
+						sp = MAKE_BASE2; 	
+					else 
+						sp = MAKE_BASE3; 
+			}
 			else
-				if( cHardness < 8 )
-					sp = MAKE_BASE2; 	
-				else 
-					sp = MAKE_BASE3; 
-            }
-            else
-            {
+				{
  			if( cHardness < 5 )
 				sp = MAKE_MEGA_CROISEUR1; 	
 			else

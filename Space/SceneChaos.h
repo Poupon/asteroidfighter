@@ -25,7 +25,7 @@ class SceneChaos : public Scene
 	void makeFloor( int pH );
 	void makeArtefact();
 	void makeWall(int pMin, int pMax, GLboolean pIndestructible, float pSpeed=0.0f, float pDeltaX=0.0f, float pAleaX=0.0f );
-	void makeAsteroide(Double3& pPos, int pSz, GLboolean pIndestructible );
+	void makeAsteroide(Double3& pPos, int pSz, GLboolean pIndestructible, float pVY );
 
 public:
 	SceneChaos( const char* pName, EnumAsteroides pTypeAsteroide, int pHardness, Double3 & lPos, float  pInterval, float  pIntervalParoi, int pSizeParoi, float pH, float pV);
