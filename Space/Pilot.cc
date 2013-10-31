@@ -118,80 +118,80 @@ bool Pilot::read( std::istream & pIs ){
     std::cout << "read [" << lTmpStr << ']' << std::endl;
 
     if( lTmpStr.compare( sStrPilot ) != 0 ){
-			std::cout << "read Pilot header fail" << std::endl;						
+			std::cout << "read Pilot header fail" << std::endl;
 			return false;
 		}
-		
+
     pIs >> lTmpStr;
     if( lTmpStr.compare( sStrLevPhaser ) != 0 ){
 			std::cout << "read Pilot LevelPhaser fail" << std::endl;
 			return false;
 		}
     pIs >> lLevelPhaser;
-		
+
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrLevLauncher ) != 0 ){
 			std::cout << "read Pilot LevelLauncher fail" << std::endl;
 			return false;
 		}
     pIs >> lLevelLauncher;
-		
+
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrLevField ) != 0 ){
 			std::cout << "read Pilot LevelField fail" << std::endl;
 			return false;
 		}
     pIs >> lLevelField;
-		
+
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrLevMotor ) != 0 ){
 			std::cout << "read Pilot LevelMotor fail" << std::endl;
 			return false;
 		}
     pIs >> lLevelMotor;
-		
+
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrMaxErg ) != 0 ){
 			std::cout << "read Pilot MaxErg fail" << std::endl;
 			return false;
 		}
     pIs >> lMaxErg;
-		
+
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrMaxRocket ) != 0 ){
 			std::cout << "read Pilot MaxRocket fail" << std::endl;
 			return false;
 		}
     pIs >> lMaxRocket;
-		
+
 		pIs >> lTmpStr;
 		if( lTmpStr.compare( sStrLife ) != 0 ){
 			std::cout << "read Pilot fail" << std::endl;
 			return false;
 		}
 		pIs >> lNbLife;
-		
+
 		pIs >> lTmpStr;
 		if( lTmpStr.compare( sStrField ) != 0 ){
 			std::cout << "read Pilot Field fail" << std::endl;
 			return false;
 		}
     pIs >> lField;
-		
+
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrRocket ) != 0 ){
 			std::cout << "read Pilot Rocket fail" << std::endl;
 			return false;
 		}
     pIs >> lRocket;
-		
+
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrErg ) != 0 ){
 			std::cout << "read Pilot fail" << std::endl;
 			return false;
 		}
     pIs >> lErg;
-		
+
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrScore ) != 0 ){
 			std::cout << "read Pilot Score fail" << std::endl;
@@ -204,18 +204,18 @@ bool Pilot::read( std::istream & pIs ){
 		cNbLife = lNbLife;
 		//cGold;
 
-    SpriteFloat::set( SPRITE_LIFE_POINT, lField );
+
 
 		cMaxErg = lMaxErg;
 		cMaxRocket = lMaxRocket;
-		
+
 		cLevelPhaser = lLevelPhaser;
 		cLevelLauncher = lLevelLauncher;
-		
+
 		cLevelField = lLevelField;
 		cLevelMotor = lLevelMotor;
 		//cLevelWarp;
-		
+		   SpriteFloat::set( SPRITE_LIFE_POINT, lField );
 		cScore = lScore;
 		return true;
  }
