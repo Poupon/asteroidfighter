@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="All" />
+	<File name="Space\ShipsMaker.cc" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="18738" topLine="691" />
+		</Cursor>
+	</File>
+	<File name="Space\WorldGame.cc" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6315" topLine="174" />
+		</Cursor>
+	</File>
+	<File name="Sprite3d\Action.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Sprite3d\Sprite3dPilot.cc" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="293" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Sprite3d\AnimatObj.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="113" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Sprite3d\Sprite3dPilot.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="250" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Sprite3d\Collision.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="457" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="T3d\T3dType.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2153" topLine="54" />
+		</Cursor>
+	</File>
+	<File name="Sprite3d\Text2d.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="90" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Sprite3d\ObjOdron.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="706" topLine="26" />
+		</Cursor>
+	</File>
+	<File name="Sprite3d\Utils3d.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1901" topLine="69" />
+		</Cursor>
+	</File>
+	<File name="Sprite3d\ObjPart.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="11629" topLine="449" />
+		</Cursor>
+	</File>
+	<File name="O3d\O3dObjPrim.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8046" topLine="236" />
+		</Cursor>
+	</File>
+	<File name="Sprite3d\World.cc" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7910" topLine="308" />
+		</Cursor>
+	</File>
+	<File name="Sprite3d\World.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3017" topLine="97" />
+		</Cursor>
+	</File>
+	<File name="Sprite3d\WorldControler.cc" open="1" top="0" tabpos="9" split="2" active="1" splitpos="826" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="10692" topLine="480" />
+			<Cursor2 position="1672" topLine="72" />
+		</Cursor>
+	</File>
+	<File name="O3d\O3dObjText.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="498" topLine="14" />
+		</Cursor>
+	</File>
+	<File name="Sprite3d\WorldControler.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="639" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="O3d\O3dSelector.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2015" topLine="66" />
+		</Cursor>
+	</File>
+	<File name="O3d\PToken.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7309" topLine="289" />
+		</Cursor>
+	</File>
+	<File name="AsteroidFighter\MainMenu.h" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="112" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Space\ActionsShip.cc" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="AsteroidFighter\main.cc" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="963" topLine="36" />
+		</Cursor>
+	</File>
+	<File name="Space\AsteroidesMaker.cc" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Space\MinesMaker.cc" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="U3d\WeaponsMaker.cc" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="AsteroidFighter\Help.cc" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5749" topLine="192" />
+		</Cursor>
+	</File>
+	<File name="Space\Pilot.cc" open="1" top="1" tabpos="3" split="2" active="1" splitpos="740" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5742" topLine="218" />
+			<Cursor2 position="56061" topLine="146" />
+		</Cursor>
+	</File>
+	<File name="AsteroidFighter\Help.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="472" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="Space\Pilot.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1442" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="T3d\T3dFontRaster.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="401" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="AsteroidFighter\MainMenu.cc" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="191" topLine="300" />
+		</Cursor>
+	</File>
+	<File name="Space\Scene.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="19" />
+		</Cursor>
+	</File>
+	<File name="T3d\T3dFontRaster.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="587" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Space\SceneAsteroide.cc" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="T3d\T3dLoadBmp.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2799" topLine="81" />
+		</Cursor>
+	</File>
+	<File name="T3d\T3dLoadGif.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6496" topLine="198" />
+		</Cursor>
+	</File>
+	<File name="Sprite3d\SceneManager.cc" open="1" top="0" tabpos="16" split="2" active="1" splitpos="826" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5398" topLine="191" />
+			<Cursor2 position="4601" topLine="123" />
+		</Cursor>
+	</File>
+	<File name="Sprite3d\SceneManager.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="426" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Sprite3d\SoundControler.cc" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="370" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="Space\SceneGrotte.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="480" topLine="11" />
+		</Cursor>
+	</File>
+	<File name="T3d\T3dPrimitiv.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7947" topLine="343" />
+		</Cursor>
+	</File>
+	<File name="O3d\O3dObj.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="606" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="Sprite3d\SoundLibrary.cc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="244" topLine="8" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>

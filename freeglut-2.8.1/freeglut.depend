@@ -1,0 +1,188 @@
+# depslib dependency file v1.0
+1300420762 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_callbacks.c
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+
+1066736514 d:\dev\asteroidfighter\freeglut-2.8.1\include\gl\freeglut.h
+	"freeglut_std.h"
+	"freeglut_ext.h"
+
+1353332734 d:\dev\asteroidfighter\freeglut-2.8.1\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1353321907 d:\dev\asteroidfighter\freeglut-2.8.1\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1353334456 d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_internal.h
+	"config.h"
+	<windows.h>
+	<windowsx.h>
+	<mmsystem.h>
+	<tchar.h>
+	<GL/glx.h>
+	<X11/Xlib.h>
+	<X11/Xatom.h>
+	<X11/keysym.h>
+	<X11/extensions/XInput.h>
+	<X11/extensions/xf86vmode.h>
+	<X11/extensions/Xrandr.h>
+	<stdio.h>
+	<string.h>
+	<math.h>
+	<stdlib.h>
+	<stdarg.h>
+	<sys/types.h>
+	<unistd.h>
+	<sys/time.h>
+	<time.h>
+	<sys/time.h>
+	<time.h>
+	<stdbool.h>
+
+1353475615 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_cursor.c
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+	<X11/cursorfont.h>
+
+1324131059 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_display.c
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+
+1315165112 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_ext.c
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+
+1243774844 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_font.c
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+
+1104750807 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_font_data.c
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+
+1353382134 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_gamemode.c
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+
+1353334864 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_geometry.c
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+
+1227185969 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_glutfont_definitions.c
+	<GL/freeglut_std.h>
+	"freeglut_internal.h"
+
+1353475615 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_init.c
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+	<limits.h>
+
+1260684404 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_input_devices.c
+	"config.h"
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+	<errno.h>
+	<sys/ioctl.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<termios.h>
+	<fcntl.h>
+	<sys/types.h>
+	<winbase.h>
+
+1317173846 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_joystick.c
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+	<sys/param.h>
+	<InputSprocket.h>
+	<mach/mach.h>
+	<IOKit/IOkitLib.h>
+	<IOKit/hid/IOHIDLib.h>
+	<windows.h>
+	<mmsystem.h>
+	<regstr.h>
+	<sys/ioctl.h>
+	<fcntl.h>
+	<errno.h>
+	<string.h>
+	<sys/joystick.h>
+	<machine/joystick.h>
+	<linux/joystick.h>
+	<usbhid.h>
+	<usb.h>
+	<usbhid.h>
+	<libusbhid.h>
+	<legacy/dev/usb/usb.h>
+	<dev/usb/usbhid.h>
+
+1358438226 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_main.c
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+	<errno.h>
+	<stdarg.h>
+	<gx.h>
+	<limits.h>
+
+1353334721 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_menu.c
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+
+1225914380 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_misc.c
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+
+1104750807 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_overlay.c
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+
+1315108151 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_spaceball.c
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+	<X11/Xlib.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<errno.h>
+	<X11/Xlib.h>
+	<X11/Xutil.h>
+
+1353334456 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_state.c
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+
+1225914336 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_stroke_mono_roman.c
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+
+1225914336 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_stroke_roman.c
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+
+1353315397 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_structure.c
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+
+1158863949 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_teapot.c
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+	"freeglut_teapot_data.h"
+
+1158863949 d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_teapot_data.h
+
+1104750807 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_videoresize.c
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+
+1353475615 source:d:\dev\asteroidfighter\freeglut-2.8.1\src\freeglut_window.c
+	<GL/freeglut.h>
+	"freeglut_internal.h"
+	<limits.h>
+	<unistd.h>
+	<Aygshell.h>
+
