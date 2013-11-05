@@ -162,9 +162,11 @@
 		<Unit filename="Space/SceneBase.h">
 			<Option target="default" />
 		</Unit>
+		<Unit filename="Space/SceneChaos.cc" />
 		<Unit filename="Space/SceneGrotte.cc">
 			<Option target="default" />
 		</Unit>
+		<Unit filename="Space/SceneHammerAnvil.cc" />
 		<Unit filename="Space/SceneLife.cc">
 			<Option target="default" />
 		</Unit>
