@@ -12,6 +12,8 @@ static const unsigned long coll_dec = 0x0A;
 #define DBGOUT if( 0 ) std::cout
 
 //**************************************
+// 2013 pDim represente la dimension de decoupage ? x 0 y 1 z 2 ?
+
 Collision::Collision(  int pDim, GLdouble pMin, GLdouble pMax, int pNbDiv )
 	:cTab(NULL),
 	 cDim(pDim),
@@ -115,6 +117,7 @@ int lNbCalcul=0;
 
 // A DEBUGGER !!!!!
 
+// static 
 void
 Collision::SpatialDetection(  VSprite3d& pVSprite, int *pDim, GLdouble *pMin, GLdouble *pMax, int *pNbDiv, int pNbDim )
 {
@@ -150,9 +153,11 @@ Collision::SpatialDetection(  VSprite3d& pVSprite, int *pDim, GLdouble *pMin, GL
 
 //----------------------------------------
 // Detecte et appelle la proc de collision
-// Algo en factorielle N (peu efficace pour si de nombreux sprites)
+// Algo en factorielle N (peu efficace pour de nombreux sprites)
 
-void
+// static 
+
+long 
 Collision::SimpleDetection(VSprite3d& pVSprite)
 {
 	int lCpt=0;
@@ -160,8 +165,7 @@ Collision::SimpleDetection(VSprite3d& pVSprite)
 
 	for( VSprite3d::iterator iter = pVSprite.begin(); iter != pVSprite.end()-1; ++iter )
 		{
-
-            if( (*iter)->getInteract() == InteractNull )
+			if( (*iter)->getInteract() == InteractNull )
 				continue;
 
 			unsigned int maskA_Def = (*iter)->getDefMask();
@@ -193,9 +197,12 @@ Collision::SimpleDetection(VSprite3d& pVSprite)
 		}
 
 	DBGOUT << " SimpleDetection: " << pVSprite.size() << " " << lCpt << " -> " << lCpt2 << std::endl;
+	return lCpt2;
 }
 
 //--------------------------------
+// static 
+
 GLboolean Collision::DetectCollision( Sprite3d &A, Sprite3d &B )
 {
 	Double3 lDist( A.getTransf().get( POS ));

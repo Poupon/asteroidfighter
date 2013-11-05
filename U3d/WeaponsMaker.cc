@@ -19,6 +19,11 @@
 #include <SpriteExplosion.h>
 #include <Sprite3d/World.h>
 
+#include <Space/Def.h>
+
+
+#include <iomanip>
+
 WeaponsMaker* TheWeaponsMaker=NULL;
 
 
@@ -549,6 +554,18 @@ WeaponsMaker::destruction( Sprite3d &pMySprite )
 GLboolean
 WeaponsMaker::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void * pParam )
 {
+
+	if( pSprite.SpriteLong::get(  SPRITE_TYPE  ) == CONTAINER  ){
+
+		// Encore faudrait il comprendre pourquoi ils interragissent ?
+		// car normalement leurs masques ne corresponde pas !
+
+		std::cout << "*** Weapon:" <<  std::hex << pMySprite.getInteract() 
+							<< " Bonus:" << std::hex <<  pSprite.getInteract() << std::endl;
+ 
+		return GL_FALSE;
+	}
+
 	destruction( pMySprite );
 
 	return GL_TRUE;

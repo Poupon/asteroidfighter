@@ -136,6 +136,7 @@ public:
 	static GLboolean GetDistPilot( Sprite3d *pSprite,  Double3 & pDist );
 	static GLboolean GetPositionWithoutCollision( int pInteract,Double3& pPos, int pSize, int pLimitX, int pLimitY=0, int pLimitZ=0, int pNbTry=10, float pMarge=1.5 );
 
+	static long sNbDetect;
 
 protected:
 };

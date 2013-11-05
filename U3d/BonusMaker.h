@@ -50,7 +50,7 @@ public:
 	O3dObjProps cPropsSkeleton;
 	O3dObjProps cPropsUpgradField;
 
-	static const int MAX_BONUS=4;
+	static const int MAX_BONUS=3;
 
 public:		
 	O3dObj* cObjBonus[MAX_BONUS];

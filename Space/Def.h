@@ -1,9 +1,13 @@
 #ifndef h_Def_h
 #define h_Def_h
 
+// il faudrait etre plus descriminant dans les masques
 
 static const unsigned int InteractAllied       =0x03+0x4;
-static const unsigned int InteractAlliedWeapon =0x30;
+
+static const unsigned int InteractAlliedWeapon  =0x03;
+
+static const unsigned int InteractAlliedWeaponMask =0x30;
 
 static const unsigned int InteractEnemy        =0x30;
 static const unsigned int InteractEnemyWeapon  =0x03;

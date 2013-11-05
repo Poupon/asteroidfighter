@@ -16,6 +16,7 @@
 #include <Collision.h>
 #include <Sprite3dPilot.h>
 
+long World::sNbDetect = 0;
 
 //--------------------------------
 inline void
@@ -66,7 +67,7 @@ World::gameOver()
 	//	cPilot = NULL;
 }
 //--------------------------------
-void
+ void
 World::gameWinner()
 {
 	//	cPilot = NULL;
@@ -208,7 +209,7 @@ void World::animateLiveSprite()
 	lNbCalcul = 0;
 
 	// Detection et resolution des collisions
-    Collision::SimpleDetection( cLiveSprite );
+  sNbDetect =  Collision::SimpleDetection( cLiveSprite );
 
 //	int   lDim[2]={ 0, 1 };
 //	int   lNbDiv[2]={ 10, 10 };

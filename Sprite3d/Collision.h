@@ -34,7 +34,7 @@ protected:
 public:
 
 	static void      SpatialDetection(  VSprite3d& pVSprite, int *pDim, GLdouble *pMin, GLdouble *pMax, int *pNbDiv, int pNbDim );
-	static void      SimpleDetection(VSprite3d& pVSprite);
+	static long      SimpleDetection(VSprite3d& pVSprite);
 	static GLboolean DetectCollision( Sprite3d &A, Sprite3d &B );
 };
 //**************************************
