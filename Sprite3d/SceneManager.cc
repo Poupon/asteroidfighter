@@ -286,7 +286,7 @@ SceneManager::endScene()
 			return  0;
 		}
 
-	if( cSceneVect[cCurScene]->getSpriteType() > 0 )
+	if( cSceneVect[cCurScene]->getSpriteType() < 0 )
     saveStateToFile(sAutoSavFile);
 
 

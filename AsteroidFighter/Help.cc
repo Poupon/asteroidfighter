@@ -258,12 +258,12 @@ Help::initStart(int pNiveau, const char* pFile)
 		int lX = pX2;
 
 		AfficheLine( pX, pY, "Cruiser,Dreadnought," );
-		AfficheLine( pX, pY-6, "Starbase ); //, Mother ship" );
+		AfficheLine( pX, pY-6, "Starbase" ); //, Mother ship" );
 
 		makeShip( CROISEUR, lX, pY, 0 );
-		lX += lXStep;
+		lX += lXStep*1.2;
 		makeShip( CUIRASSE, lX, pY, 0 );
-		lX += lXStep*1.4;
+		lX += lXStep*1.6;
 		makeShip( BASE_TORE, lX, pY, 0 );
 		//		lX += lXStep*1.8;
 		//		makeShip( MEGA_CROISEUR, lX, pY, 0 );

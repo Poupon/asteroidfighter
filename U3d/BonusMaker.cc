@@ -118,9 +118,13 @@ BonusMaker::makeUpgrad( float pSz )
 }
 //----------------------------------------------
 Sprite3d*
-BonusMaker::makeSpriteBonus( int cObjType, EnumBonus pType,  unsigned int pMaskObj, unsigned int pMakInteract, int pVal, int pVal2 )
+BonusMaker::makeSpriteBonus( int cObjType, EnumBonus pType,  unsigned int pMaskObj, unsigned int pMaskInteract, int pVal, int pVal2 )
 {
-	
+	pVal/=2;     // phipo 20131105
+
+	if( pVal <= 0 )
+		pVal = 1;
+
 	if( pVal >= MAX_BONUS )
 		pVal= MAX_BONUS-1;
 
@@ -131,7 +135,7 @@ BonusMaker::makeSpriteBonus( int cObjType, EnumBonus pType,  unsigned int pMaskO
 	else
 		sp = new Sprite3dObj( cObjBonus[pVal] );
 
-  sp->setMask( pMaskObj, pMakInteract);
+  sp->setMask( pMaskObj, pMaskInteract);
 	//  sp->setMask( InteractBonus, InteractBonus );
  
 
@@ -164,11 +168,11 @@ BonusMaker::makeSpriteBonus( int cObjType, EnumBonus pType,  unsigned int pMaskO
 		switch( pVal ){
 		case UPGRAD_ERG :   sp->setObjProps( &cPropsErg); break;
 		case UPGRAD_ROCKET: sp->setObjProps( &cPropsRocket); break;
-		case UPGRAD_FIELD: sp->setObjProps( &cPropsField); break;
+		case UPGRAD_FIELD:  sp->setObjProps( &cPropsField); break;
 				
-		case UPGRAD_PHASER: sp->setObjProps( &cPropsErg); break;
+		case UPGRAD_PHASER:   sp->setObjProps( &cPropsErg); break;
 		case UPGRAD_LAUNCHER: sp->setObjProps( &cPropsRocket); break;
-		case UPGRAD_MOTOR: sp->setObjProps( &cPropsLife); break;
+		case UPGRAD_MOTOR:    sp->setObjProps( &cPropsLife); break;
 		default:
 			sp->setObjProps( &cPropsGold);
 		}
@@ -194,7 +198,7 @@ BonusMaker::makeSpriteBonus( int cObjType, EnumBonus pType,  unsigned int pMaskO
 }
 //----------------------------------------------
 Sprite3d*
-BonusMaker::makeSpriteBonus( int cObjType, unsigned int pMaskObj, unsigned int pMakInteract, int pVal )
+BonusMaker::makeSpriteBonus( int cObjType, unsigned int pMaskObj, unsigned int pMaskInteract, int pVal )
 {
 
 	static long sTypeUpgrad = (long)randp(  MAX_UPGRAD );
@@ -203,50 +207,50 @@ BonusMaker::makeSpriteBonus( int cObjType, unsigned int pMaskObj, unsigned int p
 
 	if( WorldControler::sDebug > 1 ){		
 		if( lAlea < 10 )
-			return makeSpriteBonus( cObjType, CONTAINER_ERG, pMaskObj, pMakInteract, pVal );
+			return makeSpriteBonus( cObjType, CONTAINER_ERG, pMaskObj, pMaskInteract, pVal );
 		else		
 			if( lAlea < 20 )
-				return makeSpriteBonus( cObjType, CONTAINER_ROCKET, pMaskObj, pMakInteract, pVal );
+				return makeSpriteBonus( cObjType, CONTAINER_ROCKET, pMaskObj, pMaskInteract, pVal );
 			else		
 				if( lAlea < 30 )
-					return makeSpriteBonus( cObjType, CONTAINER_FIELD, pMaskObj, pMakInteract, pVal );
+					return makeSpriteBonus( cObjType, CONTAINER_FIELD, pMaskObj, pMaskInteract, pVal );
 				else		
 					//					if( lAlea < 40 )
-					//						return makeSpriteBonus( cObjType, CONTAINER_GOLD, pMaskObj, pMakInteract, pVal );
+					//						return makeSpriteBonus( cObjType, CONTAINER_GOLD, pMaskObj, pMaskInteract, pVal );
 					//					else
 						if( lAlea < 90 )
-							return makeSpriteBonus( cObjType, CONTAINER_UPGRAD, pMaskObj, pMakInteract, pVal, rand()%MAX_UPGRAD );
+							return makeSpriteBonus( cObjType, CONTAINER_UPGRAD, pMaskObj, pMaskInteract, pVal, rand()%MAX_UPGRAD );
 				
-		return makeSpriteBonus( cObjType, CONTAINER_LIFE, pMaskObj, pMakInteract, pVal );
+		return makeSpriteBonus( cObjType, CONTAINER_LIFE, pMaskObj, pMaskInteract, pVal );
 	}
 	
 	/*
 	if( lAlea < 35 )
-		return makeSpriteBonus( cObjType, CONTAINER_ERG, pMaskObj, pMakInteract, pVal );
+		return makeSpriteBonus( cObjType, CONTAINER_ERG, pMaskObj, pMaskInteract, pVal );
 	else		
 		if( lAlea < 60 )
-			return makeSpriteBonus( cObjType, CONTAINER_ROCKET, pMaskObj, pMakInteract, pVal );
+			return makeSpriteBonus( cObjType, CONTAINER_ROCKET, pMaskObj, pMaskInteract, pVal );
 		else		
 			if( lAlea < 90 )
-				return makeSpriteBonus( cObjType, CONTAINER_FIELD, pMaskObj, pMakInteract, pVal );
+				return makeSpriteBonus( cObjType, CONTAINER_FIELD, pMaskObj, pMaskInteract, pVal );
 			else		
 				if( lAlea < 95 )
-					return makeSpriteBonus( cObjType, CONTAINER_GOLD, pMaskObj, pMakInteract, pVal );
+					return makeSpriteBonus( cObjType, CONTAINER_GOLD, pMaskObj, pMaskInteract, pVal );
 				else
 					if( lAlea <= 100 )
-						return makeSpriteBonus( cObjType, CONTAINER_UPGRAD, pMaskObj, pMakInteract, pVal, (sTypeUpgrad++)%MAX_UPGRAD );
-	return makeSpriteBonus( cObjType, CONTAINER_LIFE, pMaskObj, pMakInteract, pVal );
+						return makeSpriteBonus( cObjType, CONTAINER_UPGRAD, pMaskObj, pMaskInteract, pVal, (sTypeUpgrad++)%MAX_UPGRAD );
+	return makeSpriteBonus( cObjType, CONTAINER_LIFE, pMaskObj, pMaskInteract, pVal );
 	*/
 	
 	if( lAlea < 40 )
-		return makeSpriteBonus( cObjType, CONTAINER_ERG, pMaskObj, pMakInteract, pVal );
+		return makeSpriteBonus( cObjType, CONTAINER_ERG, pMaskObj, pMaskInteract, pVal );
 	else		
 		if( lAlea < 60 )
-			return makeSpriteBonus( cObjType, CONTAINER_ROCKET, pMaskObj, pMakInteract, pVal );
+			return makeSpriteBonus( cObjType, CONTAINER_ROCKET, pMaskObj, pMaskInteract, pVal );
 		else		
 			if( lAlea < 97 ) // 95
-				return makeSpriteBonus( cObjType, CONTAINER_FIELD, pMaskObj, pMakInteract, pVal );
+				return makeSpriteBonus( cObjType, CONTAINER_FIELD, pMaskObj, pMaskInteract, pVal );
 	
 	
-	return makeSpriteBonus( cObjType, CONTAINER_UPGRAD, pMaskObj, pMakInteract, pVal, (sTypeUpgrad++)%MAX_UPGRAD ); 
+	return makeSpriteBonus( cObjType, CONTAINER_UPGRAD, pMaskObj, pMaskInteract, pVal, (sTypeUpgrad++)%MAX_UPGRAD ); 
 }
