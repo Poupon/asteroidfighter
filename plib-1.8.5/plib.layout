@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="All" />
+	<File name="src\sl\slDSP.cxx" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4047" topLine="151" />
+		</Cursor>
+	</File>
 	<File name="src\fnt\fnt.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="0" />
@@ -11,9 +16,9 @@
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\sl\slDSP.cxx" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\pw\pwWindows.cxx" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4047" topLine="151" />
+			<Cursor1 position="7681" topLine="248" />
 		</Cursor>
 	</File>
 	<File name="src\psl\psl.cxx" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -24,11 +29,6 @@
 	<File name="src\fnt\fnt.cxx" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\pw\pwWindows.cxx" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="7681" topLine="248" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

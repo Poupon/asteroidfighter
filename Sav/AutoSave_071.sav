@@ -1,2 +1,7 @@
+<<<<<<< local
+(Level Scene 157 Time 3119 Difficulty 2 NumSav 72 )
+(Pilot LevelPhaser 22 LevelLauncher 17 LevelField 0 LevelMotor 24 MaxErg 7500 MaxRocket 1300 Life 2 Field 320 Rocket 1261 Erg 7444 Score 119620 )
+=======
 (Level Scene 161 Time 842 Difficulty 0 NumSav 72 )
 (Pilot LevelPhaser 27 LevelLauncher 32 LevelField 2 LevelMotor 22 MaxErg 9500 MaxRocket 1600 Life 7 Field 300 Rocket 1600 Erg 6528 Score 32624 )
+>>>>>>> other
