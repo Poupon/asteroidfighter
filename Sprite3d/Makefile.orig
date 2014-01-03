@@ -42,10 +42,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/phi/DEV/3d/asteroidfighter
+CMAKE_SOURCE_DIR = /home/phi/DEV/3d/asteroidfighter/Sprite3d
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/phi/DEV/3d/asteroidfighter
+CMAKE_BINARY_DIR = /home/phi/DEV/3d/asteroidfighter/Sprite3d
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,14 +72,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/phi/DEV/3d/asteroidfighter && $(CMAKE_COMMAND) -E cmake_progress_start /home/phi/DEV/3d/asteroidfighter/CMakeFiles /home/phi/DEV/3d/asteroidfighter/Sprite3d/CMakeFiles/progress.marks
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f CMakeFiles/Makefile2 Sprite3d/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/phi/DEV/3d/asteroidfighter/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/phi/DEV/3d/asteroidfighter/Sprite3d/CMakeFiles /home/phi/DEV/3d/asteroidfighter/Sprite3d/CMakeFiles/progress.marks
+	$(MAKE) -f CMakeFiles/Makefile2 all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/phi/DEV/3d/asteroidfighter/Sprite3d/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f CMakeFiles/Makefile2 Sprite3d/clean
+	$(MAKE) -f CMakeFiles/Makefile2 clean
 .PHONY : clean
 
 # The main clean target
@@ -88,31 +88,30 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f CMakeFiles/Makefile2 Sprite3d/preinstall
+	$(MAKE) -f CMakeFiles/Makefile2 preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f CMakeFiles/Makefile2 Sprite3d/preinstall
+	$(MAKE) -f CMakeFiles/Makefile2 preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/phi/DEV/3d/asteroidfighter && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-Sprite3d/CMakeFiles/Sprite3d.dir/rule:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f CMakeFiles/Makefile2 Sprite3d/CMakeFiles/Sprite3d.dir/rule
-.PHONY : Sprite3d/CMakeFiles/Sprite3d.dir/rule
+#=============================================================================
+# Target rules for targets named Sprite3d
 
-# Convenience name for target.
-Sprite3d: Sprite3d/CMakeFiles/Sprite3d.dir/rule
+# Build rule for target.
+Sprite3d: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Sprite3d
 .PHONY : Sprite3d
 
 # fast build rule for target.
 Sprite3d/fast:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/build
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/build
 .PHONY : Sprite3d/fast
 
 AnimatObj.o: AnimatObj.cc.o
@@ -120,7 +119,7 @@ AnimatObj.o: AnimatObj.cc.o
 
 # target to build an object file
 AnimatObj.cc.o:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/AnimatObj.cc.o
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/AnimatObj.cc.o
 .PHONY : AnimatObj.cc.o
 
 AnimatObj.i: AnimatObj.cc.i
@@ -128,7 +127,7 @@ AnimatObj.i: AnimatObj.cc.i
 
 # target to preprocess a source file
 AnimatObj.cc.i:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/AnimatObj.cc.i
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/AnimatObj.cc.i
 .PHONY : AnimatObj.cc.i
 
 AnimatObj.s: AnimatObj.cc.s
@@ -136,7 +135,7 @@ AnimatObj.s: AnimatObj.cc.s
 
 # target to generate assembly for a file
 AnimatObj.cc.s:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/AnimatObj.cc.s
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/AnimatObj.cc.s
 .PHONY : AnimatObj.cc.s
 
 Collision.o: Collision.cc.o
@@ -144,7 +143,7 @@ Collision.o: Collision.cc.o
 
 # target to build an object file
 Collision.cc.o:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/Collision.cc.o
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Collision.cc.o
 .PHONY : Collision.cc.o
 
 Collision.i: Collision.cc.i
@@ -152,7 +151,7 @@ Collision.i: Collision.cc.i
 
 # target to preprocess a source file
 Collision.cc.i:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/Collision.cc.i
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Collision.cc.i
 .PHONY : Collision.cc.i
 
 Collision.s: Collision.cc.s
@@ -160,15 +159,39 @@ Collision.s: Collision.cc.s
 
 # target to generate assembly for a file
 Collision.cc.s:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/Collision.cc.s
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Collision.cc.s
 .PHONY : Collision.cc.s
+
+Collision2.o: Collision2.cc.o
+.PHONY : Collision2.o
+
+# target to build an object file
+Collision2.cc.o:
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Collision2.cc.o
+.PHONY : Collision2.cc.o
+
+Collision2.i: Collision2.cc.i
+.PHONY : Collision2.i
+
+# target to preprocess a source file
+Collision2.cc.i:
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Collision2.cc.i
+.PHONY : Collision2.cc.i
+
+Collision2.s: Collision2.cc.s
+.PHONY : Collision2.s
+
+# target to generate assembly for a file
+Collision2.cc.s:
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Collision2.cc.s
+.PHONY : Collision2.cc.s
 
 ObjOdron.o: ObjOdron.cc.o
 .PHONY : ObjOdron.o
 
 # target to build an object file
 ObjOdron.cc.o:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/ObjOdron.cc.o
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/ObjOdron.cc.o
 .PHONY : ObjOdron.cc.o
 
 ObjOdron.i: ObjOdron.cc.i
@@ -176,7 +199,7 @@ ObjOdron.i: ObjOdron.cc.i
 
 # target to preprocess a source file
 ObjOdron.cc.i:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/ObjOdron.cc.i
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/ObjOdron.cc.i
 .PHONY : ObjOdron.cc.i
 
 ObjOdron.s: ObjOdron.cc.s
@@ -184,7 +207,7 @@ ObjOdron.s: ObjOdron.cc.s
 
 # target to generate assembly for a file
 ObjOdron.cc.s:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/ObjOdron.cc.s
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/ObjOdron.cc.s
 .PHONY : ObjOdron.cc.s
 
 ObjPart.o: ObjPart.cc.o
@@ -192,7 +215,7 @@ ObjPart.o: ObjPart.cc.o
 
 # target to build an object file
 ObjPart.cc.o:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/ObjPart.cc.o
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/ObjPart.cc.o
 .PHONY : ObjPart.cc.o
 
 ObjPart.i: ObjPart.cc.i
@@ -200,7 +223,7 @@ ObjPart.i: ObjPart.cc.i
 
 # target to preprocess a source file
 ObjPart.cc.i:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/ObjPart.cc.i
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/ObjPart.cc.i
 .PHONY : ObjPart.cc.i
 
 ObjPart.s: ObjPart.cc.s
@@ -208,7 +231,7 @@ ObjPart.s: ObjPart.cc.s
 
 # target to generate assembly for a file
 ObjPart.cc.s:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/ObjPart.cc.s
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/ObjPart.cc.s
 .PHONY : ObjPart.cc.s
 
 ObjPrim.o: ObjPrim.cc.o
@@ -216,7 +239,7 @@ ObjPrim.o: ObjPrim.cc.o
 
 # target to build an object file
 ObjPrim.cc.o:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/ObjPrim.cc.o
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/ObjPrim.cc.o
 .PHONY : ObjPrim.cc.o
 
 ObjPrim.i: ObjPrim.cc.i
@@ -224,7 +247,7 @@ ObjPrim.i: ObjPrim.cc.i
 
 # target to preprocess a source file
 ObjPrim.cc.i:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/ObjPrim.cc.i
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/ObjPrim.cc.i
 .PHONY : ObjPrim.cc.i
 
 ObjPrim.s: ObjPrim.cc.s
@@ -232,15 +255,39 @@ ObjPrim.s: ObjPrim.cc.s
 
 # target to generate assembly for a file
 ObjPrim.cc.s:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/ObjPrim.cc.s
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/ObjPrim.cc.s
 .PHONY : ObjPrim.cc.s
+
+ObjText.o: ObjText.cc.o
+.PHONY : ObjText.o
+
+# target to build an object file
+ObjText.cc.o:
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/ObjText.cc.o
+.PHONY : ObjText.cc.o
+
+ObjText.i: ObjText.cc.i
+.PHONY : ObjText.i
+
+# target to preprocess a source file
+ObjText.cc.i:
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/ObjText.cc.i
+.PHONY : ObjText.cc.i
+
+ObjText.s: ObjText.cc.s
+.PHONY : ObjText.s
+
+# target to generate assembly for a file
+ObjText.cc.s:
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/ObjText.cc.s
+.PHONY : ObjText.cc.s
 
 ObjText2d.o: ObjText2d.cc.o
 .PHONY : ObjText2d.o
 
 # target to build an object file
 ObjText2d.cc.o:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/ObjText2d.cc.o
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/ObjText2d.cc.o
 .PHONY : ObjText2d.cc.o
 
 ObjText2d.i: ObjText2d.cc.i
@@ -248,7 +295,7 @@ ObjText2d.i: ObjText2d.cc.i
 
 # target to preprocess a source file
 ObjText2d.cc.i:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/ObjText2d.cc.i
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/ObjText2d.cc.i
 .PHONY : ObjText2d.cc.i
 
 ObjText2d.s: ObjText2d.cc.s
@@ -256,7 +303,7 @@ ObjText2d.s: ObjText2d.cc.s
 
 # target to generate assembly for a file
 ObjText2d.cc.s:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/ObjText2d.cc.s
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/ObjText2d.cc.s
 .PHONY : ObjText2d.cc.s
 
 ObjVect.o: ObjVect.cc.o
@@ -264,7 +311,7 @@ ObjVect.o: ObjVect.cc.o
 
 # target to build an object file
 ObjVect.cc.o:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/ObjVect.cc.o
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/ObjVect.cc.o
 .PHONY : ObjVect.cc.o
 
 ObjVect.i: ObjVect.cc.i
@@ -272,7 +319,7 @@ ObjVect.i: ObjVect.cc.i
 
 # target to preprocess a source file
 ObjVect.cc.i:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/ObjVect.cc.i
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/ObjVect.cc.i
 .PHONY : ObjVect.cc.i
 
 ObjVect.s: ObjVect.cc.s
@@ -280,7 +327,7 @@ ObjVect.s: ObjVect.cc.s
 
 # target to generate assembly for a file
 ObjVect.cc.s:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/ObjVect.cc.s
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/ObjVect.cc.s
 .PHONY : ObjVect.cc.s
 
 Random.o: Random.cc.o
@@ -288,7 +335,7 @@ Random.o: Random.cc.o
 
 # target to build an object file
 Random.cc.o:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/Random.cc.o
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Random.cc.o
 .PHONY : Random.cc.o
 
 Random.i: Random.cc.i
@@ -296,7 +343,7 @@ Random.i: Random.cc.i
 
 # target to preprocess a source file
 Random.cc.i:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/Random.cc.i
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Random.cc.i
 .PHONY : Random.cc.i
 
 Random.s: Random.cc.s
@@ -304,7 +351,7 @@ Random.s: Random.cc.s
 
 # target to generate assembly for a file
 Random.cc.s:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/Random.cc.s
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Random.cc.s
 .PHONY : Random.cc.s
 
 SceneManager.o: SceneManager.cc.o
@@ -312,7 +359,7 @@ SceneManager.o: SceneManager.cc.o
 
 # target to build an object file
 SceneManager.cc.o:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/SceneManager.cc.o
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/SceneManager.cc.o
 .PHONY : SceneManager.cc.o
 
 SceneManager.i: SceneManager.cc.i
@@ -320,7 +367,7 @@ SceneManager.i: SceneManager.cc.i
 
 # target to preprocess a source file
 SceneManager.cc.i:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/SceneManager.cc.i
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/SceneManager.cc.i
 .PHONY : SceneManager.cc.i
 
 SceneManager.s: SceneManager.cc.s
@@ -328,7 +375,7 @@ SceneManager.s: SceneManager.cc.s
 
 # target to generate assembly for a file
 SceneManager.cc.s:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/SceneManager.cc.s
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/SceneManager.cc.s
 .PHONY : SceneManager.cc.s
 
 SoundControler.o: SoundControler.cc.o
@@ -336,7 +383,7 @@ SoundControler.o: SoundControler.cc.o
 
 # target to build an object file
 SoundControler.cc.o:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/SoundControler.cc.o
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/SoundControler.cc.o
 .PHONY : SoundControler.cc.o
 
 SoundControler.i: SoundControler.cc.i
@@ -344,7 +391,7 @@ SoundControler.i: SoundControler.cc.i
 
 # target to preprocess a source file
 SoundControler.cc.i:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/SoundControler.cc.i
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/SoundControler.cc.i
 .PHONY : SoundControler.cc.i
 
 SoundControler.s: SoundControler.cc.s
@@ -352,7 +399,7 @@ SoundControler.s: SoundControler.cc.s
 
 # target to generate assembly for a file
 SoundControler.cc.s:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/SoundControler.cc.s
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/SoundControler.cc.s
 .PHONY : SoundControler.cc.s
 
 SoundLibrary.o: SoundLibrary.cc.o
@@ -360,7 +407,7 @@ SoundLibrary.o: SoundLibrary.cc.o
 
 # target to build an object file
 SoundLibrary.cc.o:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/SoundLibrary.cc.o
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/SoundLibrary.cc.o
 .PHONY : SoundLibrary.cc.o
 
 SoundLibrary.i: SoundLibrary.cc.i
@@ -368,7 +415,7 @@ SoundLibrary.i: SoundLibrary.cc.i
 
 # target to preprocess a source file
 SoundLibrary.cc.i:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/SoundLibrary.cc.i
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/SoundLibrary.cc.i
 .PHONY : SoundLibrary.cc.i
 
 SoundLibrary.s: SoundLibrary.cc.s
@@ -376,7 +423,7 @@ SoundLibrary.s: SoundLibrary.cc.s
 
 # target to generate assembly for a file
 SoundLibrary.cc.s:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/SoundLibrary.cc.s
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/SoundLibrary.cc.s
 .PHONY : SoundLibrary.cc.s
 
 Sprite3d.o: Sprite3d.cc.o
@@ -384,7 +431,7 @@ Sprite3d.o: Sprite3d.cc.o
 
 # target to build an object file
 Sprite3d.cc.o:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/Sprite3d.cc.o
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Sprite3d.cc.o
 .PHONY : Sprite3d.cc.o
 
 Sprite3d.i: Sprite3d.cc.i
@@ -392,7 +439,7 @@ Sprite3d.i: Sprite3d.cc.i
 
 # target to preprocess a source file
 Sprite3d.cc.i:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/Sprite3d.cc.i
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Sprite3d.cc.i
 .PHONY : Sprite3d.cc.i
 
 Sprite3d.s: Sprite3d.cc.s
@@ -400,7 +447,7 @@ Sprite3d.s: Sprite3d.cc.s
 
 # target to generate assembly for a file
 Sprite3d.cc.s:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/Sprite3d.cc.s
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Sprite3d.cc.s
 .PHONY : Sprite3d.cc.s
 
 Sprite3dObj.o: Sprite3dObj.cc.o
@@ -408,7 +455,7 @@ Sprite3dObj.o: Sprite3dObj.cc.o
 
 # target to build an object file
 Sprite3dObj.cc.o:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/Sprite3dObj.cc.o
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Sprite3dObj.cc.o
 .PHONY : Sprite3dObj.cc.o
 
 Sprite3dObj.i: Sprite3dObj.cc.i
@@ -416,7 +463,7 @@ Sprite3dObj.i: Sprite3dObj.cc.i
 
 # target to preprocess a source file
 Sprite3dObj.cc.i:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/Sprite3dObj.cc.i
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Sprite3dObj.cc.i
 .PHONY : Sprite3dObj.cc.i
 
 Sprite3dObj.s: Sprite3dObj.cc.s
@@ -424,7 +471,7 @@ Sprite3dObj.s: Sprite3dObj.cc.s
 
 # target to generate assembly for a file
 Sprite3dObj.cc.s:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/Sprite3dObj.cc.s
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Sprite3dObj.cc.s
 .PHONY : Sprite3dObj.cc.s
 
 Sprite3dPilot.o: Sprite3dPilot.cc.o
@@ -432,7 +479,7 @@ Sprite3dPilot.o: Sprite3dPilot.cc.o
 
 # target to build an object file
 Sprite3dPilot.cc.o:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/Sprite3dPilot.cc.o
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Sprite3dPilot.cc.o
 .PHONY : Sprite3dPilot.cc.o
 
 Sprite3dPilot.i: Sprite3dPilot.cc.i
@@ -440,7 +487,7 @@ Sprite3dPilot.i: Sprite3dPilot.cc.i
 
 # target to preprocess a source file
 Sprite3dPilot.cc.i:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/Sprite3dPilot.cc.i
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Sprite3dPilot.cc.i
 .PHONY : Sprite3dPilot.cc.i
 
 Sprite3dPilot.s: Sprite3dPilot.cc.s
@@ -448,7 +495,7 @@ Sprite3dPilot.s: Sprite3dPilot.cc.s
 
 # target to generate assembly for a file
 Sprite3dPilot.cc.s:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/Sprite3dPilot.cc.s
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Sprite3dPilot.cc.s
 .PHONY : Sprite3dPilot.cc.s
 
 Text2d.o: Text2d.cc.o
@@ -456,7 +503,7 @@ Text2d.o: Text2d.cc.o
 
 # target to build an object file
 Text2d.cc.o:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/Text2d.cc.o
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Text2d.cc.o
 .PHONY : Text2d.cc.o
 
 Text2d.i: Text2d.cc.i
@@ -464,7 +511,7 @@ Text2d.i: Text2d.cc.i
 
 # target to preprocess a source file
 Text2d.cc.i:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/Text2d.cc.i
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Text2d.cc.i
 .PHONY : Text2d.cc.i
 
 Text2d.s: Text2d.cc.s
@@ -472,7 +519,7 @@ Text2d.s: Text2d.cc.s
 
 # target to generate assembly for a file
 Text2d.cc.s:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/Text2d.cc.s
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Text2d.cc.s
 .PHONY : Text2d.cc.s
 
 Utils3d.o: Utils3d.cc.o
@@ -480,7 +527,7 @@ Utils3d.o: Utils3d.cc.o
 
 # target to build an object file
 Utils3d.cc.o:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/Utils3d.cc.o
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Utils3d.cc.o
 .PHONY : Utils3d.cc.o
 
 Utils3d.i: Utils3d.cc.i
@@ -488,7 +535,7 @@ Utils3d.i: Utils3d.cc.i
 
 # target to preprocess a source file
 Utils3d.cc.i:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/Utils3d.cc.i
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Utils3d.cc.i
 .PHONY : Utils3d.cc.i
 
 Utils3d.s: Utils3d.cc.s
@@ -496,7 +543,7 @@ Utils3d.s: Utils3d.cc.s
 
 # target to generate assembly for a file
 Utils3d.cc.s:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/Utils3d.cc.s
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/Utils3d.cc.s
 .PHONY : Utils3d.cc.s
 
 World.o: World.cc.o
@@ -504,7 +551,7 @@ World.o: World.cc.o
 
 # target to build an object file
 World.cc.o:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/World.cc.o
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/World.cc.o
 .PHONY : World.cc.o
 
 World.i: World.cc.i
@@ -512,7 +559,7 @@ World.i: World.cc.i
 
 # target to preprocess a source file
 World.cc.i:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/World.cc.i
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/World.cc.i
 .PHONY : World.cc.i
 
 World.s: World.cc.s
@@ -520,7 +567,7 @@ World.s: World.cc.s
 
 # target to generate assembly for a file
 World.cc.s:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/World.cc.s
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/World.cc.s
 .PHONY : World.cc.s
 
 WorldControler.o: WorldControler.cc.o
@@ -528,7 +575,7 @@ WorldControler.o: WorldControler.cc.o
 
 # target to build an object file
 WorldControler.cc.o:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/WorldControler.cc.o
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/WorldControler.cc.o
 .PHONY : WorldControler.cc.o
 
 WorldControler.i: WorldControler.cc.i
@@ -536,7 +583,7 @@ WorldControler.i: WorldControler.cc.i
 
 # target to preprocess a source file
 WorldControler.cc.i:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/WorldControler.cc.i
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/WorldControler.cc.i
 .PHONY : WorldControler.cc.i
 
 WorldControler.s: WorldControler.cc.s
@@ -544,7 +591,7 @@ WorldControler.s: WorldControler.cc.s
 
 # target to generate assembly for a file
 WorldControler.cc.s:
-	cd /home/phi/DEV/3d/asteroidfighter && $(MAKE) -f Sprite3d/CMakeFiles/Sprite3d.dir/build.make Sprite3d/CMakeFiles/Sprite3d.dir/WorldControler.cc.s
+	$(MAKE) -f CMakeFiles/Sprite3d.dir/build.make CMakeFiles/Sprite3d.dir/WorldControler.cc.s
 .PHONY : WorldControler.cc.s
 
 # Help Target
@@ -562,6 +609,9 @@ help:
 	@echo "... Collision.o"
 	@echo "... Collision.i"
 	@echo "... Collision.s"
+	@echo "... Collision2.o"
+	@echo "... Collision2.i"
+	@echo "... Collision2.s"
 	@echo "... ObjOdron.o"
 	@echo "... ObjOdron.i"
 	@echo "... ObjOdron.s"
@@ -571,6 +621,9 @@ help:
 	@echo "... ObjPrim.o"
 	@echo "... ObjPrim.i"
 	@echo "... ObjPrim.s"
+	@echo "... ObjText.o"
+	@echo "... ObjText.i"
+	@echo "... ObjText.s"
 	@echo "... ObjText2d.o"
 	@echo "... ObjText2d.i"
 	@echo "... ObjText2d.s"
@@ -621,6 +674,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/phi/DEV/3d/asteroidfighter && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
