@@ -15,3 +15,5 @@ AsteroidFighter - Copie.exe
 AsteroidFighter.depend
 freeglut-2.8.1/*
 Sav/*
+cmake_install.cmake
+bin/AsteroidFighter
