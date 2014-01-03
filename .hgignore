@@ -2,6 +2,7 @@
 /*/.*\.a$
 /*/.*\.exe$
 /*/.*\.dll$
+/*/CMakefiles/*$
 syntax: glob
 AsteroidFighter.exe
 glut32.dll
