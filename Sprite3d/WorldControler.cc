@@ -386,12 +386,6 @@ WorldControler::Key( unsigned char pKey, int pX, int pY )
 			WC->helpWorld();
 			break;
 
-		case 'S':
-		case 's':
-			// Pas au point ! -> plantage
-			//			WC->mainWorld();
-			//			saveLastLevel();
-			break;
 
 		case 'F':
 		case 'f':
@@ -406,7 +400,7 @@ WorldControler::Key( unsigned char pKey, int pX, int pY )
 				WC->cFullScreen = 0;
 			}
 			break;
-			/*
+			
 	case 'S':
 	case 's':
 		if( SoundControler::sMute == GL_TRUE )
@@ -414,7 +408,7 @@ WorldControler::Key( unsigned char pKey, int pX, int pY )
 		else
 			SoundControler::sMute = GL_TRUE;
 			break;
-			*/
+			
 
 		case 'R':
 		case 'r':
@@ -514,9 +508,6 @@ void WorldControler::Reshape(int pWidth, int pHeight  )
 //--------------------------------
 void WorldControler::Animate( int p)
 {
-	if( SoundControler::sTheSoundControler != NULL )
-		SoundControler::sTheSoundControler->process();
-
 
 
 //	std::cout << "Timer WorldControler::Animate <" << sMicroRate << " " << sTime << std::endl;

@@ -50,7 +50,9 @@ class T3dBox
 	}
 
 
+	Double3 center();
 	void getCenter( Double3& pD3);
+
 	virtual char *getInfoStr( char *pStr );
 
 	GLboolean isInto( Double3 & pPt )

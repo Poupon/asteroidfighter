@@ -14,6 +14,7 @@
 #include <Sprite3d/ObjText2d.h>
 #include <Sprite3d/ObjText.h>
 #include <Sprite3d/Random.h>
+#include <Sprite3d/SoundControler.h>
 
 #include <U3d/WeaponsMaker.h>
 
@@ -51,7 +52,7 @@ MainMenu::MainMenu( int pSize, WorldControler* pControl, O3dKamera* pKamera, Dou
 void
 MainMenu::mouseMove( int pX, int pY )
 {
-	std::cout << "MainMenu::mouseMove" << std::endl;
+	//	std::cout << "MainMenu::mouseMove" << std::endl;
 }
 //-----------------------------
 void
@@ -80,7 +81,7 @@ MainMenu::mouseButton( int pButton, int pState, int pX, int pY)
 long
 MainMenu::userAction( Sprite3d &pMySprite, void*pParam0, void*pParam1, void*pParam2 )
 {
-	std::cout << "UserAction -> " << (char*) pParam0 << ":"<< (long) pParam1 << ":" <<  (long) pParam2 << std::endl;
+	//	std::cout << "UserAction -> " << (char*) pParam0 << ":"<< (long) pParam1 << ":" <<  (long) pParam2 << std::endl;
 	return 666;
 }
 //-----------------------------
@@ -294,7 +295,7 @@ MainMenu::MyReadFileCb( puObject * pObject)
 
 	//	std::cout << "MainMenu::MyFileReadCb " << pObject << ":" << lStr 						<< std::endl;
 	
-	std::string lStrFileSav( lStr );
+	std::string lStrFileSav( lStr ); 
 
 	puDeleteObject( TheMainMenu->cReadSavBox );
 	TheMainMenu->cReadSavBox = NULL;
@@ -307,7 +308,7 @@ MainMenu::MyReadFileCb( puObject * pObject)
 void
 MainMenu::MyButtonCb( puObject * pObject)
 {
-  std::cout <<  "MyButtonCb :" << pObject->getValue() << std::endl;
+	//  std::cout <<  "MyButtonCb :" << pObject->getValue() << std::endl;
 
 	
 	if( pObject == TheMainMenu->cReadAutoBox ){
@@ -335,8 +336,8 @@ MainMenu::MyButtonCb( puObject * pObject)
 	if( pObject == TheMainMenu->cExtremeBox )
         WorldControler::sDifficultyLevel = 4;
 
-	  std::cout <<  "sDifficultyLevel :" << WorldControler::sDifficultyLevel
-							<< std::endl;
+	//	  std::cout <<  "sDifficultyLevel :" << WorldControler::sDifficultyLevel
+	//							<< std::endl;
 
 		////		TheMainMenu->getMyControler()->setCurrent( WorldControler::GetGameWorld() );
 
@@ -348,7 +349,7 @@ MainMenu::MyButtonCb( puObject * pObject)
 void
 MyMuteSoundButtonCb(  puObject * pObject)
 {
-  std::cout <<  "MyButtonCb :" << pObject->getValue() << std::endl;
+	//  std::cout <<  "MyButtonCb :" << pObject->getValue() << std::endl;
 
 	if( pObject->getValue() == 0 )
 		SoundControler::sMute = GL_TRUE;
@@ -382,7 +383,7 @@ MainMenu::enterWorld()
 
 	puGetWindowSizeGLUT ( &lScreenWidth, &lScreenHeight );
 
-	std::cout << "enterWorld" << std::endl;
+	//	std::cout << "enterWorld" << std::endl;
 	//		puOneShot *b = new puOneShot ( 50, 50, 200, 80 ) ;
 
 	static 	const char* TVal[6] = { "Gentile",  "Easy", "Medium", "Hard", "Extreme", NULL };

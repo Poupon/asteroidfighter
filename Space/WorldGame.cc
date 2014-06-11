@@ -4,6 +4,7 @@
 #include <U3d/Sky.h>
 
 #include <Sprite3d/Random.h>
+#include <Sprite3d/SoundControler.h>
 
 #include <SceneAsteroide.h>
 #include <SceneBase.h>
@@ -40,9 +41,9 @@ float WorldGame::YSizeWorld = 120;
 WorldGame::WorldGame( int pSize, WorldControler* pControl, O3dKamera* pKamera, Double3& pMax,
 						O3dObjProps *pProps)
 	:World(pControl, pKamera, pMax, pProps),
-	cSize(pSize),
-	 cSceneManager(NULL),
-	 cLevel(0)
+  	cSize(pSize),
+	 cLevel(0),
+	 cSceneManager(NULL)
 {
 	TheWorldGame = this;
 	cInfoLevel[0]='\0';
@@ -52,6 +53,12 @@ WorldGame::~WorldGame()
 {
 	delete cSceneManager;
 	TheWorldGame = NULL;
+}
+const char* 
+WorldGame::configGetKey(  const char* pSection, const char* pKey )
+{
+
+	return NULL;
 }
 //---------------------------------------------------
 const char*
@@ -66,7 +73,7 @@ WorldGame::getInfoLeveL(){
 GLboolean
 WorldGame::initStart( int pNiveau, const char* pNameFileSav )
 {
-	std::cout << "WorldGame::initStart " << pNiveau << " " << pNameFileSav << std::endl;
+	//	std::cout << "WorldGame::initStart " << pNiveau << " " << pNameFileSav << std::endl;
 
   Double3 lGenPos( 160.0, 0.0, 0.0 );
   Double3 lGenPos2( 0.0, 100, 0.0 );
@@ -299,7 +306,7 @@ WorldGame::freeRessources()
 void
 WorldGame::gameOver()
 {
-	std::cout << "WorldGame::gameOver" << std::endl;
+	//	std::cout << "WorldGame::gameOver" << std::endl;
 	World::gameOver();
 
 	Float4 lBanColor( 0.9, 0.9, 1.0, 0.5 ) ;
@@ -351,7 +358,7 @@ WorldGame::makeBanniere( const char* pName, Float4 pColor, float pLiveTime )
 int
 WorldGame::userEvent( void *pUserData)
 {
-	std::cout << "WorldGame::gameWinner" << std::endl;
+	//	std::cout << "WorldGame::gameWinner" << std::endl;
 	World::gameWinner();
 
 	// Mettre autre Sprite
@@ -409,16 +416,42 @@ WorldGame::InitSprite()
 PSoundId sOceanSound=PBadSoundId;
 
 
-void
+bool
 WorldGame::InitSound( const char* pPathSound)
 {
-	TheWorldGame->setMySoundLibrary( new SoundLibrary(256, pPathSound ));
+	//	std::cout << "WorldGame::InitSound " << pPathSound << std::endl;
+	
+	new SoundControler( 20, pPathSound );
 
-		sOceanSound = TheWorldGame->getMySoundLibrary()->loadSample( "ocean.wav" );
+	//	WeaponsMaker::InitSound( World* pWorld );
+	//	ActionsShip::InitSound( World* pWorld );
+	//	Pilot::InitSound( World* pWorld );
 
-	Pilot::InitSound(TheWorldGame);
-	ActionsShip::InitSound(TheWorldGame);
-	WeaponsMaker::InitSound(TheWorldGame);
+	WeaponsMaker::sSoundWeaponExplode         = LOAD_SAMPLE( "Explode.wav" );
+	WeaponsMaker::sSoundWeaponExplodePlasma   = LOAD_SAMPLE( "ExplodePlasma.mp3" );
+	WeaponsMaker::sSoundWeaponExplodePlasmaG  = LOAD_SAMPLE( "ExplodePlasmaG.wav" );
+
+
+	ActionsShip::sSoundExplosion1   = LOAD_SAMPLE( "ActionExplosion1.wav" );
+	ActionsShip::sSoundExplosion2   = LOAD_SAMPLE( "ActionExplosion2.wav" );
+	ActionsShip::sSoundExplosion3   = LOAD_SAMPLE( "ActionExplosion3.wav" );
+	ActionsShip::sSoundExplosion4   = LOAD_SAMPLE( "ActionExplosion4.wav" );
+	ActionsShip::sSoundExplosionBig = LOAD_SAMPLE( "ActionExplosionBig.wav" );
+
+
+	Pilot::sSoundWarp        = LOAD_SAMPLE( "PilotWarp.mp3" );
+	Pilot::sSoundLaser       = LOAD_SAMPLE( "PilotLaser.wav" );
+	Pilot::sSoundFireMissile = LOAD_SAMPLE( "PilotLaunchMissile.mp3" );
+
+
+	/*
+	Pilot::sSoundWarpFailed     = LOAD_SAMPLE(""); 
+	Pilot::sSoundCollision      = LOAD_SAMPLE(""); 
+  Pilot::sSoundFinalExplosion = LOAD_SAMPLE(""); 
+  Pilot::sSoundNextLife       = LOAD_SAMPLE(""); 
+	Pilot::sSoundBonus          = LOAD_SAMPLE(""); 
+	*/
+	return true;
 }
-//---------------------------------------------------
 
+//---------------------------------------------------

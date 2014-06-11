@@ -17,6 +17,16 @@
 #include <Sprite3dPilot.h>
 
 long World::sNbDetect = 0;
+World*  World::TheWorld = NULL;
+
+//--------------------------------
+const char* World::ConfigGetKey(  const char* pSection, const char* pKey ){
+
+	if( TheWorld != NULL )
+		return TheWorld->configGetKey( pSection, pKey );
+
+	return NULL;
+}
 
 //--------------------------------
 inline void
@@ -30,18 +40,19 @@ RemoveSprite(  Sprite3d *pSp,  VSprite3d& vect )
 //**************************************
 
 World::World( WorldControler *pControl, O3dKamera* pKamera, Double3& pMax, O3dObjProps*pProps )
-:cPilot( NULL ),
- cProps( pProps ),
- cMyControler(pControl),
- cKamera(pKamera),
- cOverlayOpen( GL_FALSE ),
- cBox( pMax, pMax )
+: cProps( pProps ),
+	cPilot( NULL ),
+  cMyControler(pControl),
+  cKamera(pKamera),
+  cOverlayOpen( GL_FALSE ),
+  cBox( pMax, pMax )
 {
 	for( int i = 0; i < 3; i++ )
 	{
 		cBox.getMin()[i] = -cBox.getMax()[i] ;
 	}
 
+	TheWorld = this;
 }
 //--------------------------------
 World::~World()
@@ -374,6 +385,11 @@ World::GetPositionWithoutCollision( int pInteract, Double3& pPos, int pSize, int
 }
 
 //--------------------------------
+const char* 
+World::configGetKey(  const char* pSection, const char* pKey )
+{
+	return NULL;
+}
 
 //**************************************
 

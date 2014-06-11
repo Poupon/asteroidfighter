@@ -22,7 +22,7 @@ HDRS = $(SRCS:.cc=.h)
 # /usr/lib/x86_64-linux-gnu
 # ---------------------------------------------------
 
-CFLAGS=  ${CC_DEBUG}
+CFLAGS=  ${CC_DEBUG} -g -std=c++11 -Wall  -m64 -pthread -D_POSIX_PTHREAD_SEMANTICS -m64 
 
 CINCLUDE= -I. -I..
 
@@ -49,7 +49,7 @@ clean::
 # ---------------------------------------------------
 # Compilation
 .cc.o:
-		gcc $(CFLAGS) $(CINCLUDE)  -c $*.cc 
+		gcc -O2 $(CFLAGS) $(CINCLUDE)  -c $*.cc 
  
 
 # ---------------------------------------------------

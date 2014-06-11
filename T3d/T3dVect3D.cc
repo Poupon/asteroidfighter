@@ -32,7 +32,7 @@ void
 T3dVect3D::drop()
 {
 	if( cVectPt )
-		delete cVectPt;
+		delete[] cVectPt;
 
 	cVectPt =  NULL;
 	cSz = 0;
@@ -70,7 +70,7 @@ T3dVect3D::resize( long pNb )
 		for( int i = 0; i < cNbPoint; i++ )
 			lTmp[ i ] = cVectPt[ i ];
 
-		delete cVectPt;
+		delete[] cVectPt;
 		cVectPt = lTmp;
 		cSz = pNb;
 	}

@@ -37,26 +37,35 @@ Pilot* Pilot::ThePilot = NULL;
 //*************************************************
 
 // Pour ne pas avoir a modifier le .h a chaque ajout de son
-static PSoundId sSoundWarp          =PBadSoundId;
-static PSoundId sSoundLaser         =PBadSoundId;
-static PSoundId sSoundFireMissile   =PBadSoundId;
+ PSoundId Pilot::sSoundWarp          =PBadSoundId;
+ PSoundId Pilot::sSoundLaser         =PBadSoundId;
+ PSoundId Pilot::sSoundFireMissile   =PBadSoundId;
 
 // PAS FAIT
-static PSoundId sSoundWarpFailed    =PBadSoundId;
-static PSoundId sSoundCollision     =PBadSoundId;
-static PSoundId sSoundFinalExplosion=PBadSoundId;
-static PSoundId sSoundNextLife      =PBadSoundId;
-static PSoundId sSoundBonus         =PBadSoundId;
+ PSoundId Pilot::sSoundWarpFailed    =PBadSoundId;
+ PSoundId Pilot::sSoundCollision     =PBadSoundId;
+ PSoundId Pilot::sSoundFinalExplosion=PBadSoundId;
+ PSoundId Pilot::sSoundNextLife      =PBadSoundId;
+ PSoundId Pilot::sSoundBonus         =PBadSoundId;
 
 
 //static PSoundId sMusicGameOver=PBadSoundId;
 
-void
+bool
 Pilot::InitSound( World* pWorld)
 {
-	sSoundWarp = pWorld->getMySoundLibrary()->loadSample( "PilotWarp.wav" );
-	sSoundLaser = pWorld->getMySoundLibrary()->loadSample( "PilotLaser.wav" );
-	sSoundFireMissile = pWorld->getMySoundLibrary()->loadSample( "PilotLaunchMissile.wav" );
+	const char* pSection =  "Pilot";
+	sSoundWarp        = SoundControler::LoadSample( pSection, "SoundWarp" );
+	sSoundLaser       = SoundControler::LoadSample( pSection, "SoundLaser" );
+	sSoundFireMissile = SoundControler::LoadSample( pSection, "SoundFireMissile" );
+
+	sSoundWarpFailed     = SoundControler::LoadSample( pSection, "SoundWarpFailed" );
+	sSoundCollision      = SoundControler::LoadSample( pSection, "SoundCollision" );
+  sSoundFinalExplosion = SoundControler::LoadSample( pSection, "SoundFinalExplosion" );
+  sSoundNextLife       = SoundControler::LoadSample( pSection, "SoundNextLife" );
+	sSoundBonus          = SoundControler::LoadSample( pSection, "SoundBonus" );
+
+	return true;
 }
 //-----------------------------------
 static const char* sStrPilot = "(Pilot";
@@ -122,93 +131,93 @@ bool Pilot::read( std::istream & pIs ){
 
     pIs >> lTmpStr;
 
-    std::cout << "read [" << lTmpStr << ']' << std::endl;
+		//    std::cout << "read [" << lTmpStr << ']' << std::endl;
 
     if( lTmpStr.compare( sStrPilot ) != 0 ){
-			std::cout << "read Pilot header fail" << std::endl;						
+			//			std::cout << "read Pilot header fail" << std::endl;						
 			return false;
 		}
 		
     pIs >> lTmpStr;
     if( lTmpStr.compare( sStrLevPhaser ) != 0 ){
-			std::cout << "read Pilot LevelPhaser fail" << std::endl;
+			//			std::cout << "read Pilot LevelPhaser fail" << std::endl;
 			return false;
 		}
     pIs >> lLevelPhaser;
 		
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrLevLauncher ) != 0 ){
-			std::cout << "read Pilot LevelLauncher fail" << std::endl;
+			//			std::cout << "read Pilot LevelLauncher fail" << std::endl;
 			return false;
 		}
     pIs >> lLevelLauncher;
 		
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrLevField ) != 0 ){
-			std::cout << "read Pilot LevelField fail" << std::endl;
+			//			std::cout << "read Pilot LevelField fail" << std::endl;
 			return false;
 		}
     pIs >> lMaxField;
 		
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrLevMotor ) != 0 ){
-			std::cout << "read Pilot LevelMotor fail" << std::endl;
+			//			std::cout << "read Pilot LevelMotor fail" << std::endl;
 			return false;
 		}
     pIs >> lLevelMotor;
 		
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrMaxErg ) != 0 ){
-			std::cout << "read Pilot MaxErg fail" << std::endl;
+			//			std::cout << "read Pilot MaxErg fail" << std::endl;
 			return false;
 		}
     pIs >> lMaxErg;
 		
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrMaxRocket ) != 0 ){
-			std::cout << "read Pilot MaxRocket fail" << std::endl;
+			//			std::cout << "read Pilot MaxRocket fail" << std::endl;
 			return false;
 		}
     pIs >> lMaxRocket;
 		
 		pIs >> lTmpStr;
 		if( lTmpStr.compare( sStrLife ) != 0 ){
-			std::cout << "read Pilot fail" << std::endl;
+			//			std::cout << "read Pilot fail" << std::endl;
 			return false;
 		}
 		pIs >> lNbLife;
 		
 		pIs >> lTmpStr;
 		if( lTmpStr.compare( sStrField ) != 0 ){
-			std::cout << "read Pilot Field fail" << std::endl;
+			//			std::cout << "read Pilot Field fail" << std::endl;
 			return false;
 		}
     pIs >> lField;
 		
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrRocket ) != 0 ){
-			std::cout << "read Pilot Rocket fail" << std::endl;
+			//			std::cout << "read Pilot Rocket fail" << std::endl;
 			return false;
 		}
     pIs >> lRocket;
 		
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrErg ) != 0 ){
-			std::cout << "read Pilot fail" << std::endl;
+			//			std::cout << "read Pilot fail" << std::endl;
 			return false;
 		}
     pIs >> lErg;
 		
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrScore ) != 0 ){
-			std::cout << "read Pilot Score fail" << std::endl;
+			//			std::cout << "read Pilot Score fail" << std::endl;
 			return false;
 		}
     pIs >> lScore;
 
 		pIs >> lTmpStr;
 		if( lTmpStr.compare( sStrMoney ) != 0 ){
-			std::cout << "read Pilot Money fail" << std::endl;
+			//			std::cout << "read Pilot Money fail" << std::endl;
 			return false;
 		}
     pIs >> lMoney;
@@ -241,18 +250,20 @@ bool Pilot::read( std::istream & pIs ){
 //**********************************************
 Pilot::Pilot( )
 	:Sprite3dPilot( NULL ),
+	 cErg(500),
 	 cRocket(100),
 	 cNbLife(3),
 	 cGold(0),
-	 cErg(500),
 	 cMaxErg(1000),
 	 cMaxRocket(200),
-	 cScore(0),
 
 	 cLevelPhaser(0),
 	 cLevelLauncher(0),
 	 cLevelField(0),
 	 cLevelMotor(0),
+	 cLevelWarp(0),
+	 cScore(0),
+
 	 cWarpBegin(GL_FALSE),
 	 cXDecalKamera(0.0),
 	 cYDecalKamera(0.0)
@@ -642,7 +653,7 @@ Pilot::warp()
 
 	 if( lCout > cErg )
 		 {
-			 PLAYSAMPLE( GETSAMPLE( sSoundWarpFailed ));
+			 PLAY_SAMPLE( sSoundWarpFailed );
 
 			 SpriteExplosion *sp = new SpriteExplosion( getRadius(), 0.3, 0 );
 			 sp->setTransf( lTran  );
@@ -658,7 +669,7 @@ Pilot::warp()
 
 	 if( cWarpBegin == GL_FALSE )
 		 {
-			 PLAYSAMPLE( GETSAMPLE( sSoundWarp ));
+			 PLAY_SAMPLE(  sSoundWarp );
 		 }
 
 
@@ -1018,7 +1029,7 @@ Pilot::firePhaser()
 		}
 
 	// Mettre un son differend selon la puissance du tir !
-	 PLAYSAMPLE( GETSAMPLE( sSoundLaser ));
+	 PLAY_SAMPLE(  sSoundLaser );
 }
 //--------------------------------
 void
@@ -1271,7 +1282,7 @@ Pilot::fireRocket()
 
 
 	// PLAYSAM	// Mettre un son differend selon la puissance du tir !
-	PLAYSAMPLE( GETSAMPLE( sSoundFireMissile ));
+	PLAY_SAMPLE( sSoundFireMissile );
 
 
 
@@ -1426,7 +1437,7 @@ GLboolean Pilot::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void *pParam
 			sp->setObjProps( SpriteExplosion::caExplosionProps );
 			WorldControler::Add( sp );
 
-			PLAYSAMPLE( GETSAMPLE( sSoundCollision ));
+			PLAY_SAMPLE( sSoundCollision );
 	}
 
 	if( pMySprite.SpriteFloat::get( SPRITE_LIFE_POINT ) <= 0 )
@@ -1434,7 +1445,7 @@ GLboolean Pilot::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void *pParam
 
 		if( cNbLife <= 0 )
 			{
-				PLAYSAMPLE( GETSAMPLE( sSoundFinalExplosion ));
+				PLAY_SAMPLE( sSoundFinalExplosion );
 				//				PLAYMUSIC(  GETSAMPLE( sMusicGameOver ));
 
 				int max = static_cast<long>(randp(30)+2.0);
@@ -1483,7 +1494,7 @@ GLboolean Pilot::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void *pParam
 		else
 			{
 				////////				WorldGame::TheWorldGame->cSceneManager->resetCurrentSceneFromBegin( this );
-				PLAYSAMPLE( GETSAMPLE( sSoundNextLife ));
+				PLAY_SAMPLE(  sSoundNextLife );
 
 				cNbLife--;
 
@@ -1769,7 +1780,7 @@ Pilot::collisionBonus( Sprite3d &pSprite, void *pParam)
 		}
 
 
-	PLAYSAMPLE( GETSAMPLE( sSoundBonus ));
+	PLAY_SAMPLE(  sSoundBonus );
 
 	for( int i=0; i<8; i++)
 		{

@@ -27,7 +27,6 @@ class WorldControler;
 class World
 {
 protected:
-	WorldControler *cMyControler;
 	ObjVect cLiveObj;
 	std::vector <Sprite3d*> cServiceSprite;
 
@@ -35,15 +34,15 @@ protected:
 	std::vector <Sprite3d*> cLiveSprite;
 	std::vector <Sprite3d*> cDeadSprite;
 
-	O3dKamera*   cKamera;
-	Sprite3dPilot *cPilot;
-	O3dObjProps *cProps;
+	O3dObjProps    *cProps;
+	Sprite3dPilot  *cPilot;
+	WorldControler *cMyControler;
+	O3dKamera      * cKamera;
+	GLboolean cOverlayOpen;
 
 	T3dBox cBox; // The size of this world !
 
-	GLboolean cOverlayOpen;
 
-	SoundLibrary* cMySoundLibrary;
 
 public:
 
@@ -73,13 +72,6 @@ public:
 	WorldControler * getMyControler() { return cMyControler;}
 	void setMyControler(WorldControler *pControl) { cMyControler=pControl;}
 
-	SoundLibrary* setMySoundLibrary( SoundLibrary* pMySoundLibrary )
-	{
-		SoundLibrary* lTmpSoundLibrary = cMySoundLibrary;
-		cMySoundLibrary = pMySoundLibrary;
-		return lTmpSoundLibrary;
-	}
-	SoundLibrary* getMySoundLibrary() { return cMySoundLibrary; }
 
 	T3dBox & getBox()	{ return cBox; 	}
 
@@ -137,6 +129,15 @@ public:
 	static GLboolean GetPositionWithoutCollision( int pInteract,Double3& pPos, int pSize, int pLimitX, int pLimitY=0, int pLimitZ=0, int pNbTry=10, float pMarge=1.5 );
 
 	static long sNbDetect;
+
+	
+
+	static World* TheWorld;
+
+	virtual const char* configGetKey(  const char* pSection, const char* pKey );
+
+	static const char* ConfigGetKey(  const char* pSection, const char* pKey );
+
 
 protected:
 };
