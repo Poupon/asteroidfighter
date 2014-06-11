@@ -38,59 +38,68 @@ public:
 
 	TYPE* getVect() { return &cVect[0]; }
 
-	TVectType & operator = (const TVectType& pVal)
+	const TVectType & operator = (const TVectType& pVal)
 	{
 		memcpy( cVect, pVal.cVect, sizeof( cVect ) );
 		return *this;
 	}
 
 
-	void operator += (const  TVectType& pVal)
+	const TVectType&  operator += (const  TVectType& pVal)
 	{
 		for( int i = 0; i < SIZE; i++ )
 			cVect[ i ] += pVal.cVect[ i ];
+		return *this;
 	}
 
-	void operator -= (const  TVectType& pVal)
+	const TVectType&  operator -= (const  TVectType& pVal)
 	{
 		for( int i = 0; i < SIZE; i++ )
 			cVect[i] -= pVal.cVect[i];
+		return *this;
 	}
 
-	void operator *= (const  TVectType& pVal)
+	const TVectType&  operator *= (const  TVectType& pVal)
 	{
 		for( int i = 0; i < SIZE; i++ )
 			cVect[i] *= pVal.cVect[i];
+		return *this;
 	}
 
-	void operator /= (const  TVectType& pVal)
+	const TVectType&  operator /= (const  TVectType& pVal)
 	{
 		for( int i = 0; i < SIZE; i++ )
 			cVect[i] /= pVal.cVect[i];
+		return *this;
 	}
 
-	void operator += ( TYPE pVal)
+	const TVectType& operator += ( TYPE pVal)
 	{
 		for( int i = 0; i < SIZE; i++ )
 			cVect[ i ] += pVal;
+
+		return *this;
 	}
 
-	void operator -= ( TYPE pVal)
+	const TVectType&  operator -= ( TYPE pVal)
 	{
 		for( int i = 0; i < SIZE; i++ )
 			cVect[i] -= pVal;
+		return *this;
 	}
 
-	void operator *= (TYPE pVal)
+	const TVectType&  operator *= (TYPE pVal)
 	{
 		for( int i = 0; i < SIZE; i++ )
 			cVect[i] *= pVal;
+		return *this;
 	}
 
-	void operator /= (TYPE pVal)
+	const TVectType&  operator /= (TYPE pVal)
 	{
 		for( int i = 0; i < SIZE; i++ )
 			cVect[i] /= pVal;
+		return *this;
 	}
 	
 	void inverse()

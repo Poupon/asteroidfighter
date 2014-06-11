@@ -4,6 +4,7 @@ project( U3d )
 
 
 set( LIBRARY_OUTPUT_PATH ../lib/${CMAKE_BUILD_TYPE} )
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} $ENV{CC_FLAGS}")
 
 file( GLOB_RECURSE
 			 SrcFiles 

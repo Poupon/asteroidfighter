@@ -26,7 +26,7 @@
 
 typedef TVectType<GLdouble, 3> Double3;
 
-template <> inline TVectType<GLdouble, 3> ::TVectType( GLdouble A, GLdouble B, GLdouble C, GLdouble D )
+template <> inline TVectType<GLdouble, 3> ::TVectType( GLdouble A, GLdouble B, GLdouble C, GLdouble D)
 {
 	cVect[ 0 ] = A;
 	cVect[ 1 ] = B;

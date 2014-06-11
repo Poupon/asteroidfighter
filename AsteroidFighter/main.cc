@@ -139,13 +139,15 @@ void InitWorld( int pSize, int lTest)
 void
 printHelp()
 {
-	std::cout << "StarFighter 0.3b" << std::endl;
+	std::cout << "StarFighter 0.5b" << std::endl;
 	std::cout << "-F<number> frame/second ex: -F25" << std::endl;
 	std::cout << "-S<number> size         ex: -S10" << std::endl;
 }
 //****************************************************
 int main(int argc, char **argv)
 {
+
+	XInitThreads();
 
 
 	std::cout << " sizeof(int)=" << sizeof(int)
@@ -234,7 +236,7 @@ slScheduler sched ( 8000 ) ;
 */
 
 
-	SoundControler lSoundControler;
+	//	SoundControler lSoundControler;
 
 
 
@@ -262,7 +264,9 @@ slScheduler sched ( 8000 ) ;
 			WorldGame::InitSound("sound"); // Pour les sons notamment
 		}
 
-    ulSleep ( 1 ) ;
+	///// A VOIR     ulSleep ( 1 ) ;
+
+
 		/*
 		slSample* lSound ;
 SoundLibrary sLib(200, "Data/Douteux");
@@ -290,7 +294,7 @@ ulSleep(3);
 
 //slSample* lSoundExplosion = SoundControler::sTheSoundControler->loadSample( "Data/sound/Warp.wav" );
 //SoundControler::sTheSoundControler->playSample( lSoundExplosion );
-    ulSleep ( 5 ) ;
+//    ulSleep ( 5 ) ;
 	Utils3d::Loop();
 
 	return 0;

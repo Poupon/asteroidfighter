@@ -11,6 +11,7 @@
 #include <Sprite3d/Collision.h>
 #include <Sprite3d/ObjText2d.h>
 #include <Sprite3d/Random.h>
+#include <Sprite3d/SoundControler.h>
 
 #include <O3d/O3dObjPrim.h>
 
@@ -29,16 +30,21 @@ WeaponsMaker* TheWeaponsMaker=NULL;
 
 //*************************************************
 
-static PSoundId sSoundWeaponExplode          =PBadSoundId;
-static PSoundId sSoundWeaponExplodePlasma    =PBadSoundId;
-static PSoundId sSoundWeaponExplodePlasmaG   =PBadSoundId;
+ PSoundId WeaponsMaker::sSoundWeaponExplode          =PBadSoundId;
+ PSoundId WeaponsMaker::sSoundWeaponExplodePlasma    =PBadSoundId;
+ PSoundId WeaponsMaker::sSoundWeaponExplodePlasmaG   =PBadSoundId;
 
-void
+
+bool
 WeaponsMaker::InitSound( World* pWorld )
 {
-	sSoundWeaponExplode = pWorld->getMySoundLibrary()->loadSample( "Explode.wav" );
-	sSoundWeaponExplodePlasma = pWorld->getMySoundLibrary()->loadSample( "ExplodePlasma.wav" );
-	sSoundWeaponExplodePlasmaG = pWorld->getMySoundLibrary()->loadSample( "ExplodePlasmaG.wav" );
+	const char* pSection =  "WeaponsMaker";
+
+	sSoundWeaponExplode        = SoundControler::LoadSample( pSection, "SoundWeaponExplode" );
+	sSoundWeaponExplodePlasma  = SoundControler::LoadSample( pSection, "SoundWeaponExplodePlasma");
+	sSoundWeaponExplodePlasmaG = SoundControler::LoadSample( pSection, "SoundWeaponExplodePlasmaG" );
+
+	return true;
 }
 //**********************************************************
 WeaponsMaker::WeaponsMaker()
@@ -524,14 +530,14 @@ WeaponsMaker::destruction( Sprite3d &pMySprite )
 			{
 			case WEAPON_PLASMA_GREEN:
 				sp->setObjProps( &cPropsPlasmaGreen );
-				PLAYSAMPLE( GETSAMPLE( sSoundWeaponExplodePlasmaG ));
+				PLAY_SAMPLE( sSoundWeaponExplodePlasmaG );
 				break;
 
 			case WEAPON_PLASMA:
 			case WEAPON_MICRO_PLASMA:
 			case WEAPON_PLASMA2:
 				sp->setObjProps( SpriteExplosion::caExplosionPlasmaProps );
-				PLAYSAMPLE( GETSAMPLE( sSoundWeaponExplodePlasma ));
+				PLAY_SAMPLE( sSoundWeaponExplodePlasma );
 				break;
 
 			case WEAPON_ION:
@@ -543,7 +549,7 @@ WeaponsMaker::destruction( Sprite3d &pMySprite )
 			case WEAPON_BIG_MISSILE:
 			default:
 				sp->setObjProps( SpriteExplosion::caExplosionProps );
-				PLAYSAMPLE( GETSAMPLE( sSoundWeaponExplode ));
+				PLAY_SAMPLE( sSoundWeaponExplode );
 			}
 			WorldControler::Add( sp );
 		}

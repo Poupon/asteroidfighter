@@ -44,7 +44,7 @@ Help::Help( int pSize, WorldControler* pControl, O3dKamera* pKamera, Double3& pM
 void
 Help::mouseMove( int pX, int pY )
 {
-  std::cout << "Help::mouseMove" << std::endl;
+	//  std::cout << "Help::mouseMove" << std::endl;
 }
 //-----------------------------
 void

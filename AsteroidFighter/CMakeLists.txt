@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 2.6)
 project( AsteroidFighter )
 
 set(EXECUTABLE_OUTPUT_PATH ../bin/${CMAKE_BUILD_TYPE})
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} $ENV{CC_FLAGS}")
 
 
 

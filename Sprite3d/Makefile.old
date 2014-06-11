@@ -13,7 +13,6 @@ SRCS = \
 	Utils3d.cc \
 	WorldControler.cc \
 	SoundControler.cc \
-	SoundLibrary.cc \
 	World.cc \
 	SceneManager.cc \
 	AnimatObj.cc \
@@ -27,8 +26,7 @@ HDRS = $(SRCS:.cc=.h)
 
 # ---------------------------------------------------
 
-CFLAGS=  -DPUI_WIN  ${CC_DEBUG}
-# -DSL_SOUND
+CFLAGS=  -DPUI_WIN  ${CC_DEBUG} -g -std=c++11 -Wall  -m64 -pthread -D_POSIX_PTHREAD_SEMANTICS -m64 
 
 CINCLUDE=-I. -I.. -DLINUX
 

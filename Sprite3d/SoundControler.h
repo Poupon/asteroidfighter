@@ -2,50 +2,122 @@
 #define h_SoundControler_h
 
 #include <T3d/T3dBox.h>
+#include <stdint.h>
+
+#include <string>
+#include <vector>
+
+typedef uint64_t PSoundId;
+const   uint64_t  PBadSoundId =  0;
+
+typedef int PSoundSourceId;
+const   int  PBadSoundSourceId =  -1;
 
 
-#ifdef SL_SOUND
-#include <plib/sl.h>
-#else
-typedef void* slSample;
-#endif
 
+
+class SoundSourceOwner;
+class SoundSource;
+class SoundControler;
+
+//*************************************************
+class SoundSourceOwner{
+	
+	std::vector<SoundSource*> cMySources;
+
+public:
+	SoundSourceOwner();
+	virtual ~SoundSourceOwner();
+	void remove(SoundSource* pSrc);
+
+	void playSoundSource( PSoundId pBuffer,  int pPriority=0,float pGain=1.0f, float pPitch=1.0f, bool pLoop =false);
+
+	void setSoundSourcesPosition( Double3 pPosition  );
+	void setSoundSourcesSpeed(  Double3 pSpeed  );
+	void setSoundSourcesPositionAndSpeed(  Double3 pPosition, Double3 pSpeed );
+	friend class SoundControler;
+};
+//*************************************************
+class SoundSource{
+
+private:
+	PSoundSourceId cId;
+	PSoundId   cSourceId;
+
+	SoundSourceOwner* cOwner;
+	int cPriority;
+
+	enum SourceState{ FREE, PLAY, LOOP, ERROR };
+
+	SourceState cState;
+
+	float cTime;
+
+public:	
+	SoundSource( PSoundSourceId, PSoundId);
+ 	virtual ~SoundSource();
+
+	
+	PSoundSourceId play( PSoundId pBuffer, float pGain=1.0f, float pPitch=1.0f, bool pLoop =false);
+
+	void setPosition( Double3 pPosition  );
+	void setSpeed(  Double3 pSpeed  );
+	void setPositionAndSpeed(  Double3 pPosition, Double3 pSpeed );
+
+
+	SoundSourceOwner* getOwner() { return cOwner; }
+	void setOwner( SoundSourceOwner* pOwner ) { cOwner = pOwner; }
+
+
+	friend class SoundSourceOwner;
+	friend class SoundControler;
+};
 
 //*************************************************
 
 class SoundControler{
 
-#ifdef SL_SOUND
-	slScheduler *cSlSheduller;
-#endif
 
 public:
-	SoundControler( int pRate=8000, int pSafetyMargin=0.128f );
+	SoundControler(  int pMaxSource, const char* pPath = NULL );
+	virtual ~SoundControler(  );
 
-#ifdef SL_SOUND
-	int playSample ( slSample *pSample, int pPriority = 1, slPreemptMode pMode = SL_SAMPLE_ABORT ) ;
-	int loopSample ( slSample *pSample, int pPriority = 1, slPreemptMode pMode = SL_SAMPLE_ABORT ) ;
-	int playMusic (const char *pName, int pPriority = 1, slPreemptMode pMode = SL_SAMPLE_ABORT ) ;
-#else
-#define slSample char
-	int playSample ( slSample *pSample, int pPriority = 1 ){ (void)pSample; (void)pPriority; return -1 ;}
-	int loopSample ( slSample *pSample, int pPriority = 1 ) {(void)pSample; (void)pPriority;return -1 ;}
-	int playMusic (const char *pName, int pPriority = 1 ) {(void)pName; (void)pPriority;return -1 ;}
-#endif
+	PSoundId loadSample ( const char* pName ); 
+	double   getPos( PSoundId pSource );
+	PSoundId getStatus( PSoundId pSource );
 
-	slSample* loadSample( const char* pName );
+	void playSample( PSoundId pBufferId, int pPriority=0, float pGain=1.0f, float pPitch=1.0f, bool pLoop =false);
 
-	void process();
+	void freeSource( SoundSource* pSrc );
+
+private:
+	SoundSource* internalPlaySample( PSoundId pBufferId, int pPriority=0, float pGain=1.0f, float pPitch=1.0f, bool pLoop =false);
+	void internalPlaySampleOwner( SoundSourceOwner & pOwner, PSoundId pBufferId,  int pPriority=0, float pGain=1.0f, float pPitch=1.0f, bool pLoop =false);
+	SoundSource* getFreeSource( int pPriority);
+
+
+protected:
+	std::string cPath;
+	std::vector<PSoundId> cSamples;
+
+	std::vector<SoundSource*> cSources;
+
+public:
 
 	static GLboolean sMute;
 	static GLboolean sNoSound;
 	static SoundControler* sTheSoundControler;
+
+	static PSoundId LoadSample( const char* pSection, const char* pKey );
+
+	friend SoundSourceOwner;
 };
 //*************************************************
 
+#define LOAD_SAMPLE(A) SoundControler::sTheSoundControler->loadSample(A);
 
-#define PLAYSAMPLE(A) {if( SoundControler::sTheSoundControler) {SoundControler::sTheSoundControler->playSample(A);}}
-#define LOOPSAMPLE(A) {if( SoundControler::sTheSoundControler) {SoundControler::sTheSoundControler->loopSample(A);}}
-#define PLAYMUSIC(A)  {if( SoundControler::sTheSoundControler) {SoundControler::sTheSoundControler->playMusic(A);}}
+#define PLAY_SAMPLE(A) SoundControler::sTheSoundControler->playSample(A);
+//#define LOOPSAMPLE(A) SoundControler::sTheSoundControler->loopSample(A);
 
 #endif
+    

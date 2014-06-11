@@ -9,6 +9,7 @@
 #include <Sprite3d/AutoPtr.h>
 
 #include <Sprite3d/Action.h>
+#include <Sprite3d/SoundControler.h>
 
 
 class WorldGame;
@@ -97,7 +98,18 @@ static	void AddScore( long pVal ){
 			ThePilot->cScore += pVal*((WorldControler::sDifficultyLevel*WorldControler::sDifficultyLevel)+1);
 	}
 
-	static void InitSound( World* );
+	static PSoundId sSoundWarp;
+	static PSoundId sSoundLaser;
+	static PSoundId sSoundFireMissile;
+
+	static PSoundId sSoundWarpFailed;
+	static PSoundId sSoundCollision ;
+	static PSoundId sSoundFinalExplosion;
+	static PSoundId sSoundNextLife      ;
+	static PSoundId sSoundBonus         ;
+
+
+	static bool InitSound( World* );
 };
 //**********************
 

@@ -9,6 +9,7 @@
 #include <Sprite3d/AutoPtr.h>
 
 #include <Sprite3d/Action.h>
+#include <Sprite3d/SoundControler.h>
 
 enum EnumWeapons{
 	WEAPON_NO, 
@@ -124,8 +125,12 @@ public:
 																	 unsigned int pMaskObj, unsigned int pMakInteract);
 
 
+static PSoundId sSoundWeaponExplode   ;
+static PSoundId sSoundWeaponExplodePlasma  ;
+static PSoundId sSoundWeaponExplodePlasmaG  ;
 
-	static void InitSound( World* pWorld );
+static bool InitSound( World* pWorld );
+
 };
 
 

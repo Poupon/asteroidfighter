@@ -11,6 +11,7 @@
 #include <Sprite3d/Collision.h>
 #include <Sprite3d/ObjText2d.h>
 #include <Sprite3d/Random.h>
+#include <Sprite3d/SoundControler.h>
 
 #include <U3d/SpriteExplosion.h>
 #include <U3d/WeaponsMaker.h>
@@ -25,23 +26,28 @@
 #include <math.h>
 
 
-static PSoundId sSoundExplosionBig      =PBadSoundId;
-static PSoundId sSoundExplosion1      =PBadSoundId;
-static PSoundId sSoundExplosion2      =PBadSoundId;
-static PSoundId sSoundExplosion3      =PBadSoundId;
-static PSoundId sSoundExplosion4      =PBadSoundId;
+ PSoundId ActionsShip::sSoundExplosionBig    =PBadSoundId;
+ PSoundId ActionsShip::sSoundExplosion1      =PBadSoundId;
+ PSoundId ActionsShip::sSoundExplosion2      =PBadSoundId;
+ PSoundId ActionsShip::sSoundExplosion3      =PBadSoundId;
+ PSoundId ActionsShip::sSoundExplosion4      =PBadSoundId;
 
 
 //static PSoundId sMusicGameOver=PBadSoundId;
 
-void
+bool
 ActionsShip::InitSound( World * pWorld)
 {
-	sSoundExplosion1 = pWorld->getMySoundLibrary()->loadSample( "ActionExplosion1.wav" );
-	sSoundExplosion2 = pWorld->getMySoundLibrary()->loadSample( "ActionExplosion2.wav" );
-	sSoundExplosion3 = pWorld->getMySoundLibrary()->loadSample( "ActionExplosion3.wav" );
-	sSoundExplosion4 = pWorld->getMySoundLibrary()->loadSample( "ActionExplosion4.wav" );
-	sSoundExplosionBig = pWorld->getMySoundLibrary()->loadSample( "ActionExplosionBig.wav" );
+	const char* pSection =  "ActionsShip";
+
+	sSoundExplosion1   = SoundControler::LoadSample( pSection, "SoundExplosion1" ); 
+	sSoundExplosion2   = SoundControler::LoadSample( pSection, "SoundExplosion2" ); 
+	sSoundExplosion3   = SoundControler::LoadSample( pSection, "SoundExplosion3" ); 
+	sSoundExplosion4   = SoundControler::LoadSample( pSection, "SoundExplosion4" ); 
+
+	sSoundExplosionBig = SoundControler::LoadSample( pSection, "SoundExplosionBig" );
+
+	return true;
 }
 
 //----------------------------------------------
@@ -64,11 +70,11 @@ ActionsShip::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void * pParam )
 
 		switch( rand( )%3)
 			{
-			case 0: PLAYSAMPLE( GETSAMPLE( sSoundExplosion1 )); break;
-			case 1: PLAYSAMPLE( GETSAMPLE( sSoundExplosion2 )); break;
-			case 2: PLAYSAMPLE( GETSAMPLE( sSoundExplosion3 )); break;
+			case 0: PLAY_SAMPLE( sSoundExplosion1 ); break;
+			case 1: PLAY_SAMPLE( sSoundExplosion2 ); break;
+			case 2: PLAY_SAMPLE( sSoundExplosion3 ); break;
 			default:
-				PLAYSAMPLE( GETSAMPLE( sSoundExplosion4 )); break;
+				PLAY_SAMPLE( sSoundExplosion4 ); break;
 		}
 
 
@@ -231,7 +237,7 @@ ActionsShip::animateDestroy( Sprite3d &pMySprite, void * pParam )
 			WorldControler::Add( lSp );
 		}
 
-	PLAYSAMPLE( GETSAMPLE( sSoundExplosion1 ));
+	PLAY_SAMPLE( sSoundExplosion1 );
 	int max = static_cast<long>(randp(pMySprite.getRadius())+1.0);
 	for( int j=0; j< max+1; j++)
 	{
@@ -291,7 +297,7 @@ ActionsShip::animateDestroy( Sprite3d &pMySprite, void * pParam )
 GLboolean
 ActionsShip::kill( Sprite3d &pMySprite, void*pParam )
 {
-	PLAYSAMPLE( GETSAMPLE( sSoundExplosionBig ));
+	PLAY_SAMPLE(  sSoundExplosionBig );
 
 	int max = static_cast<long>(randp(pMySprite.getRadius()*1.5));
 	for( int j=0; j< max+1; j++)

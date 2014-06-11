@@ -31,7 +31,7 @@ public:
 	virtual void saveStateToFile( const char* pName );
 
 public:
-	static void InitSound( const char* pSoundPath );
+	static bool InitSound( const char* pSoundPath );
 	static void InitSprite(  );
 
 	static float GlobalScroll;
@@ -40,7 +40,9 @@ public:
 
 	static WorldGame *TheWorldGame;
 
- 
+
+
+ 	virtual const char* configGetKey(  const char* pSection, const char* pKey );
 };
 //**************************************
 

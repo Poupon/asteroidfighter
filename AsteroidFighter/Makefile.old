@@ -15,18 +15,18 @@ HDRS = $(SRCS:.cc=.h)
 
 # ---------------------------------------------------
 
-LDFLAGS=  
+LDFLAGS=   -pthread 
 
 LIBPATHS=  -L../T3d -L../O3d -L../Sprite3d -L../U3d -L../Space  -L. \
-					  -L${DIR_PLIB}/lib  -L${DIR_OPENGL}/lib -L${DIR_GLUT_LIB} -L${DIR_X11_LIB}
+					  -L${DIR_AL}/lib  -L${DIR_SNDFILE}/lib  -L${DIR_PLIB}/lib  -L${DIR_OPENGL}/lib -L${DIR_GLUT_LIB} -L${DIR_X11_LIB}
 
-LIBS=  -lSpace -lU3d -lSprite3d -lO3d -lT3d   -lplibpuaux -lplibpu -lplibul  -lplibpw -lplibfnt -lplibsg -lplibul -lplibsl   -lGL -lGLU -lglut   -lstdc++   -lXext -lX11  -lnsl -lm 
+LIBS=  -lSpace -lU3d -lSprite3d -lO3d -lT3d   -lplibpuaux -lplibpu -lplibul  -lplibpw -lplibfnt -lplibsg -lplibul -lplibsl -lsndfile -lopenal  -lGL -lGLU -lglut   -lboost_system -lboost_program_options-mt -lstdc++ -lpthread   -lstdc++ -lrt -lXext -lX11  -lnsl -lm 
 
-# LIBS=  -lSpace -lU3d -lSprite3d -lO3d -lT3d   -lplibpuaux -lplibpu -lplibul  -lplibpw -lplibfnt -lplibsg -lplibul -lplibsl   -lGL -lGLU -lglut   -lstdc++   -lXmu -lXext -lXi -lX11  -lnsl -mt -lm 
+# LIBS=  -lSpace -lU3d -lSprite3d -lO3d -lT3d   -lplibpuaux -lplibpu -lplibul  -lplibpw -lplibfnt -lplibsg -lplibul  -lplibsl -lsndfile   -lGL -lGLU -lglut   -lboost_system -lboost_program_options-mt -lstdc++ -lpthread   -lrt  -lXmu -lXext -lXi -lX11  -lnsl -mt -lm 
 
 
 # ---------------------------------------------------
-CFLAGS=  -DPUI_WIN -DSL_SOUND  ${CC_DEBUG}
+CFLAGS=  -DPUI_WIN  ${CC_DEBUG} -g -std=c++11 -Wall  -m64 -pthread -D_POSIX_PTHREAD_SEMANTICS -m64 
 
 CINCLUDE=-I. -I..
 
