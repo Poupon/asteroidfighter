@@ -36,6 +36,9 @@
 
 #include <plib/fnt.h>
 
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/ini_parser.hpp>
+
 int sStartNiveau = 0;
 
 extern PSoundId sOceanSound;
@@ -55,6 +58,8 @@ public:
 		 cMax( 300, 200, 100 ),
 		 cGen(NULL)
 	{
+
+
 		Float4 mat1( 0.5, 0.5, 0.5, 1.0 );
 		Float4 mat2( 0.0, 0.0, 0.0, 1.0 );
 
@@ -65,6 +70,8 @@ public:
 
 		cGen->ObjPropsFloat4::set( MATERIAL, mat1 );
 		cGen->ObjPropsFloat4::set( EMISSION, mat2 );
+
+
 
 		WorldGame::InitSprite();
 		WorldControler::InitCallback();
@@ -238,6 +245,8 @@ slScheduler sched ( 8000 ) ;
 
 	//	SoundControler lSoundControler;
 
+	WorldGame::sIniFile="AsteroidFighter.ini";
+	boost::property_tree::ini_parser::read_ini( WorldGame::sIniFile, WorldGame::sConfigTree);
 
 
 	Utils3d::Init( "AsteroidFighter 1.0", argc, argv, 80*lSize, 60*lSize);
@@ -256,12 +265,12 @@ slScheduler sched ( 8000 ) ;
 	if( lData )
 		{
 			std::string lDataSound( lData );
-			lDataSound += "/sound";
+			lDataSound += "/SoundOgg";
 			WorldGame::InitSound(lDataSound.c_str()); // Pour les sons notamment
 		}
 	else
 		{
-			WorldGame::InitSound("sound"); // Pour les sons notamment
+			WorldGame::InitSound("SoundOgg"); // Pour les sons notamment
 		}
 
 	///// A VOIR     ulSleep ( 1 ) ;

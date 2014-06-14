@@ -117,16 +117,17 @@ SoundControler::~SoundControler(  )
 }
 //------------------------------------------------
 PSoundId
-SoundControler::LoadSample( const char* pSection, const char* pKey )
+SoundControler::LoadSampleConfig( const char* pKey )
 {
-	const char* lName = World::ConfigGetKey( pSection, pKey );
+	std::string lName = World::sConfigTree.get<std::string>(pKey, "");
 
-	if( lName != NULL )
+	
+	if( lName.size() > 0 )
 		{
-			return sTheSoundControler->loadSample( lName );
+			return sTheSoundControler->loadSample( lName.c_str() );
 		}
 
-	std::cerr << "*** Error SoundControler::LoadSample no filename for " << pSection << ':' << pKey << std::endl;
+	std::cerr << "*** Error SoundControler::LoadSample no filename for " << pKey << std::endl;
 
 	return PBadSoundId;
 }
@@ -229,25 +230,25 @@ SoundControler::internalPlaySample( PSoundId pBufferId, int pPriority, float pGa
 //------------------------------------------------
 // Simple function 
 
-void 
+SoundSource*  
 SoundControler::playSample( PSoundId pBufferId, int pPriority, float pGain, float pPitch, bool pLoop){
 
 	//	std::cout << "SoundControler::playSample" << pBufferId 
 	//					<<  (sMute == GL_FALSE ? " ok ":" Mute ") 
 	//					<<  ( sNoSound == GL_FALSE ? " sound ": " no_sound") << std::endl;
 	
-		internalPlaySample( pBufferId,  pPriority, pGain,  pPitch, pLoop );
+		return internalPlaySample( pBufferId,  pPriority, pGain,  pPitch, pLoop );
 }
 //------------------------------------------------
 // Simple function 
 
-void 
+SoundSource*  
 SoundControler::internalPlaySampleOwner( SoundSourceOwner & pOwner, PSoundId pBufferId, int pPriority, float pGain, float pPitch, bool pLoop){
 
 	//	std::cout << "SoundControler::playSample" << pBufferId 
 	//					<<  (sMute == GL_FALSE ? " ok ":" Mute ") 
 	//					<<  ( sNoSound == GL_FALSE ? " sound ": " no_sound") << std::endl;
-	 internalPlaySample(  pBufferId,  pPriority, pGain,  pPitch, pLoop );
+	 return internalPlaySample(  pBufferId,  pPriority, pGain,  pPitch, pLoop );
 }
 //------------------------------------------------
 double
@@ -325,21 +326,27 @@ SoundControler::getFreeSource( int pPriority){
 			//	NSInteger lLooping;
 			//alGetSourcei( lSrc->cSourceId, AL_LOOPING, &lLooping);
 
+
 			// on exclut les sources en mode LOOP
 			if( (lSrc->cState == SoundSource::SourceState::PLAY 
 					 ||  lSrc->cState == SoundSource::SourceState::ERROR)
 					&& lSrc->cPriority <= lMemPriority )
 				{
-					if( lSrc->cPriority == lMemPriority 
-							&&  lSrc->cTime < lMemTime )
-						{
-							lMemSrc = lSrc;
-							lMemTime = lSrc->cTime;
-						}							
-					else {
-						 	lMemPriority = lSrc->cPriority;
-							lMemSrc = lSrc;
-							lMemTime = lSrc->cTime;
+					//		std::cout << "  Src:" +lSrc->cTime +" Mem:" + lMemTime  ;
+
+				if( lSrc->cPriority == lMemPriority )
+					{
+						if( lSrc->cTime < lMemTime )
+							{
+								lMemSrc = lSrc;
+								lMemTime = lSrc->cTime;
+							}							
+					}
+				else
+					{
+						lMemPriority = lSrc->cPriority;
+						lMemSrc = lSrc;
+						lMemTime = lSrc->cTime;
 					}
 				}
 		}
@@ -482,7 +489,7 @@ SoundSourceOwner::playSoundSource( PSoundId pBufferId, int pPriority, float pGai
 	lSrc->setOwner( this );
 
 	cMySources.push_back( lSrc );
-		
+
 }
 //------------------------------------
 

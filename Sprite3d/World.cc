@@ -19,14 +19,10 @@
 long World::sNbDetect = 0;
 World*  World::TheWorld = NULL;
 
-//--------------------------------
-const char* World::ConfigGetKey(  const char* pSection, const char* pKey ){
 
-	if( TheWorld != NULL )
-		return TheWorld->configGetKey( pSection, pKey );
-
-	return NULL;
-}
+boost::property_tree::ptree World::sConfigTree;
+std::string            World::sIniFile;
+ 
 
 //--------------------------------
 inline void
@@ -384,12 +380,6 @@ World::GetPositionWithoutCollision( int pInteract, Double3& pPos, int pSize, int
 	return GL_FALSE;
 }
 
-//--------------------------------
-const char* 
-World::configGetKey(  const char* pSection, const char* pKey )
-{
-	return NULL;
-}
 
 //**************************************
 

@@ -15,7 +15,7 @@
 class WorldGame;
 
 //**********************
-class Pilot :  public  Sprite3dPilot, public Action
+class Pilot :  public  Sprite3dPilot, public Action, public SoundSourceOwner
 {
 	AutoPtr<O3dObjProps> caPropsShip;
 	AutoPtr<O3dObjProps> caPropsShield;
@@ -101,6 +101,7 @@ static	void AddScore( long pVal ){
 	static PSoundId sSoundWarp;
 	static PSoundId sSoundLaser;
 	static PSoundId sSoundFireMissile;
+	static PSoundId sSoundMotor;
 
 	static PSoundId sSoundWarpFailed;
 	static PSoundId sSoundCollision ;
@@ -109,7 +110,7 @@ static	void AddScore( long pVal ){
 	static PSoundId sSoundBonus         ;
 
 
-	static bool InitSound( World* );
+	static bool InitSound( );
 };
 //**********************
 
