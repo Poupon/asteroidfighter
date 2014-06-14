@@ -13,7 +13,10 @@
 #include <T3d/T3dFont.h>
 
 
-#include <Sprite3d/SoundLibrary.h>
+
+
+#include <boost/property_tree/ptree.hpp>
+
 
 class Sprite3d;
 
@@ -134,10 +137,9 @@ public:
 
 	static World* TheWorld;
 
-	virtual const char* configGetKey(  const char* pSection, const char* pKey );
-
-	static const char* ConfigGetKey(  const char* pSection, const char* pKey );
-
+	static boost::property_tree::ptree sConfigTree;
+	static std::string            sIniFile;
+ 
 
 protected:
 };

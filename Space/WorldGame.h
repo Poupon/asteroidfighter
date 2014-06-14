@@ -6,6 +6,9 @@
 
 #include <Sprite3d/SceneManager.h>
 
+
+
+
 //**************************************
 
 class WorldGame:public World
@@ -14,6 +17,7 @@ class WorldGame:public World
 	int cLevel;
 
 	char cInfoLevel[512];
+	
 
 public:
 	SceneManager* cSceneManager;
@@ -41,8 +45,6 @@ public:
 	static WorldGame *TheWorldGame;
 
 
-
- 	virtual const char* configGetKey(  const char* pSection, const char* pKey );
 };
 //**************************************
 

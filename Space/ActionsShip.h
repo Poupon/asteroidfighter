@@ -47,13 +47,14 @@ protected:
 	GLboolean animateDestroy( Sprite3d &pMySprite, void * pParam );
 
 public:
-	static bool InitSound(  World * pWorld);
+	static bool InitSound();
 
 	static PSoundId sSoundExplosionBig ;
 	static PSoundId sSoundExplosion1   ;
 	static PSoundId sSoundExplosion2   ;
 	static PSoundId sSoundExplosion3   ;
 	static PSoundId sSoundExplosion4   ;
+	static PSoundId sSoundDestroy   ;
 
 };
 

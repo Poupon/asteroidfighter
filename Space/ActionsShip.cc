@@ -31,21 +31,23 @@
  PSoundId ActionsShip::sSoundExplosion2      =PBadSoundId;
  PSoundId ActionsShip::sSoundExplosion3      =PBadSoundId;
  PSoundId ActionsShip::sSoundExplosion4      =PBadSoundId;
+ PSoundId ActionsShip::sSoundDestroy      =PBadSoundId;
 
 
 //static PSoundId sMusicGameOver=PBadSoundId;
 
 bool
-ActionsShip::InitSound( World * pWorld)
+ActionsShip::InitSound()
 {
-	const char* pSection =  "ActionsShip";
 
-	sSoundExplosion1   = SoundControler::LoadSample( pSection, "SoundExplosion1" ); 
-	sSoundExplosion2   = SoundControler::LoadSample( pSection, "SoundExplosion2" ); 
-	sSoundExplosion3   = SoundControler::LoadSample( pSection, "SoundExplosion3" ); 
-	sSoundExplosion4   = SoundControler::LoadSample( pSection, "SoundExplosion4" ); 
+	sSoundExplosion1   = SoundControler::LoadSampleConfig( "ActionsShip.SoundExplosion1" ); 
+	sSoundExplosion2   = SoundControler::LoadSampleConfig( "ActionsShip.SoundExplosion2" ); 
+	sSoundExplosion3   = SoundControler::LoadSampleConfig( "ActionsShip.SoundExplosion3" ); 
+	sSoundExplosion4   = SoundControler::LoadSampleConfig( "ActionsShip.SoundExplosion4" ); 
 
-	sSoundExplosionBig = SoundControler::LoadSample( pSection, "SoundExplosionBig" );
+	sSoundDestroy   = SoundControler::LoadSampleConfig( "ActionsShip.SoundDestroy" ); 
+
+	sSoundExplosionBig = SoundControler::LoadSampleConfig( "ActionsShip.SoundExplosionBig" );
 
 	return true;
 }
@@ -67,16 +69,17 @@ ActionsShip::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void * pParam )
 		{
 			(*iter)->setAnimateOn( GL_FALSE ); // comme il est detruit c'est normal ! et il risque d'y avoir des ptr sur pMySprite
 		}
-
-		switch( rand( )%3)
+		/*
+		switch( rand( )%4)
 			{
 			case 0: PLAY_SAMPLE( sSoundExplosion1 ); break;
 			case 1: PLAY_SAMPLE( sSoundExplosion2 ); break;
 			case 2: PLAY_SAMPLE( sSoundExplosion3 ); break;
+			case 3: PLAY_SAMPLE( sSoundExplosion4 ); break;
 			default:
 				PLAY_SAMPLE( sSoundExplosion4 ); break;
 		}
-
+		*/
 
 		int max = static_cast<long>(randp(pMySprite.getRadius()));
 		for( int j=0; j< max+1; j++)
@@ -237,7 +240,9 @@ ActionsShip::animateDestroy( Sprite3d &pMySprite, void * pParam )
 			WorldControler::Add( lSp );
 		}
 
-	PLAY_SAMPLE( sSoundExplosion1 );
+		PLAY_SAMPLE( sSoundDestroy );
+
+
 	int max = static_cast<long>(randp(pMySprite.getRadius())+1.0);
 	for( int j=0; j< max+1; j++)
 	{
@@ -297,7 +302,7 @@ ActionsShip::animateDestroy( Sprite3d &pMySprite, void * pParam )
 GLboolean
 ActionsShip::kill( Sprite3d &pMySprite, void*pParam )
 {
-	PLAY_SAMPLE(  sSoundExplosionBig );
+	//	PLAY_SAMPLE(  sSoundExplosionBig );
 
 	int max = static_cast<long>(randp(pMySprite.getRadius()*1.5));
 	for( int j=0; j< max+1; j++)

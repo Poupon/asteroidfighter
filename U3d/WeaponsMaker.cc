@@ -29,20 +29,30 @@ WeaponsMaker* TheWeaponsMaker=NULL;
 
 
 //*************************************************
-
  PSoundId WeaponsMaker::sSoundWeaponExplode          =PBadSoundId;
  PSoundId WeaponsMaker::sSoundWeaponExplodePlasma    =PBadSoundId;
  PSoundId WeaponsMaker::sSoundWeaponExplodePlasmaG   =PBadSoundId;
 
 
-bool
-WeaponsMaker::InitSound( World* pWorld )
-{
-	const char* pSection =  "WeaponsMaker";
+ PSoundId WeaponsMaker::sSoundExplosionBig    =PBadSoundId;
+ PSoundId WeaponsMaker::sSoundExplosion1      =PBadSoundId;
+ PSoundId WeaponsMaker::sSoundExplosion2      =PBadSoundId;
+ PSoundId WeaponsMaker::sSoundExplosion3      =PBadSoundId;
+ PSoundId WeaponsMaker::sSoundExplosion4      =PBadSoundId;
 
-	sSoundWeaponExplode        = SoundControler::LoadSample( pSection, "SoundWeaponExplode" );
-	sSoundWeaponExplodePlasma  = SoundControler::LoadSample( pSection, "SoundWeaponExplodePlasma");
-	sSoundWeaponExplodePlasmaG = SoundControler::LoadSample( pSection, "SoundWeaponExplodePlasmaG" );
+bool
+WeaponsMaker::InitSound( )
+{
+
+	sSoundWeaponExplode        = SoundControler::LoadSampleConfig("WeaponsMaker.SoundWeaponExplode" );
+	sSoundWeaponExplodePlasma  = SoundControler::LoadSampleConfig("WeaponsMaker.SoundWeaponExplodePlasma");
+	sSoundWeaponExplodePlasmaG = SoundControler::LoadSampleConfig("WeaponsMaker.SoundWeaponExplodePlasmaG" );
+
+
+	sSoundExplosion1   = SoundControler::LoadSampleConfig( "ActionsShip.SoundExplosion1" ); 
+	sSoundExplosion2   = SoundControler::LoadSampleConfig( "ActionsShip.SoundExplosion2" ); 
+	sSoundExplosion3   = SoundControler::LoadSampleConfig( "ActionsShip.SoundExplosion3" ); 
+	sSoundExplosion4   = SoundControler::LoadSampleConfig( "ActionsShip.SoundExplosion4" ); 
 
 	return true;
 }
@@ -530,14 +540,14 @@ WeaponsMaker::destruction( Sprite3d &pMySprite )
 			{
 			case WEAPON_PLASMA_GREEN:
 				sp->setObjProps( &cPropsPlasmaGreen );
-				PLAY_SAMPLE( sSoundWeaponExplodePlasmaG );
+				//			PLAY_SAMPLE( sSoundWeaponExplodePlasmaG );
 				break;
 
 			case WEAPON_PLASMA:
 			case WEAPON_MICRO_PLASMA:
 			case WEAPON_PLASMA2:
 				sp->setObjProps( SpriteExplosion::caExplosionPlasmaProps );
-				PLAY_SAMPLE( sSoundWeaponExplodePlasma );
+				//			PLAY_SAMPLE( sSoundWeaponExplodePlasma );
 				break;
 
 			case WEAPON_ION:
@@ -549,10 +559,23 @@ WeaponsMaker::destruction( Sprite3d &pMySprite )
 			case WEAPON_BIG_MISSILE:
 			default:
 				sp->setObjProps( SpriteExplosion::caExplosionProps );
-				PLAY_SAMPLE( sSoundWeaponExplode );
+				//			PLAY_SAMPLE( sSoundWeaponExplode );
+
 			}
 			WorldControler::Add( sp );
 		}
+
+
+				switch( rand( )%5)
+					{
+					case 0: PLAY_SAMPLE( sSoundExplosion1 ); break;
+					case 1: PLAY_SAMPLE( sSoundExplosion2 ); break;
+					case 2: PLAY_SAMPLE( sSoundExplosion3 ); break;
+					case 3: PLAY_SAMPLE( sSoundExplosion4 ); break;
+					case 4: PLAY_SAMPLE( sSoundWeaponExplode ); break;
+				default:
+						PLAY_SAMPLE( sSoundExplosion4 ); break;
+					}
 
 	WorldControler::KillSprite( &pMySprite );
 }

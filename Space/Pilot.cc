@@ -16,7 +16,6 @@
 #include <Sprite3d/WorldControler.h>
 #include <Sprite3d/ObjOdron.h>
 #include <Sprite3d/SoundControler.h>
-#include <Sprite3d/SoundLibrary.h>
 
 #include <U3d/WeaponsMaker.h>
 #include <U3d/SpriteExplosion.h>
@@ -40,6 +39,7 @@ Pilot* Pilot::ThePilot = NULL;
  PSoundId Pilot::sSoundWarp          =PBadSoundId;
  PSoundId Pilot::sSoundLaser         =PBadSoundId;
  PSoundId Pilot::sSoundFireMissile   =PBadSoundId;
+ PSoundId Pilot::sSoundMotor =PBadSoundId;
 
 // PAS FAIT
  PSoundId Pilot::sSoundWarpFailed    =PBadSoundId;
@@ -48,22 +48,22 @@ Pilot* Pilot::ThePilot = NULL;
  PSoundId Pilot::sSoundNextLife      =PBadSoundId;
  PSoundId Pilot::sSoundBonus         =PBadSoundId;
 
-
 //static PSoundId sMusicGameOver=PBadSoundId;
 
 bool
-Pilot::InitSound( World* pWorld)
+Pilot::InitSound()
 {
-	const char* pSection =  "Pilot";
-	sSoundWarp        = SoundControler::LoadSample( pSection, "SoundWarp" );
-	sSoundLaser       = SoundControler::LoadSample( pSection, "SoundLaser" );
-	sSoundFireMissile = SoundControler::LoadSample( pSection, "SoundFireMissile" );
+	sSoundWarp        = SoundControler::LoadSampleConfig( "Pilot.SoundWarp" );
+	sSoundLaser       = SoundControler::LoadSampleConfig( "Pilot.SoundLaser" );
+	sSoundFireMissile = SoundControler::LoadSampleConfig( "Pilot.SoundFireMissile" );
 
-	sSoundWarpFailed     = SoundControler::LoadSample( pSection, "SoundWarpFailed" );
-	sSoundCollision      = SoundControler::LoadSample( pSection, "SoundCollision" );
-  sSoundFinalExplosion = SoundControler::LoadSample( pSection, "SoundFinalExplosion" );
-  sSoundNextLife       = SoundControler::LoadSample( pSection, "SoundNextLife" );
-	sSoundBonus          = SoundControler::LoadSample( pSection, "SoundBonus" );
+	sSoundMotor = SoundControler::LoadSampleConfig( "Pilot.SoundMotor" );
+
+	sSoundWarpFailed     = SoundControler::LoadSampleConfig( "Pilot.SoundWarpFailed" );
+	sSoundCollision      = SoundControler::LoadSampleConfig( "Pilot.SoundCollision" );
+  sSoundFinalExplosion = SoundControler::LoadSampleConfig( "Pilot.SoundFinalExplosion" );
+  sSoundNextLife       = SoundControler::LoadSampleConfig( "Pilot.SoundNextLife" );
+	sSoundBonus          = SoundControler::LoadSampleConfig( "Pilot.SoundBonus" );
 
 	return true;
 }
@@ -268,6 +268,10 @@ Pilot::Pilot( )
 	 cXDecalKamera(0.0),
 	 cYDecalKamera(0.0)
 {
+
+
+
+
  	Float4 colorWarp (0.3, 0.05, 0.5, 0.5);
 	caPropsWarp= new O3dObjProps();
 	caPropsWarp->ObjPropsFloat4::set( MATERIAL, colorWarp );
@@ -490,6 +494,13 @@ Pilot::Pilot( )
 	*/
 
 	ThePilot = this;
+
+
+
+	//	 SoundControler::sTheSoundControler->playSample( sSoundMotor, 100, 1.0f, 1.0f, true);
+	playSoundSource( sSoundMotor, 100, 1.0f, 1.0f, true);
+
+
 }
 //------------------------
 
@@ -595,6 +606,7 @@ Pilot::animate()
 
 	drawControl();
 
+ 	setSoundSourcesPositionAndSpeed(  getTransf().TransfDouble3::get(POS),  SpriteDouble3::get( SPRITE_SPEED) );
 
 
 	return GL_TRUE;
@@ -653,7 +665,8 @@ Pilot::warp()
 
 	 if( lCout > cErg )
 		 {
-			 PLAY_SAMPLE( sSoundWarpFailed );
+			SoundSource* lSoundSrc=    PLAY_SAMPLE( sSoundWarpFailed );
+			lSoundSrc->setPosition(  getTransf().TransfDouble3::get(POS) );
 
 			 SpriteExplosion *sp = new SpriteExplosion( getRadius(), 0.3, 0 );
 			 sp->setTransf( lTran  );
@@ -669,8 +682,9 @@ Pilot::warp()
 
 	 if( cWarpBegin == GL_FALSE )
 		 {
-			 PLAY_SAMPLE(  sSoundWarp );
-		 }
+				SoundSource* lSoundSrc=   PLAY_SAMPLE_PRIO(  sSoundWarp, 5 );
+				lSoundSrc->setPosition(  getTransf().TransfDouble3::get(POS) );
+	 }
 
 
 	 SpriteExplosion *sp = new SpriteExplosion( getRadius(), 0.3, 0 );
@@ -1029,7 +1043,8 @@ Pilot::firePhaser()
 		}
 
 	// Mettre un son differend selon la puissance du tir !
-	 PLAY_SAMPLE(  sSoundLaser );
+	SoundSource* lSoundSrc=  PLAY_SAMPLE_PRIO(  sSoundLaser, 10 );
+	lSoundSrc->setPosition(  getTransf().TransfDouble3::get(POS) );
 }
 //--------------------------------
 void
@@ -1282,8 +1297,8 @@ Pilot::fireRocket()
 
 
 	// PLAYSAM	// Mettre un son differend selon la puissance du tir !
-	PLAY_SAMPLE( sSoundFireMissile );
-
+	SoundSource* lSoundSrc= PLAY_SAMPLE_PRIO( sSoundFireMissile, 10 );
+	lSoundSrc->setPosition(  getTransf().TransfDouble3::get(POS) );
 
 
 	//	TheWeaponsMaker->makeSprite(  &getTransf(), cLevelLauncher, WEAPON_ROCKET, InteractAllied ,  InteractAlliedWeaponMask);
@@ -1437,15 +1452,17 @@ GLboolean Pilot::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void *pParam
 			sp->setObjProps( SpriteExplosion::caExplosionProps );
 			WorldControler::Add( sp );
 
-			PLAY_SAMPLE( sSoundCollision );
 	}
+	SoundSource* lSoundSrc=  PLAY_SAMPLE( sSoundCollision );
+	lSoundSrc->setPosition(  getTransf().TransfDouble3::get(POS) );
 
 	if( pMySprite.SpriteFloat::get( SPRITE_LIFE_POINT ) <= 0 )
 	{
 
 		if( cNbLife <= 0 )
 			{
-				PLAY_SAMPLE( sSoundFinalExplosion );
+				SoundSource* lSoundSrc= 	PLAY_SAMPLE( sSoundFinalExplosion );
+				lSoundSrc->setPosition(  getTransf().TransfDouble3::get(POS) );
 				//				PLAYMUSIC(  GETSAMPLE( sMusicGameOver ));
 
 				int max = static_cast<long>(randp(30)+2.0);
@@ -1494,8 +1511,9 @@ GLboolean Pilot::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void *pParam
 		else
 			{
 				////////				WorldGame::TheWorldGame->cSceneManager->resetCurrentSceneFromBegin( this );
-				PLAY_SAMPLE(  sSoundNextLife );
-
+				SoundSource* lSoundSrc=  PLAY_SAMPLE(  sSoundNextLife );
+				lSoundSrc->setPosition(  getTransf().TransfDouble3::get(POS) );
+	
 				cNbLife--;
 
 				cRocket = cMaxRocket;
@@ -1780,7 +1798,8 @@ Pilot::collisionBonus( Sprite3d &pSprite, void *pParam)
 		}
 
 
-	PLAY_SAMPLE(  sSoundBonus );
+	SoundSource* lSoundSrc=   PLAY_SAMPLE(  sSoundBonus );
+	lSoundSrc->setPosition(  getTransf().TransfDouble3::get(POS) );
 
 	for( int i=0; i<8; i++)
 		{

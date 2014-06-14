@@ -30,7 +30,7 @@ public:
 	virtual ~SoundSourceOwner();
 	void remove(SoundSource* pSrc);
 
-	void playSoundSource( PSoundId pBuffer,  int pPriority=0,float pGain=1.0f, float pPitch=1.0f, bool pLoop =false);
+	void playSoundSource( PSoundId pBuffer, int pPriority=0,float pGain=1.0f, float pPitch=1.0f, bool pLoop =false);
 
 	void setSoundSourcesPosition( Double3 pPosition  );
 	void setSoundSourcesSpeed(  Double3 pSpeed  );
@@ -86,13 +86,13 @@ public:
 	double   getPos( PSoundId pSource );
 	PSoundId getStatus( PSoundId pSource );
 
-	void playSample( PSoundId pBufferId, int pPriority=0, float pGain=1.0f, float pPitch=1.0f, bool pLoop =false);
+	SoundSource* playSample( PSoundId pBufferId, int pPriority=0, float pGain=1.0f, float pPitch=1.0f, bool pLoop =false);
 
 	void freeSource( SoundSource* pSrc );
 
 private:
 	SoundSource* internalPlaySample( PSoundId pBufferId, int pPriority=0, float pGain=1.0f, float pPitch=1.0f, bool pLoop =false);
-	void internalPlaySampleOwner( SoundSourceOwner & pOwner, PSoundId pBufferId,  int pPriority=0, float pGain=1.0f, float pPitch=1.0f, bool pLoop =false);
+  SoundSource* internalPlaySampleOwner( SoundSourceOwner & pOwner, PSoundId pBufferId,  int pPriority=0, float pGain=1.0f, float pPitch=1.0f, bool pLoop =false);
 	SoundSource* getFreeSource( int pPriority);
 
 
@@ -108,7 +108,7 @@ public:
 	static GLboolean sNoSound;
 	static SoundControler* sTheSoundControler;
 
-	static PSoundId LoadSample( const char* pSection, const char* pKey );
+	static PSoundId LoadSampleConfig( const char* pKey );
 
 	friend SoundSourceOwner;
 };
@@ -117,6 +117,7 @@ public:
 #define LOAD_SAMPLE(A) SoundControler::sTheSoundControler->loadSample(A);
 
 #define PLAY_SAMPLE(A) SoundControler::sTheSoundControler->playSample(A);
+#define PLAY_SAMPLE_PRIO(A, PRIO) SoundControler::sTheSoundControler->playSample(A, PRIO);
 //#define LOOPSAMPLE(A) SoundControler::sTheSoundControler->loopSample(A);
 
 #endif

@@ -129,7 +129,13 @@ static PSoundId sSoundWeaponExplode   ;
 static PSoundId sSoundWeaponExplodePlasma  ;
 static PSoundId sSoundWeaponExplodePlasmaG  ;
 
-static bool InitSound( World* pWorld );
+static PSoundId sSoundExplosionBig ;
+static PSoundId sSoundExplosion1  ;
+static PSoundId sSoundExplosion2  ;
+static PSoundId sSoundExplosion3  ;
+static PSoundId sSoundExplosion4 ;
+
+static bool InitSound( );
 
 };
 

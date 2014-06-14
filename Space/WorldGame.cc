@@ -30,12 +30,14 @@
 #include <WorldGame.h>
 #include <ActionsShip.h>
 
-
+#include <string>
 
 float WorldGame::GlobalScroll = -20;
 WorldGame *WorldGame::TheWorldGame = NULL;
 float WorldGame::XSizeWorld = 150;
 float WorldGame::YSizeWorld = 120;
+
+
 
 //************************************************************
 WorldGame::WorldGame( int pSize, WorldControler* pControl, O3dKamera* pKamera, Double3& pMax,
@@ -53,12 +55,6 @@ WorldGame::~WorldGame()
 {
 	delete cSceneManager;
 	TheWorldGame = NULL;
-}
-const char* 
-WorldGame::configGetKey(  const char* pSection, const char* pKey )
-{
-
-	return NULL;
 }
 //---------------------------------------------------
 const char*
@@ -423,10 +419,11 @@ WorldGame::InitSound( const char* pPathSound)
 	
 	new SoundControler( 20, pPathSound );
 
-	//	WeaponsMaker::InitSound( World* pWorld );
-	//	ActionsShip::InitSound( World* pWorld );
-	//	Pilot::InitSound( World* pWorld );
+	WeaponsMaker::InitSound();
+	ActionsShip::InitSound();
+	Pilot::InitSound();
 
+	/*
 	WeaponsMaker::sSoundWeaponExplode         = LOAD_SAMPLE( "Explode.wav" );
 	WeaponsMaker::sSoundWeaponExplodePlasma   = LOAD_SAMPLE( "ExplodePlasma.mp3" );
 	WeaponsMaker::sSoundWeaponExplodePlasmaG  = LOAD_SAMPLE( "ExplodePlasmaG.wav" );
@@ -443,7 +440,7 @@ WorldGame::InitSound( const char* pPathSound)
 	Pilot::sSoundLaser       = LOAD_SAMPLE( "PilotLaser.wav" );
 	Pilot::sSoundFireMissile = LOAD_SAMPLE( "PilotLaunchMissile.mp3" );
 
-
+	*/
 	/*
 	Pilot::sSoundWarpFailed     = LOAD_SAMPLE(""); 
 	Pilot::sSoundCollision      = LOAD_SAMPLE(""); 
