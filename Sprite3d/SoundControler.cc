@@ -9,7 +9,7 @@
 
 #include <vector>
 
-#include "World.h"
+#include "World.h" 
 #include "WorldControler.h"
 
 
@@ -119,8 +119,20 @@ SoundControler::~SoundControler(  )
 PSoundId
 SoundControler::LoadSampleConfig( const char* pKey )
 {
-	std::string lName = World::sConfigTree.get<std::string>(pKey, "");
+	std::cout << "SoundControler::LoadSampleConfig " << pKey << std::endl;
 
+
+	std::map<std::string, std::string>::iterator lIterator = World::sConfig.find(pKey );
+
+
+	
+	if( lIterator == World::sConfig.end() )
+		return PBadSoundId;
+
+	std::cout << "SoundControler::LoadSampleConfig " << pKey << " LOADING  >>>" << lIterator->second << std::endl;
+
+	
+	std::string lName = lIterator->second;
 	
 	if( lName.size() > 0 )
 		{

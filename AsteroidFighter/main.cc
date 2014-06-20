@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <iostream>
+#include <fstream>
 #include <math.h>
 
 
@@ -36,14 +37,118 @@
 
 #include <plib/fnt.h>
 
-#include <boost/property_tree/ptree.hpp>
-#include <boost/property_tree/ini_parser.hpp>
+//#include <boost/property_tree/ptree.hpp>
+//#include <boost/property_tree/ini_parser.hpp>
 
 int sStartNiveau = 0;
 
 extern PSoundId sOceanSound;
 
+//------------------------------------------------
+// Enleve tout les espaces dans une chaines de caractere
+char*
+StrStrip( char* pStr )
+{
+	if( pStr == nullptr )	return nullptr;
 
+	char *t = pStr;
+	char *s = pStr;
+
+	do{			
+		while( isspace( *s )  ) s++;
+		*t++ = *s;
+	}while( *s++ != '\0');
+	
+	return pStr;
+}
+//------------------------------------------------
+bool
+ReadIni( std::istream &pIn, std::map< std::string, std::string>& pConfig )
+{
+	char lLine[4096];
+	
+	std::string lCurrentSection = "None";
+	
+	
+	//=============== read the stream ================
+	while( pIn.getline( &lLine[0], sizeof(lLine)-1 ))
+		{
+			char* lCurrent = lLine;
+			
+			if( *lCurrent == '#')  // Comment ?
+				continue;
+
+
+			
+			for( int i = (int)::strlen(lCurrent) -1 ; i >= 0; i-- )
+        {
+          if ( lCurrent[i] == '\r' ) 
+            continue;
+					
+          lCurrent[i+1] = '\0';
+          break;
+        }
+
+
+			while( isspace( *lCurrent )  ) lCurrent++;
+			if( *lCurrent == '\0' )
+				continue;
+			
+			// A section ?
+      if ( *lCurrent == '[' )
+        {
+          char *lEnd = ::strchr( lCurrent, ']' );
+					
+          if( lEnd != nullptr )
+						*lEnd = '\0';
+					
+          lCurrentSection = ++lCurrent;
+					
+					std::cout << "Current Section:" << lCurrentSection << std::endl;
+					
+					continue;
+        }
+			
+			char* lEgal = ::strchr(lCurrent, '=');
+			if( lEgal == nullptr )
+				{
+					std::cerr << "ReadIni error in section " << lCurrentSection << " >>>" << lLine << std::endl;
+					continue;
+				}
+			*lEgal  = '\0';
+			
+			char* lVal = StrStrip( lCurrent );
+			lEgal++;
+			
+			if( lVal== nullptr || strlen( lVal ) <= 0 
+					|| strlen( lEgal ) <= 0 )
+				{
+					std::cerr << "ReadIni error in section " << lCurrentSection << " >>>" << lLine << std::endl;	
+					continue;
+				}		 
+
+			std::string lKey = lCurrentSection;
+			lKey +='.';
+			lKey +=lVal;
+
+			std::cout << "ReadIni add values "  << lKey << '=' << lEgal << std::endl;	
+			pConfig[ lKey ] =  lEgal;
+		}
+		//===================================================
+	return true;		
+}
+
+//------------------------------------------------
+bool
+ReadFileIni( std::string & pName, std::map< std::string, std::string>& pConfig )
+{
+	if( pName.size() > 0 )
+		{
+			std::ifstream lFile( pName );
+			return ReadIni( lFile, pConfig );
+		}
+	return false ;
+} 
 //****************************************************
 class GameWorldControler: public WorldControler{
 
@@ -246,7 +351,7 @@ slScheduler sched ( 8000 ) ;
 	//	SoundControler lSoundControler;
 
 	WorldGame::sIniFile="AsteroidFighter.ini";
-	boost::property_tree::ini_parser::read_ini( WorldGame::sIniFile, WorldGame::sConfigTree);
+	ReadFileIni( WorldGame::sIniFile, WorldGame::sConfig);
 
 
 	Utils3d::Init( "AsteroidFighter 1.0", argc, argv, 80*lSize, 60*lSize);

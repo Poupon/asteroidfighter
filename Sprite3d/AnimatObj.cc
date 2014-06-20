@@ -4,8 +4,8 @@
 
 //*************************************************
 AnimatObj::AnimatObj( Sprite3d* pSprite,	float pDelay,  O3dObj* pObj )
-	:cMySprite( pSprite ),
-	 cDelay( pDelay ),
+	:	cDelay( pDelay ),
+	 cMySprite( pSprite ),
 	 cLastTime(0),
 	 cAnimateOn(GL_TRUE)
 {
