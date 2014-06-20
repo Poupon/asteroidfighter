@@ -20,9 +20,9 @@ long World::sNbDetect = 0;
 World*  World::TheWorld = NULL;
 
 
-boost::property_tree::ptree World::sConfigTree;
 std::string            World::sIniFile;
- 
+std::map<std::string, std::string> World::sConfig;
+
 
 //--------------------------------
 inline void

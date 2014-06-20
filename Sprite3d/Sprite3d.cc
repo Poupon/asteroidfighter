@@ -8,8 +8,8 @@
 //**************************************
 Sprite3d::Sprite3d( float cRadius, float pLifeTime )
 :cInteract(InteractNull),
- cLastColId(-1),
- cDeleteControler(NULL)
+ cDeleteControler(NULL),
+ cLastColId(-1)
 {
 	SpriteFloat::set( SPRITE_LIFETIME, pLifeTime);
 

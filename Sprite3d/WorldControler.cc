@@ -133,15 +133,15 @@ WorldControler::WorldControler(int pWidth, int pHeight, bool pFullScreen)
 	:cCurrentWorld( NULL),
 	cMainWorld(NULL),
 	cGame(NULL),
+  cPause(0),
+	cFullScreen(pFullScreen),
+	cLeftButtonDown(GL_FALSE),
+	cMiddleButtonDown (GL_FALSE),
+	cRightButtonDown( GL_FALSE),
 	cMouseX(-1),
 	cMouseY(-1),
 	cWidth(pWidth),
-	cHeight(pHeight),
-	cLeftButtonDown(GL_FALSE),
-	cMiddleButtonDown (GL_FALSE),
-    cRightButtonDown( GL_FALSE),
-    cPause(0),
-    cFullScreen(pFullScreen)
+	cHeight(pHeight)
 {
 	sCurrentFont = T3dFont::DefaultFont;
 	WC = this;

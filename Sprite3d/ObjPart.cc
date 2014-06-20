@@ -375,7 +375,6 @@ void ObjPart::draw( O3dViewProps& pVProps, O3dObjProps* pObjProps)
 {
 	glDisable( GL_LIGHTING );
 
-	int lSize=0;
 
 
 	if( cForceTransparency )

@@ -13,9 +13,9 @@
 #include <T3d/T3dFont.h>
 
 
+#include <string>
+#include <map>
 
-
-#include <boost/property_tree/ptree.hpp>
 
 
 class Sprite3d;
@@ -137,8 +137,8 @@ public:
 
 	static World* TheWorld;
 
-	static boost::property_tree::ptree sConfigTree;
-	static std::string            sIniFile;
+	static std::map< std::string, std::string> sConfig;
+	static std::string              sIniFile;
  
 
 protected:
