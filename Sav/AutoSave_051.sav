@@ -1,7 +1,2 @@
-<<<<<<< local
-(Level Scene 119 Time 2242 Difficulty 2 NumSav 52 )
-(Pilot LevelPhaser 11 LevelLauncher 10 LevelField 0 LevelMotor 15 MaxErg 5000 MaxRocket 900 Life 1 Field 260 Rocket 900 Erg 5000 Score 57120 )
-=======
-(Level Scene 122 Time 1972 Difficulty 0 NumSav 52 )
-(Pilot LevelPhaser 17 LevelLauncher 19 LevelField 2 LevelMotor 12 MaxErg 8000 MaxRocket 1000 Life 7 Field 764 Rocket 952 Erg 7918 Score 18801 )
->>>>>>> other
+(Level Scene 99 Time 2179 Difficulty 3 NumSav 52 )
+(Pilot LevelPhaser 11 LevelLauncher 13 LevelField 330 LevelMotor 14 MaxErg 6000 MaxRocket 1100 Life 2 Field 321 Rocket 828 Erg 5998 Score 264880 Money 5513 )

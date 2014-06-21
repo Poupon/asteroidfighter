@@ -72,7 +72,8 @@ WorldGame::initStart( int pNiveau, const char* pNameFileSav )
 	//	std::cout << "WorldGame::initStart " << pNiveau << " " << pNameFileSav << std::endl;
 
   Double3 lGenPos( 160.0, 0.0, 0.0 );
-  Double3 lGenPos2( 0.0, 100, 0.0 );
+	//  Double3 lGenPos2( 0.0, 130, 0.0 );
+  Double3 lGenPos2( 0.0, 150, 0.0 );
 	Float4 lBanColor( 0.6, 0.6, 0.9, 0.4 ) ;
 
 

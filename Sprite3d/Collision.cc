@@ -165,6 +165,8 @@ Collision::SimpleDetection(VSprite3d& pVSprite)
 
 	for( VSprite3d::iterator iter = pVSprite.begin(); iter != pVSprite.end()-1; ++iter )
 		{
+			if( (*iter)== nullptr ) continue;
+
 			if( (*iter)->getInteract() == InteractNull )
 				continue;
 
@@ -173,7 +175,9 @@ Collision::SimpleDetection(VSprite3d& pVSprite)
 
 			for( VSprite3d::iterator iter2 = iter + 1; iter2 != pVSprite.end(); ++iter2 )
 				{
-					if( (*iter2)->getInteract() == InteractNull )
+				if( (*iter2)== nullptr ) continue;
+
+				if( (*iter2)->getInteract() == InteractNull )
 						continue;
 
 					lNbCalcul++;

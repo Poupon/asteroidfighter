@@ -17,7 +17,7 @@
 #include <Sprite3dPilot.h>
 
 long World::sNbDetect = 0;
-World*  World::TheWorld = NULL;
+World*  World::sTheWorld = NULL;
 
 
 std::string            World::sIniFile;
@@ -25,12 +25,17 @@ std::map<std::string, std::string> World::sConfig;
 
 
 //--------------------------------
+// Inefficace !
+
 inline void
 RemoveSprite(  Sprite3d *pSp,  VSprite3d& vect )
 {
 	for( VSprite3d::iterator iter = vect.begin(); iter != vect.end(); iter++ )
 		if( *iter == pSp )
-			vect.erase( iter );
+			{
+				vect.erase( iter );
+				break;
+			}
 }
 
 //**************************************
@@ -48,7 +53,9 @@ World::World( WorldControler *pControl, O3dKamera* pKamera, Double3& pMax, O3dOb
 		cBox.getMin()[i] = -cBox.getMax()[i] ;
 	}
 
-	TheWorld = this;
+	sTheWorld = this;
+
+	std::cout << ">>>>>>>>>>>>>>>>>>>>" << sTheWorld << std::endl;
 }
 //--------------------------------
 World::~World()
@@ -58,6 +65,17 @@ World::~World()
 //--------------------------------
 void
 World::add( Sprite3d *pSprite ){
+
+	// search a free spce in the vector
+	for( std::vector <Sprite3d*>::iterator iter = cLiveSprite.begin(); iter != cLiveSprite.end(); ++iter )
+	{
+		if( (*iter) == nullptr ) 
+			{
+				(*iter) = pSprite;
+				return;
+			}
+	}
+	// no space free in the vector
 	cNewSprite.push_back( pSprite );
 }
 //--------------------------------
@@ -111,6 +129,20 @@ World::initOverlay()
 
 	return cOverlayOpen;
 }
+//--------------------------------------
+int 
+World::getNbRealLiveSprite(){
+
+	int lNb = 0;
+
+	for( std::vector <Sprite3d*>::iterator iter = cLiveSprite.begin(); iter != cLiveSprite.end(); ++iter )
+	{
+		if( *iter == nullptr ) continue;
+		lNb++;
+	}
+
+	return lNb;
+}
 //--------------------------------
 //----------- DRAW --------------
 //--------------------------------
@@ -128,6 +160,13 @@ void World::drawWorld()
 
 }
 //--------------------------------
+void World::killSprite( Sprite3d *pSp )
+	{
+		//		cDeadSprite.push_back( pSp );
+		pSp->destroy();
+		//cLiveSprite.erase( pSp );
+	}
+//--------------------------------
 void World::drawLiveSprite()
 {
 	O3dViewProps lViewProps( *getKamera() );
@@ -136,6 +175,8 @@ void World::drawLiveSprite()
 	lViewProps.ViewPropsBool::set( DRAW_ID, GL_FALSE);
 	for( std::vector <Sprite3d*>::iterator iter = cLiveSprite.begin(); iter != cLiveSprite.end(); ++iter )
 	{
+		if( *iter == nullptr ) continue;
+
 		(*iter)->makeDraw( lViewProps, cProps );
 	}
 }
@@ -152,6 +193,8 @@ World::isSpriteIntersect( Double3 pPos, float pRadius, unsigned int pMmask_Att)
 {
 	for( std::vector <Sprite3d*>::iterator iter = cLiveSprite.begin(); iter != cLiveSprite.end(); ++iter )
 	{
+		if( *iter == nullptr ) continue;
+
 		unsigned int mask_Def = (*iter)->getDefMask();
 		if( (mask_Def & pMmask_Att) )
 		{
@@ -173,6 +216,9 @@ World::isSpriteIntersectXY( Double3 pPos, float pRadius, unsigned int pMmask_Att
 {
 	for( std::vector <Sprite3d*>::iterator iter = cLiveSprite.begin(); iter != cLiveSprite.end(); ++iter )
 	{
+		if( *iter == nullptr ) continue;
+
+
 		unsigned int mask_Def = (*iter)->getDefMask();
 		if( (mask_Def & pMmask_Att) )
 		{
@@ -197,77 +243,122 @@ void World::animateLiveSprite()
 	//	std::cout << "World::animateLiveSprite " << cNewSprite.size() << std::endl;
 
 
-		// Ajout des nouveau Sprite
-	for( std::vector <Sprite3d*>::iterator iter1 = cNewSprite.begin(); iter1 != cNewSprite.end(); ++iter1 )
+	//	std::vector <Sprite3d*>::iterator iterLive = cLiveSprite.begin();
+ 
+	//=========  Ajout des nouveau Sprite =============
+	std::vector <Sprite3d*>::iterator iterLive;
+	iterLive = cLiveSprite.begin();
+	
+	bool lSearchFreeSpace = true;
+		
+	for( std::vector <Sprite3d*>::iterator iterNew = cNewSprite.begin(); iterNew != cNewSprite.end(); ++iterNew )
 	{
-		Sprite3d* lSprite = *iter1;
+		Sprite3d* lSprite = *iterNew;
+
+
+		if( lSearchFreeSpace ) 
+			{
+				// find a free space 
+				for(;	iterLive != cLiveSprite.end();	++iterLive )
+					{
+						//	std::cout << "*** World::animateLiveSprite iter "<<  *iterLive  << std::endl;
+						if( *iterLive == nullptr )
+							{
+								//					std::cout << "*** World::animateLiveSprite add nex sprite nullptr "  << std::endl;
+								break;
+							}
+					}
+		
+				if( iterLive!=cLiveSprite.end() )
+					{
+						(*iterLive) = lSprite;
+						++iterLive;
+						continue;
+					}
+
+				lSearchFreeSpace = false;
+			}
+
+		
 		//		std::cout << "World::animateLiveSprite " << lSprite << std::endl;
-		cLiveSprite.push_back( lSprite );
+		//	std::cout << "*** World::animateLiveSprite push_back "  << std::endl;
+		
+		cLiveSprite.push_back( lSprite ); // inactive iterLive
 	}
+	//=================================================
+
 
 	cNewSprite.clear();
 
-		// Boucle d animation
-	for( std::vector <Sprite3d*>::iterator iter2 = cLiveSprite.begin(); iter2 != cLiveSprite.end(); ++iter2 )
+
+
+ 	//=============  Boucle d animation ===============
+	std::cout << "animation:" << cLiveSprite.size() << " this:" << this << std::endl;
+
+	for( std::vector <Sprite3d*>::iterator iterLiveAnim = cLiveSprite.begin(); iterLiveAnim != cLiveSprite.end(); ++iterLiveAnim )
 		{
-			(*iter2)->animate();
+			if( (*iterLiveAnim) == nullptr ) continue;
+
+
+			(*iterLiveAnim)->animate();
 		}
+	//=================================================
+
+
+
 
 	lNbCalcul = 0;
 
 	// Detection et resolution des collisions
   sNbDetect =  Collision::SimpleDetection( cLiveSprite );
 
-//	int   lDim[2]={ 0, 1 };
-//	int   lNbDiv[2]={ 10, 10 };
-//	cout << "***********************************" <<endl;
-//	Collision::SpatialDetection( cLiveSprite, &lDim[0], cBox.getMin(), cBox.getMax(), &lNbDiv[0], 2 );
-//	cout << "Collision " << cLiveSprite.size() << "/" << lNbCalcul <<endl;
 
 
-		// Elimination logique des Sprite sortie du monde
-	for( std::vector <Sprite3d*>::iterator iter3 = cLiveSprite.begin(); iter3 != cLiveSprite.end(); ++iter3 )
+	//=============   Elimination logique des Sprite sortie du monde =============  
+	for( std::vector <Sprite3d*>::iterator iterLiveOut = cLiveSprite.begin(); iterLiveOut != cLiveSprite.end(); ++iterLiveOut )
 	{
-		if( cBox.isInto( (*iter3)->getTransf().TransfDouble3::get(POS)) == GL_FALSE
-			&& (*iter3)->leaveWorld() == GL_TRUE)
+		if( (*iterLiveOut) == nullptr ) continue;
+
+		if( cBox.isInto( (*iterLiveOut)->getTransf().TransfDouble3::get(POS)) == GL_FALSE
+			&& (*iterLiveOut)->leaveWorld() == GL_TRUE)
 			{
-				cDeadSprite.push_back( (*iter3) ); // On stocke le pointer sur le tableau
+				(*iterLiveOut)->destroy();
 			}
 	}
+	//=================================================
 
 
-		// Elimination physique des Sprite morts // Inverser boucle si strl::vector
 
-	// TODO a optimiser !!!
-	for( std::vector<Sprite3d*>::iterator iter4 = cDeadSprite.begin(); iter4 != cDeadSprite.end(); iter4++ )
+	//============= Destroy ==========================
+	// Elimination physique des Sprite morts
+
+	for( VSprite3d::iterator iterLiveDestroy = cLiveSprite.begin(); iterLiveDestroy != cLiveSprite.end(); iterLiveDestroy++ )
 		{
-			for( VSprite3d::iterator iter5 = cLiveSprite.begin(); iter5 != cLiveSprite.end(); iter5++ )
-			{
-				if( *iter4 == *iter5 )
+			if( *iterLiveDestroy == nullptr ) continue;
+			
+			if( (*iterLiveDestroy)->isDestroy() )
 				{
-					delete( *iter5 );
-					*iter5 = NULL;
-					cLiveSprite.erase( iter5 );
-					break;
+					delete( *iterLiveDestroy );
+					*iterLiveDestroy = NULL;
 				}
-			}
 		}
+	//=================================================
 
-	cDeadSprite.clear();
 }
 //--------------------------------
+// Inefficace !
 void
 World::removeSprite(  Sprite3d *pSp )
 {
 	RemoveSprite( pSp, cLiveSprite );
-	RemoveSprite( pSp, cDeadSprite );
+	//	RemoveSprite( pSp, cDeadSprite );
 	RemoveSprite( pSp, cNewSprite );
 }
 //--------------------------------
 void
 World::deleteSprite( Sprite3d* pSprite)
 {
-	if(pSprite ->getDeleteControler() == NULL)
+	if(pSprite->getDeleteControler() == NULL)
 		delete pSprite;
 	else
 		pSprite->getDeleteControler()->execDelete( pSprite  );
@@ -280,14 +371,18 @@ void World::killAllSprite()
 		deleteSprite( *iter );
 
 	for( std::vector < Sprite3d *> ::iterator iter2 = cLiveSprite.begin(); iter2 != cLiveSprite.end(); ++iter2 )
-		deleteSprite( *iter2 );
+		{
+			if(  *iter2 != nullptr )
+				deleteSprite( *iter2 );
+		}
 
-	for( std::vector < Sprite3d *> ::iterator iter3 = cDeadSprite.begin(); iter3 != cDeadSprite.end(); ++iter3 )
-		deleteSprite( *iter3 );
+	/*	for( std::vector < Sprite3d *> ::iterator iterOut = cDeadSprite.begin(); iterOut != cDeadSprite.end(); ++iterOut )
+		deleteSprite( *iterOut );
+	*/
 #endif
 	cNewSprite.clear();
 	cLiveSprite.clear();
-	cDeadSprite.clear();
+	//	cDeadSprite.clear();
 
 }
 //--------------------------------
@@ -358,6 +453,9 @@ World::GetDistPilot( Sprite3d *pSprite,  Double3 & pDist )
 	return GL_TRUE;
 }
 //------------------------
+// Pas rapide du tout ! a optimiser
+// mettre un tableau 2D et les sprites repartie dedans en fonction de leur position
+
 GLboolean
 World::GetPositionWithoutCollision( int pInteract, Double3& pPos, int pSize, int pLimitX, int pLimitY, int pLimitZ, int pNbTry, float pMarge ){
 

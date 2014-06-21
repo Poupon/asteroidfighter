@@ -147,6 +147,18 @@ public:
 
 	static void   VerifSpeedDelta( double& pV, double& pDV, double pMaxV, double pMaxDV );
 	static double GetAngle( double pCos, double pSin );
+
+
+protected:
+	bool cDestroy;
+
+public:
+	void destroy(){
+		cDestroy = true;
+	}
+
+	bool isDestroy(){ return cDestroy; }
+
 };
 //**************************************
 

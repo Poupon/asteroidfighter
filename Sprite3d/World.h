@@ -35,7 +35,7 @@ protected:
 
 	std::vector <Sprite3d*> cNewSprite;
 	std::vector <Sprite3d*> cLiveSprite;
-	std::vector <Sprite3d*> cDeadSprite;
+	//	std::vector <Sprite3d*> cDeadSprite;
 
 	O3dObjProps    *cProps;
 	Sprite3dPilot  *cPilot;
@@ -56,11 +56,11 @@ public:
 	O3dObjProps *getProps() {return cProps; }
 
 
-	void killSprite( Sprite3d *pSp )
-	{
-		cDeadSprite.push_back( pSp );
-		//cLiveSprite.erase( pSp );
-	}
+	void killSprite( Sprite3d *pSp );
+	
+
+	int getNbLiveSprite() { return cLiveSprite.size(); }
+	int getNbRealLiveSprite();
 
 	void removeSprite(  Sprite3d *pSp );
 	void deleteSprite( Sprite3d* pSprite);
@@ -135,7 +135,7 @@ public:
 
 	
 
-	static World* TheWorld;
+	static World* sTheWorld;
 
 	static std::map< std::string, std::string> sConfig;
 	static std::string              sIniFile;

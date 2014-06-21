@@ -60,7 +60,7 @@ SoundControler::SoundControler(  int pMaxSource,  const char* pPath  )
 		}
  
 
-	std::cout << "SoundControler::SoundControler OK " << pPath  << std::endl;
+		std::cout << "SoundControler::SoundControler OK " << pPath  << std::endl;
 
 
 	// Reservation des sources
@@ -216,7 +216,7 @@ SoundControler::loadSample ( const char* pName )
 SoundSource* 
 SoundControler::internalPlaySample( PSoundId pBufferId, int pPriority, float pGain, float pPitch, bool pLoop){
 
-	std::cout << "SoundControler::internalPlaySample" << pBufferId << " prio:" << pPriority ;
+	///	std::cout << "SoundControler::internalPlaySample" << pBufferId << " prio:" << pPriority ;
 	//					<<  (sMute == GL_FALSE ? " ok ":" Mute ") 
 	//					<<  ( sNoSound == GL_FALSE ? " sound ": " no_sound") << std::endl;
 
@@ -229,13 +229,13 @@ SoundControler::internalPlaySample( PSoundId pBufferId, int pPriority, float pGa
 	if( lSrc == NULL 
 			||  lSrc->play( pBufferId, pGain, pPitch, pLoop ) == PBadSoundSourceId )
 	 {			 
-		 std::cout << " RETURN NULL" << std::endl ;
+		 //		 std::cout << " RETURN NULL" << std::endl ;
 		 return NULL;
 	 }
 	
 	lSrc->cPriority = pPriority;
 
-	std::cout << " ID:" << lSrc->cSourceId << std::endl ;
+	//	std::cout << " ID:" << lSrc->cSourceId << std::endl ;
 
 	return lSrc;
 }
@@ -323,7 +323,7 @@ SoundControler::getFreeSource( int pPriority){
 			
 
 			if( lSrc->cState == SoundSource::SourceState::FREE ) {
-				std::cout << " - FREE - " ;
+				//				std::cout << " - FREE - " ;
 				return lSrc;
 			}
 
@@ -331,7 +331,7 @@ SoundControler::getFreeSource( int pPriority){
 			 
 			if (lSourceState != AL_PLAYING) {
 				lSrc->cState =  SoundSource::SourceState::FREE ;
-				std::cout << " - FINISH - " ;
+				//				std::cout << " - FINISH - " ;
 			 	return lSrc;
 			}
 
@@ -366,7 +366,7 @@ SoundControler::getFreeSource( int pPriority){
 
 
 	if( lMemSrc != NULL ) {
-		std::cout << " - REUSE - " ;
+		//		std::cout << " - REUSE - " ;
 
 		alSourceStop( lMemSrc->cSourceId );
 		lMemSrc->cState =  SoundSource::SourceState::FREE;
