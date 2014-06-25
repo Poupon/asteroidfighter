@@ -178,7 +178,9 @@ AsteroidesMaker::makeSpriteAsteroide( EnumAsteroides pType, float pSz, int pFace
 	// Comme chaque object est unique il doit etre detruit a la mort du sprite
   sp->setDeepDestroy(GL_TRUE);
 
-  sp->setMask( InteractObstacle, InteractObstacle );
+	//  sp->setMask( InteractObstacle, InteractObstacle );
+  sp->setMask( InteractObstacleIn, InteractObstacleOut );
+
   sp->setAction( SPRITE_ACTION_COLLISION, this);
   sp->SpriteFloat::set( SPRITE_LIFE_POINT, pSz*2 );
   sp->SpriteFloat::set( SPRITE_MAX_LIFE_POINT, pSz*2 );
@@ -194,7 +196,8 @@ AsteroidesMaker::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void *pParam
 
 	if( pSprite.getDefMask() == InteractObstacle )
 	{
-		return GL_TRUE;
+		std::cout  << "BUG AsteroidesMaker::collision" << std::endl;
+		return GL_TRUE; // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 		if(  pMySprite.getObjectId() != pSprite.cLastColId
 		|| pSprite.getObjectId() != pMySprite.cLastColId)
@@ -226,8 +229,8 @@ AsteroidesMaker::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void *pParam
 
 	if( pMySprite.SpriteFloat::get( SPRITE_LIFE_POINT ) <= 0 )
 	{
-		int max = static_cast<long>(randp(pMySprite.getRadius()*0.5)+1.0);
-		for( int j=0; j< max+1; j++)
+		int max = static_cast<long>(randp(pMySprite.getRadius()*0.4)+1.0);
+		for( int j=0; j< max; j++)
 		{
 			SpriteExplosion *sp = new SpriteExplosion( 1.3+randp(pMySprite.getRadius()), 0.3+randp(0.3) );
 			sp->setTransf( pMySprite.getTransf() );
@@ -245,8 +248,8 @@ AsteroidesMaker::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void *pParam
 		//	Double3 lSpinMother( pMySprite.SpriteDouble3::get(SPRITE_SPIN  ));
 
 
-
-		for( int i = 0; i < pSz; i++ )
+		int lNbDebris = pSz >>1;
+		for( int i = 0; i < lNbDebris; i++ )
 		{
 			float sz = randp(pSz);
 

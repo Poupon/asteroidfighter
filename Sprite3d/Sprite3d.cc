@@ -1,15 +1,23 @@
 #include <Sprite3d.h>
 #include <iostream>
+#include <typeinfo>
 
 #include <World.h>
 #include <Action.h>
 #include <Sprite3dPilot.h>
 
+
+
+
+
+
 //**************************************
 Sprite3d::Sprite3d( float cRadius, float pLifeTime )
-:cInteract(InteractNull),
+:cInteractDef(InteractNull),
+cInteractAtt(InteractNull),
  cDeleteControler(NULL),
  cLastColId(-1),
+
  cDestroy( false )
 {
 	SpriteFloat::set( SPRITE_LIFETIME, pLifeTime);

@@ -243,7 +243,9 @@ ActionsShip::animateDestroy( Sprite3d &pMySprite, void * pParam )
 		PLAY_SAMPLE( sSoundDestroy );
 
 
-	int max = static_cast<long>(randp(pMySprite.getRadius())+1.0);
+	int max = static_cast<long>(randp(pMySprite.getRadius()/2)+1.0);
+	if( max > 10 )
+		max = 10;
 	for( int j=0; j< max+1; j++)
 	{
 		SpriteExplosion *sp = new SpriteExplosion( 1+randp(pMySprite.getRadius()), 0.3+randp(0.3) );

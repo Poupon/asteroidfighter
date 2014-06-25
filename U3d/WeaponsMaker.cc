@@ -589,8 +589,8 @@ WeaponsMaker::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void * pParam )
 		// Encore faudrait il comprendre pourquoi ils interragissent ?
 		// car normalement leurs masques ne corresponde pas !
 
-		std::cout << "*** Weapon:" <<  std::hex << pMySprite.getInteract() 
-							<< " Bonus:" << std::hex <<  pSprite.getInteract() << std::endl;
+		//		std::cout << "*** Weapon:" <<  std::hex << pMySprite.getInteract() 
+		//							<< " Bonus:" << std::hex <<  pSprite.getInteract() << std::endl;
  
 		return GL_FALSE;
 	}

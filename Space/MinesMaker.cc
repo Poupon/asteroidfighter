@@ -73,7 +73,7 @@ MinesMaker::makeMine( MineType pMineType, int pMaxLife, float  pSpin,
 
 				Tourelle* lTour  = makeModul( lSz*0.3 );
 				lTour->set( lSp,  0.6,  FIRE_DIRECT, (pMineType == MINE_LASER ? WEAPON_PLASMA_RED : WEAPON_ION ),
-										lBox, InteractEnemy, InteractEnemyWeapon);
+										lBox, InteractWeaponEnemyIn, InteractWeaponEnemyOut);
 			lVect->add(  lTour );
 			lObj =lVect;
 			}
@@ -102,7 +102,7 @@ MinesMaker::makeMine( MineType pMineType, int pMaxLife, float  pSpin,
 		}
 	lSp->setO3dObj( lObj );
 
-	lSp->setMask( InteractEnemy, InteractEnemyWeapon);
+	lSp->setMask( InteractWeaponEnemyIn, InteractWeaponEnemyOut);
 	lSp->setAction( SPRITE_ACTION_COLLISION, TheMinesMaker );
 	lSp->setAction( SPRITE_ACTION_ANIMATE, TheMinesMaker );
 

@@ -22,7 +22,9 @@ World*  World::sTheWorld = NULL;
 
 std::string            World::sIniFile;
 std::map<std::string, std::string> World::sConfig;
-
+ 
+int  World::sFlagCollision3d  = 0; // automatique
+int  World::sThresholdDetection3d = 100;
 
 //--------------------------------
 // Inefficace !
@@ -41,12 +43,16 @@ RemoveSprite(  Sprite3d *pSp,  VSprite3d& vect )
 //**************************************
 
 World::World( WorldControler *pControl, O3dKamera* pKamera, Double3& pMax, O3dObjProps*pProps )
-: cProps( pProps ),
+	: cServiceSprite(128),
+		cNewSprite(2048),
+		cLiveSprite(4096),
+		cProps( pProps ),
 	cPilot( NULL ),
   cMyControler(pControl),
   cKamera(pKamera),
   cOverlayOpen( GL_FALSE ),
-  cBox( pMax, pMax )
+		cBox( pMax, pMax ),
+		cNbLiveSprite(0)
 {
 	for( int i = 0; i < 3; i++ )
 	{
@@ -55,7 +61,10 @@ World::World( WorldControler *pControl, O3dKamera* pKamera, Double3& pMax, O3dOb
 
 	sTheWorld = this;
 
-	std::cout << ">>>>>>>>>>>>>>>>>>>>" << sTheWorld << std::endl;
+
+	Double3 lDiv( 32, 32, 32 ); // PB SI Y GRAND ?
+	cZonesDetectCollision = Collision::InitSpatialDetection3D( cBox, lDiv );
+
 }
 //--------------------------------
 World::~World()
@@ -129,20 +138,6 @@ World::initOverlay()
 
 	return cOverlayOpen;
 }
-//--------------------------------------
-int 
-World::getNbRealLiveSprite(){
-
-	int lNb = 0;
-
-	for( std::vector <Sprite3d*>::iterator iter = cLiveSprite.begin(); iter != cLiveSprite.end(); ++iter )
-	{
-		if( *iter == nullptr ) continue;
-		lNb++;
-	}
-
-	return lNb;
-}
 //--------------------------------
 //----------- DRAW --------------
 //--------------------------------
@@ -210,7 +205,7 @@ World::isSpriteIntersect( Double3 pPos, float pRadius, unsigned int pMmask_Att)
 }
 //-------------------------------------------------
 // Determine si un des sprites intersecte avec une zone
-
+/*
 Sprite3d*
 World::isSpriteIntersectXY( Double3 pPos, float pRadius, unsigned int pMmask_Att)
 {
@@ -232,7 +227,7 @@ World::isSpriteIntersectXY( Double3 pPos, float pRadius, unsigned int pMmask_Att
 	}
 	return NULL;
 }
-
+*/
 //--------------------------------
 //----------- ANIMATE ------------
 //--------------------------------
@@ -293,7 +288,9 @@ void World::animateLiveSprite()
 
 
  	//=============  Boucle d animation ===============
-	std::cout << "animation:" << cLiveSprite.size() << " this:" << this << std::endl;
+	//	std::cout << "animation:" << cLiveSprite.size() << " this:" << this << std::endl;
+
+	cNbLiveSprite = 0;
 
 	for( std::vector <Sprite3d*>::iterator iterLiveAnim = cLiveSprite.begin(); iterLiveAnim != cLiveSprite.end(); ++iterLiveAnim )
 		{
@@ -301,6 +298,7 @@ void World::animateLiveSprite()
 
 
 			(*iterLiveAnim)->animate();
+			cNbLiveSprite++;
 		}
 	//=================================================
 
@@ -310,7 +308,30 @@ void World::animateLiveSprite()
 	lNbCalcul = 0;
 
 	// Detection et resolution des collisions
-  sNbDetect =  Collision::SimpleDetection( cLiveSprite );
+	//	  sNbDetect =  Collision::SimpleDetection( cLiveSprite  );
+	if( sFlagCollision3d == 0) // automatique
+		{
+			if( getNbLiveSprite() > sThresholdDetection3d )
+				{
+					Collision::CleanSpatialDetection3D(	*cZonesDetectCollision );																																		
+					sNbDetect = Collision::SpatialDetection3D( cLiveSprite, *cZonesDetectCollision );
+				}
+			else 
+				{
+					cZonesDetectCollision->desactivate();
+					sNbDetect =  Collision::SimpleDetection( cLiveSprite  );
+				}
+		}
+	else if( sFlagCollision3d == 1)
+		{
+			Collision::CleanSpatialDetection3D(	*cZonesDetectCollision );																																		
+			sNbDetect = Collision::SpatialDetection3D( cLiveSprite, *cZonesDetectCollision );
+		}
+	else if( sFlagCollision3d == 2)
+		{
+			cZonesDetectCollision->desactivate();
+			sNbDetect =  Collision::SimpleDetection( cLiveSprite  );
+		}
 
 
 
@@ -340,6 +361,7 @@ void World::animateLiveSprite()
 				{
 					delete( *iterLiveDestroy );
 					*iterLiveDestroy = NULL;
+					cNbLiveSprite--;
 				}
 		}
 	//=================================================
@@ -368,7 +390,8 @@ void World::killAllSprite()
 {
 #ifndef PC_WINDOWS
 	for( std::vector < Sprite3d *> ::iterator iter = cNewSprite.begin(); iter != cNewSprite.end(); ++iter )
-		deleteSprite( *iter );
+		if( *iter != nullptr )
+			deleteSprite( *iter );
 
 	for( std::vector < Sprite3d *> ::iterator iter2 = cLiveSprite.begin(); iter2 != cLiveSprite.end(); ++iter2 )
 		{
@@ -382,6 +405,7 @@ void World::killAllSprite()
 #endif
 	cNewSprite.clear();
 	cLiveSprite.clear();
+	cNbLiveSprite = 0;
 	//	cDeadSprite.clear();
 
 }

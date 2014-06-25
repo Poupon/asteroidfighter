@@ -27,6 +27,15 @@ T3dBox::getCenter( Double3& pD3 )
 }
 //---------------------------
 Double3 
+T3dBox::size()
+{
+	return Double3( (cMax[0] -cMin[0]),
+									(cMax[1] -cMin[1]),
+									(cMax[2] -cMin[2])
+									);
+}
+//---------------------------
+Double3 
 T3dBox::center()
 {
 	return Double3( (cMin[0] + cMax[0])* 0.5,

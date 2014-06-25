@@ -49,7 +49,7 @@ class T3dBox
 		return cMax;
 	}
 
-
+	Double3 size();
 	Double3 center();
 	void getCenter( Double3& pD3);
 
@@ -66,6 +66,14 @@ class T3dBox
 		return GL_TRUE;
 	}
 
+	std::ostream& print( std::ostream& os)
+	{
+		os << '[';
+		cMin.print( os ) << " ";
+		cMax.print( os )<< '[';
+
+		return os;
+	}
 
 	friend class T3dVect3D;
 };
