@@ -10,6 +10,8 @@
 #include <O3d/O3dKamera.h>
 
 #include <Sprite3d/ObjVect.h>
+#include <Sprite3d/Collision.h>
+
 #include <T3d/T3dFont.h>
 
 
@@ -45,7 +47,7 @@ protected:
 
 	T3dBox cBox; // The size of this world !
 
-
+	Array3d< std::vector<Sprite3d*> >* cZonesDetectCollision; //Detection de collision par zone
 
 public:
 
@@ -59,8 +61,9 @@ public:
 	void killSprite( Sprite3d *pSp );
 	
 
-	int getNbLiveSprite() { return cLiveSprite.size(); }
-	int getNbRealLiveSprite();
+	int cNbLiveSprite;
+	int getSizeLiveSprite() { return cLiveSprite.size(); }
+	int getNbLiveSprite() { return cNbLiveSprite ; }
 
 	void removeSprite(  Sprite3d *pSp );
 	void deleteSprite( Sprite3d* pSprite);
@@ -84,7 +87,7 @@ public:
 	virtual O3dKamera* getKamera() {return cKamera; }
 
 	Sprite3d *isSpriteIntersect( Double3 pPos, float pRadius, unsigned int pMmask_Att );
-	Sprite3d *isSpriteIntersectXY( Double3 pPos, float pRadius, unsigned int pMmask_Att );
+	//	Sprite3d *isSpriteIntersectXY( Double3 pPos, float pRadius, unsigned int pMmask_Att );
 
 
 	GLboolean initOverlay();
@@ -135,10 +138,16 @@ public:
 
 	
 
-	static World* sTheWorld;
+	static World* sTheWorld
+;
 
 	static std::map< std::string, std::string> sConfig;
 	static std::string              sIniFile;
+
+
+public:
+	static int sFlagCollision3d;
+	static int sThresholdDetection3d;
  
 
 protected:

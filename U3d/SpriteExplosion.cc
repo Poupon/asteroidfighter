@@ -4,9 +4,48 @@
 
 #include <SpriteExplosion.h>
 #include <iostream>
+#include <typeinfo>
+
 
 AutoPtr<O3dObjProps> SpriteExplosion::caExplosionProps;
 AutoPtr<O3dObjProps> SpriteExplosion::caExplosionPlasmaProps;
+
+std::vector<SpriteExplosion*> SpriteExplosion::sFreeExploVect;
+
+//----------------------------------
+
+void* 
+SpriteExplosion::operator new( size_t pSz )
+{
+	//	std::cout << "SpriteExplosion::operator new " << pSz << " sz:" << sFreeExploVect.size() << std::endl;
+
+	if( pSz == sizeof( SpriteExplosion ) && sFreeExploVect.size() > 0 )
+		{
+			//			std::cout << "***SpriteExplosion::operator new  Vector !" << pSz << " sz:" << sFreeExploVect.size() << std::endl;
+			SpriteExplosion* lTmp = sFreeExploVect.back();
+			sFreeExploVect.pop_back();
+			return lTmp;		
+		}
+	
+	return ::operator new( pSz );
+}
+//----------------------------------
+void 
+SpriteExplosion::operator delete( void* pSp, size_t pSz) 
+{	
+	if( pSp == nullptr ) return;
+
+	if( pSz != sizeof(SpriteExplosion ) )
+		{
+			//			std::cout << "SpriteExplosion::operator delete  External" << pSz<< std::endl;
+			::operator delete( pSp );
+			return;
+		}
+	
+	//	std::cout << "***SpriteExplosion::operator delete Internal " << pSz  << " sz:" << sFreeExploVect.size()  << std::endl;
+
+	sFreeExploVect.push_back( (SpriteExplosion*)pSp );
+}
 
 //***************************
 

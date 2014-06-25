@@ -324,6 +324,11 @@ WorldControler::SpecialKey( int pKey, int pX, int pY )
 		break;
 
 	case GLUT_KEY_LEFT:
+		World::sFlagCollision3d = false;
+		break;
+
+	case GLUT_KEY_RIGHT:
+		World::sFlagCollision3d = true;
 		break;
 
 	}

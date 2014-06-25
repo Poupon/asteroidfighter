@@ -28,7 +28,7 @@ HDRS = $(SRCS:.cc=.h)
 
 # ---------------------------------------------------
 
-CFLAGS=  ${CC_DEBUG} -g -std=c++11 -Wall  -m64 -pthread -D_POSIX_PTHREAD_SEMANTICS -m64 
+CFLAGS=  ${CC_DEBUG} -g -std=c++11 -Wall  -O3 -m64 -pthread -D_POSIX_PTHREAD_SEMANTICS -m64 
 
 CINCLUDE=-I. -I.. 
 

@@ -19,6 +19,12 @@ public:
 
 
 	static void Init();
+
+private:
+	static std::vector <SpriteExplosion*> sFreeExploVect;
+public:
+	void* operator new( size_t pSz );
+	void  operator delete( void* pSp,  size_t pSz);
 };
 //***************************
 

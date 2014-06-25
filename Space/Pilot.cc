@@ -282,7 +282,7 @@ Pilot::Pilot( )
 
 	float lSz = 6.0f;
 
-	setMask( InteractAllied, InteractAlliedWeaponMask );
+	setMask( InteractShipAlliedIn, InteractShipAlliedOut );
 	SpriteFloat::set( SPRITE_LIFE_POINT,       200 );
 	SpriteFloat::set( SPRITE_MAX_LIFE_POINT,   200 );
 
@@ -810,19 +810,19 @@ Pilot::firePhaser()
 		if( lTirDevant )
 			{
 				lCoutTotal+=lCout;
-				TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 1,           &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 1,           &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 		if( lTirEtendue )
 			{
 				lCoutTotal += lCout*2;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 		if( lTirLateral )
 			{
 				lCoutTotal += lCout*2;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 		break;
 
@@ -830,20 +830,20 @@ Pilot::firePhaser()
 		if( lTirDevant )
 			{
 				lCoutTotal += lCout*2;
-				TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 2,           &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 2,           &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 		if( lTirEtendue )
 			{
 				lCoutTotal += lCout*4;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 
 		if( lTirLateral )
 			{
 				lCoutTotal += lCout*4;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 		break;
@@ -852,19 +852,19 @@ Pilot::firePhaser()
 		if( lTirDevant )
 			{
 				lCoutTotal += lCout*3;
-				TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 3,           &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 3,           &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 		if( lTirEtendue )
 			{
 				lCoutTotal += lCout*6;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 		if( lTirLateral )
 			{
 				lCoutTotal += lCout*6;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 		break;
@@ -874,22 +874,22 @@ Pilot::firePhaser()
 		if( lTirDevant )
 			{
 				lCoutTotal += lCout*4;
-				TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 3,      &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-	 			TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.02, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 3,      &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+	 			TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.02, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 		if( lTirEtendue )
 			{
 				lCoutTotal += lCout*8;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lEtendue,    &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.2+lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lEtendue,    &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.2+lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 		if( lTirLateral )
 			{
 				lCoutTotal += lCout*8;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral,     &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.2+lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral,     &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.2+lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 		break;
@@ -898,22 +898,22 @@ Pilot::firePhaser()
 		if( lTirDevant )
 			{
 				lCoutTotal += lCout*5;
-				TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 3,      &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.02, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 3,      &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.02, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 		if( lTirEtendue )
 			{
 				lCoutTotal += lCout*10;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lEtendue ,     &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2+lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lEtendue ,     &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2+lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 		if( lTirLateral )
 			{
 				lCoutTotal += lCout*10;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral,     &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2+lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral,     &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2+lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 		break;
 
@@ -921,25 +921,25 @@ Pilot::firePhaser()
 		if( lTirDevant )
 			{
 				lCoutTotal += lCout*6;
-				TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 3,      &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.02, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.04, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 3,      &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.02, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.04, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 		if( lTirEtendue )
 			{
 				lCoutTotal += lCout*12;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3,lEtendue ,     &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2+lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.4+lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3,lEtendue ,     &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2+lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.4+lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 		if( lTirLateral )
 			{
 				lCoutTotal += lCout*12;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral,     &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2+lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.4+lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral,     &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2+lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.4+lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 		break;
@@ -948,25 +948,25 @@ Pilot::firePhaser()
 		if( lTirDevant )
 			{
 				lCoutTotal += lCout*7;
-				TheWeaponsMaker->makeMultipleSameWeapon    ( lCurrent,  lSpProj, 3,      &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.02, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.04, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeapon    ( lCurrent,  lSpProj, 3,      &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.02, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.04, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 		if( lTirEtendue )
 			{
 				lCoutTotal += lCout*14;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lEtendue,     &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2+lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.4+lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lEtendue,     &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2+lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.4+lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 		if( lTirLateral )
 			{
 				lCoutTotal += lCout*14;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral,     &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2+lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.4+lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral,     &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2+lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.4+lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 		break;
@@ -975,25 +975,25 @@ Pilot::firePhaser()
 		if( lTirDevant )
 			{
 				lCoutTotal += lCout*8;
-				TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 3,      &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.02, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.04, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 3,      &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.02, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.04, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 		if( lTirEtendue )
 			{
 				lCoutTotal += lCout*16;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lEtendue,     &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.2+lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.4+lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lEtendue,     &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.2+lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.4+lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 		if( lTirLateral )
 			{
 				lCoutTotal += lCout*16;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral,     &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.2+lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.4+lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral,     &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.2+lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.4+lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 		break;
 
@@ -1002,25 +1002,25 @@ Pilot::firePhaser()
 		if( lTirDevant )
 			{
 				lCoutTotal += lCout*9;
-				TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 3,      &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.02, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.04, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 3,      &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.02, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.04, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 		if( lTirEtendue )
 			{
 				lCoutTotal += lCout*18;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lEtendue,     &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.2+lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.4+lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lEtendue,     &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.2+lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.4+lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 
 		if( lTirLateral )
 			{
 				lCoutTotal += lCout*18;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral,     &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.2+lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.4+lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral,     &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.2+lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.4+lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 		break;
 	}
@@ -1115,47 +1115,47 @@ Pilot::fireRocket()
 		if(  lTirDevant ){
 			
 			lCoutTotal+=lCout;
-			TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 1,  &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+			TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 1,  &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 		}
 
 		if( lTirEtendue ){
 			lCoutTotal+=lCout*2;
-			TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+			TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 		}
 
 		if( lTirLateral ){
 			lCoutTotal+=lCout*2;
-			TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+			TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 		}
 		break;
 
 	case 1:  // DOUBLE
 		if( lTirDevant ){
 			lCoutTotal+=lCout*2;
-			TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 2,            &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+			TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 2,            &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 		}
 		if( lTirEtendue ){
 			lCoutTotal+=lCout*4;
-			TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2,  lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+			TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2,  lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 		}
 		if( lTirLateral ){
 			lCoutTotal+=lCout*4;
-			TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2,  lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+			TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2,  lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 		break;
 
 	case 2:  // TRIPLE
 		if( lTirDevant ){
 			lCoutTotal+=lCout*3;
-			TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 3,           &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+			TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 3,           &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 		}
 		if( lTirEtendue ){
 			lCoutTotal+=lCout*6;
-			TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3,  lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+			TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3,  lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 		}
 		if( lTirLateral ){
 			lCoutTotal+=lCout*6;
-			TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+			TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 		}
 		break;
 
@@ -1164,20 +1164,20 @@ Pilot::fireRocket()
 		if( lTirDevant )
 			{
 				lCoutTotal+=lCout*4;
-				TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 3,          &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.02, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 3,          &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.02, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 		if( lTirEtendue )
 			{
 				lCoutTotal+=lCout*8;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.15+lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.15+lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 		if( lTirLateral )
 			{
 				lCoutTotal+=lCout*8;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.15+lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.15+lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 		break;
 
@@ -1185,20 +1185,20 @@ Pilot::fireRocket()
 		if( lTirDevant )
 			{
 				lCoutTotal+=lCout*5;
-				TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 3,          &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.02, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 3,          &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.02, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 		if( lTirEtendue )
 			{
 				lCoutTotal+=lCout*10;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.15+lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.15+lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 		if( lTirLateral )
 			{
 				lCoutTotal+=lCout*10;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3,   lLateral,   &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.15+lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3,   lLateral,   &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.15+lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 		break;
 
@@ -1206,23 +1206,23 @@ Pilot::fireRocket()
 		if( lTirDevant )
 			{
 				lCoutTotal+=lCout*6;
-				TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 3,      &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.02, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.03, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 3,      &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.02, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.03, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 		if( lTirEtendue )
 			{
 				lCoutTotal+=lCout*12;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lEtendue,     &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2+lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.4+lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lEtendue,     &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2+lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.4+lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 		if( lTirLateral )
 			{
 				lCoutTotal+=lCout*12;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral,     &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2+lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.4+lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral,     &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2+lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.4+lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 		break;
 
@@ -1230,23 +1230,23 @@ Pilot::fireRocket()
 		if( lTirDevant )
 			{
 				lCoutTotal+=lCout*7;
-				TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 3,      &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.02, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.03, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 3,      &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.02, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.03, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 		if( lTirEtendue )
 			{
 				lCoutTotal+=lCout*14;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lEtendue,     &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2+lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.4+lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lEtendue,     &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2+lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.4+lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 		if( lTirLateral )
 			{
 				lCoutTotal+=lCout*14;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral,     &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2+lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.4+lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral,     &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2+lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.4+lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 		break;
 	default:
@@ -1254,23 +1254,23 @@ Pilot::fireRocket()
 		if( lTirDevant )
 			{
 				lCoutTotal+=lCout*8;
-				TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 3,      &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.02, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.03, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 3,      &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.02, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.03, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 		if( lTirEtendue )
 			{
 				lCoutTotal+=lCout*16;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lEtendue,     &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.2+lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.4+lEtendue, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lEtendue,     &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.2+lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.4+lEtendue, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 		if( lTirLateral )
 			{
 				lCoutTotal+=lCout*16;
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral,     &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.2+lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
-				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.4+lLateral, &getTransf(), lWeapon, InteractAlliedWeapon, InteractAlliedWeaponMask);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, lLateral,     &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.2+lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+				TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 3, 0.4+lLateral, &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 			}
 		break;
 	}
@@ -1301,7 +1301,7 @@ Pilot::fireRocket()
 	lSoundSrc->setPosition(  getTransf().TransfDouble3::get(POS) );
 
 
-	//	TheWeaponsMaker->makeSprite(  &getTransf(), cLevelLauncher, WEAPON_ROCKET, InteractAllied ,  InteractAlliedWeaponMask);
+	//	TheWeaponsMaker->makeSprite(  &getTransf(), cLevelLauncher, WEAPON_ROCKET, InteractAllied ,  InteractWeaponAlliedOut);
 }
 //--------------------------------
 void
@@ -1322,55 +1322,55 @@ Pilot::fireMine()
 
 	switch( lVal ){
 	case 0:  // NORMAL
-		TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 1,          &getTransf(), WEAPON_ION, InteractAlliedWeapon, InteractAlliedWeaponMask);
+		TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 1,          &getTransf(), WEAPON_ION, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 		break;
 
 	case 1:  // DOUBLE
-		TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 2,      &getTransf(), WEAPON_ION, InteractAlliedWeapon, InteractAlliedWeaponMask);
+		TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 2,      &getTransf(), WEAPON_ION, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 		break;
 
 	case 2:  // TRIPLE
-		TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 3,          &getTransf(), WEAPON_ION, InteractAlliedWeapon, InteractAlliedWeaponMask);
+		TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 3,          &getTransf(), WEAPON_ION, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 		break;
 
 	case 3:  // DOUBLE pour 1 Lateral
-		TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 2,          &getTransf(), WEAPON_ION, InteractAlliedWeapon, InteractAlliedWeaponMask);
-		TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.2, &getTransf(), WEAPON_ION, InteractAlliedWeapon, InteractAlliedWeaponMask);
+		TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 2,          &getTransf(), WEAPON_ION, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+		TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.2, &getTransf(), WEAPON_ION, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 		break;
 
 	case 4: // TRIPLE + 1 lateral
-		TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 3,          &getTransf(), WEAPON_ION, InteractAlliedWeapon, InteractAlliedWeaponMask);
-		TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.2, &getTransf(), WEAPON_ION, InteractAlliedWeapon, InteractAlliedWeaponMask);
+		TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 3,          &getTransf(), WEAPON_ION, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+		TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.2, &getTransf(), WEAPON_ION, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 		break;
 
 	case 5: // TRIPLE + double Lateral
-		TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 3,          &getTransf(), WEAPON_ION, InteractAlliedWeapon, InteractAlliedWeaponMask);
-		TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2, &getTransf(), WEAPON_ION, InteractAlliedWeapon, InteractAlliedWeaponMask);
+		TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 3,          &getTransf(), WEAPON_ION, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+		TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2, &getTransf(), WEAPON_ION, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 		break;
 
 	case 6:
-		TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 3,          &getTransf(), WEAPON_ION, InteractAlliedWeapon, InteractAlliedWeaponMask);
-		TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2, &getTransf(), WEAPON_ION, InteractAlliedWeapon, InteractAlliedWeaponMask);
-		TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.4, &getTransf(), WEAPON_ION, InteractAlliedWeapon, InteractAlliedWeaponMask);
+		TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 3,          &getTransf(), WEAPON_ION, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+		TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2, &getTransf(), WEAPON_ION, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+		TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.4, &getTransf(), WEAPON_ION, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 		break;
 
 	case 7:
-		TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 3,          &getTransf(), WEAPON_ION, InteractAlliedWeapon, InteractAlliedWeaponMask);
-		TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2, &getTransf(), WEAPON_ION, InteractAlliedWeapon, InteractAlliedWeaponMask);
-		TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.4, &getTransf(), WEAPON_ION, InteractAlliedWeapon, InteractAlliedWeaponMask);
+		TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 3,          &getTransf(), WEAPON_ION, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+		TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2, &getTransf(), WEAPON_ION, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+		TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.4, &getTransf(), WEAPON_ION, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 		break;
 
 		/*
 	case 11 :
-		TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.1  &getTransf(), WEAPON_PLASMA, InteractAlliedWeapon, InteractAlliedWeaponMask);
+		TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.1  &getTransf(), WEAPON_PLASMA, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 	case 10:
-		TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.3  &getTransf(), WEAPON_PLASMA, InteractAlliedWeapon, InteractAlliedWeaponMask);
+		TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 1, 0.3  &getTransf(), WEAPON_PLASMA, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 	case 9:
-		TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 3,          &getTransf(), WEAPON_PLASMA, InteractAlliedWeapon, InteractAlliedWeaponMask);
+		TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 3,          &getTransf(), WEAPON_PLASMA, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 	case 8:
-		TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 3,          &getTransf(), WEAPON_ION, InteractAlliedWeapon, InteractAlliedWeaponMask);
-		TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2, &getTransf(), WEAPON_ION, InteractAlliedWeapon, InteractAlliedWeaponMask);
-		TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.4, &getTransf(), WEAPON_ION, InteractAlliedWeapon, InteractAlliedWeaponMask);;
+		TheWeaponsMaker->makeMultipleSameWeapon( lCurrent,  lSpProj, 3,          &getTransf(), WEAPON_ION, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+		TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.2, &getTransf(), WEAPON_ION, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
+		TheWeaponsMaker->makeMultipleSameWeaponDiag( lCurrent,  lSpProj, 2, 0.4, &getTransf(), WEAPON_ION, InteractWeaponAlliedIn, InteractWeaponAlliedOut);;
 		break;
 		*/
 
@@ -1389,7 +1389,7 @@ Pilot::fireMine()
 			WorldControler::Add( lSpProj[i] );
 		}
 
-	//	TheWeaponsMaker->makeSprite( lSpProj, &getTransf(), cLevelPhaser, WEAPON_ION, InteractAllied ,  InteractAlliedWeaponMask);
+	//	TheWeaponsMaker->makeSprite( lSpProj, &getTransf(), cLevelPhaser, WEAPON_ION, InteractAllied ,  InteractWeaponAlliedOut);
 }
 //--------------------------------------------------------
 //--------------------------------------------------------
@@ -1594,6 +1594,22 @@ Pilot::drawControl()
 
 	T3dColor::Yellow();
 	sprintf(tmp,"$:%ld", cGold);
+	WorldControler::sCurrentFont->displayAt( lX, lY, lZ, tmp);
+
+	lX += 40;
+	//	lY -= 10;
+
+
+
+	lY -= 10;
+	lY -= 8;
+	lX = -120;
+	T3dColor::Green();
+	sprintf(tmp,"Sprite:%d %d", WorldGame::TheWorldGame->getSizeLiveSprite(), WorldGame::TheWorldGame->getNbLiveSprite() );
+
+	//	std::cout << "Sprite:" <<   WorldGame::TheWorldGame->getNbLiveSprite() 
+	//						<<  " " <<  WorldGame::TheWorldGame->getNbRealLiveSprite() << std::endl;
+
 	WorldControler::sCurrentFont->displayAt( lX, lY, lZ, tmp);
 
 	lY -= 10;

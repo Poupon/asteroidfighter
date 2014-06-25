@@ -19,6 +19,7 @@ protected:
 public:
 
 	Sprite3dPilot( O3dObj *pObj );
+	virtual ~Sprite3dPilot(){;}
 
 //	virtual void drawObj(O3dObjProps* pProps);
 	virtual GLboolean animate();

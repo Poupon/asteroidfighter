@@ -47,7 +47,7 @@ SceneArtifice::SceneArtifice( int pHardness,  Double3& lPos,
   Double3 spin( 5.0, 8.0, 10.0 );
   SpriteDouble3::set( SPRITE_SPIN, spin );
 
-  cInteract = GL_FALSE;
+  cInteractDef = cInteractAtt = 0;
   
 }
 //------------------------

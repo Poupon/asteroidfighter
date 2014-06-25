@@ -2,8 +2,10 @@
 #define h_Collision_h
 
 #include <vector>
+#include <set>
 
-#include <Sprite3d/World.h>
+
+#include <Sprite3d/Array3d.h>
 
 class Sprite3d;
 
@@ -13,7 +15,30 @@ typedef std::vector < Sprite3d *> VSprite3d; // redefinition
 //**************************************
 class Collision
 {	
+	//========================
+	class CollisionSprite{
+		
+		Sprite3d * cSpriteA;
+		Sprite3d * cSpriteB;
+
+	public :
+		CollisionSprite( Sprite3d * pSpriteA,  Sprite3d * pSpriteB );
+
+		GLboolean exec();
+
+		bool operator <  ( const CollisionSprite& B) const 
+		{
+			if( cSpriteA == B.cSpriteA )
+				return  cSpriteB < B.cSpriteB;
+			
+			return  cSpriteA < B.cSpriteA;
+		}
+
+	};
+	//========================
+
 	VSprite3d** cTab;
+
 	float      cMul;
 	int        cDim;
 	int        cNbDiv;
@@ -26,15 +51,15 @@ public:
 	virtual ~Collision();
 
 protected:
-	void set( Sprite3d *pSprite);
-	void set( VSprite3d& vSprite  );
-	void add( int pPos, Sprite3d *pSprite ); 
-	VSprite3d* next();
 
 public:
+	static Array3d< std::vector<Sprite3d*> > *InitSpatialDetection3D( T3dBox& pBox, Double3 pDiv  );
+	static void                               CleanSpatialDetection3D( Array3d< std::vector<Sprite3d*> >& pZones );
+	static long                               SpatialDetection3D( VSprite3d& pSprites,  Array3d< std::vector<Sprite3d*> >& pZones  );
 
-	static void      SpatialDetection(  VSprite3d& pVSprite, int *pDim, GLdouble *pMin, GLdouble *pMax, int *pNbDiv, int pNbDim );
-	static long      SimpleDetection(VSprite3d& pVSprite);
+	static long      SimpleDetection( VSprite3d& pVSprite, std::set<CollisionSprite>& pContainer );
+	static long      SimpleDetection( VSprite3d& pVSprite);
+
 	static GLboolean DetectCollision( Sprite3d &A, Sprite3d &B );
 };
 //**************************************

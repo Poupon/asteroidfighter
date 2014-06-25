@@ -82,13 +82,16 @@ public:
 #define InteractNull  0x0
 #define InteractAll  0xFFFF
 
+	
+
 
 protected:
 
 	Action *cVectAction[ MAX_SPRITE_ACTION ];
 	void   *cVectActionParam[ MAX_SPRITE_ACTION ];
-	unsigned int cInteract;
-	
+	unsigned int cInteractDef;
+	unsigned int cInteractAtt;
+
 	Sprite3dDeleteControler* cDeleteControler;
 
 public:
@@ -106,7 +109,8 @@ public:
 	
 	virtual GLboolean         animate();	
 	virtual GLboolean         leaveWorld();
-	virtual GLboolean collision( Sprite3d & pSprite );
+	virtual GLboolean collision
+( Sprite3d & pSprite );
 
 	virtual float getRadius() {return cRadius; }
 
@@ -122,19 +126,18 @@ public:
 
 	void setMask( unsigned short def, unsigned short att )
 	{
-		cInteract  = def ;
-		cInteract  |= ((unsigned int)att)<<8;
+		cInteractDef  = def ;
+		cInteractAtt  = att;
 	}
 
 	unsigned short getDefMask()
 	{
-		return (unsigned short)(cInteract & 0x00FF);
+		return cInteractDef;
 	}
 	unsigned short getAttMask()
 	{
-		return (unsigned short)((cInteract & 0xFF00) >> 8) ;
+		return  cInteractAtt;
 	}
-	unsigned int getInteract() {return cInteract; }
 
 	void resetLife();
 

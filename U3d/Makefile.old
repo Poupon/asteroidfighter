@@ -22,7 +22,7 @@ HDRS = $(SRCS:.cc=.h)
 CFLAGS=  -DPUI_WIN  ${CC_DEBUG}
 # -DSL_SOUND
 
-CINCLUDE=-I. -I.. -DLINUX -g -std=c++11 -Wall  -m64 -pthread -D_POSIX_PTHREAD_SEMANTICS -m64 
+CINCLUDE=-I. -I.. -DLINUX -g -std=c++11 -Wall  -O3  -m64 -pthread -D_POSIX_PTHREAD_SEMANTICS -m64 
 
 #  -I/usr/openwin/include  -I${DIR_OPENGL_INC} -I${DIR_GLUT_INC} -I${DIR_PLIB_INC}
 

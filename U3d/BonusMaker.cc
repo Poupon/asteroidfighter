@@ -248,7 +248,7 @@ BonusMaker::makeSpriteBonus( int cObjType, unsigned int pMaskObj, unsigned int p
 		if( lAlea < 60 )
 			return makeSpriteBonus( cObjType, CONTAINER_ROCKET, pMaskObj, pMaskInteract, pVal );
 		else		
-			if( lAlea < 97 ) // 95
+			if( lAlea < 99 ) // 95
 				return makeSpriteBonus( cObjType, CONTAINER_FIELD, pMaskObj, pMaskInteract, pVal );
 	
 	
