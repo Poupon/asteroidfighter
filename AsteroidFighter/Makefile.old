@@ -26,7 +26,7 @@ LIBS=  -lSpace -lU3d -lSprite3d -lO3d -lT3d   -lplibpuaux -lplibpu -lplibul  -lp
 
 
 # ---------------------------------------------------
-CFLAGS=  -DPUI_WIN  ${CC_DEBUG} -g -std=c++11 -Wall -O3  -m64 -pthread -D_POSIX_PTHREAD_SEMANTICS -m64 
+CFLAGS=  -DPUI_WIN  ${CC_DEBUG} -g -std=c++11 -Wall -O3  -m64 -pthread -D_POSIX_PTHREAD_SEMANTICS -m64 ${CC_PROFILING}
 
 CINCLUDE=-I. -I..
 

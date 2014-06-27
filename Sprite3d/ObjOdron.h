@@ -11,8 +11,8 @@ class ObjOdron : public O3dObj
 	int cDepth;
 
 public:
-	ObjOdron( float pRadius, int lDepth )
-		:O3dObj( pRadius ),
+	ObjOdron( float pRadius, int lDepth, GLboolean pUseList=GL_TRUE )
+		:O3dObj( pRadius, pUseList ),
 		cDepth( lDepth )
 		{
 			cUseList = GL_TRUE;

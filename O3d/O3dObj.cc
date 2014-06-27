@@ -43,6 +43,7 @@ O3dObj::~O3dObj()
 /*    O3dObj::makeList ...                                             */
 /*---------------------------------------------------------------------*/
 
+// IL FAUDRAIT DEUX MODE UN AVEC PROPS L4AUTRE SENS
 void
 O3dObj::makeList( O3dViewProps & pVProps, O3dObjProps *pObjProps )
 {
@@ -58,7 +59,11 @@ O3dObj::makeList( O3dViewProps & pVProps, O3dObjProps *pObjProps )
 
 			if( pObjProps )
 				pObjProps->open();
+
+			//			glNewList( cListId, GL_COMPILE );
 			drawObj( pVProps, pObjProps );
+			//			glEndList();
+
 			if( pObjProps )
 				pObjProps->close();
 
