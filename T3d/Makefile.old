@@ -22,7 +22,7 @@ HDRS = $(SRCS:.cc=.h)
 # /usr/lib/x86_64-linux-gnu
 # ---------------------------------------------------
 
-CFLAGS=  ${CC_DEBUG} -g -std=c++11 -Wall  -m64  -O3 -pthread -D_POSIX_PTHREAD_SEMANTICS -m64 
+CFLAGS=  ${CC_DEBUG} -g -std=c++11 -Wall  -m64  -O3 -pthread -D_POSIX_PTHREAD_SEMANTICS -m64  ${CC_PROFILING}
 
 CINCLUDE= -I. -I..
 

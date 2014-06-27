@@ -23,7 +23,7 @@ World*  World::sTheWorld = NULL;
 std::string            World::sIniFile;
 std::map<std::string, std::string> World::sConfig;
  
-int  World::sFlagCollision3d  = 0; // automatique
+int  World::sFlagCollision3d  = 1; // automatique
 int  World::sThresholdDetection3d = 100;
 
 //--------------------------------
@@ -62,7 +62,8 @@ World::World( WorldControler *pControl, O3dKamera* pKamera, Double3& pMax, O3dOb
 	sTheWorld = this;
 
 
-	Double3 lDiv( 32, 32, 32 ); // PB SI Y GRAND ?
+	//	Double3 lDiv( 32, 32, 32 ); 
+	Double3 lDiv( 64, 32, 64 ); 
 	cZonesDetectCollision = Collision::InitSpatialDetection3D( cBox, lDiv );
 
 }
@@ -75,6 +76,10 @@ World::~World()
 void
 World::add( Sprite3d *pSprite ){
 
+
+	//	if( cNbLiveSprite >= 5000 ) // too many sprite 
+	//		delete pSprite;
+		
 	// search a free spce in the vector
 	for( std::vector <Sprite3d*>::iterator iter = cLiveSprite.begin(); iter != cLiveSprite.end(); ++iter )
 	{

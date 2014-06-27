@@ -1,16 +1,21 @@
 #include <GL/glut.h>
 
 #include <Sprite3d/World.h>
+#include <Sprite3d/ObjOdron.h>
 
 #include <SpriteExplosion.h>
 #include <iostream>
 #include <typeinfo>
 
 
+// Creation de deux objets presistant et compilé pour toutes les explosions
 AutoPtr<O3dObjProps> SpriteExplosion::caExplosionProps;
 AutoPtr<O3dObjProps> SpriteExplosion::caExplosionPlasmaProps;
 
 std::vector<SpriteExplosion*> SpriteExplosion::sFreeExploVect;
+
+O3dObj* sObjExplosionPlasma = nullptr;
+O3dObj* sObjExplosion = nullptr;
 
 //----------------------------------
 
@@ -61,6 +66,16 @@ SpriteExplosion::Init()
 	caExplosionPlasmaProps =  new O3dObjProps();
 	caExplosionPlasmaProps->ObjPropsFloat4::set( MATERIAL, pr2 );
 	caExplosionPlasmaProps->ObjPropsFloat4::set( EMISSION, pr2 );
+
+
+	sObjExplosion = new ObjOdron(  1.0f, 3, GL_TRUE );
+	//	sObjExplosion->setObjProps( SpriteExplosion::caExplosionProps );
+
+	sObjExplosionPlasma = new ObjOdron(  1.0f, 3, GL_TRUE );
+	//	sObjExplosionPlasma->setObjProps( SpriteExplosion::caExplosionPlasmaProps );
+
+
+	// Ajouter ODRON EN SHARED (modifier OedObj pour accepter shared)
 }
 //----------------------
 SpriteExplosion::SpriteExplosion( float pRadius, float pLifeTime, float pDestroy )
@@ -68,6 +83,7 @@ SpriteExplosion::SpriteExplosion( float pRadius, float pLifeTime, float pDestroy
 {
 	cRadius = pRadius;
 	SpriteFloat::set( SPRITE_DESTROY_POINT, pDestroy);
+
 }
 //----------------------
 void SpriteExplosion::drawObj( O3dViewProps& pVProps, O3dObjProps* pObjProps )
@@ -81,6 +97,23 @@ void SpriteExplosion::drawObj( O3dViewProps& pVProps, O3dObjProps* pObjProps )
 	else
 		val = static_cast<int>((cRadius *2 *(1.0-lAvance)) + 1.0);
 
-	glutSolidSphere( val + 1.0, 6 + val, 6 + val );
+	Double3 lVal3( val, val, val);
+	getTransf().TransfDouble3::set( SCALE, lVal3 );
+
+
+	//	glutSolidSphere( val + 1.0, 6 + val, 6 + val );
+
+	if( caObj.getPtr() != nullptr )
+			caObj->draw( pVProps, pObjProps );
+	else
+		{
+			// GROSS BIDOUILLE pour contourner pb sur compilation avec les props
+			// et conserver deux type d'esplosion sans changer les appels
+
+			if( pObjProps == SpriteExplosion::caExplosionProps.getPtr() )
+				sObjExplosion->draw( pVProps, pObjProps );
+			else
+				sObjExplosionPlasma->draw( pVProps, pObjProps );			
+		}
 }
 //***************************
