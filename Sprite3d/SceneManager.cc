@@ -328,18 +328,24 @@ GLboolean SceneManager::kill( Sprite3d &pMySprite, void *pParam )
 }
 
 //------------------------------------------------
-void
+bool
 SceneManager::execDelete( Sprite3d* pToDel )
 {
-	std::cout << "SceneManager::execDelete" << std::endl;
+	bool lFlagDel = false;
 	for( unsigned int i=0; i<  cSceneVect.size(); i++ )
 		{
 			if( cSceneVect[i] == pToDel )
 				{
 					delete cSceneVect[i];
-					cSceneVect[i] = NULL;
+					lFlagDel = true;
+					cSceneVect[i] = NULL;					
 				}
 		}
+
+	if( lFlagDel )
+		return true;
+
+	return false;
 }
 
 
