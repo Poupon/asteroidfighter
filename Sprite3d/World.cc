@@ -29,31 +29,26 @@ int  World::sThresholdDetection3d = 100;
 //--------------------------------
 // Inefficace !
 
-inline void
-RemoveSprite(  Sprite3d *pSp,  VSprite3d& vect )
-{
-	for( VSprite3d::iterator iter = vect.begin(); iter != vect.end(); iter++ )
-		if( *iter == pSp )
-			{
-				vect.erase( iter );
-				break;
-			}
-}
 
 //**************************************
 
 World::World( WorldControler *pControl, O3dKamera* pKamera, Double3& pMax, O3dObjProps*pProps )
-	: cServiceSprite(128),
-		cNewSprite(2048),
-		cLiveSprite(4096),
+	: 
 		cProps( pProps ),
-	cPilot( NULL ),
-  cMyControler(pControl),
-  cKamera(pKamera),
-  cOverlayOpen( GL_FALSE ),
+		cPilot( NULL ),
+		cMyControler(pControl),
+		cKamera(pKamera),
+		cOverlayOpen( GL_FALSE ),
 		cBox( pMax, pMax ),
 		cNbLiveSprite(0)
 {
+	cServiceSprite.reserve(128);
+	cNewSprite.reserve(2048);
+	cLiveSprite.reserve(4096);
+	cFreeLivePosition.reserve(4096);
+
+
+
 	for( int i = 0; i < 3; i++ )
 	{
 		cBox.getMin()[i] = -cBox.getMax()[i] ;
@@ -81,6 +76,7 @@ World::add( Sprite3d *pSprite ){
 	//		delete pSprite;
 		
 	// search a free spce in the vector
+	/*
 	for( std::vector <Sprite3d*>::iterator iter = cLiveSprite.begin(); iter != cLiveSprite.end(); ++iter )
 	{
 		if( (*iter) == nullptr ) 
@@ -89,6 +85,17 @@ World::add( Sprite3d *pSprite ){
 				return;
 			}
 	}
+	*/
+	// First see in the free position vector
+	if( cFreeLivePosition.size() ){
+
+		int cLastPos = cFreeLivePosition.back();
+		cFreeLivePosition.pop_back();
+		cLiveSprite.at(cLastPos) =  pSprite;
+
+		return ;
+	}
+
 	// no space free in the vector
 	cNewSprite.push_back( pSprite );
 }
@@ -162,9 +169,7 @@ void World::drawWorld()
 //--------------------------------
 void World::killSprite( Sprite3d *pSp )
 	{
-		//		cDeadSprite.push_back( pSp );
 		pSp->destroy();
-		//cLiveSprite.erase( pSp );
 	}
 //--------------------------------
 void World::drawLiveSprite()
@@ -340,6 +345,7 @@ void World::animateLiveSprite()
 
 
 
+
 	//=============   Elimination logique des Sprite sortie du monde =============  
 	for( std::vector <Sprite3d*>::iterator iterLiveOut = cLiveSprite.begin(); iterLiveOut != cLiveSprite.end(); ++iterLiveOut )
 	{
@@ -358,61 +364,96 @@ void World::animateLiveSprite()
 	//============= Destroy ==========================
 	// Elimination physique des Sprite morts
 
-	for( VSprite3d::iterator iterLiveDestroy = cLiveSprite.begin(); iterLiveDestroy != cLiveSprite.end(); iterLiveDestroy++ )
+	
+	for( VSprite3d::iterator iterLiveDestroy = cLiveSprite.begin(); iterLiveDestroy != cLiveSprite.end(); iterLiveDestroy++)
 		{
 			if( *iterLiveDestroy == nullptr ) continue;
 			
 			if( (*iterLiveDestroy)->isDestroy() )
 				{
+					removeLiveSprite( iterLiveDestroy );
 					delete( *iterLiveDestroy );
-					*iterLiveDestroy = NULL;
-					cNbLiveSprite--;
 				}
 		}
+	
 	//=================================================
 
 }
 //--------------------------------
-// Inefficace !
+void
+World::removeLiveSprite( VSprite3d::iterator& pIterLive )
+{	
+	*pIterLive = nullptr;
+	cNbLiveSprite--;
+	cFreeLivePosition.push_back(  pIterLive- cLiveSprite.begin() ); // On stocke la position libre				
+}
+//--------------------------------
+// Inefficace, mais rare !
+
 void
 World::removeSprite(  Sprite3d *pSp )
 {
-	RemoveSprite( pSp, cLiveSprite );
-	//	RemoveSprite( pSp, cDeadSprite );
-	RemoveSprite( pSp, cNewSprite );
+
+	for( VSprite3d::iterator iterLive = cLiveSprite.begin(); iterLive != cLiveSprite.end(); iterLive++ )
+		{
+			if( *iterLive == pSp )
+				{
+					removeLiveSprite( iterLive );
+					return;
+				}
+		}
+
+
+	for( VSprite3d::iterator iterNew = cNewSprite.begin(); iterNew != cNewSprite.end(); iterNew++ )
+	{
+		if( *iterNew == pSp )
+			cNewSprite.erase( iterNew );
+	}
 }
+
 //--------------------------------
-void
+bool
 World::deleteSprite( Sprite3d* pSprite)
 {
-	if(pSprite->getDeleteControler() == NULL)
+	if(pSprite->getDeleteControler() == NULL) {
 		delete pSprite;
+		return true;
+	}
 	else
-		pSprite->getDeleteControler()->execDelete( pSprite  );
+		return pSprite->getDeleteControler()->execDelete( pSprite );
+
+	return false;
 }
+
 //--------------------------------
 void World::killAllSprite()
 {
-#ifndef PC_WINDOWS
-	for( std::vector < Sprite3d *> ::iterator iter = cNewSprite.begin(); iter != cNewSprite.end(); ++iter )
-		if( *iter != nullptr )
-			deleteSprite( *iter );
+	//#ifndef PC_WINDOWS
 
-	for( std::vector < Sprite3d *> ::iterator iter2 = cLiveSprite.begin(); iter2 != cLiveSprite.end(); ++iter2 )
+	for( std::vector < Sprite3d *> ::iterator iterNew = cNewSprite.begin(); iterNew != cNewSprite.end(); ++iterNew )
+		if( *iterNew != nullptr )
+			{
+				deleteSprite( *iterNew );
+			}
+
+
+	for( std::vector < Sprite3d *> ::iterator iterLive = cLiveSprite.begin(); iterLive != cLiveSprite.end(); ++iterLive)
 		{
-			if(  *iter2 != nullptr )
-				deleteSprite( *iter2 );
+			if(  *iterLive != nullptr )
+				{
+					if( deleteSprite( *iterLive ) )
+						{
+							removeLiveSprite( iterLive );
+						}					
+				}
 		}
 
-	/*	for( std::vector < Sprite3d *> ::iterator iterOut = cDeadSprite.begin(); iterOut != cDeadSprite.end(); ++iterOut )
-		deleteSprite( *iterOut );
-	*/
-#endif
+	//#endif
+
 	cNewSprite.clear();
 	cLiveSprite.clear();
+	cFreeLivePosition.clear();
 	cNbLiveSprite = 0;
-	//	cDeadSprite.clear();
-
 }
 //--------------------------------
 void World::animateWorld()

@@ -39,7 +39,7 @@ public:
 
 	virtual GLboolean leaveWorld( Sprite3d &pMySprite, void*pParam );
 	virtual GLboolean kill( Sprite3d &pMySprite, void*pParam );
-	void execDelete( Sprite3d* pToDel );
+	bool execDelete( Sprite3d* pToDel );
 
 	int getCurrentSceneIndex() { return cCurScene; }
 	Sprite3d* getCurrentScene() {return cSceneVect[cCurScene]; }

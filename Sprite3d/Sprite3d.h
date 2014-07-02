@@ -69,7 +69,7 @@ typedef T3dTab<long, long, EnumSpriteLong, MAX_SPRITE_LONG>SpriteLong;
 class Sprite3dDeleteControler{
 public:
 	Sprite3dDeleteControler(){;}
-	virtual void execDelete( Sprite3d* pToDel ) {;}
+	virtual bool execDelete( Sprite3d* pToDel ) { return false;}
 };
 //**************************************
 

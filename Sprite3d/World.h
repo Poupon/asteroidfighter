@@ -35,8 +35,11 @@ protected:
 	ObjVect cLiveObj;
 	std::vector <Sprite3d*> cServiceSprite;
 
-	std::vector <Sprite3d*> cNewSprite;
+	std::vector <Sprite3d*> cNewSprite;    // les sprite nouvellement creé
 	std::vector <Sprite3d*> cLiveSprite;
+
+	std::vector <int> cFreeLivePosition;
+
 	//	std::vector <Sprite3d*> cDeadSprite;
 
 	O3dObjProps    *cProps;
@@ -64,9 +67,10 @@ public:
 	int cNbLiveSprite;
 	int getSizeLiveSprite() { return cLiveSprite.size(); }
 	int getNbLiveSprite() { return cNbLiveSprite ; }
-
+	void removeLiveSprite( VSprite3d::iterator& pIterLive );
 	void removeSprite(  Sprite3d *pSp );
-	void deleteSprite( Sprite3d* pSprite);
+
+	bool deleteSprite( Sprite3d* pSprite);
 
 	void killAllSprite();
 
