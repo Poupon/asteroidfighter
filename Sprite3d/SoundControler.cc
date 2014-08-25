@@ -1,11 +1,13 @@
 #include <SoundControler.h>
 
 
-
+#ifdef USE_SOUND
 #include <AL/al.h>
 #include <AL/alc.h>
 
 #include <sndfile.h>
+#endif
+
 
 #include <vector>
 
@@ -17,9 +19,13 @@ GLboolean SoundControler::sNoSound = GL_FALSE;
 GLboolean SoundControler::sMute    = GL_FALSE;
 
 SoundControler* SoundControler::sTheSoundControler = NULL;
+
+#ifdef USE_SOUND
+
 ALCdevice*  sSoundDevice = NULL;
 ALCcontext* sSoundContext = NULL;
 
+#endif
 
 
 
@@ -32,6 +38,8 @@ SoundControler::SoundControler(  int pMaxSource,  const char* pPath  )
 
 	sTheSoundControler = this;
 
+
+#ifdef USE_SOUND
 
 	sSoundDevice = alcOpenDevice(NULL);
 	if (!sSoundDevice)
@@ -74,11 +82,20 @@ SoundControler::SoundControler(  int pMaxSource,  const char* pPath  )
 			cSources.push_back( new SoundSource( i, lSource ) );
 
 		}
+#else
+
+std::cerr << "Sound not implemented !"  << std::endl;
+
+
+#endif
+
 }
 //------------------------------------------------
 
 SoundControler::~SoundControler(  )
 {
+
+#ifdef USE_SOUND
 	// ALCcontext* Context = alcGetCurrentContext();
   // ALCdevice*  Device  = alcGetContextsDevice(Context);
 
@@ -113,12 +130,14 @@ SoundControler::~SoundControler(  )
 
 
 	sMute =  sNoSound = true;
-
+#endif
 }
 //------------------------------------------------
 PSoundId
 SoundControler::LoadSampleConfig( const char* pKey )
 {
+
+#ifdef USE_SOUND
 	std::cout << "SoundControler::LoadSampleConfig " << pKey << std::endl;
 
 
@@ -142,6 +161,9 @@ SoundControler::LoadSampleConfig( const char* pKey )
 	std::cerr << "*** Error SoundControler::LoadSample no filename for " << pKey << std::endl;
 
 	return PBadSoundId;
+#else
+	return 0;
+#endif
 }
 //------------------------------------------------
 PSoundId
@@ -150,6 +172,8 @@ SoundControler::loadSample ( const char* pName )
 	if( sMute || sNoSound )	return PBadSoundId;
 
 
+
+#ifdef USE_SOUND
 
 	std::string lFilePath(  cPath );
 
@@ -209,6 +233,9 @@ SoundControler::loadSample ( const char* pName )
 		cSamples.push_back( lBuffer );
 
     return lBuffer;
+#else
+		return 0;
+#endif
 }
 //------------------------------------------------
 // internal protected  function
@@ -219,6 +246,8 @@ SoundControler::internalPlaySample( PSoundId pBufferId, int pPriority, float pGa
 	///	std::cout << "SoundControler::internalPlaySample" << pBufferId << " prio:" << pPriority ;
 	//					<<  (sMute == GL_FALSE ? " ok ":" Mute ") 
 	//					<<  ( sNoSound == GL_FALSE ? " sound ": " no_sound") << std::endl;
+
+#ifdef USE_SOUND
 
 
 	if( sMute || sNoSound || pBufferId == PBadSoundId )	return 0;
@@ -238,6 +267,10 @@ SoundControler::internalPlaySample( PSoundId pBufferId, int pPriority, float pGa
 	//	std::cout << " ID:" << lSrc->cSourceId << std::endl ;
 
 	return lSrc;
+
+#else
+	return NULL;
+#endif
 }
 //------------------------------------------------
 // Simple function 
@@ -266,6 +299,7 @@ SoundControler::internalPlaySampleOwner( SoundSourceOwner & pOwner, PSoundId pBu
 double
 SoundControler::getPos( PSoundId pSource ) {
 
+#ifdef USE_SOUND
 	if( sMute || sNoSound || pSource == PBadSoundId )	return 0;
 
 
@@ -273,6 +307,9 @@ SoundControler::getPos( PSoundId pSource ) {
 
 	alGetSourcef( pSource, AL_SEC_OFFSET, &lSeconds);
  	return lSeconds;
+#else
+	return 0;
+#endif
 }
 //------------------------------------------------
 PSoundId 
@@ -280,18 +317,24 @@ SoundControler::getStatus( PSoundId pSource ) {
 
 	if( sMute || sNoSound || pSource == PBadSoundId )	return 0;
 
+#ifdef USE_SOUND
+
 	ALint lStatus;
 	
     // Récupération de l'état du son
 	alGetSourcei( pSource, AL_SOURCE_STATE, &lStatus);
 	
 	return lStatus;
+#else
+	return 0;
+#endif
 }
 //------------------------------------------------
 //------------------------------------------------
 //------------------------------------------------
 void SoundControler::freeSource( SoundSource* pSrc ){
 	
+#ifdef USE_SOUND
 	alSourceStop( pSrc->cSourceId );
 
 	if( pSrc->getOwner() != NULL )
@@ -300,6 +343,7 @@ void SoundControler::freeSource( SoundSource* pSrc ){
 		}
 
 	pSrc->cState = SoundSource::SourceState::FREE;
+#endif
 }
 //------------------------------------------------
 // On renvoie la premiere source libre ou a defaut 
@@ -308,6 +352,9 @@ void SoundControler::freeSource( SoundSource* pSrc ){
 
 SoundSource* 
 SoundControler::getFreeSource( int pPriority){
+
+
+#ifdef USE_SOUND
 
 	int lMemPriority = pPriority;
 	SoundSource* lMemSrc = NULL;
@@ -373,6 +420,10 @@ SoundControler::getFreeSource( int pPriority){
 	}
 
 	return lMemSrc;
+#else
+
+	return NULL;
+#endif
 }
 //*************************************************
 //*************************************************
@@ -390,7 +441,8 @@ SoundSource::SoundSource(  int pId, PSoundId pSourceId )
 //------------------------------------											
 SoundSource::~SoundSource()
 {		
-
+	
+#ifdef USE_SOUND
 
 	if( cSourceId != PBadSoundId)
 		{
@@ -398,11 +450,14 @@ SoundSource::~SoundSource()
 
 			alDeleteSources( 1, &lSource );
 		}
+#endif
 }
 //------------------------------------
 PSoundSourceId 
 	SoundSource:: play( PSoundId pBufferId,  float pGain, float pPitch, bool pLoop)
 {
+
+#ifdef USE_SOUND
 	ALenum err = alGetError(); // clear error code 
 	
 	alSourcei( cSourceId, AL_BUFFER, 0 );
@@ -433,6 +488,9 @@ PSoundSourceId
 	alSourcePlay( cSourceId );
 
 	return cId;
+#else
+	return PBadSoundSourceId;
+#endif
 }
 //------------------------------------
 
@@ -456,11 +514,14 @@ SoundSource::setPositionAndSpeed(  Double3 pPosition, Double3 pSpeed )
 //*************************************************
 SoundSourceOwner::SoundSourceOwner()
 {
+  for( std::vector<SoundSource*>::iterator p=cMySources.begin(); p!=cMySources.end(); ++p)
+                {                
+                        (*p)->setOwner( NULL );
+                }
 }
 //------------------------------------
 SoundSourceOwner::~SoundSourceOwner()
 {
-
 	for( std::vector<SoundSource*>::iterator p=cMySources.begin(); p!=cMySources.end(); ++p)
 		{		  
 			(*p)->setOwner( NULL ); 
@@ -471,7 +532,7 @@ void SoundSourceOwner::remove(SoundSource* pSrc){
 
 	for( std::vector<SoundSource*>::iterator p= cMySources.begin(); 
 			 p!=cMySources.end();
-			 ++p) 
+			 ++p)  
 		{
 			if( *p == pSrc )
 				cMySources.erase( p );
@@ -531,7 +592,6 @@ SoundSourceOwner::setSoundSourcesPositionAndSpeed(  Double3 pPosition, Double3 p
 			(*p)->setPosition( pPosition );
 			(*p)->setSpeed( pSpeed );
 		}
-
 }
 //*************************************************
 
