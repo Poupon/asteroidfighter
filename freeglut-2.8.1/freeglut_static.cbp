@@ -45,6 +45,9 @@
 				</Compiler>
 			</Target>
 		</Build>
+		<Compiler>
+			<Add option="-O2" />
+		</Compiler>
 		<Unit filename="include/GL/freeglut.h" />
 		<Unit filename="include/GL/freeglut_ext.h" />
 		<Unit filename="include/GL/freeglut_std.h" />

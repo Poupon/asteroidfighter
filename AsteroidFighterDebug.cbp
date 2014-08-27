@@ -103,7 +103,6 @@
 		<Unit filename="Sprite3d/ObjOdron.cc" />
 		<Unit filename="Sprite3d/ObjPart.cc" />
 		<Unit filename="Sprite3d/ObjPrim.cc" />
-		<Unit filename="Sprite3d/ObjText.cc" />
 		<Unit filename="Sprite3d/ObjText2d.cc" />
 		<Unit filename="Sprite3d/ObjVect.cc" />
 		<Unit filename="Sprite3d/Random.cc" />
@@ -111,7 +110,6 @@
 		<Unit filename="Sprite3d/SceneManager.h" />
 		<Unit filename="Sprite3d/SoundControler.cc" />
 		<Unit filename="Sprite3d/SoundControler.h" />
-		<Unit filename="Sprite3d/SoundLibrary.cc" />
 		<Unit filename="Sprite3d/SoundLibrary.h" />
 		<Unit filename="Sprite3d/Sprite3d.cc" />
 		<Unit filename="Sprite3d/Sprite3d.h" />

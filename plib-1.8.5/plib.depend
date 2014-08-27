@@ -2177,23 +2177,23 @@
 	<string.h>
 	"ul.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\fnt\fnt.cxx
+1409128698 source:d:\dev\asteroidfighter\plib-1.8.5\src\fnt\fnt.cxx
 	"fntLocal.h"
 
-1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\fnt\fntlocal.h
+1409128698 d:\dev\asteroidfighter\plib-1.8.5\src\fnt\fntlocal.h
 	"fnt.h"
 
-1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\fnt\fnt.h
+1409128698 d:\dev\asteroidfighter\plib-1.8.5\src\fnt\fnt.h
 	<stdio.h>
 	"sg.h"
 	<OpenGL/gl.h>
 	<GL/gl.h>
 
-1221036750 d:\dev\asteroidfighter\plib-1.8.5\include\plib\sg.h
+1409128683 d:\dev\asteroidfighter\plib-1.8.5\include\plib\sg.h
 	<stdio.h>
 	"ul.h"
 
-1221036752 d:\dev\asteroidfighter\plib-1.8.5\include\plib\ul.h
+1409128690 d:\dev\asteroidfighter\plib-1.8.5\include\plib\ul.h
 	<stdio.h>
 	<stdlib.h>
 	<stdarg.h>
@@ -2218,25 +2218,25 @@
 	<float.h>
 	<errno.h>
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\fnt\fntbitmap.cxx
+1409128698 source:d:\dev\asteroidfighter\plib-1.8.5\src\fnt\fntbitmap.cxx
 	"fnt.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\fnt\fnttxf.cxx
+1409128698 source:d:\dev\asteroidfighter\plib-1.8.5\src\fnt\fnttxf.cxx
 	"fntLocal.h"
 	<agl.h>
 	<OpenGL/CGLCurrent.h>
 	<GL/glx.h>
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\js.cxx
+1409128699 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\js.cxx
 	"js.h"
 
-1205201182 d:\dev\asteroidfighter\plib-1.8.5\src\js\js.h
+1409128699 d:\dev\asteroidfighter\plib-1.8.5\src\js\js.h
 	"ul.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\jsbsd.cxx
+1409128699 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\jsbsd.cxx
 	"js.h"
 	<string.h>
 	<errno.h>
@@ -2250,24 +2250,24 @@
 	<dev/usb/usb.h>
 	<dev/usb/usbhid.h>
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\jslinux.cxx
+1409128699 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\jslinux.cxx
 	"js.h"
 	<linux/joystick.h>
 	<sys/param.h>
 	<fcntl.h>
 	<sys/ioctl.h>
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\jslinuxold.cxx
+1409128699 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\jslinuxold.cxx
 	"js.h"
 	<linux/joystick.h>
 	<fcntl.h>
 	<sys/ioctl.h>
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\jsmacos.cxx
+1409128699 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\jsmacos.cxx
 	"js.h"
 	<InputSprocket.h>
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\jsmacosx.cxx
+1409128699 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\jsmacosx.cxx
 	"js.h"
 	<mach/mach.h>
 	<IOKit/IOKitLib.h>
@@ -2279,50 +2279,50 @@
 	<IOKit/hidsystem/IOHIDUsageTables.h>
 	<Kernel/IOKit/hidsystem/IOHIDUsageTables.h>
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\jsnone.cxx
+1409128699 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\jsnone.cxx
 	"js.h"
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\jswindows.cxx
+1409128699 source:d:\dev\asteroidfighter\plib-1.8.5\src\js\jswindows.cxx
 	"js.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\net\netbuffer.cxx
+1409128700 source:d:\dev\asteroidfighter\plib-1.8.5\src\net\netbuffer.cxx
 	"netBuffer.h"
 
-1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\net\netbuffer.h
+1409128700 d:\dev\asteroidfighter\plib-1.8.5\src\net\netbuffer.h
 	"netChannel.h"
 
-1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\net\netchannel.h
+1409128700 d:\dev\asteroidfighter\plib-1.8.5\src\net\netchannel.h
 	"netSocket.h"
 
-1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\net\netsocket.h
+1409128700 d:\dev\asteroidfighter\plib-1.8.5\src\net\netsocket.h
 	"ul.h"
 	<errno.h>
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\net\netchannel.cxx
+1409128700 source:d:\dev\asteroidfighter\plib-1.8.5\src\net\netchannel.cxx
 	"netChannel.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\net\netchat.cxx
+1409128700 source:d:\dev\asteroidfighter\plib-1.8.5\src\net\netchat.cxx
 	"netChat.h"
 
-1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\net\netchat.h
+1409128700 d:\dev\asteroidfighter\plib-1.8.5\src\net\netchat.h
 	"netBuffer.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\net\netmessage.cxx
+1409128700 source:d:\dev\asteroidfighter\plib-1.8.5\src\net\netmessage.cxx
 	"netMessage.h"
 
-1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\net\netmessage.h
+1409128700 d:\dev\asteroidfighter\plib-1.8.5\src\net\netmessage.h
 	"netBuffer.h"
 	<winsock2.h>
 	<netinet/in.h>
 	<arpa/inet.h>
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\net\netmonitor.cxx
+1409128700 source:d:\dev\asteroidfighter\plib-1.8.5\src\net\netmonitor.cxx
 	"netMonitor.h"
 
-1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\net\netmonitor.h
+1409128700 d:\dev\asteroidfighter\plib-1.8.5\src\net\netmonitor.h
 	"netChat.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\net\netsocket.cxx
+1409128700 source:d:\dev\asteroidfighter\plib-1.8.5\src\net\netsocket.cxx
 	"netSocket.h"
 	<netinet/in.h>
 	<sys/types.h>
@@ -2337,10 +2337,10 @@
 	<winsock.h>
 	<stdarg.h>
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\psl.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\psl.cxx
 	"pslLocal.h"
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\psl\psllocal.h
+1409128701 d:\dev\asteroidfighter\plib-1.8.5\src\psl\psllocal.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -2353,61 +2353,61 @@
 	"pslCompiler.h"
 	"pslContext.h"
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\psl\psl.h
+1409128701 d:\dev\asteroidfighter\plib-1.8.5\src\psl\psl.h
 	<stdio.h>
 	"ul.h"
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslfileio.h
+1409128701 d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslfileio.h
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslopcodes.h
+1409128701 d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslopcodes.h
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslsymbol.h
+1409128701 d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslsymbol.h
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslcompiler.h
+1409128701 d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslcompiler.h
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslcontext.h
+1409128701 d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslcontext.h
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslcodegen.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslcodegen.cxx
 	"pslLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslcompiler.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslcompiler.cxx
 	"pslLocal.h"
 	"ul.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslcontext.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslcontext.cxx
 	"pslLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\psldump.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\psldump.cxx
 	"pslLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslerror.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslerror.cxx
 	"pslLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslexpression.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslexpression.cxx
 	"pslLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslfileio.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslfileio.cxx
 	"pslLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslprogram.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslprogram.cxx
 	"pslLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslsymbols.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\pslsymbols.cxx
 	"pslLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\psltoken.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\psl\psltoken.cxx
 	"pslLocal.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puaux.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puaux.cxx
 	"puAuxLocal.h"
 
-1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxlocal.h
+1409128701 d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxlocal.h
 	"puAux.h"
 
-1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puaux.h
+1409128701 d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puaux.h
 	"pu.h"
 
-1221036750 d:\dev\asteroidfighter\plib-1.8.5\include\plib\pu.h
+1409128683 d:\dev\asteroidfighter\plib-1.8.5\include\plib\pu.h
 	<stdio.h>
 	"fnt.h"
 	"ulRTTI.h"
@@ -2417,90 +2417,90 @@
 	"puSDL.h"
 	"puNative.h"
 
-1221036750 d:\dev\asteroidfighter\plib-1.8.5\include\plib\fnt.h
+1409128683 d:\dev\asteroidfighter\plib-1.8.5\include\plib\fnt.h
 	<stdio.h>
 	"sg.h"
 	<OpenGL/gl.h>
 	<GL/gl.h>
 
-1221036752 d:\dev\asteroidfighter\plib-1.8.5\include\plib\ulrtti.h
+1409128690 d:\dev\asteroidfighter\plib-1.8.5\include\plib\ulrtti.h
 	<string.h>
 	"ul.h"
 
-1221036750 d:\dev\asteroidfighter\plib-1.8.5\include\plib\puglut.h
+1409128683 d:\dev\asteroidfighter\plib-1.8.5\include\plib\puglut.h
 	"pu.h"
 	<GLUT/glut.h>
 	<GL/freeglut.h>
 	<GL/glut.h>
 
-1221036750 d:\dev\asteroidfighter\plib-1.8.5\include\plib\pupw.h
+1409128683 d:\dev\asteroidfighter\plib-1.8.5\include\plib\pupw.h
 	"pu.h"
 
-1221036750 d:\dev\asteroidfighter\plib-1.8.5\include\plib\pufltk.h
+1409128683 d:\dev\asteroidfighter\plib-1.8.5\include\plib\pufltk.h
 	"pu.h"
 	<FL/Fl_Gl_Window.H>
 
-1221036750 d:\dev\asteroidfighter\plib-1.8.5\include\plib\pusdl.h
+1409128683 d:\dev\asteroidfighter\plib-1.8.5\include\plib\pusdl.h
 	"pu.h"
 	"SDL.h"
 
-1221036750 d:\dev\asteroidfighter\plib-1.8.5\include\plib\punative.h
+1409128683 d:\dev\asteroidfighter\plib-1.8.5\include\plib\punative.h
 	"pu.h"
 	<GL/glx.h>
 	<agl.h>
 	<OpenGL/CGLCurrent.h>
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxbislider.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxbislider.cxx
 	"puAuxLocal.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxbisliderwithends.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxbisliderwithends.cxx
 	"puAuxLocal.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxchooser.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxchooser.cxx
 	"puAuxLocal.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxcombobox.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxcombobox.cxx
 	"puAuxLocal.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxcompass.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxcompass.cxx
 	"puAuxLocal.h"
 	<OpenGL/gl.h>
 	<GL/gl.h>
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxfileselector.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxfileselector.cxx
 	"puAuxLocal.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxlargeinput.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxlargeinput.cxx
 	"puAuxLocal.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxscrollbar.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxscrollbar.cxx
 	"puAuxLocal.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxselectbox.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxselectbox.cxx
 	"puAuxLocal.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxsliderwithinput.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxsliderwithinput.cxx
 	"puAuxLocal.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxspinbox.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxspinbox.cxx
 	"puAuxLocal.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxtrislider.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxtrislider.cxx
 	"puAuxLocal.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxverticalmenu.cxx
+1409128701 source:d:\dev\asteroidfighter\plib-1.8.5\src\puaux\puauxverticalmenu.cxx
 	"puAuxLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pu.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pu.cxx
 	"puLocal.h"
 	<agl.h>
 	<OpenGL/CGLCurrent.h>
 	<GL/glx.h>
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\pui\pulocal.h
+1409128702 d:\dev\asteroidfighter\plib-1.8.5\src\pui\pulocal.h
 	"pu.h"
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\pui\pu.h
+1409128702 d:\dev\asteroidfighter\plib-1.8.5\src\pui\pu.h
 	<stdio.h>
 	"fnt.h"
 	"ulRTTI.h"
@@ -2510,103 +2510,103 @@
 	"puSDL.h"
 	"puNative.h"
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\pui\puglut.h
+1409128702 d:\dev\asteroidfighter\plib-1.8.5\src\pui\puglut.h
 	"pu.h"
 	<GLUT/glut.h>
 	<GL/freeglut.h>
 	<GL/glut.h>
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\pui\pupw.h
+1409128702 d:\dev\asteroidfighter\plib-1.8.5\src\pui\pupw.h
 	"pu.h"
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\pui\pufltk.h
+1409128702 d:\dev\asteroidfighter\plib-1.8.5\src\pui\pufltk.h
 	"pu.h"
 	<FL/Fl_Gl_Window.H>
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\pui\pusdl.h
+1409128702 d:\dev\asteroidfighter\plib-1.8.5\src\pui\pusdl.h
 	"pu.h"
 	"SDL.h"
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\pui\punative.h
+1409128702 d:\dev\asteroidfighter\plib-1.8.5\src\pui\punative.h
 	"pu.h"
 	<GL/glx.h>
 	<agl.h>
 	<OpenGL/CGLCurrent.h>
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puarrowbutton.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puarrowbutton.cxx
 	"puLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pubox.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pubox.cxx
 	"puLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pubutton.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pubutton.cxx
 	"puLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pubuttonbox.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pubuttonbox.cxx
 	"puLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pudial.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pudial.cxx
 	"puLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pudialogbox.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pudialogbox.cxx
 	"puLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pufont.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pufont.cxx
 	"puLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puframe.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puframe.cxx
 	"puLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pugroup.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pugroup.cxx
 	"puLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puinput.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puinput.cxx
 	"puLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puinputbase.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puinputbase.cxx
 	"puLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puinterface.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puinterface.cxx
 	"puLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pulistbox.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pulistbox.cxx
 	"puLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pumenubar.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pumenubar.cxx
 	"puLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puobject.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puobject.cxx
 	"puLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puoneshot.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puoneshot.cxx
 	"puLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pupopup.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pupopup.cxx
 	"puLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pupopupmenu.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\pupopupmenu.cxx
 	"puLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\purange.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\purange.cxx
 	"puLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puslider.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puslider.cxx
 	"puLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\putext.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\putext.cxx
 	"puLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puvalue.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pui\puvalue.cxx
 	"puLocal.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\pw\pw.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pw\pw.cxx
 	"ul.h"
 	"pw.h"
 
-1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\pw\pw.h
+1409128702 d:\dev\asteroidfighter\plib-1.8.5\src\pw\pw.h
 	<stdio.h>
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\pw\pwmacosx.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pw\pwmacosx.cxx
 	"ul.h"
 	<Carbon/Carbon.h>
 	<AGL/agl.h>
@@ -2626,13 +2626,13 @@
 	<stdio.h>
 	"pw.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\pw\pwwindows.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pw\pwwindows.cxx
 	"ul.h"
 	<windows.h>
 	<GL/gl.h>
 	"pw.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\pw\pwx11.cxx
+1409128702 source:d:\dev\asteroidfighter\plib-1.8.5\src\pw\pwx11.cxx
 	"ul.h"
 	"pw.h"
 	<stdio.h>
@@ -2650,37 +2650,37 @@
 	<GL/glx.h>
 	<X11/Xm/MwmUtil.h>
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\sg\sg.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\sg\sg.cxx
 	"sg.h"
 
-1205201180 d:\dev\asteroidfighter\plib-1.8.5\src\sg\sg.h
+1409128703 d:\dev\asteroidfighter\plib-1.8.5\src\sg\sg.h
 	<stdio.h>
 	"ul.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\sg\sgd.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\sg\sgd.cxx
 	"sg.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\sg\sgdisect.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\sg\sgdisect.cxx
 	"sg.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\sg\sgisect.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\sg\sgisect.cxx
 	"sg.h"
 
-1205201180 source:d:\dev\asteroidfighter\plib-1.8.5\src\sg\sgperlinnoise.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\sg\sgperlinnoise.cxx
 	<stdio.h>
 	<time.h>
 	<math.h>
 	"sg.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\sldsp.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\sldsp.cxx
 	"sl.h"
 	<errno.h>
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\sl\sl.h
+1409128703 d:\dev\asteroidfighter\plib-1.8.5\src\sl\sl.h
 	<stdio.h>
 	"slPortability.h"
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\sl\slportability.h
+1409128703 d:\dev\asteroidfighter\plib-1.8.5\src\sl\slportability.h
 	"ul.h"
 	<stdio.h>
 	<stdlib.h>
@@ -2702,13 +2702,13 @@
 	<sys/audioio.h>
 	<sys/stropts.h>
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slenvelope.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slenvelope.cxx
 	"sl.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slmoddacio.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slmoddacio.cxx
 	"slMODPrivate.h"
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\sl\slmodprivate.h
+1409128703 d:\dev\asteroidfighter\plib-1.8.5\src\sl\slmodprivate.h
 	"ul.h"
 	<stdio.h>
 	<stdlib.h>
@@ -2719,152 +2719,152 @@
 	<io.h>
 	<unistd.h>
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slmodfile.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slmodfile.cxx
 	"slMODPrivate.h"
 	"slMODfile.h"
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\sl\slmodfile.h
+1409128703 d:\dev\asteroidfighter\plib-1.8.5\src\sl\slmodfile.h
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slmodinst.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slmodinst.cxx
 	"slMODPrivate.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slmodnote.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slmodnote.cxx
 	"slMODPrivate.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slmodplayer.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slmodplayer.cxx
 	"sl.h"
 	"slMODPrivate.h"
 	"slMODfile.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slplayer.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slplayer.cxx
 	"sl.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slsample.cxx
+1409146847 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slsample.cxx
 	"sl.h"
 	<math.h>
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slsampleplayer.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slsampleplayer.cxx
 	"sl.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slscheduler.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\slscheduler.cxx
 	"sl.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\smmixer.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\sl\smmixer.cxx
 	"sm.h"
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\sl\sm.h
+1409128703 d:\dev\asteroidfighter\plib-1.8.5\src\sl\sm.h
 	"slPortability.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssg.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssg.cxx
 	"ssgLocal.h"
 	<agl.h>
 	<OpenGL/CGLCurrent.h>
 	<GL/glx.h>
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssglocal.h
+1409128704 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssglocal.h
 	"ssg.h"
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssg.h
+1409128703 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssg.h
 	<stdio.h>
 	"sg.h"
 	<OpenGL/gl.h>
 	<GL/gl.h>
 	"ssgconf.h"
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgconf.h
+1409128704 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgconf.h
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssganimation.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssganimation.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssganimtransform.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssganimtransform.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgaxistransform.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgaxistransform.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgbase.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgbase.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgbasetransform.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgbasetransform.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgbranch.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgbranch.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgcontext.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgcontext.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgcutout.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgcutout.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgdlist.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgdlist.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgentity.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgentity.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssginvisible.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssginvisible.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgio.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgio.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgisect.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgisect.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgleaf.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgleaf.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssglist.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssglist.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgload.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgload.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgload3ds.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgload3ds.cxx
 	"ssgLocal.h"
 	"ssg3ds.h"
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssg3ds.h
+1409128703 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssg3ds.h
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadac.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadac.cxx
 	"ssgLocal.h"
 	"ssgVertSplitter.h"
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgvertsplitter.h
+1409128704 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgvertsplitter.h
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadasc.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadasc.cxx
 	"ssgLocal.h"
 	"ssgLoaderWriterStuff.h"
 	"ssgParser.h"
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloaderwriterstuff.h
+1409128704 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloaderwriterstuff.h
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgparser.h
+1409128704 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgparser.h
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadase.cxx
+1409146963 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadase.cxx
 	"ssgLocal.h"
 	"ssgParser.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadatg.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadatg.cxx
 	"ssgLocal.h"
 	"ssgLoaderWriterStuff.h"
 	"ssgParser.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadbmp.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadbmp.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloaddof.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloaddof.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloaddxf.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloaddxf.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloaderwriterstuff.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloaderwriterstuff.cxx
 	"ssgLocal.h"
 	"ssgLoaderWriterStuff.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadflt.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadflt.cxx
 	"ssg.h"
 	"ssgLoaderWriterStuff.h"
 	<unistd.h>
@@ -2879,252 +2879,253 @@
 	<sys/mman.h>
 	<io.h>
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadiv.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadiv.cxx
 	"ssgLocal.h"
 	"ssgParser.h"
 	"ssgLoaderWriterStuff.h"
 	"ssgLoadVRML.h"
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadvrml.h
+1409128703 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadvrml.h
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadm.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadm.cxx
 	<stdio.h>
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadmd2.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadmd2.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadmdl.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadmdl.cxx
 	"ssgLocal.h"
 	"ssgLoadMDL.h"
 	<iostream>
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadmdl.h
+1409128703 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadmdl.h
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadmdl_bgltexture.cxx
+1409147225 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadmdl_bgltexture.cxx
 	"ssgLocal.h"
 	"ssgMSFSPalette.h"
+	<string.h>
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgmsfspalette.h
+1409128704 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgmsfspalette.h
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadobj.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadobj.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadoff.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadoff.cxx
 	"ssgLocal.h"
 	"ssgLoaderWriterStuff.h"
 	"ssgParser.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadpcx.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadpcx.cxx
 	"ssgLocal.h"
 	"pcx.h"
 
-1205201184 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\pcx.h
+1409128703 d:\dev\asteroidfighter\plib-1.8.5\src\ssg\pcx.h
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadpng.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadpng.cxx
 	"ssgLocal.h"
 	<gl/glpng.h>
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadsgi.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadsgi.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadssg.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadssg.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadstrip.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadstrip.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadtexture.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadtexture.cxx
 	"ssgLocal.h"
 	<sys/stat.h>
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadtga.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadtga.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadtri.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadtri.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadvrml1.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadvrml1.cxx
 	"ssgLocal.h"
 	"ssgParser.h"
 	"ssgLoaderWriterStuff.h"
 	"ssgLoadVRML.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadx.cxx
+1409128703 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadx.cxx
 	"ssgLocal.h"
 	"ssgLoaderWriterStuff.h"
 	"ssgParser.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadxplaneobj.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgloadxplaneobj.cxx
 	<stdio.h>
 	<string.h>
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgoptimiser.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgoptimiser.cxx
 	"ssgLocal.h"
 	"ssgVertSplitter.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgparser.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgparser.cxx
 	"ssgLocal.h"
 	"ssgParser.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgrangeselector.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgrangeselector.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgroot.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgroot.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsave3ds.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsave3ds.cxx
 	<stdio.h>
 	"ssgLocal.h"
 	"ssg3ds.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveac.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveac.cxx
 	"ssgLocal.h"
 	"ssgLoaderWriterStuff.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveasc.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveasc.cxx
 	"ssgLocal.h"
 	"ssgLoaderWriterStuff.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsavease.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsavease.cxx
 	"ssgLocal.h"
 	"ssgLoaderWriterStuff.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveatg.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveatg.cxx
 	<stdio.h>
 	"ssgLocal.h"
 	"ssgLoaderWriterStuff.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsavedxf.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsavedxf.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveflt.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveflt.cxx
 	<stdio.h>
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveiv.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveiv.cxx
 	<assert.h>
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsavem.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsavem.cxx
 	<stdio.h>
 	"ssgLocal.h"
 	"ssgLoaderWriterStuff.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveobj.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveobj.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveoff.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveoff.cxx
 	<stdio.h>
 	"ssgLocal.h"
 	"ssgLoaderWriterStuff.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveqhi.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsaveqhi.cxx
 	<stdio.h>
 	"ssgLocal.h"
 	"ssgLoaderWriterStuff.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsavetri.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsavetri.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsavevrml1.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsavevrml1.cxx
 	<stdio.h>
 	"ssgLocal.h"
 	"ssgLoaderWriterStuff.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsavex.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsavex.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgselector.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgselector.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsimplelist.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsimplelist.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsimplestate.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgsimplestate.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgstate.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgstate.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgstateselector.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgstateselector.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgstatetables.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgstatetables.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgstatistics.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgstatistics.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgstats.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgstats.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgtextrans.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgtextrans.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgtexture.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgtexture.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgtransform.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgtransform.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgtween.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgtween.cxx
 	"ssgLocal.h"
 	"ul.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgtweencontroller.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgtweencontroller.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgvertsplitter.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgvertsplitter.cxx
 	"ssgVertSplitter.h"
 	<math.h>
 	"sg.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgvtable.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgvtable.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgvtxarray.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgvtxarray.cxx
 	"ssgLocal.h"
 
-1205201184 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgvtxtable.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssg\ssgvtxtable.cxx
 	"ssgLocal.h"
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgabillboards.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgabillboards.cxx
 	<math.h>
 	"ssgaBillboards.h"
 
-1205201182 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgabillboards.h
+1409128704 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgabillboards.h
 	"ssg.h"
 
-1221036750 d:\dev\asteroidfighter\plib-1.8.5\include\plib\ssg.h
+1409128689 d:\dev\asteroidfighter\plib-1.8.5\include\plib\ssg.h
 	<stdio.h>
 	"sg.h"
 	<OpenGL/gl.h>
 	<GL/gl.h>
 	"ssgconf.h"
 
-1221036752 d:\dev\asteroidfighter\plib-1.8.5\include\plib\ssgconf.h
+1409128690 d:\dev\asteroidfighter\plib-1.8.5\include\plib\ssgconf.h
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgacelestialbody.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgacelestialbody.cxx
 	<math.h>
 	"ssgaSky.h"
 	"ssgaSphere.h"
 
-1205201182 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgasky.h
+1409128704 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgasky.h
 	"ssg.h"
 
-1205201182 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgasphere.h
+1409128704 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgasphere.h
 	"ssg.h"
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgacloudlayer.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgacloudlayer.cxx
 	"ssgaSky.h"
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgafire.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgafire.cxx
 	"ssg.h"
 	"ssgAux.h"
 
-1205201182 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgaux.h
+1409128704 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgaux.h
 	"ssg.h"
 	"ssgaShapes.h"
 	"ssgaParticleSystem.h"
@@ -3133,66 +3134,66 @@
 	"ssgaLensFlare.h"
 	"ssgaScreenDump.h"
 
-1205201182 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgashapes.h
+1409128704 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgashapes.h
 	"ssg.h"
 
-1205201182 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgaparticlesystem.h
+1409128704 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgaparticlesystem.h
 
-1205201182 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgafire.h
+1409128704 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgafire.h
 	"ssgAux.h"
 
-1205201182 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgawavesystem.h
+1409128704 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgawavesystem.h
 	"ssgaShapes.h"
 
-1205201182 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgalensflare.h
+1409128704 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgalensflare.h
 	"ssgaShapes.h"
 
-1205201182 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgascreendump.h
+1409128704 d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgascreendump.h
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgalensflare.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgalensflare.cxx
 	"ssgAux.h"
 	"../ssg/ssgLocal.h"
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgalensflaretexture.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgalensflaretexture.cxx
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgaparticlesystem.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgaparticlesystem.cxx
 	"ssgAux.h"
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgapatch.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgapatch.cxx
 	"ssgAux.h"
 	<string.h>
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgascreendump.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgascreendump.cxx
 	"ssgAux.h"
 	<string.h>
 	"ul.h"
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgashapes.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgashapes.cxx
 	"ssgAux.h"
 	<string.h>
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgasky.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgasky.cxx
 	"ssgaSky.h"
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgaskydome.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgaskydome.cxx
 	<math.h>
 	"ssgaSky.h"
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgasphere.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgasphere.cxx
 	"ul.h"
 	"ssgaSphere.h"
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgastars.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgastars.cxx
 	"ssgaSky.h"
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgateapot.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgateapot.cxx
 	"ssgAux.h"
 	<string.h>
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgaux.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgaux.cxx
 	"ssgAux.h"
 
-1205201182 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgawavesystem.cxx
+1409128704 source:d:\dev\asteroidfighter\plib-1.8.5\src\ssgaux\ssgawavesystem.cxx
 	"ssgAux.h"
 	<string.h>
 

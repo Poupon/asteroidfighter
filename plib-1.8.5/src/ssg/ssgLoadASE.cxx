@@ -1,21 +1,21 @@
 /*
      PLIB - A Suite of Portable Game Libraries
      Copyright (C) 1998,2002  Steve Baker
- 
+
      This library is free software; you can redistribute it and/or
      modify it under the terms of the GNU Library General Public
      License as published by the Free Software Foundation; either
      version 2 of the License, or (at your option) any later version.
- 
+
      This library is distributed in the hope that it will be useful,
      but WITHOUT ANY WARRANTY; without even the implied warranty of
      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
      Library General Public License for more details.
- 
+
      You should have received a copy of the GNU Library General Public
      License along with this library; if not, write to the Free Software
      Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
- 
+
      For further information visit http://plib.sourceforge.net
 
      $Id: ssgLoadASE.cxx 1988 2004-10-29 22:41:37Z wolfram_kuss $
@@ -110,12 +110,12 @@ struct aseMesh
   u32 num_verts ;
   u32 num_tverts ;
   u32 num_cverts ;
-  
+
   aseFace* faces ;
   sgVec3* verts ;
   sgVec2* tverts ;
   sgVec3* cverts ;
-  
+
   aseMesh();
   ~aseMesh();
 };
@@ -133,11 +133,11 @@ struct aseObject
   u32 mat_index ;
   u32 num_tkeys ;
   aseTransform* tkeys ;
-  
+
   enum { MAX_FRAMES = 256 };
   aseMesh* mesh_list[ MAX_FRAMES ];
   int mesh_count ;
-  
+
   aseObject( Type type );
   ~aseObject();
 };
@@ -148,13 +148,13 @@ struct aseMaterial
   u32 mat_index ;
   u32 sub_index ;
   bool sub_flag ;
-  
+
   sgVec4 amb ;
   sgVec4 diff ;
   sgVec4 spec ;
   f32 shine ;
   f32 transparency ;
-  
+
   char* tfname ;
   sgVec2 texrep ;
   sgVec2 texoff ;
@@ -173,7 +173,7 @@ static u32 num_frames=0 ;
 
 static _ssgParserSpec parser_spec =
 {
-   "\r\n\t ",  // delim_chars_skipable 
+   "\r\n\t ",  // delim_chars_skipable
 	 0,          // delim_chars_non_skipable
    NULL,      // pre_processor
    "{",        // open_brace_chars
@@ -235,7 +235,7 @@ static u32 count_sub_materials( u32 mat_index )
 static aseMaterial* find_material( u32 mat_index, u32 sub_index )
 {
   u32 i;
-  
+
   //find sub-material
   for ( i=0; i<num_materials; i++ )
   {
@@ -243,7 +243,7 @@ static aseMaterial* find_material( u32 mat_index, u32 sub_index )
     if ( mat->mat_index == mat_index && mat->sub_index == sub_index )
       return(mat);
   }
-  
+
   //just match material #
   for ( i=0; i<num_materials; i++ )
   {
@@ -251,7 +251,7 @@ static aseMaterial* find_material( u32 mat_index, u32 sub_index )
     if ( mat->mat_index == mat_index )
       return(mat);
   }
-  
+
   parser.error("unknown material #%d",mat_index);
   return(0);
 }
@@ -295,7 +295,7 @@ static ssgSimpleState* make_state( aseMaterial* mat, bool prelit )
     st -> disable ( GL_BLEND ) ;
     st -> setOpaque () ;
   }
-  
+
   if ( prelit )
   {
     st -> disable ( GL_LIGHTING ) ;
@@ -310,9 +310,9 @@ static ssgSimpleState* make_state( aseMaterial* mat, bool prelit )
     st -> setColourMaterial ( GL_AMBIENT_AND_DIFFUSE ) ;
     st -> enable  ( GL_LIGHTING ) ;
   }
-  
+
   st -> setShadeModel ( GL_SMOOTH ) ;
-  
+
   return st ;
 }
 
@@ -321,7 +321,7 @@ static ssgSimpleState* get_state( aseMaterial* mat, bool prelit )
 {
   // is material an ifl (image file list)
 #ifdef UL_WIN32
-  if ( strnicmp ( "ifl_", mat -> name, 4 ) == 0 )
+  if ( strncmp( "ifl_", mat -> name, 4 ) == 0 )
 #else
   if ( strncasecmp ( "ifl_", mat -> name, 4 ) == 0 )
 #endif
@@ -404,7 +404,7 @@ static int parse_material( u32 mat_index, u32 sub_index, cchar* mat_name )
   if ( num_materials >= MAX_MATERIALS )
   {
     parser.error( "too many materials" );
-    
+
     // skip material definition
     int startLevel = parser.level;
     while (parser.getLine( startLevel ) != NULL)
@@ -413,7 +413,7 @@ static int parse_material( u32 mat_index, u32 sub_index, cchar* mat_name )
   }
   aseMaterial* mat = new aseMaterial;
   materials [ num_materials++ ] = mat ;
-  
+
   memset ( mat, 0, sizeof(aseMaterial) ) ;
   mat->mat_index = mat_index ;
   mat->sub_index = sub_index ;
@@ -422,7 +422,7 @@ static int parse_material( u32 mat_index, u32 sub_index, cchar* mat_name )
   mat->texrep[1] = 1.0f ;
   mat->texoff[0] = 0.0f ;
   mat->texoff[1] = 0.0f ;
-  
+
   char* token;
   int startLevel = parser.level;
   while ((token = parser.getLine( startLevel )) != NULL)
@@ -432,12 +432,12 @@ static int parse_material( u32 mat_index, u32 sub_index, cchar* mat_name )
       char* name;
 			if (! parser.parseString(name, "mat name") )
 				return FALSE;
-			
+
       if ( mat->sub_flag )
       {
         char buff [ 256 ] ;
         sprintf( buff, "%s, sub#%d", mat_name, sub_index );
-        
+
         mat->name = ulStrDup ( buff ) ;
       }
       else
@@ -507,7 +507,7 @@ static int parse_material( u32 mat_index, u32 sub_index, cchar* mat_name )
 				return FALSE;
     }
   }
-  
+
   //parser.message("material: %s (%s)",mat->name,mat->tfname);
 	return TRUE;
 }
@@ -518,7 +518,7 @@ static int parse_material_list()
 {
   if ( num_materials )
     parser.error("multiple material lists");
-  
+
   char* token;
   int startLevel = parser.level;
   while ((token = parser.getLine( startLevel )) != NULL)
@@ -541,7 +541,7 @@ static int parse_mesh( aseObject* obj )
   aseMesh* mesh = NULL ;
 	u32 mesh_face_normal_index = 0x7fffffff;
 	u32 mesh_face_normal_count = 0;
-  
+
   char* token;
   int startLevel = parser.level;
   while ((token = parser.getLine( startLevel )) != NULL)
@@ -549,7 +549,7 @@ static int parse_mesh( aseObject* obj )
     if ( mesh == NULL )
     {
       u32 frame = aseObject::MAX_FRAMES ;
-      
+
       if (!strcmp(token,"*TIMEVALUE"))
       {
         u32 time;
@@ -562,14 +562,14 @@ static int parse_mesh( aseObject* obj )
         parser.error("missing *TIMEVALUE");
         frame = aseObject::MAX_FRAMES ;
       }
-      
+
       if ( frame >= aseObject::MAX_FRAMES || obj->mesh_list [ frame ] != NULL )
       {
         //ignore this mesh
         while (parser.getLine( startLevel )) ;
         return TRUE; // go on parsing
       }
-      
+
       mesh = new aseMesh ;
       obj->mesh_list [ frame ] = mesh ;
       obj->mesh_count ++ ;
@@ -654,13 +654,13 @@ static int parse_mesh( aseObject* obj )
 				return FALSE;
 			}
 
-			
+
 			if (index >= mesh -> num_faces)
         parser.error("bad face #");
       else
       {
         aseFace& face = mesh -> faces[ index ];
-        
+
         parser.expect("A:");
         if (! parser.parseUInt(face.v[0], "face.v[0]"))
 					return FALSE;
@@ -670,7 +670,7 @@ static int parse_mesh( aseObject* obj )
         parser.expect("C:");
         if (! parser.parseUInt(face.v[2], "face.v[2]"))
 					return FALSE;
-        
+
         //search for other flags
 				token = parser.parseToken(0);
         while ( ! parser.eol )
@@ -694,7 +694,7 @@ static int parse_mesh( aseObject* obj )
       else
       {
         aseFace& face = mesh -> faces[ index ];
-        
+
         if (! parser.parseUInt(face.tv[0], "tface.tv[0]"))
 					return FALSE;
         if (! parser.parseUInt(face.tv[1], "tface.tv[1]"))
@@ -713,7 +713,7 @@ static int parse_mesh( aseObject* obj )
       else
       {
         aseFace& face = mesh -> faces[ index ];
-        
+
         if (! parser.parseUInt(face.cv[0], "tface.cv[0]"))
 					return FALSE;
         if (! parser.parseUInt(face.cv[1], "tface.cv[1]"))
@@ -722,11 +722,11 @@ static int parse_mesh( aseObject* obj )
 					return FALSE;
       }
     }
-		// SAC: START OF VERTEX NORMAL PARSING SECTION   
+		// SAC: START OF VERTEX NORMAL PARSING SECTION
 		// NOTE: Assumes that three correctly-ordered *MESH_VERTEXNORMAL lines
     // come after each *MESH_FACENORMAL line.  Which seems to be the case
     // in current exporter
-    else if (!strcmp(token,"*MESH_FACENORMAL"))		
+    else if (!strcmp(token,"*MESH_FACENORMAL"))
 		{
 			if (! parser.parseUInt(mesh_face_normal_index, "face normal #"))
 				return FALSE;
@@ -759,10 +759,10 @@ static int parse_mesh( aseObject* obj )
 			// sgNormaliseVec3 ( vn ) ;
 			mesh_face_normal_count++;
     }
-		// SAC: END OF VERTEX NORMAL PARSING SECTION   
+		// SAC: END OF VERTEX NORMAL PARSING SECTION
     else if (!strcmp(token,"*MESH_VERTEX"))
     {
-      u32 index; 
+      u32 index;
 			if (! parser.parseUInt(index, "vertex #"))
 				return FALSE;
       if (index >= mesh -> num_verts)
@@ -770,7 +770,7 @@ static int parse_mesh( aseObject* obj )
       else
       {
         sgVec3& vert = mesh -> verts[ index ];
-        
+
         if (! parser.parseFloat(vert[0], "vert.x"))
 					return FALSE;
         if (! parser.parseFloat(vert[1], "vert.y"))
@@ -789,7 +789,7 @@ static int parse_mesh( aseObject* obj )
       else
       {
         sgVec2& tvert = mesh -> tverts[ index ];
-        
+
         if (! parser.parseFloat(tvert[0], "tvert.x"))
 					return FALSE;
         if (! parser.parseFloat(tvert[1], "tvert.y"))
@@ -806,7 +806,7 @@ static int parse_mesh( aseObject* obj )
       else
       {
         sgVec3& cvert = mesh -> cverts[ index ];
-        
+
         if (! parser.parseFloat(cvert[0], "cvert.x"))
 					return FALSE;
         if (! parser.parseFloat(cvert[1], "cvert.y"))
@@ -855,7 +855,7 @@ static ssgLeaf* add_points( aseObject* obj, aseMesh* mesh )
 
       sgNormaliseVec3 ( target ) ;
       sgAddVec3 ( target, obj->pos ) ;
-  
+
       vl -> add ( obj->pos ) ;
       vl -> add ( target ) ;
     }
@@ -899,7 +899,7 @@ static ssgLeaf* add_mesh( aseObject* obj, aseMesh* mesh, u32 sub_index )
   aseMaterial* mat = find_material ( obj->mat_index, sub_index ) ;
   if ( mat == NULL )
     return NULL ;
-  
+
   //compute number of faces for this sub-material
   u32 num_faces = mesh -> num_faces ;
   if ( mat->sub_flag )
@@ -914,7 +914,7 @@ static ssgLeaf* add_mesh( aseObject* obj, aseMesh* mesh, u32 sub_index )
   }
   if ( num_faces == 0 )
     return NULL ;
-  
+
   if ( mesh -> cverts == NULL )
   {
     u32 num_verts = num_faces * 3 ;
@@ -925,7 +925,7 @@ static ssgLeaf* add_mesh( aseObject* obj, aseMesh* mesh, u32 sub_index )
     ssgVertexArray* vl = new ssgVertexArray ( num_verts ) ;
     ssgNormalArray* nl = new ssgNormalArray ( num_verts ) ;
     ssgTexCoordArray* tl = 0 ;
-    if ( mesh -> tverts )  
+    if ( mesh -> tverts )
       tl = new ssgTexCoordArray ( num_verts ) ;
 
     //set the material colour
@@ -939,13 +939,13 @@ static ssgLeaf* add_mesh( aseObject* obj, aseMesh* mesh, u32 sub_index )
     {
       if ( mat->sub_flag && face->sub_index != mat->sub_index )
         continue ;
-      
+
       sgVec3 n ;
       sgMakeNormal ( n,
         mesh -> verts[ face->v[0] ] ,
         mesh -> verts[ face->v[1] ] ,
         mesh -> verts[ face->v[2] ] ) ;
-      
+
       for ( u32 j=0; j<3; j++ )
       {
         vl -> add ( mesh -> verts[ face->v[j] ] ) ;
@@ -956,7 +956,7 @@ static ssgLeaf* add_mesh( aseObject* obj, aseMesh* mesh, u32 sub_index )
 					nl -> add ( face->vn [j] ) ;
 				else
 					nl -> add ( n ) ;
-        
+
         if ( mesh -> tverts )
         {
           sgVec2 tv ;
@@ -973,37 +973,37 @@ static ssgLeaf* add_mesh( aseObject* obj, aseMesh* mesh, u32 sub_index )
     leaf -> setState ( st ) ;
     return current_options -> createLeaf ( leaf, obj->name ) ;
   }
-  
+
   //allocate map_index array
   int* map_index = new int [ mesh -> num_faces * 3 ] ;
-  
+
   //allocate the vertex list
   u32 max_verts = mesh -> num_verts + mesh -> num_faces * 3 ;
   aseVertexBuffer* vert_list = new aseVertexBuffer [ max_verts ] ;
-  
+
   //mark each vertex as *not* used
   aseVertexBuffer* vert = vert_list ;
   for ( i=0; i < max_verts; i++, vert++ )
   {
     vert -> use_flag = false ;
   }
-  
+
   u32 extra_verts = 0 ;
-  
+
   //build the vertex list
   aseFace* face = mesh -> faces ;
   for ( i=0; i<mesh -> num_faces; i++, face++ )
   {
     if ( mat->sub_flag && face->sub_index != mat->sub_index )
       continue ;
-    
+
     for ( u32 j=0; j<3; j++ )
     {
       int k = i*3+j;
-      
+
       map_index [k] = face->v[j] ;
       vert = vert_list + map_index[k];
-      
+
       if ( vert -> use_flag )
       {
         //check for match
@@ -1016,13 +1016,13 @@ static ssgLeaf* add_mesh( aseObject* obj, aseMesh* mesh, u32 sub_index )
           match = false ;
         if ( match )
           continue ;  //texcoord and color matches other vertex
-        
+
         extra_verts ++ ;
-        
+
         map_index [k] = mesh -> num_verts + k ;
         vert = vert_list + map_index[k];
       }
-      
+
       //add the vertex
       vert -> use_flag = true;
       sgCopyVec3 ( vert -> v, mesh -> verts[ face->v[j] ] ) ;
@@ -1032,7 +1032,7 @@ static ssgLeaf* add_mesh( aseObject* obj, aseMesh* mesh, u32 sub_index )
         sgCopyVec3 ( vert -> cv, mesh -> cverts[ face->cv[j] ] ) ;
     }
   }
-  
+
   //assign a unique index to each vertex
   int num_verts = 0 ;
   vert = vert_list;
@@ -1041,42 +1041,42 @@ static ssgLeaf* add_mesh( aseObject* obj, aseMesh* mesh, u32 sub_index )
     if ( vert -> use_flag )
       vert -> index = num_verts ++;
   }
-  
+
   //if ( extra_verts > 0 )
   //   ulSetError( UL_DEBUG, "%d verts; %d added", num_verts-extra_verts, extra_verts );
   //else
   //   ulSetError( UL_DEBUG, "%d verts", num_verts );
-  
+
   //pass the data to ssg
   ssgSimpleState* st = get_state ( mat, ( mesh -> cverts != NULL ) ) ;
   ssgIndexArray* il = new ssgIndexArray ( num_faces * 3 ) ;
   ssgVertexArray* vl = new ssgVertexArray ( num_verts ) ;
   ssgTexCoordArray* tl = 0 ;
   ssgColourArray* cl = 0 ;
-  if ( mesh -> tverts )  
+  if ( mesh -> tverts )
     tl = new ssgTexCoordArray ( num_verts ) ;
   if ( mesh -> cverts )
     cl = new ssgColourArray ( num_verts ) ;
-  
+
   //build the index list
   face = mesh -> faces ;
   for ( i=0; i<mesh -> num_faces; i++, face++ )
   {
     if ( mat->sub_flag && face->sub_index != mat->sub_index )
       continue ;
-    
+
     for ( u32 j=0; j<3; j++ )
     {
       int k = i*3+j;
       vert = vert_list + map_index[k];
-      
+
       if ( ! vert -> use_flag )
         ulSetError ( UL_FATAL, "internal error" ) ;
-      
+
       il -> add ( vert -> index ) ;
     }
   }
-  
+
   //copy the vertex lists
   vert = vert_list;
   for ( i=0; i < max_verts; i++, vert++ )
@@ -1084,7 +1084,7 @@ static ssgLeaf* add_mesh( aseObject* obj, aseMesh* mesh, u32 sub_index )
     if ( vert -> use_flag )
     {
       vl -> add ( vert -> v ) ;
-      
+
       if ( mesh -> tverts )
       {
         sgVec2 tv ;
@@ -1092,18 +1092,18 @@ static ssgLeaf* add_mesh( aseObject* obj, aseMesh* mesh, u32 sub_index )
         get_texcoord ( mat, tv ) ;
         tl -> add ( tv ) ;
       }
-      
+
       if ( mesh -> cverts )
       {
         sgVec4 c ;
         sgCopyVec3 ( c, vert -> cv ) ;
         c[3] = 1.0f - mat -> transparency ;
-        
+
         cl -> add ( c ) ;
       }
     }
   }
-  
+
   delete[] vert_list ;
   delete[] map_index ;
 
@@ -1121,7 +1121,7 @@ static aseTransform* get_tkey( aseObject* obj, u32 time )
   {
     obj->num_tkeys = 0;
     obj->tkeys = new aseTransform [ num_frames ] ;
-    
+
     //initialize
     aseTransform* tkey = obj->tkeys ;
     for ( u32 i=0; i<num_frames; i++, tkey++ )
@@ -1132,15 +1132,15 @@ static aseTransform* get_tkey( aseObject* obj, u32 time )
       sgSetVec3 ( tkey->scale, 1, 1, 1 ) ;
     }
   }
-  
+
   //compute frame number
   u32 frame = time / ticks_per_frame - first_frame;
   if ((time % ticks_per_frame) != 0 || frame >= num_frames)
     parser.error("bad time");
-  
+
   if ( frame+1 > obj->num_tkeys )
     obj->num_tkeys = frame+1;
-  
+
   return( &obj->tkeys[ frame ] );
 }
 
@@ -1171,14 +1171,14 @@ static int parse_tkeys( aseObject* obj )
         if (! parser.parseUInt(time, "time"))
           return FALSE;
         aseTransform* tkey = get_tkey( obj, time );
-        
+
         if (! parser.parseFloat(tkey->pos[0], "pos.x"))
           return FALSE;
         if (! parser.parseFloat(tkey->pos[1], "pos.y"))
           return FALSE;
         if (! parser.parseFloat(tkey->pos[2], "pos.z"))
           return FALSE;
-        
+
         if ( obj->parent == NULL )
         {
           sgSubVec3 ( tkey->pos, obj->pos ) ;
@@ -1191,7 +1191,7 @@ static int parse_tkeys( aseObject* obj )
               tkey->pos[i] -= obj->pos[i] ;
           }
         }
-        
+
         //copy the position forward
         for ( u32 i=obj->num_tkeys; i<num_frames; i++ )
           sgCopyVec3 ( obj->tkeys[ i ].pos, tkey->pos ) ;
@@ -1202,7 +1202,7 @@ static int parse_tkeys( aseObject* obj )
         if (!parser.parseUInt(time, "time"))
           return FALSE;
         aseTransform* tkey = get_tkey( obj, time );
-        
+
         if (! parser.parseFloat(tkey->axis[0], "axis.x"))
           return FALSE;
         if (! parser.parseFloat(tkey->axis[1], "axis.y"))
@@ -1224,7 +1224,7 @@ static int parse_tkeys( aseObject* obj )
         sgSetVec3 ( tkey->axis, 0, 0, 1 ) ;
         tkey->angle = 0.0f ;
         sgSetVec3 ( tkey->scale, 1, 1, 1 ) ;
-          
+
 // *CONTROL_TCB_ROT_KEY 160	-0.9949	-0.0914	0.0434	3.1336	0.0000	0.0000	0.0000	0.0000	0.0000
         if (! parser.parseFloat(tkey->axis[0], "axis.x"))
           return FALSE;
@@ -1252,7 +1252,7 @@ static int parse_tkeys( aseObject* obj )
         if (! parser.parseUInt(time, "time"))
           return FALSE;
         aseTransform* tkey = get_tkey( obj, time );
-        
+
         if (! parser.parseFloat(tkey->scale[0], "scale.x"))
           return FALSE;
         if (! parser.parseFloat(tkey->scale[1], "scale.y"))
@@ -1276,7 +1276,7 @@ static int parse_tkeys( aseObject* obj )
 static int parse_object( aseObject::Type type )
 {
   aseObject* obj = new aseObject ( type ) ;
-  
+
   char* token;
   int startLevel = parser.level;
   while ((token = parser.getLine( startLevel )) != NULL)
@@ -1288,8 +1288,8 @@ static int parse_object( aseObject::Type type )
         char* name;
 				if (! parser.parseString(name, "obj name"))
 					return FALSE;
-				
-        
+
+
         obj->name = ulStrDup ( name ) ;
       }
     }
@@ -1300,8 +1300,8 @@ static int parse_object( aseObject::Type type )
         char* name;
 				if (! parser.parseString(name, "parent name"))
 					return FALSE;
-				
-        
+
+
         obj->parent = ulStrDup ( name ) ;
       }
     }
@@ -1390,14 +1390,14 @@ static int parse_object( aseObject::Type type )
 				return FALSE;
     }
   }
-  
+
   //if ( obj->parent != NULL )
   //  ulSetError( UL_DEBUG, "add_mesh: %s, parent=%s", obj->name, obj->parent ) ;
   //else
   //  ulSetError( UL_DEBUG, "add_mesh: %s", obj->name ) ;
-  
+
   ssgEntity* mesh_entity = NULL ;
-  
+
   if ( obj->mesh_count > 1 )
   {
     //how many frames?
@@ -1409,17 +1409,17 @@ static int parse_object( aseObject::Type type )
       if ( mesh != NULL )
         num_frames ++ ;
     }
-    
+
     //allocate selector
     ssgSelector* selector = new ssgSelector ( num_frames ) ;
-    
+
     //init
     for ( i=0; i<aseObject::MAX_FRAMES; i++ )
     {
       aseMesh* mesh = obj->mesh_list [ i ] ;
       if ( mesh == NULL )
         continue ;
-      
+
       u32 num_subs = count_sub_materials ( obj->mat_index );
       if ( num_subs > 1 )
       {
@@ -1476,7 +1476,7 @@ static int parse_object( aseObject::Type type )
           branch -> addKid ( leaf ) ;
       }
     }
-    
+
     mesh_entity = branch ;
   }
   else
@@ -1487,7 +1487,7 @@ static int parse_object( aseObject::Type type )
       branch -> addKid ( leaf ) ;
     mesh_entity = branch ;
   }
-  
+
   if ( mesh_entity != NULL )
   {
     //add to graph -- find parent branch
@@ -1510,7 +1510,7 @@ static int parse_object( aseObject::Type type )
     {
       parent_branch = top_branch ;
     }
-    
+
     if ( obj->num_tkeys > 0 )
     {
       ssgAnimTransform * at = new ssgAnimTransform;
@@ -1526,18 +1526,18 @@ static int parse_object( aseObject::Type type )
       for ( u32 i = 1 ; i < obj->num_tkeys ; i++ )
       {
         aseTransform* tkey = obj->tkeys + i ;
-        
+
         sgVec3 pos ;
         sgMat4 tmp ;
         sgMat4 mat ;
-        
+
         /*
         *  compute rmat
         *  the key rotation is additive to the last rotation
         */
         sgMakeRotMat4 ( tmp, -tkey->angle * SG_RADIANS_TO_DEGREES, tkey->axis ) ;
         sgPostMultMat4 ( rmat, tmp ) ;
-        
+
         /*
         *  rotation is around the mesh pivot point (obj->pos)
         *  translate -obj->pos
@@ -1545,12 +1545,12 @@ static int parse_object( aseObject::Type type )
         sgCopyVec3 ( pos, obj->pos ) ;
         sgNegateVec3 ( pos ) ;
         sgMakeTransMat4 ( mat, pos ) ;
-        
+
         /*
         *  perform the rotation
         */
         sgPostMultMat4 ( mat, rmat ) ;
-        
+
         /*
         *  translate obj->pos + tkey->pos
         */
@@ -1558,18 +1558,18 @@ static int parse_object( aseObject::Type type )
         sgAddVec3 ( pos, tkey->pos ) ;
         sgMakeTransMat4 ( tmp, pos ) ;
         sgPostMultMat4 ( mat, tmp ) ;
-        
+
         at->setATransform ( mat, i);
       }
       // insert the ssgAnimTransform into the scene graph:
-      at-> addKid ( mesh_entity ) ; 
+      at-> addKid ( mesh_entity ) ;
       mesh_entity = at;
     }
 
     parent_branch -> addKid ( mesh_entity ) ;
     mesh_entity -> setName ( obj->name ) ;
   }
-  
+
   delete obj ;
 	return TRUE;
 }
@@ -1583,15 +1583,15 @@ static bool parse()
     parser.error("not enough memory");
     return false ;
   }
-  
+
   num_materials = 0 ;
-  
+
   first_frame = 0 ;
   last_frame = 0 ;
   frame_speed = 0 ;
   ticks_per_frame = 0 ;
   num_frames = 0 ;
-  
+
   bool firsttime = true;
   char* token;
   int startLevel = parser.level;
@@ -1699,6 +1699,6 @@ ssgEntity *ssgLoadASE ( const char *fname, const ssgLoaderOptions* options )
   }
   parse_free();
   parser.closeFile();
-  
+
   return top_branch ;
 }

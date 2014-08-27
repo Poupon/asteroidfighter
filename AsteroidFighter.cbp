@@ -26,13 +26,11 @@
 			<Add alias="All" targets="default;" />
 		</VirtualTargets>
 		<Compiler>
-			<Add option="-O3" />
-			<Add option="-O" />
+			<Add option="-O2" />
 			<Add option="-pedantic" />
+			<Add option="-std=c++11" />
 			<Add option="-Wextra" />
 			<Add option="-Wall" />
-			<Add option="-pg" />
-			<Add option="-g" />
 			<Add option="-fpermissive -Wno-unused-parameter" />
 			<Add option="-DUL_WIN32=1 -DUL_MSVC=1 -DOPENGLUT_STATIC -DPUI_WIN" />
 			<Add option="-DWIN32" />
@@ -50,7 +48,6 @@
 			<Add directory="freeglut-2.8.1/include" />
 		</Compiler>
 		<Linker>
-			<Add option="-pg -lgmon" />
 			<Add library="winmm" />
 			<Add library="plib" />
 			<Add library="freeglut" />
@@ -197,9 +194,6 @@
 		<Unit filename="Sprite3d/ObjPrim.cc">
 			<Option target="default" />
 		</Unit>
-		<Unit filename="Sprite3d/ObjText.cc">
-			<Option target="default" />
-		</Unit>
 		<Unit filename="Sprite3d/ObjText2d.cc">
 			<Option target="default" />
 		</Unit>
@@ -216,9 +210,6 @@
 			<Option target="default" />
 		</Unit>
 		<Unit filename="Sprite3d/SoundControler.cc">
-			<Option target="default" />
-		</Unit>
-		<Unit filename="Sprite3d/SoundLibrary.cc">
 			<Option target="default" />
 		</Unit>
 		<Unit filename="Sprite3d/Sprite3d.cc">

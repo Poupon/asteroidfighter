@@ -11,7 +11,7 @@
      but WITHOUT ANY WARRANTY; without even the implied warranty of
      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
      Library General Public License for more details.
- 
+
      You should have received a copy of the GNU Library General Public
      License along with this library; if not, write to the Free
      Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
@@ -44,6 +44,7 @@
 
 #include "ssgLocal.h"
 #include "ssgMSFSPalette.h"
+#include <string.h>
 
 //===========================================================================
 // Texture palette values (from fs5.pal)
@@ -306,7 +307,7 @@ unsigned const char ssgFsTexPalette[1024] = {
   0x4a, 0x63, 0x4a, 0xff,
   0x39, 0x73, 0x84, 0xff,
   0x21, 0x63, 0x7b, 0xff,
-  0x4a, 0x73, 0x84, 0xff 
+  0x4a, 0x73, 0x84, 0xff
 };
 
 #ifdef SSG_LOAD_MDL_BGL_TEXTURE_SUPPORTED
@@ -316,7 +317,7 @@ bool ssgLoadMDLTexture ( const char *fname, ssgTextureInfo* info )
   FILE *tfile;
   int index = 0;
   if ( (tfile = fopen(fname, "rb")) == NULL) {
-    char *dupfname = strdup( fname);
+    char *dupfname = (char*)malloc( strlen(fname));//strdup( fname);
     char *p = strrchr( dupfname,'_');
     if (p != 0) {
       *p = '\0';
@@ -358,7 +359,7 @@ bool ssgLoadMDLTexture ( const char *fname, ssgTextureInfo* info )
         texels[c++] = (b<index)?0:255;
       }
     }
-    
+
     fclose(tfile);
 
     if ( info != NULL )
