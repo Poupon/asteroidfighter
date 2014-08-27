@@ -1,21 +1,21 @@
 /*
      PLIB - A Suite of Portable Game Libraries
      Copyright (C) 1998,2002  Steve Baker
- 
+
      This library is free software; you can redistribute it and/or
      modify it under the terms of the GNU Library General Public
      License as published by the Free Software Foundation; either
      version 2 of the License, or (at your option) any later version.
- 
+
      This library is distributed in the hope that it will be useful,
      but WITHOUT ANY WARRANTY; without even the implied warranty of
      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
      Library General Public License for more details.
- 
+
      You should have received a copy of the GNU Library General Public
      License along with this library; if not, write to the Free Software
      Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
- 
+
      For further information visit http://plib.sourceforge.net
 
      $Id: slSample.cxx 1853 2004-02-08 18:41:15Z stromberg $
@@ -85,7 +85,7 @@ void slSample::changeRate   ( int r )
     if ( getBps () == 8 )
       buffer2 [ i ] = (Uchar) ( (res < 0) ? 0 : (res > 255) ? 255 : res ) ;
     else
-      ((Ushort *) buffer2 ) [ i ] = 
+      ((Ushort *) buffer2 ) [ i ] =
                 (Ushort) ( (res < 0) ? 0 : (res > 65535) ? 65535 : res ) ;
   }
 
@@ -380,9 +380,9 @@ int slSample::loadWavFile ( const char *fname )
       return SL_TRUE ;
     }
   }
-  
+
   ulSetError ( UL_WARNING, "slSample: Premature EOF in '%s'.", fname ) ;
-  
+
   fclose ( fd ) ;
   return SL_FALSE ;
 }
@@ -498,16 +498,16 @@ int slSample::loadRawFile ( const char *fname )
   }
 
   struct stat stat_buf ;
-
+  /*
   if ( fstat ( fileno ( fd ), & stat_buf ) != 0 )
   {
     ulSetError ( UL_WARNING,
              "slSample: loadRawFile: Cannot get status for '%s'.",
-             fname ) ;        
+             fname ) ;
     fclose ( fd ) ;
     return SL_FALSE ;
   }
-
+*/
   length = stat_buf . st_size ;
 
   if ( length > 0 )

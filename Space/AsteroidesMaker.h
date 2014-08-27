@@ -13,8 +13,8 @@
 enum EnumAsteroides{
 	ASTEROIDE_PIERRE,
 	ASTEROIDE_SNOW,
-	ASTEROIDE_ICE, 
-	ASTEROIDE_MARS, 
+	ASTEROIDE_ICE,
+	ASTEROIDE_MARS,
 	ASTEROIDE_WATER,
 	ASTEROIDE_CRISTAL,
 	PLASMA_SOLAIRE
@@ -29,7 +29,7 @@ class AsteroidesMaker : public Action
 	Float4               cColorCristal;
 	Float4               cColorPlasmaSolaire1;
 	Float4               cColorPlasmaSolaire2;
-	
+
 
 	AutoPtr<T3dTexture>  caTexLune;
 	AutoPtr<T3dTexture>  caTexMars;
@@ -43,14 +43,14 @@ class AsteroidesMaker : public Action
 	O3dObjProps cPropsIce;
 
 	O3dObjProps cPropsCristal;
-	O3dObjProps cPropsPlasmaSolaire1;;
-	O3dObjProps cPropsPlasmaSolaire2;;
+	O3dObjProps cPropsPlasmaSolaire1;
+	O3dObjProps cPropsPlasmaSolaire2;
 
 	O3dObjProps cPropsGen;
 
 public:
-	AsteroidesMaker();	
-   
+	AsteroidesMaker();
+
 	O3dObj*  makeAsteroide( float pSz, int pFacette );
  	ObjVect*  makeAsteroideSnow( float pSz, int pFacette );
  	O3dObj* makeAsteroideIce( float pSz, int pFacette );

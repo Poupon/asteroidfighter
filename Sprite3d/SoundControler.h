@@ -22,7 +22,7 @@ class SoundControler;
 
 //*************************************************
 class SoundSourceOwner{
-	
+
 	std::vector<SoundSource*> cMySources;
 
 public:
@@ -47,17 +47,22 @@ private:
 	SoundSourceOwner* cOwner;
 	int cPriority;
 
-	enum SourceState{ FREE, PLAY, LOOP, ERROR };
+	enum SourceState{
+            FREE=0,
+            PLAY=1,
+            LOOP=2,
+            SRC_ERR
+        };
 
 	SourceState cState;
 
 	float cTime;
 
-public:	
+public:
 	SoundSource( PSoundSourceId, PSoundId);
  	virtual ~SoundSource();
 
-	
+
 	PSoundSourceId play( PSoundId pBuffer, float pGain=1.0f, float pPitch=1.0f, bool pLoop =false);
 
 	void setPosition( Double3 pPosition  );
@@ -82,7 +87,7 @@ public:
 	SoundControler(  int pMaxSource, const char* pPath = NULL );
 	virtual ~SoundControler(  );
 
-	PSoundId loadSample ( const char* pName ); 
+	PSoundId loadSample ( const char* pName );
 	double   getPos( PSoundId pSource );
 	PSoundId getStatus( PSoundId pSource );
 
@@ -121,4 +126,4 @@ public:
 //#define LOOPSAMPLE(A) SoundControler::sTheSoundControler->loopSample(A);
 
 #endif
-    
+

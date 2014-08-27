@@ -1,21 +1,21 @@
 /*
      PLIB - A Suite of Portable Game Libraries
      Copyright (C) 1998,2002  Steve Baker
- 
+
      This library is free software; you can redistribute it and/or
      modify it under the terms of the GNU Library General Public
      License as published by the Free Software Foundation; either
      version 2 of the License, or (at your option) any later version.
- 
+
      This library is distributed in the hope that it will be useful,
      but WITHOUT ANY WARRANTY; without even the implied warranty of
      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
      Library General Public License for more details.
- 
+
      You should have received a copy of the GNU Library General Public
      License along with this library; if not, write to the Free Software
      Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
- 
+
      For further information visit http://plib.sourceforge.net
 
      $Id: ul.cxx 2129 2007-10-16 00:45:26Z fayjf $
@@ -69,17 +69,17 @@ ulDir* ulOpenDir ( const char* dirname )
     strcpy( dir->dirname, dirname ) ;
 
 #ifdef UL_MSVC
-    char search[_MAX_PATH];
+    char search[1024];
     strcpy(search,dirname);
-    
+
     //munch the directory seperator
     int len = strlen(search);
     if ( len>0 && strchr("/\\",search[len-1]) )
       search[len-1] = 0;
-    
+
     //add the wildcard
     strcat(search,"/*.*");
-    
+
     dir->first = true;
     dir->done = false;
     dir->hFind = FindFirstFile(search, &dir->data);
@@ -193,8 +193,8 @@ char* ulMakePath( char* path, const char* dir, const char* fname )
 }
 
 
-static int recursiveFindFileInSubDirs ( char * filenameOutput, 
-						const char * tPath,  const char * tfnameInput ) 
+static int recursiveFindFileInSubDirs ( char * filenameOutput,
+						const char * tPath,  const char * tfnameInput )
 {
   int bFound = FALSE;
   char tempString [ 1024 ];
@@ -222,18 +222,18 @@ static int recursiveFindFileInSubDirs ( char * filenameOutput,
         bFound = recursiveFindFileInSubDirs ( filenameOutput,
                                               tempString, tfnameInput );
       }
-      
+
 		}
 		ulCloseDir ( dirp ) ;
 	}
 
 	return bFound;
 }
-    
 
 
-void ulFindFile( char *filenameOutput, const char *path, 
-											  const char * tfnameInput, const char *sAPOM ) 
+
+void ulFindFile( char *filenameOutput, const char *path,
+											  const char * tfnameInput, const char *sAPOM )
 /*
   adds tfnameInput to the path and puts this into the buffer filenameOutput.
   sAPOM is used iff path contains "$(APOM)"
@@ -252,34 +252,34 @@ void ulFindFile( char *filenameOutput, const char *path,
 
   A segment may end in $(...). ulFindFile will then look in in this
   path and recursively in all the sub-paths
- 
+
   Some examples:
- 
+
   for loading *.MDl-models, it is very nice to set the texture path to
 
   $(APOM);$(APOM)/texture;$(APOM)/../texture
 
-  This consits of three segments and tells ulFindFile to look in the 
+  This consits of three segments and tells ulFindFile to look in the
   path of the model, in a subpath texture and in a path texture "besides"
   the path of the model. Some *.mdl-models are shipped in a directory which
   conatins a "texture"-directory, a "Model"-directory and others. In this
   case you find the texture in $(APOM)/../texture
- 
+
   Another example: You have all your textures in a directory-structure
   under /roomplan.  For example brick is under /roomplan/bricks, wood is
   under /roomplan/wood, oak is under /roomplan/wood/oak. Then you should
   use the following texture path:
 
   "/roomplan/$(...)"
- 
+
   If you dont want all of the bells and whistles, just call:
   _ssgMakePath ( filenameOutput, path, tfnameInput ) ;
-*/ 
- 
+*/
+
 {
-  
+
   char temp_texture_path[1024], *s_ptr, *s_ptr1, *current_path;
-  
+
   strncpy(temp_texture_path, path, 1024);
   current_path = temp_texture_path;
   s_ptr = temp_texture_path;
@@ -312,7 +312,7 @@ void ulFindFile( char *filenameOutput, const char *path,
       }
     }
     else if ( *s_ptr == '$' )
-    { 
+    {
       if ( s_ptr [ 1 ] == '$' )
       {
         // replace "$$" with "$"
@@ -338,7 +338,7 @@ void ulFindFile( char *filenameOutput, const char *path,
       }
       else
       if ( 0 == strncmp( s_ptr, "$(...)", strlen("$(...)" ) ) )
-      {  
+      {
         //strcpy(temp_texture_path_for_recursion, current_path);
 
         char * nextPath=s_ptr;
@@ -365,7 +365,7 @@ void ulFindFile( char *filenameOutput, const char *path,
         char tPath [ 1024 ];
         strcpy ( tPath, current_path ) ;
         tPath [ (long) (s_ptr - current_path) ] = 0;
-        
+
         // So, lets recurse into the sub-dirs:
         // Here I just assume that the "$(...)" is the last thing in
         // this segment
@@ -375,12 +375,12 @@ void ulFindFile( char *filenameOutput, const char *path,
           return ; // success
 
         // *****
-        // we handled the path-segment current_path containing the $(...) and 
+        // we handled the path-segment current_path containing the $(...) and
         // didnt find the file, so go on to the nect segment
 
         current_path = nextPath; // points to a 0 if this was the last segment
         s_ptr = current_path;
-      }  
+      }
       else
         s_ptr++;
     }
@@ -412,13 +412,13 @@ char *ulStrDup ( const char *s )
 
 /*
 
- 
+
   I'm sick of half the machines on the planet supporting
   strncasecmp and the other half strnicmp - so here is my own
   offering.
 
   **** ATTENTION ****
-  WK: If you used strnicmp, make sure you realise the completely 
+  WK: If you used strnicmp, make sure you realise the completely
   changed meaning of the return value - 0 means not equal!
 */
 
@@ -460,7 +460,7 @@ int ulStrNEqual ( const char *s1, const char *s2, int len )
   offering.
 
   **** ATTENTION ****
-  WK: If you used stricmp, make sure you realise the completely 
+  WK: If you used stricmp, make sure you realise the completely
   changed meaning of the return value - 0 means not equal!
 */
 
@@ -498,12 +498,12 @@ int ulIsAbsolutePathName ( const char *pathname )
   /*
     Is this an absolute pathname or a relative one?
   */
- 
+
   if ( (pathname == NULL) || (pathname [0] == 0) )
     return FALSE;
 
 #ifdef UL_MSVC
- 
+
   /*
     Under WinDOS, it's an absolute path if it starts
     with a slash *or* if it starts with a drive letter,

@@ -25,20 +25,20 @@
 SceneHammerAnvil *SceneHammerAnvil::TheSceneHammerAnvil = NULL;
 
 //**************************************
-SceneHammerAnvil::SceneHammerAnvil( const char* pName, EnumAsteroides pTypeAsteroide, int pHardness, Double3& lPos, 
+SceneHammerAnvil::SceneHammerAnvil( const char* pName, EnumAsteroides pTypeAsteroide, int pHardness, Double3& lPos,
 																float pInterval, float  pH, float pV )
 :Scene( pName, pHardness, pInterval, pH, pV ),
 cTypeAsteroide(pTypeAsteroide)
 {
-  TheSceneHammerAnvil = this; 
+  TheSceneHammerAnvil = this;
 
- 
+
   //===== Initialisation des props du generateur =====
   Float4 mat1(   0.8, 0.4, 0.5, 1.0 );
 
   caPropsGen = new O3dObjProps;
   caPropsGen->ObjPropsFloat4::set( MATERIAL, mat1 );
- 
+
 
 	caGenTexture = new T3dTexture( "textures/1.gif"  );
   caPropsGen->setTexture( caGenTexture );
@@ -67,13 +67,14 @@ GLboolean SceneHammerAnvil::animate(){
   if( ( WorldControler::GetTime()-SpriteFloat::get( SPRITE_TIMER1)) < cInterval )
 	  return GL_FALSE;
 
-	 
+
   SpriteFloat::set( SPRITE_TIMER1,  WorldControler::GetTime());
 
    Sprite3d::animate();
 
  	subAnimate (1);
 	subAnimate(-1);
+    return GL_TRUE;
 }
 //------------------------
 GLboolean SceneHammerAnvil::subAnimate(int pSens)
@@ -121,7 +122,7 @@ GLboolean SceneHammerAnvil::subAnimate(int pSens)
 	}
 
   Double3 lD3 ( 0, WorldGame::GlobalScroll*pSens, 0);
-  sp->SpriteDouble3::set( SPRITE_SPEED, lD3); 
+  sp->SpriteDouble3::set( SPRITE_SPEED, lD3);
   sp->getTransf().TransfDouble3::set( POS, pos );
 
   WorldControler::Add( sp  );

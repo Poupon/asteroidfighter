@@ -54,11 +54,11 @@ StrStrip( char* pStr )
 	char *t = pStr;
 	char *s = pStr;
 
-	do{			
+	do{
 		while( isspace( *s )  ) s++;
 		*t++ = *s;
 	}while( *s++ != '\0');
-	
+
 	return pStr;
 }
 //------------------------------------------------
@@ -66,25 +66,25 @@ bool
 ReadIni( std::istream &pIn, std::map< std::string, std::string>& pConfig )
 {
 	char lLine[4096];
-	
+
 	std::string lCurrentSection = "None";
-	
-	
+
+
 	//=============== read the stream ================
 	while( pIn.getline( &lLine[0], sizeof(lLine)-1 ))
 		{
 			char* lCurrent = lLine;
-			
+
 			if( *lCurrent == '#')  // Comment ?
 				continue;
 
 
-			
+
 			for( int i = (int)::strlen(lCurrent) -1 ; i >= 0; i-- )
         {
-          if ( lCurrent[i] == '\r' ) 
+          if ( lCurrent[i] == '\r' )
             continue;
-					
+
           lCurrent[i+1] = '\0';
           break;
         }
@@ -93,22 +93,22 @@ ReadIni( std::istream &pIn, std::map< std::string, std::string>& pConfig )
 			while( isspace( *lCurrent )  ) lCurrent++;
 			if( *lCurrent == '\0' )
 				continue;
-			
+
 			// A section ?
       if ( *lCurrent == '[' )
         {
           char *lEnd = ::strchr( lCurrent, ']' );
-					
+
           if( lEnd != nullptr )
 						*lEnd = '\0';
-					
+
           lCurrentSection = ++lCurrent;
-					
+
 					std::cout << "Current Section:" << lCurrentSection << std::endl;
-					
+
 					continue;
         }
-			
+
 			char* lEgal = ::strchr(lCurrent, '=');
 			if( lEgal == nullptr )
 				{
@@ -116,26 +116,26 @@ ReadIni( std::istream &pIn, std::map< std::string, std::string>& pConfig )
 					continue;
 				}
 			*lEgal  = '\0';
-			
+
 			char* lVal = StrStrip( lCurrent );
 			lEgal++;
-			
-			if( lVal== nullptr || strlen( lVal ) <= 0 
+
+			if( lVal== nullptr || strlen( lVal ) <= 0
 					|| strlen( lEgal ) <= 0 )
 				{
-					std::cerr << "ReadIni error in section " << lCurrentSection << " >>>" << lLine << std::endl;	
+					std::cerr << "ReadIni error in section " << lCurrentSection << " >>>" << lLine << std::endl;
 					continue;
-				}		 
+				}
 
 			std::string lKey = lCurrentSection;
 			lKey +='.';
 			lKey +=lVal;
 
-			std::cout << "ReadIni add values "  << lKey << '=' << lEgal << std::endl;	
+			std::cout << "ReadIni add values "  << lKey << '=' << lEgal << std::endl;
 			pConfig[ lKey ] =  lEgal;
 		}
 		//===================================================
-	return true;		
+	return true;
 }
 
 //------------------------------------------------
@@ -148,7 +148,7 @@ ReadFileIni( std::string & pName, std::map< std::string, std::string>& pConfig )
 			return ReadIni( lFile, pConfig );
 		}
 	return false ;
-} 
+}
 //****************************************************
 class GameWorldControler: public WorldControler{
 
@@ -258,8 +258,9 @@ printHelp()
 //****************************************************
 int main(int argc, char **argv)
 {
-
+#ifdef X_LINUX
 	XInitThreads();
+#endif // X_LINUX
 
 
 	std::cout << " sizeof(int)=" << sizeof(int)
