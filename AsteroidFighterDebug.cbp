@@ -42,6 +42,7 @@
 			<Add alias="All" targets="AsteroidFighterDbg;" />
 		</VirtualTargets>
 		<Compiler>
+			<Add option="-pg" />
 			<Add option="-g" />
 			<Add option="-fpermissive" />
 			<Add option="-DUL_WIN32=1 -DUL_MSVC=1 -DOPENGLUT_STATIC" />
@@ -52,13 +53,18 @@
 			<Add directory="Sprite3d" />
 			<Add directory="O3d" />
 			<Add directory="T3d" />
+			<Add directory="../libsndfile32/include" />
+			<Add directory="../openal-soft-1.16.0-bin/include" />
 		</Compiler>
 		<Linker>
+			<Add option="-pg -lgmon" />
 			<Add library="plib" />
 			<Add library="opengl32" />
 			<Add library="glu32" />
 			<Add library="glut32" />
 			<Add library="winmm" />
+			<Add library="..\libsndfile32\lib\libsndfile-1.lib" />
+			<Add library="..\openal-soft-1.16.0-bin\libs\Win32\OpenAL32.lib" />
 		</Linker>
 		<Unit filename="AsteroidFighter/Help.cc" />
 		<Unit filename="AsteroidFighter/Help.h" />

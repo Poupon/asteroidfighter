@@ -4,21 +4,30 @@
 	<Project>
 		<Option title="AsteroidFighter" />
 		<Option pch_mode="0" />
+		<Option default_target="default" />
 		<Option compiler="gcc" />
 		<Build>
+			<Script file="lib_finder.script" />
 			<Target title="default">
 				<Option output="AsteroidFighter.exe" prefix_auto="0" extension_auto="0" />
 				<Option object_output="Output" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="-S6 -F25 -T8" />
 				<Option projectResourceIncludeDirsRelation="1" />
 			</Target>
 			<Target title="Debug">
 				<Option output="AsteroidFighter" prefix_auto="1" extension_auto="1" />
 				<Option type="0" />
 				<Option compiler="gcc" />
+				<Option parameters="-S6 -F25 -T8" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="AsteroidFighter" />
+					<Add directory="Space" />
+					<Add directory="U3d" />
+					<Add directory="Sprite3d" />
+					<Add directory="O3d" />
 				</Compiler>
 			</Target>
 		</Build>
@@ -26,17 +35,20 @@
 			<Add alias="All" targets="default;" />
 		</VirtualTargets>
 		<Compiler>
-			<Add option="-O2" />
+			<Add option="-fexpensive-optimizations" />
+			<Add option="-O3" />
 			<Add option="-pedantic" />
 			<Add option="-std=c++11" />
 			<Add option="-Wextra" />
 			<Add option="-Wall" />
+			<Add option="-g" />
 			<Add option="-fpermissive -Wno-unused-parameter" />
 			<Add option="-DUL_WIN32=1 -DUL_MSVC=1 -DOPENGLUT_STATIC -DPUI_WIN" />
 			<Add option="-DWIN32" />
 			<Add option="-DOPENGLUT_STATIC" />
 			<Add option="-DPUI_WIN" />
 			<Add option="-DPC_WINDOWS" />
+			<Add option="-DUSE_SOUND" />
 			<Add directory="." />
 			<Add directory="AsteroidFighter" />
 			<Add directory="Space" />
@@ -46,6 +58,8 @@
 			<Add directory="T3d" />
 			<Add directory="plib-1.8.5/include" />
 			<Add directory="freeglut-2.8.1/include" />
+			<Add directory="../openal-soft-1.16.0-bin/include" />
+			<Add directory="../libsndfile32/include" />
 		</Compiler>
 		<Linker>
 			<Add library="winmm" />
@@ -53,6 +67,8 @@
 			<Add library="freeglut" />
 			<Add library="opengl32" />
 			<Add library="glu32" />
+			<Add library="..\openal-soft-1.16.0-bin\libs\Win32\OpenAL32.lib" />
+			<Add library="..\libsndfile32\lib\libsndfile-1.lib" />
 			<Add directory="Output/AsteroidFighter" />
 			<Add directory="Output/O3d" />
 			<Add directory="Output/Space" />
@@ -61,6 +77,8 @@
 			<Add directory="Output/U3d" />
 			<Add directory="freeglut-2.8.1/Release" />
 			<Add directory="plib-1.8.5/lib" />
+			<Add directory="../openal-soft-1.16.0-bin/libs/Win32" />
+			<Add directory="../libsndfile32/lib" />
 		</Linker>
 		<Unit filename="AsteroidFighter/Help.cc">
 			<Option target="default" />
@@ -212,6 +230,7 @@
 		<Unit filename="Sprite3d/SoundControler.cc">
 			<Option target="default" />
 		</Unit>
+		<Unit filename="Sprite3d/SoundControler.h" />
 		<Unit filename="Sprite3d/Sprite3d.cc">
 			<Option target="default" />
 		</Unit>
