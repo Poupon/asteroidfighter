@@ -388,7 +388,7 @@ SoundControler::getFreeSource( int pPriority){
 
 			// on exclut les sources en mode LOOP
 			if( (lSrc->cState == SoundSource::SourceState::PLAY 
-					 ||  lSrc->cState == SoundSource::SourceState::ERROR)
+					 ||  lSrc->cState == SoundSource::SourceState::SRC_ERR)
 					&& lSrc->cPriority <= lMemPriority )
 				{
 					//		std::cout << "  Src:" +lSrc->cTime +" Mem:" + lMemTime  ;
@@ -477,7 +477,7 @@ PSoundSourceId
 	if( (err = alGetError()) != 0 ) 
 		{
 			std::cerr << "SoundSource:: play error" << std::endl;
-			cState = SourceState::ERROR;
+			cState = SourceState::SRC_ERR;
 			return PBadSoundSourceId;
 		}
 	else
