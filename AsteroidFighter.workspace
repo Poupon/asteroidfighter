@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Workspace">
+		<Project filename="AsteroidFighter.cbp" />
+		<Project filename="AsteroidFighterDebug.cbp" />
+		<Project filename="plib-1.8.5/plib.cbp" />
+		<Project filename="freeglut-2.8.1/freeglut.cbp" />
+		<Project filename="freeglut-2.8.1/freeglut_static.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>

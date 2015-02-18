@@ -1,0 +1,1230 @@
+# depslib dependency file v1.0
+1409128678 source:d:\dev\asteroidfighter\asteroidfighter\help.cc
+	<stdlib.h>
+	<T3d/T3dLoadImg.h>
+	<T3d/T3dColor.h>
+	<O3d/O3dObjPrim.h>
+	<O3d/O3dObjText.h>
+	<Sprite3d/ObjOdron.h>
+	<Sprite3d/World.h>
+	<Sprite3d/ObjText2d.h>
+	<Sprite3d/ObjText.h>
+	<U3d/WeaponsMaker.h>
+	<Space/Pilot.h>
+	<Space/SceneAsteroide.h>
+	<Space/ShipsMaker.h>
+	<Space/Def.h>
+	<U3d/Sky.h>
+	<iostream>
+	<U3d/Banniere.h>
+	<Help.h>
+	<O3d/O3dObjPLibFont.h>
+
+1409128679 d:\dev\asteroidfighter\t3d\t3dloadimg.h
+
+1409128679 d:\dev\asteroidfighter\t3d\t3dcolor.h
+	<T3d/T3dType.h>
+
+1409128679 d:\dev\asteroidfighter\t3d\t3dtype.h
+	<GL/glut.h>
+	<GL/gl.h>
+	<GL/glx.h>
+	<GL/glu.h>
+	<string.h>
+	<T3d/TVectType.h>
+
+988234426 d:\dev\asteroidfighter\gl\glut.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1228534334 d:\dev\asteroidfighter\gl\gl.h
+
+1228534334 d:\dev\asteroidfighter\gl\glu.h
+	<stddef.h>
+	<GL/gl.h>
+
+1409128679 d:\dev\asteroidfighter\t3d\tvecttype.h
+	<iostream>
+
+1409128678 d:\dev\asteroidfighter\o3d\o3dobjprim.h
+	<O3d/O3dObj.h>
+
+1409128678 d:\dev\asteroidfighter\o3d\o3dobj.h
+	<T3d/T3dBox.h>
+	<T3d/T3dTransf.h>
+	<O3d/O3dViewProps.h>
+	<O3d/O3dObjProps.h>
+
+1409128679 d:\dev\asteroidfighter\t3d\t3dbox.h
+	<T3d/T3dType.h>
+	<T3d/T3dVect3D.h>
+	<string.h>
+
+1409128679 d:\dev\asteroidfighter\t3d\t3dvect3d.h
+	<T3d/T3dType.h>
+
+1409128679 d:\dev\asteroidfighter\t3d\t3dtransf.h
+	<T3d/T3dType.h>
+	<T3d/T3dTab.h>
+	<string.h>
+
+1409128679 d:\dev\asteroidfighter\t3d\t3dtab.h
+	<T3d/T3dType.h>
+
+1409128678 d:\dev\asteroidfighter\o3d\o3dviewprops.h
+	<T3d/T3dFont.h>
+	<T3d/T3dTab.h>
+	<O3d/O3dSelector.h>
+
+1409128679 d:\dev\asteroidfighter\t3d\t3dfont.h
+	<T3d/T3dType.h>
+
+1409128678 d:\dev\asteroidfighter\o3d\o3dselector.h
+	<T3d/T3dType.h>
+
+1409128678 d:\dev\asteroidfighter\o3d\o3dobjprops.h
+	<T3d/T3dVect3D.h>
+	<T3d/T3dTab.h>
+	<T3d/T3dTexture.h>
+
+1409128679 d:\dev\asteroidfighter\t3d\t3dtexture.h
+	<T3d/T3dType.h>
+
+1409128678 d:\dev\asteroidfighter\o3d\o3dobjtext.h
+	<O3d/O3dObjPoint.h>
+	<string>
+	<vector>
+
+1409128678 d:\dev\asteroidfighter\o3d\o3dobjpoint.h
+	<O3d/O3dObj.h>
+	<T3d/T3dVect3D.h>
+
+1409128679 d:\dev\asteroidfighter\sprite3d\objodron.h
+	<O3d/O3dObj.h>
+
+1409128679 d:\dev\asteroidfighter\sprite3d\world.h
+	<stdlib.h>
+	<stdio.h>
+	<T3d/T3dBox.h>
+	<O3d/O3dObjProps.h>
+	<O3d/O3dKamera.h>
+	<Sprite3d/ObjVect.h>
+	<Sprite3d/Collision.h>
+	<T3d/T3dFont.h>
+	<string>
+	<map>
+
+1409128678 d:\dev\asteroidfighter\o3d\o3dkamera.h
+	<T3d/T3dType.h>
+	<T3d/T3dTab.h>
+	<T3d/T3dTransf.h>
+	<GL/gl.h>
+	<GL/glx.h>
+	<GL/glu.h>
+
+1409128679 d:\dev\asteroidfighter\sprite3d\objvect.h
+	<vector>
+	<O3d/O3dObj.h>
+
+1382378458 d:\dev\asteroidfighter\sprite3d\soundlibrary.h
+	<T3d/T3dBox.h>
+	<Sprite3d/SoundControler.h>
+
+1409129108 d:\dev\asteroidfighter\sprite3d\soundcontroler.h
+	<T3d/T3dBox.h>
+	<stdint.h>
+	<string>
+	<vector>
+
+1221036750 d:\dev\asteroidfighter\plib-1.8.5\include\plib\sl.h
+	<stdio.h>
+	"slPortability.h"
+
+1221036750 d:\dev\asteroidfighter\plib-1.8.5\include\plib\slportability.h
+	"ul.h"
+	<stdio.h>
+	<stdlib.h>
+	<Sound.h>
+	<Timer.h>
+	<unix.h>
+	<Carbon/Carbon.h>
+	<fcntl.h>
+	<sys/stat.h>
+	<string.h>
+	<limits.h>
+	<math.h>
+	<linux/soundcard.h>
+	<sys/ioctl.h>
+	<sys/soundcard.h>
+	<soundcard.h>
+	<sys/audioio.h>
+	<audio.h>
+	<sys/audioio.h>
+	<sys/stropts.h>
+
+1409128690 d:\dev\asteroidfighter\plib-1.8.5\include\plib\ul.h
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<string.h>
+	<ctype.h>
+	<assert.h>
+	<windows.h>
+	<mmsystem.h>
+	<regstr.h>
+	<unistd.h>
+	<be/kernel/image.h>
+	<CodeFragments.h>
+	<unistd.h>
+	<unistd.h>
+	<unistd.h>
+	<dlfcn.h>
+	<fcntl.h>
+	<sys/param.h>
+	<assert.h>
+	<limits.h>
+	<math.h>
+	<float.h>
+	<errno.h>
+
+1409128679 d:\dev\asteroidfighter\sprite3d\objtext2d.h
+	<O3d/O3dObj.h>
+	<Sprite3d/Text2d.h>
+
+1409128679 d:\dev\asteroidfighter\sprite3d\text2d.h
+	<T3d/T3dFont.h>
+	<string>
+
+1409128679 d:\dev\asteroidfighter\sprite3d\objtext.h
+	<O3d/O3dObj.h>
+
+1409128679 d:\dev\asteroidfighter\u3d\weaponsmaker.h
+	<O3d/O3dObjProps.h>
+	<O3d/O3dObj.h>
+	<O3d/O3dObjPrim.h>
+	<Sprite3d/Sprite3dPilot.h>
+	<Sprite3d/ObjPart.h>
+	<Sprite3d/AutoPtr.h>
+	<Sprite3d/Action.h>
+	<Sprite3d/SoundControler.h>
+
+1409128679 d:\dev\asteroidfighter\sprite3d\sprite3dpilot.h
+	<Sprite3d/Sprite3dObj.h>
+
+1409128679 d:\dev\asteroidfighter\sprite3d\sprite3dobj.h
+	<Sprite3d/Sprite3d.h>
+
+1409128679 d:\dev\asteroidfighter\sprite3d\sprite3d.h
+	<vector>
+	<T3d/T3dTransf.h>
+	<O3d/O3dObj.h>
+	<Sprite3d/World.h>
+	<Sprite3d/WorldControler.h>
+
+1409128679 d:\dev\asteroidfighter\sprite3d\worldcontroler.h
+	<T3d/T3dBox.h>
+	<O3d/O3dObjProps.h>
+	<O3d/O3dKamera.h>
+	<Sprite3d/ObjVect.h>
+	<T3d/T3dFont.h>
+
+1409128679 d:\dev\asteroidfighter\sprite3d\objpart.h
+	<vector>
+	<T3d/T3dTab.h>
+	<O3d/O3dObj.h>
+
+1409128679 d:\dev\asteroidfighter\sprite3d\autoptr.h
+
+1409128679 d:\dev\asteroidfighter\sprite3d\action.h
+	<Sprite3d/Sprite3d.h>
+	<iostream>
+
+1409128679 d:\dev\asteroidfighter\space\pilot.h
+	<istream>
+	<ostream>
+	<Sprite3d/Sprite3dPilot.h>
+	<Sprite3d/ObjPart.h>
+	<Sprite3d/AutoPtr.h>
+	<Sprite3d/Action.h>
+	<Sprite3d/SoundControler.h>
+
+1409128679 d:\dev\asteroidfighter\space\sceneasteroide.h
+	<Sprite3d/AutoPtr.h>
+	<Sprite3d/Sprite3dObj.h>
+	<Space/AsteroidesMaker.h>
+	<Space/Scene.h>
+
+1409128957 d:\dev\asteroidfighter\space\asteroidesmaker.h
+	<O3d/O3dObjProps.h>
+	<O3d/O3dObj.h>
+	<O3d/O3dObjPrim.h>
+	<Sprite3d/Sprite3dPilot.h>
+	<Sprite3d/ObjPart.h>
+	<Sprite3d/AutoPtr.h>
+	<Sprite3d/Action.h>
+
+1409128679 d:\dev\asteroidfighter\space\scene.h
+	<Sprite3d/AutoPtr.h>
+	<string>
+	<Sprite3d/Sprite3dObj.h>
+
+1409128679 d:\dev\asteroidfighter\space\shipsmaker.h
+	<O3d/O3dObjProps.h>
+	<O3d/O3dObj.h>
+	<O3d/O3dObjPrim.h>
+	<Sprite3d/Sprite3dPilot.h>
+	<Sprite3d/ObjPart.h>
+	<Sprite3d/AutoPtr.h>
+	<Sprite3d/Action.h>
+	<Space/ActionsShip.h>
+	<U3d/WeaponsMaker.h>
+
+1409128679 d:\dev\asteroidfighter\space\actionsship.h
+	<O3d/O3dObjProps.h>
+	<O3d/O3dObj.h>
+	<O3d/O3dObjPrim.h>
+	<Sprite3d/Sprite3dPilot.h>
+	<Sprite3d/ObjPart.h>
+	<Sprite3d/AutoPtr.h>
+	<Sprite3d/Action.h>
+	<U3d/WeaponsMaker.h>
+
+1409128679 d:\dev\asteroidfighter\space\def.h
+
+1409128679 d:\dev\asteroidfighter\u3d\sky.h
+	<Sprite3d/Sprite3d.h>
+
+1409128679 d:\dev\asteroidfighter\u3d\banniere.h
+	<Sprite3d/Sprite3dObj.h>
+	<Sprite3d/AutoPtr.h>
+
+1409128678 d:\dev\asteroidfighter\asteroidfighter\help.h
+	<Sprite3d/AutoPtr.h>
+	<Sprite3d/Sprite3dObj.h>
+	<U3d/BonusMaker.h>
+	<U3d/WeaponsMaker.h>
+	<Space/AsteroidesMaker.h>
+	<Space/ShipsMaker.h>
+	<Space/MinesMaker.h>
+
+1409128679 d:\dev\asteroidfighter\u3d\bonusmaker.h
+	<O3d/O3dObjProps.h>
+	<O3d/O3dObj.h>
+	<O3d/O3dObjPrim.h>
+	<Sprite3d/Sprite3dPilot.h>
+	<Sprite3d/ObjPart.h>
+	<Sprite3d/AutoPtr.h>
+	<Sprite3d/Action.h>
+
+1409128679 d:\dev\asteroidfighter\space\minesmaker.h
+	<O3d/O3dObjProps.h>
+	<O3d/O3dObj.h>
+	<O3d/O3dObjPrim.h>
+	<Sprite3d/Sprite3dPilot.h>
+	<Sprite3d/ObjPart.h>
+	<Sprite3d/AutoPtr.h>
+	<Sprite3d/Action.h>
+	<Space/ActionsShip.h>
+	<U3d/WeaponsMaker.h>
+
+1409128678 d:\dev\asteroidfighter\o3d\o3dobjplibfont.h
+	<O3d/O3dObjPoint.h>
+	<string>
+	<vector>
+	"plib/fnt.h"
+
+1409128683 d:\dev\asteroidfighter\plib-1.8.5\include\plib\fnt.h
+	<stdio.h>
+	"sg.h"
+	<OpenGL/gl.h>
+	<GL/gl.h>
+
+1409128683 d:\dev\asteroidfighter\plib-1.8.5\include\plib\sg.h
+	<stdio.h>
+	"ul.h"
+
+1409129823 source:d:\dev\asteroidfighter\asteroidfighter\main.cc
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<iostream>
+	<fstream>
+	<math.h>
+	<GL/glut.h>
+	<O3d/O3dObjProps.h>
+	<O3d/O3dKamera.h>
+	<O3d/O3dObjText.h>
+	<Sprite3d/World.h>
+	<Sprite3d/ObjOdron.h>
+	<Sprite3d/ObjPart.h>
+	<Sprite3d/Sprite3d.h>
+	<Sprite3d/Utils3d.h>
+	<Sprite3d/Collision.h>
+	<Sprite3d/ObjText2d.h>
+	<Sprite3d/ObjText.h>
+	<Sprite3d/SceneManager.h>
+	<Sprite3d/SoundControler.h>
+	<MainMenu.h>
+	<Help.h>
+	<Space/WorldGame.h>
+	<plib/ul.h>
+	<plib/pu.h>
+	<plib/fnt.h>
+
+1409128679 d:\dev\asteroidfighter\sprite3d\utils3d.h
+	<T3d/T3dType.h>
+
+1409128679 d:\dev\asteroidfighter\sprite3d\collision.h
+	<vector>
+	<set>
+	<Sprite3d/Array3d.h>
+
+1409128679 d:\dev\asteroidfighter\sprite3d\scenemanager.h
+	<Sprite3d/Sprite3d.h>
+	<Sprite3d/Action.h>
+
+1409128678 d:\dev\asteroidfighter\asteroidfighter\mainmenu.h
+	<Sprite3d/AutoPtr.h>
+	<Sprite3d/Sprite3dObj.h>
+	<plib/pu.h>
+	<plib/puAux.h>
+
+1409128683 d:\dev\asteroidfighter\plib-1.8.5\include\plib\pu.h
+	<stdio.h>
+	"fnt.h"
+	"ulRTTI.h"
+	"puGLUT.h"
+	"puPW.h"
+	"puFLTK.h"
+	"puSDL.h"
+	"puNative.h"
+
+1409128690 d:\dev\asteroidfighter\plib-1.8.5\include\plib\ulrtti.h
+	<string.h>
+	"ul.h"
+
+1409128683 d:\dev\asteroidfighter\plib-1.8.5\include\plib\puglut.h
+	"pu.h"
+	<GLUT/glut.h>
+	<GL/freeglut.h>
+	<GL/glut.h>
+
+1409128683 d:\dev\asteroidfighter\plib-1.8.5\include\plib\pupw.h
+	"pu.h"
+
+1409128683 d:\dev\asteroidfighter\plib-1.8.5\include\plib\pufltk.h
+	"pu.h"
+	<FL/Fl_Gl_Window.H>
+
+1409128683 d:\dev\asteroidfighter\plib-1.8.5\include\plib\pusdl.h
+	"pu.h"
+	"SDL.h"
+
+1409128683 d:\dev\asteroidfighter\plib-1.8.5\include\plib\punative.h
+	"pu.h"
+	<GL/glx.h>
+	<agl.h>
+	<OpenGL/CGLCurrent.h>
+
+1409128683 d:\dev\asteroidfighter\plib-1.8.5\include\plib\puaux.h
+	"pu.h"
+
+1409128679 d:\dev\asteroidfighter\space\worldgame.h
+	<Sprite3d/World.h>
+	<Sprite3d/SceneManager.h>
+
+1409128678 source:d:\dev\asteroidfighter\asteroidfighter\mainmenu.cc
+	<stdlib.h>
+	<time.h>
+	<T3d/T3dLoadImg.h>
+	<T3d/T3dColor.h>
+	<O3d/O3dObjPrim.h>
+	<O3d/O3dObjText.h>
+	<O3d/O3dObjPLibFont.h>
+	<Sprite3d/ObjOdron.h>
+	<Sprite3d/World.h>
+	<Sprite3d/ObjText2d.h>
+	<Sprite3d/ObjText.h>
+	<Sprite3d/Random.h>
+	<Sprite3d/SoundControler.h>
+	<U3d/WeaponsMaker.h>
+	<MainMenu.h>
+	<Space/Pilot.h>
+	<Space/SceneAsteroide.h>
+	<Space/ShipsMaker.h>
+	<Space/Def.h>
+	<U3d/Sky.h>
+	<iostream>
+	<U3d/Banniere.h>
+	<plib/pu.h>
+
+1409128679 d:\dev\asteroidfighter\sprite3d\random.h
+	<T3d/T3dType.h>
+
+1409128678 source:d:\dev\asteroidfighter\o3d\o3dkamera.cc
+	<O3dKamera.h>
+
+1409128678 source:d:\dev\asteroidfighter\o3d\o3dobj.cc
+	<O3dObj.h>
+	<T3d/T3dColor.h>
+	<T3d/T3dPrimitiv.h>
+	<stdio.h>
+	<math.h>
+
+1409128679 d:\dev\asteroidfighter\t3d\t3dprimitiv.h
+	<T3d/T3dType.h>
+	<T3d/T3dVect3D.h>
+
+1409128678 source:d:\dev\asteroidfighter\o3d\o3dobjbezier.cc
+	<O3dObjBezier.h>
+	<O3dObjProps.h>
+
+1409128678 d:\dev\asteroidfighter\o3d\o3dobjbezier.h
+	<O3d/O3dObjLine.h>
+
+1409128678 d:\dev\asteroidfighter\o3d\o3dobjline.h
+	<O3d/O3dObjPoint.h>
+
+1409128678 source:d:\dev\asteroidfighter\o3d\o3dobjbspline.cc
+	<T3d/T3dCalcul.h>
+	<T3d/T3dColor.h>
+	<T3d/T3dPrimitiv.h>
+	<O3dObjBSpline.h>
+	<O3dObjProps.h>
+
+1409128679 d:\dev\asteroidfighter\t3d\t3dcalcul.h
+	<T3d/T3dType.h>
+
+1409128678 d:\dev\asteroidfighter\o3d\o3dobjbspline.h
+	<O3d/O3dObjLine.h>
+
+1409128678 source:d:\dev\asteroidfighter\o3d\o3dobjbsplinesurf.cc
+	<O3dObjBSplineSurf.h>
+	<T3d/T3dColor.h>
+	<stdio.h>
+
+1409128678 d:\dev\asteroidfighter\o3d\o3dobjbsplinesurf.h
+	<O3d/O3dObjShape.h>
+
+1409128678 d:\dev\asteroidfighter\o3d\o3dobjshape.h
+	<T3d/T3dPrimitiv.h>
+	<O3d/O3dObjPoint.h>
+
+1409128678 source:d:\dev\asteroidfighter\o3d\o3dobjfacet.cc
+	<O3dObjFacet.h>
+	<T3d/T3dColor.h>
+
+1409128678 d:\dev\asteroidfighter\o3d\o3dobjfacet.h
+	<O3d/O3dObjPoint.h>
+
+1409128678 source:d:\dev\asteroidfighter\o3d\o3dobjlight.cc
+	<O3dObjLight.h>
+	<O3dObjProps.h>
+	<T3d/T3dColor.h>
+
+1409128678 d:\dev\asteroidfighter\o3d\o3dobjlight.h
+	<O3d/O3dObjPoint.h>
+
+1409128678 source:d:\dev\asteroidfighter\o3d\o3dobjline.cc
+	<O3dObjLine.h>
+	<O3dObjProps.h>
+	<T3d/T3dColor.h>
+
+1409128678 source:d:\dev\asteroidfighter\o3d\o3dobjnurbs.cc
+	<O3dObjNurbs.h>
+	<T3d/T3dType.h>
+
+1409128678 d:\dev\asteroidfighter\o3d\o3dobjnurbs.h
+	<O3d/O3dObjLine.h>
+
+1409128678 source:d:\dev\asteroidfighter\o3d\o3dobjplibfont.cc
+	<O3dObjPLibFont.h>
+	<O3dObjProps.h>
+	<iostream>
+	<T3d/T3dColor.h>
+	<stdlib.h>
+
+1409128678 source:d:\dev\asteroidfighter\o3d\o3dobjpoint.cc
+	<O3dObjPoint.h>
+	<O3dObjProps.h>
+	<T3d/T3dPrimitiv.h>
+	<T3d/T3dColor.h>
+	<stdio.h>
+	<math.h>
+
+1409128678 source:d:\dev\asteroidfighter\o3d\o3dobjprim.cc
+	<O3dObjPrim.h>
+	<math.h>
+
+1409128678 source:d:\dev\asteroidfighter\o3d\o3dobjprops.cc
+	<O3dObjProps.h>
+	<T3d/T3dColor.h>
+	<GL/gl.h>
+	<iostream>
+
+1409128678 source:d:\dev\asteroidfighter\o3d\o3dobjshape.cc
+	<T3d/T3dCalcul.h>
+	<T3d/T3dPrimitiv.h>
+	<T3d/T3dColor.h>
+	<O3dObjProps.h>
+	<O3dObjShape.h>
+	<stdio.h>
+
+1409128678 source:d:\dev\asteroidfighter\o3d\o3dobjtext.cc
+	<O3dObjText.h>
+	<O3dObjProps.h>
+	<iostream>
+	<T3d/T3dColor.h>
+	<stdlib.h>
+
+1409128678 source:d:\dev\asteroidfighter\o3d\o3dselector.cc
+	<O3dSelector.h>
+	<O3d/O3dViewProps.h>
+	<O3d/O3dKamera.h>
+	<stdio.h>
+
+1409128678 source:d:\dev\asteroidfighter\o3d\o3dviewprops.cc
+
+1409128678 source:d:\dev\asteroidfighter\o3d\ptoken.cc
+	<PToken.h>
+	<stdlib.h>
+	<string.h>
+	"fstream"
+
+1409128678 d:\dev\asteroidfighter\o3d\ptoken.h
+	<T3d/T3dType.h>
+	<iostream>
+
+1409128679 source:d:\dev\asteroidfighter\space\actionsship.cc
+	<stdlib.h>
+	<ActionsShip.h>
+	<Sprite3d/World.h>
+	<Sprite3d/ObjOdron.h>
+	<Sprite3d/ObjPart.h>
+	<Sprite3d/Sprite3d.h>
+	<Sprite3d/Utils3d.h>
+	<Sprite3d/Collision.h>
+	<Sprite3d/ObjText2d.h>
+	<Sprite3d/Random.h>
+	<Sprite3d/SoundControler.h>
+	<U3d/SpriteExplosion.h>
+	<U3d/WeaponsMaker.h>
+	<U3d/BonusMaker.h>
+	<Space/Pilot.h>
+	<Def.h>
+	<ShipsMaker.h>
+	<math.h>
+
+1409128679 d:\dev\asteroidfighter\u3d\spriteexplosion.h
+	<Sprite3d/AutoPtr.h>
+	<Sprite3d/Sprite3d.h>
+	<O3d/O3dObj.h>
+
+1409128679 source:d:\dev\asteroidfighter\space\asteroidesmaker.cc
+	<stdlib.h>
+	<Sprite3d/ObjPart.h>
+	<Sprite3d/Sprite3d.h>
+	<Sprite3d/Utils3d.h>
+	<Sprite3d/Collision.h>
+	<Sprite3d/ObjText2d.h>
+	<Sprite3d/Random.h>
+	<Sprite3d/ObjOdron.h>
+	<WorldGame.h>
+	<U3d/SpriteExplosion.h>
+	<T3d/T3dLoadImg.h>
+	<AsteroidesMaker.h>
+	<Space/Def.h>
+
+1409128679 source:d:\dev\asteroidfighter\space\minesmaker.cc
+	<stdlib.h>
+	<MinesMaker.h>
+	<T3d/T3dLoadImg.h>
+	<Sprite3d/World.h>
+	<Sprite3d/ObjOdron.h>
+	<Sprite3d/ObjPart.h>
+	<Sprite3d/Sprite3d.h>
+	<Sprite3d/Utils3d.h>
+	<Sprite3d/Collision.h>
+	<Sprite3d/ObjText2d.h>
+	<Sprite3d/Random.h>
+	<U3d/WeaponsMaker.h>
+	<U3d/SpriteExplosion.h>
+	<U3d/BonusMaker.h>
+	<U3d/Tourelle.h>
+	<Space/Def.h>
+	<math.h>
+
+1409128679 d:\dev\asteroidfighter\u3d\tourelle.h
+	<Sprite3d/AnimatObj.h>
+	<U3d/WeaponsMaker.h>
+
+1409128679 d:\dev\asteroidfighter\sprite3d\animatobj.h
+	<Sprite3d/ObjVect.h>
+
+1409128679 source:d:\dev\asteroidfighter\space\pilot.cc
+	<GL/glut.h>
+	<Pilot.h>
+	<T3d/T3dColor.h>
+	<T3d/T3dLoadImg.h>
+	<O3d/O3dObjPrim.h>
+	<O3d/O3dObjText.h>
+	<O3d/O3dObjPLibFont.h>
+	<Sprite3d/World.h>
+	<Sprite3d/ObjPart.h>
+	<Sprite3d/Random.h>
+	<Sprite3d/WorldControler.h>
+	<Sprite3d/ObjOdron.h>
+	<Sprite3d/SoundControler.h>
+	<U3d/WeaponsMaker.h>
+	<U3d/SpriteExplosion.h>
+	<U3d/BonusMaker.h>
+	<U3d/ObjPrimPart.h>
+	<U3d/Banniere.h>
+	<WorldGame.h>
+	<Def.h>
+	<stdio.h>
+
+1409128679 d:\dev\asteroidfighter\u3d\objprimpart.h
+	<Sprite3d/ObjPart.h>
+
+1409128679 source:d:\dev\asteroidfighter\space\scene.cc
+	<stdlib.h>
+	<stdio.h>
+	<Def.h>
+	<T3d/T3dLoadImg.h>
+	<T3d/T3dColor.h>
+	<O3d/O3dObjPrim.h>
+	<Sprite3d/ObjOdron.h>
+	<Sprite3d/World.h>
+	<Sprite3d/Random.h>
+	<Scene.h>
+	<ShipsMaker.h>
+	<U3d/BonusMaker.h>
+	<iostream>
+
+1409128679 source:d:\dev\asteroidfighter\space\sceneasteroide.cc
+	<stdlib.h>
+	<Def.h>
+	<T3d/T3dLoadImg.h>
+	<T3d/T3dColor.h>
+	<O3d/O3dObjPrim.h>
+	<Sprite3d/ObjOdron.h>
+	<Sprite3d/World.h>
+	<Sprite3d/Random.h>
+	<SceneAsteroide.h>
+	<ShipsMaker.h>
+	<AsteroidesMaker.h>
+	<WorldGame.h>
+	<U3d/BonusMaker.h>
+	<iostream>
+
+1409128679 source:d:\dev\asteroidfighter\space\sceneattack.cc
+	<stdlib.h>
+	<Def.h>
+	<T3d/T3dLoadImg.h>
+	<T3d/T3dColor.h>
+	<O3d/O3dObjPrim.h>
+	<Sprite3d/ObjOdron.h>
+	<Sprite3d/World.h>
+	<Sprite3d/Random.h>
+	<SceneAttack.h>
+	<ShipsMaker.h>
+	<WorldGame.h>
+	<U3d/BonusMaker.h>
+	<iostream>
+
+1409128679 d:\dev\asteroidfighter\space\sceneattack.h
+	<Sprite3d/AutoPtr.h>
+	<Sprite3d/Sprite3dObj.h>
+	<Space/Scene.h>
+
+1409128679 source:d:\dev\asteroidfighter\space\scenebase.cc
+	<stdlib.h>
+	<Def.h>
+	<T3d/T3dLoadImg.h>
+	<T3d/T3dColor.h>
+	<O3d/O3dObjPrim.h>
+	<Sprite3d/ObjOdron.h>
+	<Sprite3d/World.h>
+	<Sprite3d/Random.h>
+	<SceneBase.h>
+	<ShipsMaker.h>
+	<U3d/BonusMaker.h>
+	<iostream>
+
+1409128679 d:\dev\asteroidfighter\space\scenebase.h
+	<Sprite3d/AutoPtr.h>
+	<Sprite3d/Sprite3dObj.h>
+	<Space/Scene.h>
+
+1409128679 source:d:\dev\asteroidfighter\space\scenegrotte.cc
+	<stdlib.h>
+	<Def.h>
+	<T3d/T3dLoadImg.h>
+	<T3d/T3dColor.h>
+	<O3d/O3dObjPrim.h>
+	<Sprite3d/ObjOdron.h>
+	<Sprite3d/World.h>
+	<Sprite3d/Random.h>
+	<SceneGrotte.h>
+	<ShipsMaker.h>
+	<MinesMaker.h>
+	<AsteroidesMaker.h>
+	<WorldGame.h>
+	<U3d/BonusMaker.h>
+	<iostream>
+
+1409128679 d:\dev\asteroidfighter\space\scenegrotte.h
+	<Sprite3d/AutoPtr.h>
+	<Space/AsteroidesMaker.h>
+	<Space/Scene.h>
+
+1409128679 source:d:\dev\asteroidfighter\space\scenelife.cc
+	<stdlib.h>
+	<Def.h>
+	<T3d/T3dLoadImg.h>
+	<T3d/T3dColor.h>
+	<O3d/O3dObjPrim.h>
+	<Sprite3d/ObjOdron.h>
+	<Sprite3d/World.h>
+	<Sprite3d/Random.h>
+	<SceneLife.h>
+	<WorldGame.h>
+	<U3d/BonusMaker.h>
+	<iostream>
+
+1409128679 d:\dev\asteroidfighter\space\scenelife.h
+	<Sprite3d/AutoPtr.h>
+	<Sprite3d/Sprite3dObj.h>
+	<Space/Scene.h>
+
+1409128679 source:d:\dev\asteroidfighter\space\shipsmaker.cc
+	<stdlib.h>
+	<ShipsMaker.h>
+	<T3d/T3dLoadImg.h>
+	<Sprite3d/World.h>
+	<Sprite3d/ObjOdron.h>
+	<Sprite3d/ObjPart.h>
+	<Sprite3d/Sprite3d.h>
+	<Sprite3d/Utils3d.h>
+	<Sprite3d/Collision.h>
+	<Sprite3d/ObjText2d.h>
+	<Sprite3d/Random.h>
+	<U3d/Tourelle.h>
+	<U3d/WeaponsMaker.h>
+	<U3d/SpriteExplosion.h>
+	<U3d/BonusMaker.h>
+	<Space/Def.h>
+	<math.h>
+
+1409128679 source:d:\dev\asteroidfighter\space\worldgame.cc
+	<Sprite3d/World.h>
+	<Sprite3d/SceneManager.h>
+	<U3d/Sky.h>
+	<Sprite3d/Random.h>
+	<Sprite3d/SoundControler.h>
+	<SceneAsteroide.h>
+	<SceneBase.h>
+	<SceneAttack.h>
+	<SceneGrotte.h>
+	<SceneLife.h>
+	<SceneHammerAnvil.h>
+	<SceneArtifice.h>
+	<SceneChaos.h>
+	<Pilot.h>
+	<Def.h>
+	<WorldGame.h>
+	<ShipsMaker.h>
+	<MinesMaker.h>
+	<U3d/BonusMaker.h>
+	<U3d/WeaponsMaker.h>
+	<U3d/SpriteExplosion.h>
+	<U3d/ObjPrimPart.h>
+	<U3d/Banniere.h>
+	<WorldGame.h>
+	<ActionsShip.h>
+	<string>
+
+1409128679 source:d:\dev\asteroidfighter\sprite3d\animatobj.cc
+	<AnimatObj.h>
+	<Sprite3d/Sprite3d.h>
+
+1409128679 source:d:\dev\asteroidfighter\sprite3d\collision.cc
+	<Collision.h>
+	<algorithm>
+	<Sprite3d.h>
+	<iostream>
+	<vector>
+	<set>
+	<Array3d.h>
+
+1409128679 source:d:\dev\asteroidfighter\sprite3d\objodron.cc
+	<ObjOdron.h>
+	<O3d/O3dObjProps.h>
+	<Utils3d.h>
+	<iostream>
+
+1409128679 source:d:\dev\asteroidfighter\sprite3d\objpart.cc
+	<ObjPart.h>
+	<World.h>
+	<WorldControler.h>
+	<T3d/T3dColor.h>
+	<stdlib.h>
+	<iostream>
+	<Utils3d.h>
+	<Random.h>
+
+1409128679 source:d:\dev\asteroidfighter\sprite3d\objprim.cc
+	<ObjPrim.h>
+	<GL/glut.h>
+	<Utils3d.h>
+	<iostream>
+
+1409128679 d:\dev\asteroidfighter\sprite3d\objprim.h
+	<O3d/O3dObj.h>
+
+1382378458 source:d:\dev\asteroidfighter\sprite3d\objtext.cc
+	<Objtext.h>
+	<GL/glut.h>
+	<ostream>
+
+1409128679 source:d:\dev\asteroidfighter\sprite3d\objtext2d.cc
+	<ObjText2d.h>
+	<T3d/T3dCalcul.h>
+
+1409128679 source:d:\dev\asteroidfighter\sprite3d\objvect.cc
+	<T3d/T3dColor.h>
+	<ObjVect.h>
+	<stdio.h>
+
+1409128679 source:d:\dev\asteroidfighter\sprite3d\random.cc
+	<Random.h>
+	<stdlib.h>
+
+1409128679 source:d:\dev\asteroidfighter\sprite3d\scenemanager.cc
+	<SceneManager.h>
+	<Sprite3d/WorldControler.h>
+	<Space/Pilot.h>
+	<fstream>
+	<sstream>
+	<iomanip>
+
+1409128679 source:d:\dev\asteroidfighter\sprite3d\soundcontroler.cc
+	<SoundControler.h>
+	<AL/al.h>
+	<AL/alc.h>
+	<sndfile.h>
+	<vector>
+	"World.h"
+	"WorldControler.h"
+
+1382543666 source:d:\dev\asteroidfighter\sprite3d\soundlibrary.cc
+	<SoundControler.h>
+	<SoundLibrary.h>
+
+1409128679 source:d:\dev\asteroidfighter\sprite3d\sprite3d.cc
+	<Sprite3d.h>
+	<iostream>
+	<typeinfo>
+	<World.h>
+	<Action.h>
+	<Sprite3dPilot.h>
+	<math.h>
+
+1409128679 source:d:\dev\asteroidfighter\sprite3d\sprite3dobj.cc
+	<Sprite3dObj.h>
+	<GL/glut.h>
+
+1409128679 source:d:\dev\asteroidfighter\sprite3d\sprite3dpilot.cc
+	<Sprite3dPilot.h>
+	<iostream>
+	<World.h>
+	<O3d/O3dKamera.h>
+	<Utils3d.h>
+
+1409128679 source:d:\dev\asteroidfighter\sprite3d\text2d.cc
+	<Text2d.h>
+	<stdio.h>
+
+1409128679 source:d:\dev\asteroidfighter\sprite3d\utils3d.cc
+	<Utils3d.h>
+	<GL/glut.h>
+	<World.h>
+	<WorldControler.h>
+	<stdio.h>
+	<math.h>
+	<O3d/O3dKamera.h>
+	<iostream>
+
+1409128679 source:d:\dev\asteroidfighter\sprite3d\world.cc
+	<GL/glut.h>
+	<O3d/O3dKamera.h>
+	<T3d/T3dPrimitiv.h>
+	<T3d/T3dColor.h>
+	<T3d/T3dFont.h>
+	<T3d/T3dFontRaster.h>
+	<iostream>
+	<World.h>
+	<WorldControler.h>
+	<ObjOdron.h>
+	<Sprite3d.h>
+	<Collision.h>
+	<Sprite3dPilot.h>
+
+1409128679 d:\dev\asteroidfighter\t3d\t3dfontraster.h
+	<T3d/T3dFont.h>
+
+1409128679 source:d:\dev\asteroidfighter\sprite3d\worldcontroler.cc
+	<GL/glut.h>
+	<O3d/O3dKamera.h>
+	<T3d/T3dPrimitiv.h>
+	<T3d/T3dColor.h>
+	<T3d/T3dFont.h>
+	<T3d/T3dFontRaster.h>
+	<iostream>
+	<World.h>
+	<WorldControler.h>
+	<ObjOdron.h>
+	<Sprite3d.h>
+	<Collision.h>
+	<Sprite3dPilot.h>
+	<SoundControler.h>
+	<plib/pu.h>
+
+1409128679 source:d:\dev\asteroidfighter\t3d\t3dbox.cc
+	<T3dBox.h>
+	<stdio.h>
+
+1409128679 source:d:\dev\asteroidfighter\t3d\t3dcalcul.cc
+	<T3dCalcul.h>
+	<math.h>
+
+1409128679 source:d:\dev\asteroidfighter\t3d\t3dcolor.cc
+	<T3dColor.h>
+
+1409128679 source:d:\dev\asteroidfighter\t3d\t3dfontraster.cc
+	<T3dType.h>
+	<T3dFontRaster.h>
+	<stdlib.h>
+	<iostream>
+
+1409128679 source:d:\dev\asteroidfighter\t3d\t3dloadbmp.cc
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<iostream>
+	<T3dLoadImg.h>
+
+1409128679 source:d:\dev\asteroidfighter\t3d\t3dloadgif.cc
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<iostream>
+	"T3dLoadImg.h"
+	<stdio.h>
+	<string.h>
+	<iostream>
+
+1409128679 source:d:\dev\asteroidfighter\t3d\t3dloadimg.cc
+	"T3dLoadImg.h"
+	<stdio.h>
+	<malloc.h>
+	<string.h>
+	<iostream>
+
+1409128679 source:d:\dev\asteroidfighter\t3d\t3dprimitiv.cc
+	<T3dPrimitiv.h>
+	<T3dCalcul.h>
+	<T3dColor.h>
+	<T3dVect3D.h>
+	<string.h>
+
+1409128679 source:d:\dev\asteroidfighter\t3d\t3dtexture.cc
+	<T3dTexture.h>
+	<T3dLoadImg.h>
+
+1409128679 source:d:\dev\asteroidfighter\t3d\t3dtransf.cc
+	<T3dTransf.h>
+	<T3dBox.h>
+
+1409128679 source:d:\dev\asteroidfighter\t3d\t3dvect3d.cc
+	<T3dVect3D.h>
+	<stdlib.h>
+	<stdio.h>
+	<T3dBox.h>
+
+1409128679 source:d:\dev\asteroidfighter\u3d\banniere.cc
+	<Banniere.h>
+	<T3d/T3dLoadImg.h>
+
+1409128679 source:d:\dev\asteroidfighter\u3d\bonusmaker.cc
+	<BonusMaker.h>
+	<T3d/T3dColor.h>
+	<Sprite3d/World.h>
+	<Sprite3d/ObjOdron.h>
+	<Sprite3d/ObjPart.h>
+	<Sprite3d/Sprite3d.h>
+	<Sprite3d/Utils3d.h>
+	<Sprite3d/Collision.h>
+	<Sprite3d/ObjText2d.h>
+	<Sprite3d/Random.h>
+	<SpriteExplosion.h>
+
+1409128679 source:d:\dev\asteroidfighter\u3d\containersmaker.cc
+	<ContainersMaker.h>
+	<T3d/T3dColor.h>
+	<Sprite3d/World.h>
+	<Sprite3d/ObjOdron.h>
+	<Sprite3d/ObjPart.h>
+	<Sprite3d/Sprite3d.h>
+	<Sprite3d/Utils3d.h>
+	<Sprite3d/Collision.h>
+	<Sprite3d/ObjText2d.h>
+	<Sprite3d/Random.h>
+	<SpriteExplosion.h>
+
+1409128679 d:\dev\asteroidfighter\u3d\containersmaker.h
+	<O3d/O3dObjProps.h>
+	<O3d/O3dObj.h>
+	<O3d/O3dObjPrim.h>
+	<Sprite3d/Sprite3dPilot.h>
+	<Sprite3d/ObjPart.h>
+	<Sprite3d/AutoPtr.h>
+	<Sprite3d/Action.h>
+
+1409128679 source:d:\dev\asteroidfighter\u3d\objprimpart.cc
+	<ObjPrimPart.h>
+
+1409128679 source:d:\dev\asteroidfighter\u3d\sky.cc
+	<GL/glut.h>
+	<Sprite3d/World.h>
+	<T3d/T3dColor.h>
+	<Sky.h>
+	<iostream>
+	<Sprite3d/Random.h>
+	<math.h>
+
+1409128679 source:d:\dev\asteroidfighter\u3d\spriteexplosion.cc
+	<GL/glut.h>
+	<Sprite3d/World.h>
+	<Sprite3d/ObjOdron.h>
+	<SpriteExplosion.h>
+	<iostream>
+	<typeinfo>
+
+1409128679 source:d:\dev\asteroidfighter\u3d\tourelle.cc
+	<Tourelle.h>
+	<math.h>
+
+1409128679 source:d:\dev\asteroidfighter\u3d\weaponsmaker.cc
+	<WeaponsMaker.h>
+	<Sprite3d/World.h>
+	<Sprite3d/ObjOdron.h>
+	<Sprite3d/ObjPart.h>
+	<Sprite3d/Sprite3d.h>
+	<Sprite3d/Utils3d.h>
+	<Sprite3d/Collision.h>
+	<Sprite3d/ObjText2d.h>
+	<Sprite3d/Random.h>
+	<Sprite3d/SoundControler.h>
+	<O3d/O3dObjPrim.h>
+	<SpriteExplosion.h>
+	<Sprite3d/World.h>
+	<Space/Def.h>
+	<iomanip>
+
+1066736514 d:\dev\freeglut-2.8.1\include\gl\glut.h
+	"freeglut_std.h"
+
+1353332734 d:\dev\freeglut-2.8.1\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1066736514 d:\dev\freeglut-2.8.1\include\gl\freeglut.h
+	"freeglut_std.h"
+	"freeglut_ext.h"
+
+1353321907 d:\dev\freeglut-2.8.1\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+976663372 d:\dev\asteroidfighter\glut-3.7\gl\glut.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1409128679 d:\dev\asteroidfighter\sprite3d\array3d.h
+	<T3d/T3dTransf.h>
+	<O3d/O3dObj.h>
+
+1409128680 d:\dev\asteroidfighter\freeglut-2.8.1\include\gl\glut.h
+	"freeglut_std.h"
+
+1409128680 d:\dev\asteroidfighter\freeglut-2.8.1\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1409128680 d:\dev\asteroidfighter\freeglut-2.8.1\include\gl\freeglut.h
+	"freeglut_std.h"
+	"freeglut_ext.h"
+
+1409128680 d:\dev\asteroidfighter\freeglut-2.8.1\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1409128679 d:\dev\asteroidfighter\space\scenehammeranvil.h
+	<Sprite3d/AutoPtr.h>
+	<Sprite3d/Sprite3dObj.h>
+	<Space/AsteroidesMaker.h>
+	<Space/Scene.h>
+
+1409128679 d:\dev\asteroidfighter\space\sceneartifice.h
+	<Sprite3d/AutoPtr.h>
+	<Sprite3d/Sprite3dObj.h>
+	<Sprite3d/Action.h>
+
+1409128679 d:\dev\asteroidfighter\space\scenechaos.h
+	<Sprite3d/AutoPtr.h>
+	<Space/AsteroidesMaker.h>
+	<Space/Scene.h>
+
+1409129167 source:d:\dev\asteroidfighter\space\scenehammeranvil.cc
+	<stdlib.h>
+	<Def.h>
+	<T3d/T3dLoadImg.h>
+	<T3d/T3dColor.h>
+	<O3d/O3dObjPrim.h>
+	<Sprite3d/ObjOdron.h>
+	<Sprite3d/World.h>
+	<Sprite3d/Random.h>
+	<SceneHammerAnvil.h>
+	<ShipsMaker.h>
+	<AsteroidesMaker.h>
+	<WorldGame.h>
+	<U3d/BonusMaker.h>
+	<iostream>
+
+1409128679 source:d:\dev\asteroidfighter\space\scenechaos.cc
+	<stdlib.h>
+	<Def.h>
+	<T3d/T3dLoadImg.h>
+	<T3d/T3dColor.h>
+	<O3d/O3dObjPrim.h>
+	<Sprite3d/ObjOdron.h>
+	<Sprite3d/World.h>
+	<Sprite3d/Random.h>
+	<SceneChaos.h>
+	<ShipsMaker.h>
+	<MinesMaker.h>
+	<AsteroidesMaker.h>
+	<WorldGame.h>
+	<U3d/BonusMaker.h>
+	<iostream>
+

@@ -1,0 +1,25 @@
+/*/.*\.o$
+/*/.*\.a$
+/*/.*\.exe$
+/*/.*\.dll$
+/*/.*\.cmake$
+.*\.*~$
+/*/.*\.*~$
+CMakeFiles/*$
+/*/CMakeFiles/*$
+syntax: glob
+AsteroidFighter.exe
+glut32.dll
+.hgignore.orig
+AsteroidFighter - Copie.exe
+AsteroidFighter.depend
+freeglut-2.8.1/*
+Sav/*
+cmake_install.cmake
+bin/AsteroidFighter
+#mem.err#
+#mem.err#
+#mem.err#
+#mem.err#
+AsteroidFighter/AsteroidFighter
+mem.err
