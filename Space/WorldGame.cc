@@ -9,6 +9,7 @@
 #include <SceneAsteroide.h>
 #include <SceneBase.h>
 #include <SceneAttack.h>
+#include <SceneAttackCroisseur.h>
 #include <SceneGrotte.h>
 #include <SceneLife.h>
 #include <SceneHammerAnvil.h>
@@ -94,15 +95,15 @@ WorldGame::initStart( int pNiveau, const char* pNameFileSav )
 		}	//			std::cout << "pNiveau:" << pNiveau << std::endl;
 
 	int duree=1000;
-	for( cLevel=pNiveau; cLevel< pNiveau+8+WorldControler::sDifficultyLevel*2; cLevel++ )		// acceleration a chaque niveau !!!
+	for( cLevel=pNiveau; cLevel< pNiveau+8+WorldControler::sDifficultyLevel; cLevel++ )	
 		{
 
 			//			std::cout << "pLevel:" << cLevel << std::endl;
 			// Message NEXT LEVEL
 			if( cLevel!= pNiveau )
 				{
-					cSceneManager->addSceneTempo(3);
-					cSceneManager->addScene( makeBanniere( "textures/NextLevel.gif", lBanColor, 3), 4);
+					cSceneManager->addSceneTempo(4);
+					cSceneManager->addScene( makeBanniere( "Game.TextureNextLevel", lBanColor, 3), 4);
 					cSceneManager->addSceneTempo(3);
 					WorldGame::GlobalScroll -= 1;  // NE DOIT PAS MARCHER CAR GLOBAL IL FAUDRAIT METTRE UN SCROLL par Scene
 					// Ou memoriser le GlobalScroll a la creation de chque scene puis ensuite celle ci le positionner
@@ -111,8 +112,8 @@ WorldGame::initStart( int pNiveau, const char* pNameFileSav )
 
 
 
-			if( cLevel > 5 )
-				cSceneManager->addScene( new SceneLife( lGenPos, YSizeWorld, 20.0f ),  0.5 );
+			//		if( cLevel > 5 )
+			//			cSceneManager->addScene( new SceneLife( lGenPos, YSizeWorld, 20.0f ),  0.5 );
 			
 
 			//*************************** WATER ***************************
@@ -216,29 +217,37 @@ WorldGame::initStart( int pNiveau, const char* pNameFileSav )
 
 			cSceneManager->addScene( new SceneLife( lGenPos, YSizeWorld, 20.0f ),  0.5 );
 			cSceneManager->addSceneTempo(5);
-
+			//  "Hammer and anvil"
 
 			//*********************** PLASMA_SOLAIRE ***********************
 
-			cSceneManager->addScene( new SceneAsteroide( "Asteroid field", PLASMA_SOLAIRE, cLevel, lGenPos, 0.3, YSizeWorld, 20.0 ), duree );
+			cSceneManager->addScene( new SceneAsteroide( "Coronal mass ejection", PLASMA_SOLAIRE, cLevel, lGenPos, 0.3, YSizeWorld, 20.0 ), duree );
 			cSceneManager->addSceneTempo(5);
 
-			cSceneManager->addScene( new SceneHammerAnvil( "Hammer and anvil", PLASMA_SOLAIRE, cLevel, lGenPos2, 0.3f, YSizeWorld, 20.0f ),  duree );
+			cSceneManager->addScene( new SceneHammerAnvil( "Sun storm", PLASMA_SOLAIRE, cLevel, lGenPos2, 0.3f, YSizeWorld, 20.0f ),  duree );
 			cSceneManager->addSceneTempo(5);
 
 
-			cSceneManager->addScene( new SceneChaos( "Chaos",  PLASMA_SOLAIRE, cLevel, lGenPos, 1, 0.4, 15, YSizeWorld, 50.0f ), duree );
+			cSceneManager->addScene( new SceneChaos( "Solar prominence",  PLASMA_SOLAIRE, cLevel, lGenPos, 1, 0.4, 15, YSizeWorld, 50.0f ), duree );
 
-			cSceneManager->addScene(new SceneGrotte( "Inside Asteroid", PLASMA_SOLAIRE,  cLevel, lGenPos, 1.1, 0.6, 14, YSizeWorld, 50.0 ), duree);
+			cSceneManager->addScene(new SceneGrotte( "In the Plasma vortex", PLASMA_SOLAIRE,  cLevel, lGenPos, 1.1, 0.6, 14, YSizeWorld, 50.0 ), duree);
 
-			cSceneManager->addScene( new SceneChaos( "Chaos",  PLASMA_SOLAIRE, cLevel, lGenPos, 1, 0.4, 15, YSizeWorld, 50.0f ), duree );
-			cSceneManager->addScene( new SceneHammerAnvil( "Hammer and anvil", PLASMA_SOLAIRE, cLevel, lGenPos2, 0.3f, YSizeWorld, 20.0f ),  duree );
+			cSceneManager->addScene( new SceneChaos( "Solar prominence",  PLASMA_SOLAIRE, cLevel, lGenPos, 1, 0.4, 15, YSizeWorld, 50.0f ), duree );
+			cSceneManager->addScene( new SceneHammerAnvil( "Sun storm", PLASMA_SOLAIRE, cLevel, lGenPos2, 0.3f, YSizeWorld, 20.0f ),  duree );
 
-			cSceneManager->addScene( new SceneAsteroide( "Asteroid field", PLASMA_SOLAIRE, cLevel, lGenPos, 0.3, YSizeWorld, 20.0 ), duree );	
+			cSceneManager->addScene( new SceneAsteroide( "Coronal mass ejection", PLASMA_SOLAIRE, cLevel, lGenPos, 0.3, YSizeWorld, 20.0 ), duree );	
 
-
+			
 		
 			cSceneManager->addScene( new SceneAttack( "Confrontation", cLevel, lGenPos, 3, YSizeWorld, 30.0), duree);
+
+
+
+			if( cLevel == 7 )
+				continue;
+
+			cSceneManager->addScene( new SceneAttackCroisseur( "Confrontation", cLevel, lGenPos, 3, YSizeWorld, 30.0), duree);
+			
 
 			//		if( cLevel == 7 )
 			//	continue;
@@ -308,7 +317,7 @@ WorldGame::gameOver()
 
 	Float4 lBanColor( 0.9, 0.9, 1.0, 0.5 ) ;
 
-	Sprite3d* lSpBan = new Banniere( "textures/game_over.gif", lBanColor );
+	Sprite3d* lSpBan = new Banniere( "Game.TextureGameOver", lBanColor );
 
 	Double3 lPosBan( 0, 0, 20 );
 	Double3 lSpeed( 0, 0, 20 );
@@ -367,7 +376,7 @@ WorldGame::userEvent( void *pUserData)
 
 	Float4 lBanColor( 0.9, 0.9, 1.0, 0.5 ) ;
 
-	Sprite3d* lSpBan = new Banniere( "textures/you_win.gif", lBanColor );
+	Sprite3d* lSpBan = new Banniere( "Game.TextureYouWin", lBanColor );
 
 	Double3 lPosBan( 0, 0, 20 );
 	Double3 lSpeed( 0, 0, 20 );
@@ -439,7 +448,7 @@ WorldGame::InitSound( const char* pPathSound)
 
 	Pilot::sSoundWarp        = LOAD_SAMPLE( "PilotWarp.mp3" );
 	Pilot::sSoundLaser       = LOAD_SAMPLE( "PilotLaser.wav" );
-	Pilot::sSoundFireMissile = LOAD_SAMPLE( "PilotLaunchMissile.mp3" );
+	*	Pilot::sSoundFireMissile = LOAD_SAMPLE( "PilotLaunchMissile.mp3" );
 
 	*/
 	/*
@@ -451,5 +460,51 @@ WorldGame::InitSound( const char* pPathSound)
 	*/
 	return true;
 }
+//---------------------------------------------------
+const char*  
+WorldGame::GetPathConfig( std::string& pName, WorldGame::PathType pPath, const char* pKey )
+{
+	std::map<std::string, std::string>::iterator lIterator = World::sConfig.find(pKey );
+	
+	if( lIterator == World::sConfig.end() )
+		return NULL;
 
+	
+	std::map<std::string, std::string>::iterator lIteratorPath;
+
+	switch( pPath )
+		{
+		case PathType::TEXTURE:	lIteratorPath = World::sConfig.find( "Paths.Textures" );		break;
+		case PathType::FONT   :  lIteratorPath = World::sConfig.find( "Paths.Fonts" );		break;
+		case PathType::SOUND  : 	lIteratorPath = World::sConfig.find( "Paths.Sounds" );		break;
+		}
+
+	 if( lIteratorPath == World::sConfig.end() )
+		 pName = lIterator->second;
+	 else
+		 {
+			 pName =  lIteratorPath->second ;
+			 pName += "/";
+			 pName +=  lIterator->second;
+		 }
+
+	 return pName.c_str();
+}
+//---------------------------------------------------
+
+T3dTexture*
+WorldGame::LoadTextureConfig( const char* pKey, GLenum pFilter  )
+{
+	std::cout << "WorldGame::LoadTextureConfig " << pKey << std::endl;
+
+
+	std::string lName ;			
+	GetPathConfig( lName, PathType::TEXTURE,  pKey );
+		
+	std::cout << "WorldGame::LoadTextureConfig" << pKey << " LOADING   >>>" << lName << std::endl;
+
+
+	return  new T3dTexture( lName.c_str(), pFilter );
+
+}
 //---------------------------------------------------
