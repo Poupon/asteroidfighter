@@ -40,7 +40,7 @@ cTypeAsteroide(pTypeAsteroide)
   caPropsGen->ObjPropsFloat4::set( MATERIAL, mat1 );
 
 
-	caGenTexture = new T3dTexture( "textures/1.gif"  );
+	caGenTexture = WorldGame::LoadTextureConfig( "Asteroids.Texture1"  );
   caPropsGen->setTexture( caGenTexture );
   setObjProps( caPropsGen );
 

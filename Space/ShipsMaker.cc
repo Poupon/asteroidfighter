@@ -20,6 +20,7 @@
 #include <U3d/BonusMaker.h>
 
 #include <Space/Def.h>
+#include <WorldGame.h>
 
 #include <math.h>
 
@@ -41,32 +42,32 @@ ShipsMaker::ShipsMaker()
 	TheShipsMaker = this;
 
 
-	caTexMod = new T3dTexture("textures/5.gif" );
-	caTexBody = new T3dTexture("textures/25.gif" );
+	caTexMod  = WorldGame::LoadTextureConfig("Ships.TexMod");
+	caTexBody = WorldGame::LoadTextureConfig("Ships.TexBody"); // new T3dTexture("textures/25.gif" );
 
-	caTexBlindage = new T3dTexture("textures/9.gif" );
+	caTexBlindage =  WorldGame::LoadTextureConfig("Ships.TexBlindage"); //new T3dTexture("textures/9.gif" );
 	cPropsBlindage.setTexture( caTexBlindage );
 
 
-	caTexSpin = new T3dTexture("textures/32.gif" );
+	caTexSpin =  WorldGame::LoadTextureConfig("Ships.TexSpin"); //new T3dTexture("textures/32.gif" );
 	cPropsSpin.setTexture( caTexSpin );
 
-	caTexBleue = new T3dTexture("textures/32.gif" );
+	caTexBleue =  WorldGame::LoadTextureConfig("Ships.TexBlue"); //new T3dTexture("textures/32.gif" );
 	cPropsBleue.setTexture( caTexBleue );
 
-	caTexMaille = new T3dTexture("textures/49.gif" );
+	caTexMaille = WorldGame::LoadTextureConfig("Ships.TexMaille"); // new T3dTexture("textures/49.gif" );
 	cPropsMaille.setTexture( caTexMaille );
 
-	caTexEcail = new T3dTexture("textures/53.gif" );
+	caTexEcail = WorldGame::LoadTextureConfig("Ships.TexEcaille"); // new T3dTexture("textures/53.gif" );
 	cPropsEcail.setTexture( caTexEcail );
 
-	caTexFlamme = new T3dTexture("textures/38.gif" );
+	caTexFlamme =  WorldGame::LoadTextureConfig("Ships.TexFlamme"); //new T3dTexture("textures/38.gif" );
 	cPropsFlamme.setTexture( caTexFlamme );
 
-	caTexDalle = new T3dTexture("textures/63.gif" );
+	caTexDalle =  WorldGame::LoadTextureConfig("Ships.TexDalle"); //new T3dTexture("textures/63.gif" );
 	cPropsDalle.setTexture( caTexDalle );
 
-	caTexEmail = new T3dTexture("textures/25.gif" );
+	caTexEmail =  WorldGame::LoadTextureConfig("Ships.TexCristal"); //new T3dTexture("textures/25.gif" );
 	cPropsEmail.setTexture( caTexEmail );
 
 	cPropsDome.ObjPropsFloat4::set( MATERIAL, cColorDome );
@@ -201,8 +202,6 @@ ShipsMaker::makeShip2( float pSz, Sprite3dObj* pSp, int pNiveau )
 	if( pNiveau >=  2 ){
 		lWeapon1 = WEAPON_PLASMA2;
 	}
-
-
 
 
 
@@ -644,14 +643,30 @@ ShipsMaker::makeCroiseur( float pSz, Sprite3dObj* pSp, int pNiveau)
 
 	lCore->setObjProps( &cPropsSpin );
 
-	if( pNiveau == 1 ){
+	if( pNiveau <= 1 ){
 		lWeapon1 = WEAPON_PLASMA_GREEN;
 		lCore->setObjProps( &cPropsMaille );
+	} else
+	if( pNiveau >= 5  ){
+		lWeapon1 = WEAPON_ION;
+		lWeapon2 = WEAPON_MISSILE;
+		lCore->setObjProps( &cPropsBlindage );
+	} else
+	if( pNiveau >= 4  ){
+		lWeapon1 = WEAPON_ION;
+		lWeapon2 = WEAPON_SMALL_MISSILE;
+		lCore->setObjProps( &cPropsBlindage );
+	} else
+	if( pNiveau >= 3  ){
+		lWeapon1 = WEAPON_PLASMA_BLUE;
+		lWeapon2 = WEAPON_ROCKET;
+		lCore->setObjProps( &cPropsBlindage );
 	} else
 	if( pNiveau >=  2 ){
 		lWeapon1 = WEAPON_PLASMA_BLUE;
 		lCore->setObjProps( &cPropsBlindage );
-	}
+	} 
+
 
 
 //	O3dObj* lCore2 = new O3dObjPrim( O3dObjPrim::PrimSphere, pSz+2, 9, 12 );
@@ -677,8 +692,8 @@ ShipsMaker::makeCroiseur( float pSz, Sprite3dObj* pSp, int pNiveau)
 		lVect->add(  lMod2 );
 	}
 	if( pNiveau > 2 ){
-		Tourelle* lMod2 = makeModul( pSz*0.2);
-		lMod2->set( pSp, 0.8, FIRE_DIRECT, lWeapon2,
+		Tourelle* lMod2 = makeModul( pSz*0.3);
+		lMod2->set( pSp, 0.7, FIRE_DIRECT, lWeapon2,
 								lBox2, InteractWeaponEnemyIn, InteractWeaponEnemyOut );
 		lMod2->MkGetPOS()[0] = -(pSz);
 		lVect->add(  lMod2 );
@@ -703,11 +718,15 @@ ShipsMaker::makeCuirasse( float pSz, Sprite3dObj* pSp, int pNiveau)
 		lWeapon1 = WEAPON_PLASMA_GREEN;
 		lWeapon2 = WEAPON_MISSILE;
 	} else
-	if( pNiveau >=  2 ){
+	if( pNiveau ==  2 ){
 		lWeapon1 = WEAPON_PLASMA_BLUE;
 		lWeapon2 = WEAPON_BIG_MISSILE;
 	}
-
+	else
+	if( pNiveau >=  2 ){
+		lWeapon1 = WEAPON_ION;
+		lWeapon2 = WEAPON_BIG_MISSILE;
+	}
 
 	ObjVect *lVect = new ObjVect();
 
@@ -735,7 +754,7 @@ ShipsMaker::makeCuirasse( float pSz, Sprite3dObj* pSp, int pNiveau)
 	lTour->MkGetPOS()[0] = pSz;
 	lVect->add(  lTour );
 
-	if( pNiveau > 0 ){
+	if( pNiveau > 0  && pNiveau <= 2 ){
 		lTour = makeModul( pSz*0.1 );
 		lTour->set( pSp, 0.4, FIRE_DIRECT, lWeapon1,
 								lBox2, InteractWeaponEnemyIn, InteractWeaponEnemyOut );
@@ -744,21 +763,47 @@ ShipsMaker::makeCuirasse( float pSz, Sprite3dObj* pSp, int pNiveau)
 		lVect->add(  lTour );
 	}
 
-
-	lTour = makeModul( pSz*0.15 );
-	lTour->set( pSp, 1.0, FIRE_DIRECT, WEAPON_PLASMA_GREEN,
-							lBox3, InteractWeaponEnemyIn, InteractWeaponEnemyOut );
-	lTour->getTransf().TransfDouble3::get( POS )[1] = -pSz;
-	lTour->MkGetPOS()[0] = -pSz;
-	lVect->add(  lTour );
-
-	if( pNiveau > 1 ){
+	if( pNiveau > 1 && pNiveau <= 2 ){ 
 		lTour = makeModul( pSz*0.15 );
-		lTour->set( pSp, 1.0, FIRE_DIRECT, WEAPON_PLASMA_GREEN,
+		lTour->set( pSp, 1.0, FIRE_DIRECT, lWeapon2,
+							lBox3, InteractWeaponEnemyIn, InteractWeaponEnemyOut );
+		lTour->getTransf().TransfDouble3::get( POS )[1] = -pSz;
+		lTour->MkGetPOS()[0] = -pSz;
+		lVect->add(  lTour );
+	}
+
+	if( pNiveau > 1 && pNiveau < 3 ){
+		lTour = makeModul( pSz*0.15 );
+		lTour->set( pSp, 1.0, FIRE_DIRECT, lWeapon2,
 								lBox3, InteractWeaponEnemyIn, InteractWeaponEnemyOut );
 		lTour->getTransf().TransfDouble3::get( POS )[1] = -pSz;
 		lTour->MkGetPOS()[0] = -pSz;
 		lVect->add(  lTour );
+	}
+	if( pNiveau > 2  && pNiveau <= 3  ){
+		lTour = makeModul( pSz*0.15 );
+		lTour->set( pSp, 1.0, FIRE_DIRECT, lWeapon2,
+								lBox3, InteractWeaponEnemyIn, InteractWeaponEnemyOut );
+		lTour->getTransf().TransfDouble3::get( POS )[1] = -pSz;
+		lTour->MkGetPOS()[0] = -pSz;
+		lVect->add(  lTour );
+
+	if( pNiveau >= 3 ){
+		lTour = makeModul( pSz*0.15 );
+		lTour->set( pSp, 1.0, FIRE_DIRECT, lWeapon2,
+								lBox3, InteractWeaponEnemyIn, InteractWeaponEnemyOut );
+		lTour->getTransf().TransfDouble3::get( POS )[1] = -pSz;
+		lTour->MkGetPOS()[0] = -pSz;
+		lVect->add(  lTour );
+	}
+	if( pNiveau >= 4 ){
+		lTour = makeModul( pSz*0.15 );
+		lTour->set( pSp, 1.0, FIRE_DIRECT, lWeapon2,
+								lBox3, InteractWeaponEnemyIn, InteractWeaponEnemyOut );
+		lTour->getTransf().TransfDouble3::get( POS )[1] = -pSz;
+		lTour->MkGetPOS()[0] = -pSz;
+		lVect->add(  lTour );
+	}
 	}
 
 //	lVect->MkGetANGLE()[0] = 90;
@@ -782,11 +827,18 @@ ShipsMaker::makeBaseTore( float pSz, Sprite3dObj* pSp, int pNiveau)
 		lWeapon2 = WEAPON_PLASMA_GREEN;
 		lWeapon3 = WEAPON_MISSILE;
 	} else
-	if( pNiveau >=  2 ){
+		if( pNiveau >=  3 ){
+		lWeapon1 = WEAPON_ION;
+		lWeapon2 = WEAPON_PLASMA_BLUE;
+		lWeapon3 = WEAPON_BIG_MISSILE;
+	 }
+		else
+			if( pNiveau >=  2 ){
 		lWeapon1 = WEAPON_PLASMA2;
 		lWeapon2 = WEAPON_PLASMA_BLUE;
 		lWeapon3 = WEAPON_BIG_MISSILE;
 	}
+	
 
 
 
@@ -834,7 +886,7 @@ ShipsMaker::makeBaseTore( float pSz, Sprite3dObj* pSp, int pNiveau)
 
 
 	lTour = makeModul( pSz*0.2 );
-	lTour->set( pSp, 0.2, FIRE_DIRECT, lWeapon1,
+	lTour->set( pSp, 0.2, FIRE_DIRECT, lWeapon2,
 							lBox2, InteractWeaponEnemyIn, InteractWeaponEnemyOut );
 	lTour->getTransf().TransfDouble3::get( POS )[1] = -pSz;
 	lVect->add(  lTour );
@@ -850,6 +902,13 @@ ShipsMaker::makeBaseTore( float pSz, Sprite3dObj* pSp, int pNiveau)
 	if( pNiveau >= 2 ){
 		lTour = makeModul( pSz*0.2 );
 		lTour->set( pSp, 0.2, FIRE_DIRECT, lWeapon1,
+								lBox2, InteractWeaponEnemyIn, InteractWeaponEnemyOut );
+		lTour->getTransf().TransfDouble3::get( POS )[1] = pSz;
+		lVect->add(  lTour );
+	}
+	if( pNiveau >= 3 ){
+		lTour = makeModul( pSz*0.2 );
+		lTour->set( pSp, 0.2, FIRE_DIRECT, lWeapon3,
 								lBox2, InteractWeaponEnemyIn, InteractWeaponEnemyOut );
 		lTour->getTransf().TransfDouble3::get( POS )[1] = pSz;
 		lVect->add(  lTour );
@@ -886,19 +945,19 @@ ShipsMaker::makeShip( ShipType pShipType, int pMaxLife, float  pSpin,
 		case INTERCEPTOR : lObj =  makeInterceptor( 3, lSp, pNiveau );
 			break;
 
-		case TORPILLEUR : lObj =  makeTorpilleur( 6, lSp, pNiveau );
+		case TORPILLEUR : lObj =  makeTorpilleur( 6+pNiveau*0.5, lSp, pNiveau );
 			break;
 
-		case CROISEUR : lObj =  makeCroiseur( 6+pNiveau, lSp, pNiveau );
+		case CROISEUR : lObj =  makeCroiseur( 5+pNiveau, lSp, pNiveau );
 			break;
 
-		case CUIRASSE : lObj  =  makeCuirasse( 10+pNiveau, lSp, pNiveau );
+		case CUIRASSE : lObj  =  makeCuirasse( 9+pNiveau*2, lSp, pNiveau );
 			break;
 
-		case BASE_TORE : lObj =  makeBaseTore( 15+pNiveau, lSp, pNiveau );
+		case BASE_TORE : lObj =  makeBaseTore( 16+pNiveau, lSp, pNiveau );
 			break;
 
-		case MEGA_CROISEUR : lObj =  makeMegaCroiseur( 16+pNiveau, lSp, pNiveau );
+		case MEGA_CROISEUR : lObj =  makeMegaCroiseur( 10+pNiveau, lSp, pNiveau );
 		lSpin[0]= pSpin*4;
 			break;
 

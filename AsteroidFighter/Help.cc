@@ -19,6 +19,7 @@
 #include <Space/SceneAsteroide.h>
 #include <Space/ShipsMaker.h>
 #include <Space/Def.h>
+#include <Space/WorldGame.h>
 #include <U3d/Sky.h>
 
 #include <iostream>
@@ -112,10 +113,11 @@ void
 Help::AfficheLine( int pX, int pY, const char* pStr ){
 
 	static fntTexFont  *sFont = NULL;
+	std::string lName;
 
 	if( sFont == NULL )
 		//		sFont = new fntTexFont( "Times-Roman.txf" );
-					sFont = new fntTexFont( "font/Helvetica.txf" );
+		sFont = new fntTexFont( WorldGame::GetPathConfig( lName, WorldGame::PathType::FONT, "Fonts.FontDefault" ));
 
 	O3dObjPLibFont* lObjText = new O3dObjPLibFont( *sFont, 5, pStr );
 
