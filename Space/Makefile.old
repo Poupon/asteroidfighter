@@ -8,6 +8,7 @@ SRCS = \
 	MinesMaker.cc \
 	SceneAsteroide.cc \
 	SceneAttack.cc \
+	SceneAttackCroisseur.cc \
 	SceneGrotte.cc \
 	SceneHammerAnvil.cc \
 	SceneChaos.cc \
