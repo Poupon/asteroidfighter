@@ -23,6 +23,9 @@
 #include <U3d/ObjPrimPart.h>
 #include <U3d/Banniere.h>
 
+
+#include <Space/WorldGame.h>
+
 #include <WorldGame.h>
 #include <Def.h>
 #include <stdio.h>
@@ -300,7 +303,7 @@ Pilot::Pilot( )
 
 
 
-	caTexCore = new T3dTexture("textures/38.gif" ); // 38 9  53 63
+	caTexCore = WorldGame::LoadTextureConfig(	"TextureShip" ); // 38 9  53 63
 
 
 
@@ -1485,7 +1488,7 @@ GLboolean Pilot::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void *pParam
 
 				Float4 lBanColor( 0.6, 0.6, 0.9, 0.5 ) ;
 
-				Sprite3d* lSpBan = new Banniere( "textures/game_over.gif", lBanColor );
+				Sprite3d* lSpBan = new Banniere( "Game.TextureGameOver", lBanColor ); // "textures/game_over.gif", lBanColor );
 
 				Double3 lPosBan( 0, 0, 20 );
 				Double3 lSpeed( 0, 0, 20 );

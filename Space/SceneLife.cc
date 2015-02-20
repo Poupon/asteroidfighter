@@ -20,7 +20,7 @@
 
 //**************************************
 SceneLife::SceneLife( Double3& lPos, float pH, float pV)
-	:Scene( "", 0, 0, pH, pV ),
+	:Scene( "Catch the life", 0, 0, pH, pV ),
  cFirstTime(GL_TRUE)
 {
 	getTransf().TransfDouble3::set( POS, lPos );
@@ -40,7 +40,6 @@ GLboolean SceneLife::animate()
 
 
 			if( World::GetPositionWithoutCollision( InteractObstacle, pos, sz, 0, (int)cH ) == GL_FALSE){
-				//	std::cout << "SceneGrotte::make Artefact collision" << std::endl;
 				return GL_FALSE;
 			}
 			Sprite3d *sp;

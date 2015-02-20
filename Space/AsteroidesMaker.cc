@@ -44,15 +44,18 @@ AsteroidesMaker::AsteroidesMaker()
 
 
  // cPropsLune.ObjPropsFloat4::set( MATERIAL, cColorGrey );
-  T3dLoadImage imgLune( "textures/3.gif" );
+	std::string lName;
+
+
+  T3dLoadImage imgLune( WorldGame::GetPathConfig( lName, WorldGame::PathType::TEXTURE, "Asteroids.TextureLune") );
   caTexLune = new T3dTexture( imgLune.width, imgLune.height, imgLune.makeRGBA() );
   cPropsLune.setTexture( caTexLune );
 
-  T3dLoadImage imgMars( "textures/39.gif" );
+  T3dLoadImage imgMars( WorldGame::GetPathConfig( lName, WorldGame::PathType::TEXTURE, "Asteroids.TextureMars") );
   caTexMars = new T3dTexture( imgMars.width, imgMars.height, imgMars.makeRGBA() );
   cPropsMars.setTexture( caTexMars );
 
-  T3dLoadImage imgWater( "textures/48.gif" );
+  T3dLoadImage imgWater( WorldGame::GetPathConfig( lName, WorldGame::PathType::TEXTURE, "Asteroids.TextureWater") );
   caTexWater = new T3dTexture( imgWater.width, imgWater.height, imgWater.makeRGBA() );
   cPropsWater.ObjPropsFloat4::set( MATERIAL, cColorIce );
   cPropsWater.setTexture( caTexWater );

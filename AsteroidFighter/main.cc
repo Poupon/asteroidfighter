@@ -27,6 +27,9 @@
 #include <MainMenu.h>
 #include <Help.h>
 
+#include <vector>
+
+
 #include <Space/WorldGame.h>
 
 #include <plib/ul.h>
@@ -288,9 +291,10 @@ int main(int argc, char **argv)
 				case 'G' :
 					WorldControler::sDebug =1;
 					break;
-                case 'f' :
-                    lFullScreen = false;
-                    break;
+
+        case 'f' :
+					lFullScreen = false;
+					break;
 
 				case 'F' :
 					{
@@ -375,8 +379,17 @@ slScheduler sched ( 8000 ) ;
 			WorldGame::InitSound(lDataSound.c_str()); // Pour les sons notamment
 		}
 	else
-		{
-			WorldGame::InitSound("SoundOgg"); // Pour les sons notamment
+		{	
+			std::map<std::string, std::string>::iterator lIterator = World::sConfig.find("Paths.Sounds");
+			if( lIterator == World::sConfig.end() )
+				{
+					WorldGame::InitSound("SoundOgg"); // Pour les sons notamment
+				}
+			else 
+				{
+					std::string lName = lIterator->second;
+					WorldGame::InitSound(lName.c_str());
+				}
 		}
 
 	///// A VOIR     ulSleep ( 1 ) ;

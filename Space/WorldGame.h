@@ -18,6 +18,12 @@ class WorldGame:public World
 
 	char cInfoLevel[512];
 	
+public: 
+	enum class PathType{
+		  SOUND,
+			TEXTURE,
+			FONT
+	};
 
 public:
 	SceneManager* cSceneManager;
@@ -44,7 +50,8 @@ public:
 
 	static WorldGame *TheWorldGame;
 
-
+	static const char*      GetPathConfig( std::string& pName, WorldGame::PathType pPath, const char* pKey );
+	static T3dTexture*      LoadTextureConfig( const char* pKey, GLenum pFilter = GL_NEAREST  );
 };
 //**************************************
 
