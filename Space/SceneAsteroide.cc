@@ -40,7 +40,7 @@ cTypeAsteroide(pTypeAsteroide)
   caPropsGen->ObjPropsFloat4::set( MATERIAL, mat1 );
  
 
-	caGenTexture = new T3dTexture( "textures/1.gif"  );
+	caGenTexture = WorldGame::LoadTextureConfig( "Asteroids.Texture1"  );
   caPropsGen->setTexture( caGenTexture );
   setObjProps( caPropsGen );
 
@@ -65,9 +65,12 @@ GLboolean SceneAsteroide::animate()
 {
    Sprite3d::animate();
 
+	std::cout << "SceneAsteroide::animate " << 0 << std::endl;
 
   if( ( WorldControler::GetTime()-SpriteFloat::get( SPRITE_TIMER1)) < cInterval )
 	  return GL_FALSE;
+
+	std::cout << "SceneAsteroide::animate " << 1111 << std::endl;
 
 	 
   SpriteFloat::set( SPRITE_TIMER1,  WorldControler::GetTime());
@@ -85,10 +88,12 @@ GLboolean SceneAsteroide::animate()
 
   Sprite3d *sp;
 
-  float p = randp( 10 );
+  float lProba = randp( 100 );
+
+	std::cout << "*** SceneAsteroide::animate " << lProba << std::endl;
 
 
-  if( p<=0.2 )
+  if( lProba <= 2 )
   {
 	Double3 lD3( randf( 75 ), randf( 75 ), randf( 75 ));
 	sp = TheBonusMaker->makeSpriteBonus( CONTAINER,
@@ -97,13 +102,13 @@ GLboolean SceneAsteroide::animate()
 	sp->SpriteDouble3::set( SPRITE_SPIN, lD3);
   }
   else
-  if( p <= 1.3 )
+  if( lProba <= 13 )
 	sp = MAKE_SHIP1(cHardness);
   else
-	 if( p <= 2.1  )
+	 if( lProba <= 21  )
 	sp = MAKE_SHIP2(cHardness);
   else
-	 if( p <= 2.3  )
+	 if( lProba <= 23  )
 	sp = MAKE_SHIP3(cHardness);
   else
 	{

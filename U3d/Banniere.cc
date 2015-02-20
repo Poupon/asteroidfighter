@@ -2,6 +2,7 @@
 
 
 #include <T3d/T3dLoadImg.h>
+#include <Space/WorldGame.h>
 
 
 //*************************************************
@@ -9,9 +10,14 @@
 Banniere::Banniere( const char* pStr, Float4& pColor )
 	:Sprite3d(1.0)
 {
+	std::string lName;
+
+	WorldGame::GetPathConfig( lName, WorldGame::PathType::TEXTURE, pStr );
+
   cProps.ObjPropsFloat4::set( MATERIAL, pColor );
 
-	T3dLoadImage lImg( pStr );
+	T3dLoadImage lImg( lName.c_str() );
+
   caTex = new T3dTexture( lImg.width, lImg.height, lImg.makeRGBA() );
 	cProps.setTexture( caTex );
 

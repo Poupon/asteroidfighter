@@ -31,10 +31,6 @@ SceneAttack::SceneAttack( const char* pName,  int pHardness, Double3& lPos,
   caPropsGen = new O3dObjProps;
   caPropsGen->ObjPropsFloat4::set( MATERIAL, mat1 );
  
-	//  T3dLoadImage img( "textures/1.gif" );
-
-	//  caGenTexture = new T3dTexture( img.width, img.height, img.makeRGBA() );
-	//  caPropsGen->setTexture( caGenTexture.getPtr() );
   setObjProps( caPropsGen );
 
   //=============================================
@@ -108,27 +104,40 @@ GLboolean SceneAttack::animate()
 				sp = MAKE_TORPILLEUR1;	
 			else 	if( cHardness < 4 )
 				sp = MAKE_TORPILLEUR2;	
-			else 
+			else 	if( cHardness < 5 )
 				sp = MAKE_TORPILLEUR3;	
+			else 	if( cHardness < 6 )
+				sp = MAKE_TORPILLEUR4;	
+			else 	if( cHardness < 7 )
+				sp = MAKE_TORPILLEUR5;	
 		}
 	else	if( p <= 110)	
 		{
 			if( cHardness < 3 )
 				sp = MAKE_CROISEUR1;	
 			else 	if( cHardness < 4 )
-				sp = MAKE_CROISEUR2;						
-			else 
-					sp = MAKE_CROISEUR3;						
+				sp = MAKE_CROISEUR2;
+  	  else if( cHardness < 5 )					
+				sp = MAKE_CROISEUR3;						
+			else if( cHardness < 6 )
+					sp = MAKE_CROISEUR4;						
+			else
+					sp = MAKE_CROISEUR5;						
 		}
 	else 						
 		{
 			if( cHardness < 4 )
 				sp = MAKE_CUIRASSE1;
 			else
-				if( cHardness < 7 )
+				if( cHardness < 6 )
 					sp = MAKE_CUIRASSE2;
 				else 
+				if( cHardness < 7 )
 					sp = MAKE_CUIRASSE3;
+				if(  cHardness < 8 )
+					sp = MAKE_CUIRASSE4;
+				else
+					sp = MAKE_CUIRASSE5;
 		}
 						
   if( sp )
