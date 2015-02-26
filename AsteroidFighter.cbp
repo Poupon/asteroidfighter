@@ -171,6 +171,7 @@
 		<Unit filename="Space/SceneAttack.cc">
 			<Option target="default" />
 		</Unit>
+		<Unit filename="Space/SceneAttackCroisseur.cc" />
 		<Unit filename="Space/SceneBase.cc">
 			<Option target="default" />
 		</Unit>

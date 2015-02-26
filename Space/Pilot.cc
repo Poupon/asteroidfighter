@@ -90,8 +90,8 @@ void Pilot::write( std::ostream & pOs){
 
     int lField = SpriteFloat::get( SPRITE_LIFE_POINT );
     int lMaxField = SpriteFloat::get( SPRITE_MAX_LIFE_POINT );
-		
-		
+
+
     pOs << sStrPilot << ' '
         << sStrLevPhaser << ' ' << cLevelPhaser << ' '
         << sStrLevLauncher << ' ' << cLevelLauncher << ' '
@@ -137,80 +137,80 @@ bool Pilot::read( std::istream & pIs ){
 		//    std::cout << "read [" << lTmpStr << ']' << std::endl;
 
     if( lTmpStr.compare( sStrPilot ) != 0 ){
-			//			std::cout << "read Pilot header fail" << std::endl;						
+			//			std::cout << "read Pilot header fail" << std::endl;
 			return false;
 		}
-		
+
     pIs >> lTmpStr;
     if( lTmpStr.compare( sStrLevPhaser ) != 0 ){
 			//			std::cout << "read Pilot LevelPhaser fail" << std::endl;
 			return false;
 		}
     pIs >> lLevelPhaser;
-		
+
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrLevLauncher ) != 0 ){
 			//			std::cout << "read Pilot LevelLauncher fail" << std::endl;
 			return false;
 		}
     pIs >> lLevelLauncher;
-		
+
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrLevField ) != 0 ){
 			//			std::cout << "read Pilot LevelField fail" << std::endl;
 			return false;
 		}
     pIs >> lMaxField;
-		
+
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrLevMotor ) != 0 ){
 			//			std::cout << "read Pilot LevelMotor fail" << std::endl;
 			return false;
 		}
     pIs >> lLevelMotor;
-		
+
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrMaxErg ) != 0 ){
 			//			std::cout << "read Pilot MaxErg fail" << std::endl;
 			return false;
 		}
     pIs >> lMaxErg;
-		
+
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrMaxRocket ) != 0 ){
 			//			std::cout << "read Pilot MaxRocket fail" << std::endl;
 			return false;
 		}
     pIs >> lMaxRocket;
-		
+
 		pIs >> lTmpStr;
 		if( lTmpStr.compare( sStrLife ) != 0 ){
 			//			std::cout << "read Pilot fail" << std::endl;
 			return false;
 		}
 		pIs >> lNbLife;
-		
+
 		pIs >> lTmpStr;
 		if( lTmpStr.compare( sStrField ) != 0 ){
 			//			std::cout << "read Pilot Field fail" << std::endl;
 			return false;
 		}
     pIs >> lField;
-		
+
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrRocket ) != 0 ){
 			//			std::cout << "read Pilot Rocket fail" << std::endl;
 			return false;
 		}
     pIs >> lRocket;
-		
+
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrErg ) != 0 ){
 			//			std::cout << "read Pilot fail" << std::endl;
 			return false;
 		}
     pIs >> lErg;
-		
+
 		pIs >> lTmpStr;
     if( lTmpStr.compare( sStrScore ) != 0 ){
 			//			std::cout << "read Pilot Score fail" << std::endl;
@@ -235,15 +235,15 @@ bool Pilot::read( std::istream & pIs ){
 
 		cMaxErg = lMaxErg;
 		cMaxRocket = lMaxRocket;
-		
+
 		cLevelPhaser = lLevelPhaser;
 		cLevelLauncher = lLevelLauncher;
-		
+
 		SpriteFloat::set( SPRITE_MAX_LIFE_POINT, lMaxField );
 
 		cLevelMotor = lLevelMotor;
 		//cLevelWarp;
-		
+
 		cScore = lScore;
 
 		cGold = lMoney;
@@ -303,7 +303,7 @@ Pilot::Pilot( )
 
 
 
-	caTexCore = WorldGame::LoadTextureConfig(	"TextureShip" ); // 38 9  53 63
+	caTexCore = WorldGame::LoadTextureConfig("Pilot.TextureShip" ); // 38 9  53 63
 
 
 
@@ -570,21 +570,21 @@ Pilot::animate()
 
 	cManX = 0.05;
 	cManY = 0.15;
-	
+
 	{  //===== Rechargement de base pour l'energie =====
 		static float sMemTime = WorldControler::sTime; // fist time
-		
+
 		float lTime = WorldControler::sTime;
 		if( lTime - sMemTime >= 1 ){
 			sMemTime +=  lTime - sMemTime;
-			
-			cErg += 10;  
+
+			cErg += 10;
 			if( cErg > cMaxErg )
-				cErg = cMaxErg;			
+				cErg = cMaxErg;
 		}
 	} //================================================
 
-	
+
 
 	if(cWarpBegin == GL_FALSE )
 		Sprite3dPilot::animate();
@@ -807,7 +807,7 @@ Pilot::firePhaser()
 			else
 				lWeapon = lWeapon2;
 
- 
+
 	switch( lVal%lMaxWeapon ){
 	case 0:  // NORMAL
 		if( lTirDevant )
@@ -1116,7 +1116,7 @@ Pilot::fireRocket()
 	switch( lVal%lMaxWeapon ){
 	case 0:  // NORMAL
 		if(  lTirDevant ){
-			
+
 			lCoutTotal+=lCout;
 			TheWeaponsMaker->makeMultipleSameWeapon(     lCurrent,  lSpProj, 1,  &getTransf(), lWeapon, InteractWeaponAlliedIn, InteractWeaponAlliedOut);
 		}
@@ -1516,7 +1516,7 @@ GLboolean Pilot::collision( Sprite3d &pMySprite, Sprite3d &pSprite, void *pParam
 				////////				WorldGame::TheWorldGame->cSceneManager->resetCurrentSceneFromBegin( this );
 				SoundSource* lSoundSrc=  PLAY_SAMPLE(  sSoundNextLife );
 				lSoundSrc->setPosition(  getTransf().TransfDouble3::get(POS) );
-	
+
 				cNbLife--;
 
 				cRocket = cMaxRocket;
@@ -1610,7 +1610,7 @@ Pilot::drawControl()
 	T3dColor::Green();
 	sprintf(tmp,"Sprite:%d %d", WorldGame::TheWorldGame->getSizeLiveSprite(), WorldGame::TheWorldGame->getNbLiveSprite() );
 
-	//	std::cout << "Sprite:" <<   WorldGame::TheWorldGame->getNbLiveSprite() 
+	//	std::cout << "Sprite:" <<   WorldGame::TheWorldGame->getNbLiveSprite()
 	//						<<  " " <<  WorldGame::TheWorldGame->getNbRealLiveSprite() << std::endl;
 
 	WorldControler::sCurrentFont->displayAt( lX, lY, lZ, tmp);
@@ -1708,7 +1708,7 @@ Pilot::collisionBonus( Sprite3d &pSprite, void *pParam)
 					if( cRocket > cMaxRocket ){
 
 						cGold +=  cRocket- cMaxRocket;
-							
+
 						cRocket = cMaxRocket;
 					}
 
