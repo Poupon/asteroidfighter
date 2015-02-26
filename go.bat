@@ -1,1 +1,1 @@
-AsteroidFighter -S6 -F5 -T8
+AsteroidFighter -S6 -F25 -T8
