@@ -273,31 +273,37 @@ SceneManager::resetCurrentSceneFromBegin( Sprite3dPilot* pPilot )
 int
 SceneManager::endScene()
 {
-	std::cout << "SceneManager::endScene" << std::endl;
- // le Sprite est elimine par World qui appele execDelete
+  std::cout << "SceneManager::endScene" << std::endl;
+  // le Sprite est elimine par World qui appele execDelete
 
-	cSceneVect[cCurScene]->leaveWorld();
-	cCurScene++;
+  cSceneVect[cCurScene]->leaveWorld();
+  cCurScene++;
 
-	if( cCurScene == cSceneVect.size() )
-		{
-			sprintf( cStrInfo, "Finish");
-			WorldControler::WC->userEvent(NULL);
-			return  0;
-		}
+  if( cCurScene == cSceneVect.size() )
+    {
+      sprintf( cStrInfo, "Finish");
+      WorldControler::WC->userEvent(NULL);
+      return  0;
+    }
 
-	if( cSceneVect[cCurScene]->getSpriteType() < 0 )
-    saveStateToFile(sAutoSavFile);
+  if( cSceneVect[cCurScene]->getSpriteType() < 0 )
+    {
+      std::ostringstream lOs ;
+      lOs << sAutoSavFile << '_'
+	  << cSceneVect[cCurScene]->getStrInfo() << '_'
+	  << WorldControler::sDifficultyLevel;
+      //     saveStateToFile(sAutoSavFile);
+      saveStateToFile(lOs.str().c_str());
+    }
+
+  sprintf( cStrInfo, "%d/%lu | %s", cCurScene, cSceneVect.size(), cSceneVect[cCurScene]->getStrInfo());
+  cSceneVect[cCurScene]->resetLife();
+
+  if( WorldControler::GetCurrentWorld())
+    WorldControler::Add(cSceneVect[cCurScene]);
 
 
-	sprintf( cStrInfo, "%d/%lu | %s", cCurScene, cSceneVect.size(), cSceneVect[cCurScene]->getStrInfo());
-	cSceneVect[cCurScene]->resetLife();
-
-	if( WorldControler::GetCurrentWorld())
-		WorldControler::Add(cSceneVect[cCurScene]);
-
-
-	return 0;
+  return 0;
 }
 //------------------------------
 GLboolean

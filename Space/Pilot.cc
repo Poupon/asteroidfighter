@@ -9,6 +9,17 @@
 #include <O3d/O3dObjText.h>
 #include <O3d/O3dObjPLibFont.h>
 
+#include <Sprite3d/World.h>
+#include <Sprite3d/ObjPart.h>
+#include <Sprite3d/Random.h>
+#include <Sprite3d/WorldControler.h>
+#include <Sprite3d/ObjOdron.h>
+#include <Sprite3d/SoundControler.h>
+
+#include <U3d/WeaponsMaker.h>
+#include <U3d/SpriteExplosion.h>
+#include <U3d/BonusMaker.h>
+#include <U3d/ObjPrimPart.h>
 
 #include <Sprite3d/World.h>
 #include <Sprite3d/ObjPart.h>
@@ -30,6 +41,7 @@
 #include <Def.h>
 #include <stdio.h>
 
+#include <FL/Fl.H>
 
 #define MAX_WEAPON_IN_USE 256
 
