@@ -5,7 +5,6 @@
 #include <AL/al.h>
 #include <AL/alc.h>
 
-#include <sndfile.h>
 #endif
 
 

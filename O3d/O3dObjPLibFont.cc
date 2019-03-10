@@ -10,15 +10,11 @@
 void 
 O3dObjPLibFont::drawObj( O3dViewProps & pVProps, O3dObjProps *pObjProps )
 {
-	static fntRenderer sTexout ;
-
-	 sTexout.setFont( &cFont );
-	 sTexout.setPointSize( cSize);
-	 sTexout.begin () ;
-	 sTexout.start3f ( 0.0f, 0.0f, 0.0f ) ;
-		     sTexout.puts ( cStr.data() ) ;
-   sTexout.end () ;
-	 glDisable      ( GL_TEXTURE_2D ) ; 
+	glDisable(GL_LIGHTING);
+	//	gl_font( cFont, cSize );
+	//	gl_draw( cStr.data(),   0.0f,  0.0f,  0.0f); 
+	T3dFont::DefaultFont->displayAt( 0, 0, 0, cStr.data());
+	glEnable(GL_LIGHTING);
 }
 
 

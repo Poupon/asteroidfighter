@@ -115,7 +115,7 @@ bool Pilot::read( std::istream & pIs ){
 	long  lErg=0;
 	long  lRocket=0;
 	long  lNbLife=0;
-	long  lGold=0;
+	//	long  lGold=0;
 	long  lField=0;
 
 	long  lMaxErg=0;
@@ -768,24 +768,25 @@ Pilot::firePhaser()
 
 	double lLateral=0.7;
 	double lEtendue=0.3;
-
+ 
 	int lTirDevant  = GL_TRUE;
 	int lTirEtendue = GL_FALSE;
 	int lTirLateral = GL_FALSE;
 
-	if(  WorldControler::GetKeyModifiers() &  GLUT_ACTIVE_SHIFT )
+	//	if(  WorldControler::GetKeyModifiers() &  GLUT_ACTIVE_SHIFT )
+	if(   Fl::event_shift() )
 		{
 			lTirDevant  = GL_FALSE;
-			lTirEtendue = GL_FALSE;
 			lTirLateral = GL_TRUE;
 		}
-	if(  WorldControler::GetKeyModifiers() & GLUT_ACTIVE_CTRL  )
+	//	if(  WorldControler::GetKeyModifiers() & GLUT_ACTIVE_CTRL  )
+	if(  Fl::event_ctrl() )
 		{
 			lTirDevant  = GL_FALSE;
 			lTirEtendue = GL_TRUE;
-			lTirLateral = GL_FALSE;
 		}
-	if(  WorldControler::GetKeyModifiers() &  GLUT_ACTIVE_ALT )
+//	if(  WorldControler::GetKeyModifiers() &  GLUT_ACTIVE_ALT )
+	if(  Fl::event_alt() )
 		{
 			lTirDevant  = GL_TRUE;
 			lTirEtendue = GL_TRUE;
@@ -1088,19 +1089,20 @@ Pilot::fireRocket()
 	int lTirLateral = GL_FALSE;
 
 
-	if(  WorldControler::GetKeyModifiers() &  GLUT_ACTIVE_SHIFT )
+	//	if(  WorldControler::GetKeyModifiers() &  GLUT_ACTIVE_SHIFT )
+	if(   Fl::event_shift() )
 		{
 			lTirDevant  = GL_FALSE;
-			lTirEtendue = GL_FALSE;
 			lTirLateral = GL_TRUE;
 		}
-	if(  WorldControler::GetKeyModifiers() & GLUT_ACTIVE_CTRL  )
+	//	if(  WorldControler::GetKeyModifiers() & GLUT_ACTIVE_CTRL  )
+	if(  Fl::event_ctrl() )
 		{
 			lTirDevant  = GL_FALSE;
 			lTirEtendue = GL_TRUE;
-			lTirLateral = GL_FALSE;
 		}
-	if(  WorldControler::GetKeyModifiers() &  GLUT_ACTIVE_ALT )
+	//	if(  WorldControler::GetKeyModifiers() &  GLUT_ACTIVE_ALT )
+	if(  Fl::event_alt() )
 		{
 			lTirDevant  = GL_TRUE;
 			lTirEtendue = GL_TRUE;
@@ -1552,6 +1554,8 @@ Pilot::drawControl()
 {
 	glDisable(GL_LIGHTING);
 
+
+
 	char tmp[256];
 
 	float lX = -110;//+cXDecalKamera;
@@ -1795,9 +1799,7 @@ Pilot::collisionBonus( Sprite3d &pSprite, void *pParam)
 			pSprite.SpriteFloat::set( SPRITE_LIFETIME, 2);
 
 			if( cText != NULL )	{
-				static fntTexFont  sFont( "font/Helvetica.txf" );
-
-				O3dObjPLibFont* lO3dText = new O3dObjPLibFont( sFont, 4, cText  );
+				O3dObjPLibFont* lO3dText = new O3dObjPLibFont( FL_HELVETICA_BOLD, 12, cText  ); // 4
 
 			 	Sprite3dObj *lSpriteText = new Sprite3dObj( lO3dText, 2 );
 							//		Sprite3dObj *lSpriteText = new Sprite3dObj( new O3dObjPrim( O3dObjPrim::PrimSphere, 20, 8, 8 ), 2);
@@ -1889,51 +1891,3 @@ Pilot::key( unsigned char key, int x, int y )
 }
 
 
-
-
-#ifdef TOTOTO
-/*
-A METTRE DANS WORLD ...
-
-        int overlaySupport;
-         int transparent, red, white;
-
-         glutInitDisplayMode(GLUT_SINGLE | GLUT_INDEX);
-         overlaySupport = glutLayerGet(GLUT_OVERLAY_POSSIBLE);
-         if (overlaySupport) {
-           glutEstablishOverlay();
-           glutHideOverlay();
-           transparent = glutLayerGet(GLUT_TRANSPARENT_INDEX);
-           glClearIndex(transparent);
-           red = (transparent + 1) % glutGet(GLUT_WINDOW_COLORMAP_SIZE);
-           white = (transparent + 2) % glutGet(GLUT_WINDOW_COLORMAP_SIZE);
-           glutSetColor(red, 1.0, 0.0, 0.0);  /* Red. */
-           glutSetColor(white, 1.0, 1.0, 1.0);  /* White. */
-           glutOverlayDisplayFunc(redrawOverlay);
-           glutReshapeFunc(reshape);
-         } else {
-           printf( "Sorry, no nifty overlay (try an SGI workstation)!0");
-         }
-
-//A mettre pour l'affichage
-
-
-         void
-         reshape(int w, int h)
-         {
-           if (overlaySupport) {
-             glutUseLayer(GLUT_OVERLAY);
-             /* Setup overlay to have X style coordinate system. */
-             glViewport(0, 0, w, h);
-             glMatrixMode(GL_PROJECTION);
-             glLoadIdentity();
-             gluOrtho2D(0, w, 0, h);
-             glScalef(1, -1, 1);
-             glTranslatef(0, -h, 0);
-             glMatrixMode(GL_MODELVIEW);
-             glutUseLayer(GLUT_NORMAL);
-           }
-           glViewport(0, 0, w, h);
-         }
-*/
-#endif

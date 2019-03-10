@@ -56,7 +56,7 @@ public:
 		 cCurrentWorld =	pCurrent;
 
 		 if( cCurrentWorld )
-			 cCurrentWorld->enterWorld();
+			 cCurrentWorld->enterWorld( cWidth, cHeight);
 		 cCurrentWorld->getKamera()->setAspectRatio(  cWidth, cHeight );
 	 }
 	World* getCurrentWorld() { return  cCurrentWorld; }
@@ -139,10 +139,6 @@ public:
 	int getWidth()  { return  cWidth; }
 	int getHeight() { return  cHeight;}
 
-
-#ifdef PUI_WIN
-static	GLboolean PuiInUse;
-#endif
 
 
 

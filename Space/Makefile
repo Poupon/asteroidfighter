@@ -1,3 +1,5 @@
+include ${FLTK_PATH}/makeinclude
+
 TARGET=libSpace.a
 
 SRCS = \
@@ -26,10 +28,9 @@ HDRS = $(SRCS:.cc=.h)
 
 # ---------------------------------------------------
 
-CFLAGS=  -DPUI_WIN  ${CC_DEBUG} -g -std=c++11  -O3 -Wall  -m64 -pthread -D_POSIX_PTHREAD_SEMANTICS -m64  ${CC_PROFILING}
+CFLAGS=  ${CC_DEBUG} -g -std=c++11  -O3 -Wall  -pthread -D_POSIX_PTHREAD_SEMANTICS -m64  ${CC_PROFILING}
 
 CINCLUDE=-I. -I.. 
-# -I/usr/openwin/include  -I${DIR_OPENGL_INC} -I${DIR_GLUT_INC} -I${DIR_PLIB_INC}
 
 # ---------------------------------------------------
 

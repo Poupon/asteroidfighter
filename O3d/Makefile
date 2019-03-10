@@ -1,3 +1,4 @@
+include ${FLTK_PATH}/makeinclude
 TARGET=libO3d.a
 
 SRCS = \
@@ -28,7 +29,8 @@ HDRS = $(SRCS:.cc=.h)
 
 # ---------------------------------------------------
 
-CFLAGS=  ${CC_DEBUG} -g -std=c++11 -Wall  -O3 -m64 -pthread -D_POSIX_PTHREAD_SEMANTICS -m64  ${CC_PROFILING}
+CFLAGS=  ${CC_DEBUG} -g -std=c++11 -Wall  -O3 -m64 -pthread -D_POSIX_PTHREAD_SEMANTICS -m64  ${CC_PROFILING} -I${FLTK_PATH} -I/usr/include/freetype2
+
 
 CINCLUDE=-I. -I.. 
 

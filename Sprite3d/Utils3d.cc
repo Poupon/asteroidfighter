@@ -1,6 +1,7 @@
 #include <Utils3d.h>
 
-#include <GL/glut.h>
+#include <FL/glut.H>
+
 #include <World.h>
 #include <WorldControler.h>
 #include <stdio.h>
@@ -13,8 +14,7 @@
 
 void Utils3d::Init(const char *pName, int argc, char **argv, int pWidth, int pHeight )
 {
-  glutInit(&argc, argv);  /* initialize glut, processing
-                             arguments */
+	/////// FLTK   glutInit(&argc, argv);
 
   glutInitWindowSize( pWidth, pHeight );
   glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH | GLUT_DOUBLE);
@@ -22,7 +22,7 @@ void Utils3d::Init(const char *pName, int argc, char **argv, int pWidth, int pHe
 
 
   T3dFont::Init();
-
+	/*
 #if GL_EXT_polygon_offset
   if (!glutExtensionSupported("GL_EXT_polygon_offset")) {
     printf("Warning: "
@@ -32,7 +32,7 @@ void Utils3d::Init(const char *pName, int argc, char **argv, int pWidth, int pHe
 #else
   printf("Warning: not compiled with GL_EXT_polygon_offset support.\n");
 #endif
-
+	*/
 
 
   static float ambient[] =

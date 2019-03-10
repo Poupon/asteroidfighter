@@ -353,7 +353,7 @@ T3dPrimitiv::DrawGrid( float pSz, int pNb )
 	   // Turn the lines GREEN
     T3dColor::Green();
 	float lPas = pSz / pNb;
-	float lOrg = pSz / 2;
+	//	float lOrg = pSz / 2;
 
     // Draw a 1x1 grid along the X and Z axis'
     for(float i = -pSz; i <= pSz; i += lPas )

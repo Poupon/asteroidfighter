@@ -16,9 +16,8 @@
 #include <Sprite3dPilot.h>
 #include <SoundControler.h>
 
-#ifdef  PUI_WIN
-#include <plib/pu.h>
-#endif
+#include <FL/Fl.H>
+#include <FL/Fl_Native_File_Chooser.H>
 
 WorldControler *WorldControler::WC = NULL;
 
@@ -50,104 +49,47 @@ int   WorldControler::sOldKeyModifiers=0;
 // Pas au point ! -> plantage
 
 
-static puDialogBox* sSavDialogBox = NULL;
-static puInput* sSavInputBox = NULL;
-static puOneShot* sOkBox = NULL;
 
-void go_away_callback ( puObject * pObject )
+void saveLastLevel()
 {
-	std::cout << "go_away_callback" << std::endl;
-
-	//	puDeleteObject( sSavInputBox ) ;
-
-	// On recupere les frappes pour WorldController
-
-	glutSpecialFunc( WorldControler::SpecialKey );
-  glutKeyboardFunc(WorldControler::Key);
- 
-
-	if( pObject == sOkBox ){
-		char * lStr = sSavInputBox->getDisplayedText();
-		std::cout << "Ok : " << lStr << std::endl;
-		if( WorldControler::WC != NULL && WorldControler::GetGameWorld() != NULL)
-			WorldControler::GetGameWorld()->saveStateToFile(lStr);
-	} else {
-		std::cout << "Cancel" << std::endl;
-	}
-	sSavDialogBox->close();
-	//	puDeleteObject( sSavDialogBox) ;
-	//  sSavDialogBox = NULL ;
-}
-
-void text_ok_callback(  puObject * puObject){
-	std::cout << "saisie" << std::endl;
-}
-void my_keyboard_func ( unsigned char key, int x, int y )
-{
-	puKeyboard ( key, PU_DOWN ) ;
-	glutPostRedisplay () ;
-}
-void my_special_func ( int special_key, int x, int y )
-{
-	puKeyboard ( special_key + PU_KEY_GLUT_SPECIAL_OFFSET, PU_DOWN ) ;
-	glutPostRedisplay () ;
-}
-
-void
-saveLastLevel(){
-
-	if( sSavDialogBox == NULL )
-		{			
-			sSavDialogBox  = new puDialogBox( 450, 150);
-			
-			new puFrame ( 0, 0, 600, 200 ) ;
-			(new puText  ( 10, 150 ))->setLabel ( "Save current level" ) ;
-			
-			sSavInputBox = new puInput ( 10, 100, 500, 150 );
-			sSavInputBox->acceptInput();
-			sSavInputBox->setValidData("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-.");
-
-			//		sSavInputBox->setLabel( "toto" );
-			//		sSavInputBox-> setCallback ( text_ok_callback);
-			
-			puOneShot *cancel = new puOneShot ( 50, 30, "Cancel" ) ;
-			puOneShot *sOkBox= new puOneShot ( 300, 30, "OK" ) ;
-	
-			sOkBox-> makeReturnDefault ( TRUE ) ;
-			sOkBox-> setCallback( go_away_callback ) ;
-			cancel-> setCallback( go_away_callback ) ;
+	Fl_Native_File_Chooser fnfc;
+	fnfc.title("Pick a file for write");
+	fnfc.type(Fl_Native_File_Chooser::BROWSE_FILE);
+	fnfc.filter("AF\t*.sav\n"
+							"3D Files\t*.{sav}");
+	fnfc.directory(".");           // default directory to use
+	// Show native chooser
+	switch ( fnfc.show() )
+		{
+		case -1: printf("ERROR: %s\n", fnfc.errmsg());    break;  // ERROR
+		case  1: printf("CANCEL\n");                      break;  // CANCEL
+		default:
+			{
+				if( WorldControler::WC != NULL && WorldControler::GetGameWorld() != NULL)
+					WorldControler::GetGameWorld()->saveStateToFile( fnfc.filename());						
+			}	
 		}
-	
-	// On recupere les frappes pour pu 
-	glutSpecialFunc( my_special_func );
-  glutKeyboardFunc(my_keyboard_func);
-	
-	sSavDialogBox->close() ;
-  sSavDialogBox->reveal() ;
 }
-//--------------------------------
-
-
 //**************************************
 WorldControler::WorldControler(int pWidth, int pHeight, bool pFullScreen)
 	:cCurrentWorld( NULL),
-	cMainWorld(NULL),
-	cGame(NULL),
-  cPause(0),
-	cFullScreen(pFullScreen),
-	cLeftButtonDown(GL_FALSE),
-	cMiddleButtonDown (GL_FALSE),
-	cRightButtonDown( GL_FALSE),
-	cMouseX(-1),
-	cMouseY(-1),
-	cWidth(pWidth),
-	cHeight(pHeight)
+	 cMainWorld(NULL),
+	 cGame(NULL),
+	 cPause(0),
+	 cFullScreen(pFullScreen),
+	 cLeftButtonDown(GL_FALSE),
+	 cMiddleButtonDown (GL_FALSE),
+	 cRightButtonDown( GL_FALSE),
+	 cMouseX(-1),
+	 cMouseY(-1),
+	 cWidth(pWidth),
+	 cHeight(pHeight)
 {
 	sCurrentFont = T3dFont::DefaultFont;
 	WC = this;
 
 	if(cFullScreen);
-        glutFullScreen(	);
+	glutFullScreen(	);
 }
 //--------------------------------
 WorldControler::~WorldControler()
@@ -158,7 +100,7 @@ WorldControler::~WorldControler()
 //--------------------------------
 void
 WorldControler::Add( Sprite3d* pSprite) {
-		WC->cCurrentWorld->add( pSprite );
+	WC->cCurrentWorld->add( pSprite );
 }
 //--------------------------------
 
@@ -209,11 +151,11 @@ void
 WorldControler::start( int pLevel, const char* pFileNameSav)
 {
 	if( cCurrentWorld == cMainWorld )
-	{
-		cGame->freeRessources();
-		cGame->initStart( pLevel, pFileNameSav);
-		setCurrent( cGame );
-	}
+		{
+			cGame->freeRessources();
+			cGame->initStart( pLevel, pFileNameSav);
+			setCurrent( cGame );
+		}
 }
 //------------------------------------------------------
 //-------------------- STATIC --------------------------
@@ -221,12 +163,13 @@ WorldControler::start( int pLevel, const char* pFileNameSav)
 
 void WorldControler::MouseMove( int pX, int pY )
 {
-//	std::cout << "<<<WorldControler::MouseMove " << sTime  << std::endl;
+	//	std::cout << "<<<WorldControler::MouseMove " << sTime  << std::endl;
 
 	//	sOldKeyModifiers = sKeyModifiers;
 	//	sKeyModifiers = glutGetModifiers();
 
 #ifdef PUI_WIN
+	/*
 	if( PuiInUse )
 		{
 			if( puMouse ( pX, pY ) )
@@ -235,19 +178,25 @@ void WorldControler::MouseMove( int pX, int pY )
 					return;
 				}
 		}
+	*/
 #endif
+
+
+	
+	
 	WC->cMouseX = pX;
 	WC->cMouseY = pY;
 	if( WC->cCurrentWorld )
 		WC->cCurrentWorld->setPilot( pX, pY );
 
-//	std::cout << "WorldControler::MouseMove " << sTime  << " >>>" << std::endl;
+	//	std::cout << "WorldControler::MouseMove " << sTime  << " >>>" << std::endl;
 }
 //--------------------------------
 void WorldControler::MouseButton( int pButton, int pState, int pX, int pY )
 {
-//	std::cout << "<<<WorldControler::MouseButton " << sTime  << std::endl;
+	//	std::cout << "<<<WorldControler::MouseButton " << sTime  << std::endl;
 
+	/*
 #ifdef PUI_WIN
 	if( PuiInUse )
 		{
@@ -258,6 +207,7 @@ void WorldControler::MouseButton( int pButton, int pState, int pX, int pY )
 				}
 		}
 #endif
+	*/
 
 	sOldKeyModifiers = sKeyModifiers;
 	sKeyModifiers = glutGetModifiers();
@@ -266,7 +216,7 @@ void WorldControler::MouseButton( int pButton, int pState, int pX, int pY )
 	WC->cMouseY = pY;
 
 	switch( pButton )
-	{
+		{
 		case GLUT_LEFT_BUTTON:
 			if( pState == GLUT_DOWN )
 				WC->cLeftButtonDown = GL_TRUE;
@@ -289,17 +239,18 @@ void WorldControler::MouseButton( int pButton, int pState, int pX, int pY )
 			break;
 
 		default:;
-	}
+		}
 	WC->cCurrentWorld->mouseButton( pButton, pState, pX, pY );
 
-//	std::cout << "WorldControler::MouseButton " << sTime  << " >>>"  << std::endl;
+	//	std::cout << "WorldControler::MouseButton " << sTime  << " >>>"  << std::endl;
 }
 //--------------------------------
 
 void
 WorldControler::SpecialKey( int pKey, int pX, int pY )
 {
-//	std::cout << "<<<WorldControler::SpecialKey " << sTime  << std::endl;
+	//	std::cout << "<<<WorldControler::SpecialKey " << sTime  << std::endl;
+	/*
 #ifdef PUI_WIN
 	if( PuiInUse )
 		{
@@ -310,39 +261,40 @@ WorldControler::SpecialKey( int pKey, int pX, int pY )
 				}
 		}
 #endif
-
+	*/
+	
 	sOldKeyModifiers = sKeyModifiers;
 	sKeyModifiers = glutGetModifiers();
 
-//	std::cout << "SpecialKey:" << pKey << ":" << (int)pKey << '(' << pX << ',' << pY <<')'<< " " << sKeyModifiers << std::endl;
+	//	std::cout << "SpecialKey:" << pKey << ":" << (int)pKey << '(' << pX << ',' << pY <<')'<< " " << sKeyModifiers << std::endl;
 
 
 	switch( pKey )
-	{
-	case GLUT_KEY_F1 :
-		WC->helpWorld();
-		break;
+		{
+		case GLUT_KEY_F1 :
+			WC->helpWorld();
+			break;
 
-	case GLUT_KEY_LEFT:
-		World::sFlagCollision3d = false;
-		break;
+		case GLUT_KEY_LEFT:
+			World::sFlagCollision3d = false;
+			break;
 
-	case GLUT_KEY_RIGHT:
-		World::sFlagCollision3d = true;
-		break;
+		case GLUT_KEY_RIGHT:
+			World::sFlagCollision3d = true;
+			break;
 
-	}
+		}
 
 	WC->cCurrentWorld->setPilotSpecialKey( pKey, pX, pY );
 
 
-//	std::cout << "WorldControler::SpecialKey " << sTime  << " >>>" << std::endl;
+	//	std::cout << "WorldControler::SpecialKey " << sTime  << " >>>" << std::endl;
 }
 //--------------------------------
 void
 WorldControler::KeyUp( unsigned char pKey, int pX, int pY )
 {
-//	std::cout << "<<< WorldControler::KeyUp " << sTime  << std::endl;
+	//	std::cout << "<<< WorldControler::KeyUp " << sTime  << std::endl;
 
 	//	sOldKeyModifiers = sKeyModifiers;
 	//	sKeyModifiers = glutGetModifiers();
@@ -351,13 +303,13 @@ WorldControler::KeyUp( unsigned char pKey, int pX, int pY )
 
 	WC->cCurrentWorld->setPilotKeyUp( pKey, pX, pY );
 
-//	std::cout << "WorldControler::KeyUp " << sTime  << " >>>" << std::endl;
+	//	std::cout << "WorldControler::KeyUp " << sTime  << " >>>" << std::endl;
 }
 //--------------------------------
 void
 WorldControler::Key( unsigned char pKey, int pX, int pY )
 {
-//	std::cout << "<<< WorldControler::Key " << sTime  << std::endl;
+	//	std::cout << "<<< WorldControler::Key " << sTime  << std::endl;
 
 	O3dKamera& lKam= *(WC->cCurrentWorld->getKamera());
 
@@ -368,7 +320,7 @@ WorldControler::Key( unsigned char pKey, int pX, int pY )
 
 
 	switch( pKey )
-	{
+		{
 		case 'q':
 		case 'Q':
 		case 27:
@@ -395,23 +347,23 @@ WorldControler::Key( unsigned char pKey, int pX, int pY )
 		case 'F':
 		case 'f':
 			if( WC->cFullScreen == 0)
-			{
-				WC->cFullScreen = 1;
-				glutFullScreen(	);
-			}
+				{
+					WC->cFullScreen = 1;
+					glutFullScreen(	);
+				}
 			else
-			{
-				glutReshapeWindow(WC->cWidth, WC->cHeight );
-				WC->cFullScreen = 0;
-			}
+				{
+					glutReshapeWindow(WC->cWidth, WC->cHeight );
+					WC->cFullScreen = 0;
+				}
 			break;
 			
-	case 'S':
-	case 's':
-		if( SoundControler::sMute == GL_TRUE )
-			SoundControler::sMute = GL_FALSE;
-		else
-			SoundControler::sMute = GL_TRUE;
+		case 'S':
+		case 's':
+			if( SoundControler::sMute == GL_TRUE )
+				SoundControler::sMute = GL_FALSE;
+			else
+				SoundControler::sMute = GL_TRUE;
 			break;
 			
 
@@ -427,49 +379,49 @@ WorldControler::Key( unsigned char pKey, int pX, int pY )
 				WC->start();
 			break;
 
-	default:
-		if( WC->cCurrentWorld == WC->cMainWorld )
-			{
-				 WC->selectNewGame( pKey, pX, pY );
-			}
-	}
+		default:
+			if( WC->cCurrentWorld == WC->cMainWorld )
+				{
+					WC->selectNewGame( pKey, pX, pY );
+				}
+		}
 
 
 	if( sDebug )
     switch( pKey )
-	{
-		case 'X':
-			lKam.TransfDouble3::get( ANGLE )[0] += 15;
-			break;
-		case 'x':
-			lKam.TransfDouble3::get( ANGLE )[0] -= 15;
-			break;
-		case 'Y':
-			lKam.TransfDouble3::get( ANGLE )[1] += 15;
-			break;
-		case 'y':
-			lKam.TransfDouble3::get( ANGLE )[1] -= 15;
-			break;
-		case 'Z':
-			lKam.TransfDouble3::get( ANGLE )[2] += 15;
-			break;
-		case 'z':
-			lKam.TransfDouble3::get( ANGLE )[2] -= 15;
-			break;
-	}
+			{
+			case 'X':
+				lKam.TransfDouble3::get( ANGLE )[0] += 15;
+				break;
+			case 'x':
+				lKam.TransfDouble3::get( ANGLE )[0] -= 15;
+				break;
+			case 'Y':
+				lKam.TransfDouble3::get( ANGLE )[1] += 15;
+				break;
+			case 'y':
+				lKam.TransfDouble3::get( ANGLE )[1] -= 15;
+				break;
+			case 'Z':
+				lKam.TransfDouble3::get( ANGLE )[2] += 15;
+				break;
+			case 'z':
+				lKam.TransfDouble3::get( ANGLE )[2] -= 15;
+				break;
+			}
 
 
 
 
 	WC->cCurrentWorld->setPilotKey( pKey, pX, pY );
 
-//	std::cout << "WorldControler::Key " << sTime  << " >>>" << std::endl;
+	//	std::cout << "WorldControler::Key " << sTime  << " >>>" << std::endl;
 }
 
 //--------------------------------
 void WorldControler::Display()
 {
-//	std::cout << "<<< WorldControler::Display " << sTime  << " >>>" << std::endl;
+	//	std::cout << "<<< WorldControler::Display " << sTime  << " >>>" << std::endl;
 
 	Redraw(0);
 
@@ -480,17 +432,22 @@ void WorldControler::Redraw( int p)
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   glColor3f( 1, 0, 0 );
 
-  if(WC->cCurrentWorld)
-      WC->cCurrentWorld->drawWorld();
 
+
+
+	if(WC->cCurrentWorld)
+		WC->cCurrentWorld->drawWorld();
+
+
+	/*
 #ifdef PUI_WIN
 	if( PuiInUse )
 		{
-			 puDisplay () ;
+			puDisplay () ;
 		}
 #endif
-//	std::cout << "WorldControler::Display " << sTime  << " >>>" << std::endl;
-
+	//	std::cout << "WorldControler::Display " << sTime  << " >>>" << std::endl;
+	*/
   glutSwapBuffers();
 
 }
@@ -498,9 +455,9 @@ void WorldControler::Redraw( int p)
 void WorldControler::Visibility( int pState )
 {
   if (pState == GLUT_VISIBLE)
-     WC->cPause = 0;
+		WC->cPause = 0;
   else
-      WC->cPause = 1;
+		WC->cPause = 1;
 }
 //----------------------------------
 void WorldControler::Reshape(int pWidth, int pHeight  )
@@ -515,14 +472,14 @@ void WorldControler::Animate( int p)
 {
 
 
-//	std::cout << "Timer WorldControler::Animate <" << sMicroRate << " " << sTime << std::endl;
+	//	std::cout << "Timer WorldControler::Animate <" << sMicroRate << " " << sTime << std::endl;
 
 	if( WC->cPause == 1)
-	{
-		glutTimerFunc( sMicroRate, Animate, 0 );
-//	std::cout << " PAUSE Timer WorldControler::Animate " << sMicroRate << " " << sTime<< " >>>> " << std::endl;
-		return;
-	}
+		{
+			glutTimerFunc( sMicroRate, Animate, 0 );
+			//	std::cout << " PAUSE Timer WorldControler::Animate " << sMicroRate << " " << sTime<< " >>>> " << std::endl;
+			return;
+		}
 
 	sTime += sRatio;
 
@@ -531,27 +488,27 @@ void WorldControler::Animate( int p)
 
 	Redraw( 0 );
 
-//	cout << "Rate:" << sMicroRate << " ration:" << sRatio << endl;
+	//	cout << "Rate:" << sMicroRate << " ration:" << sRatio << endl;
 
 	glutTimerFunc( sMicroRate, Animate, 0 );
-//	std::cout << " Timer WorldControler::Animate " << sMicroRate << " " << sTime << " >>>> " << std::endl;
+	//	std::cout << " Timer WorldControler::Animate " << sMicroRate << " " << sTime << " >>>> " << std::endl;
 
 }
 //--------------------------------
 void WorldControler::Idle()
 {
-//  std::cout << "Idle" << std::endl;
+	//  std::cout << "Idle" << std::endl;
 }
 //--------------------------------
 void WorldControler::InitCallback()
 {
-     /* set callbacks */
+	/* set callbacks */
 	glutSpecialFunc( SpecialKey );
   glutKeyboardFunc(Key);
   glutIdleFunc(Idle);
-//	glutKeyboardUpFunc( KeyUp );
+	//	glutKeyboardUpFunc( KeyUp );
 
-//#ifndef PC_WINDOWS  || LINUX
+	//#ifndef PC_WINDOWS  || LINUX
 	glutReshapeFunc( Reshape );
 	//#endif
 
@@ -563,10 +520,11 @@ void WorldControler::InitCallback()
 
   glutTimerFunc( 500, Animate, 0 );
 
+	/*
 #ifdef PUI_WIN
 	puInit () ;
 #endif
-
+	*/
 }
 //--------------------------------
 void
@@ -593,6 +551,6 @@ WorldControler::GameWinner( )
 int
 WorldControler::userEvent( void* pUserData )
 {
-//	std::cout << "WorldControler::userEvent  " << std::endl;
+	//	std::cout << "WorldControler::userEvent  " << std::endl;
 	return WC->cCurrentWorld->userEvent( pUserData );
 }

@@ -136,8 +136,8 @@ World::initOverlay()
 			glClearIndex(transparent);
 			red = (transparent + 1) % glutGet(GLUT_WINDOW_COLORMAP_SIZE);
 			white = (transparent + 2) % glutGet(GLUT_WINDOW_COLORMAP_SIZE);
-			glutSetColor(red, 1.0, 0.0, 0.0);  /* Red. */
-			glutSetColor(white, 1.0, 1.0, 1.0);  /* White. */
+			//			glutSetColor(red, 1.0, 0.0, 0.0);  /* Red. */
+			//		glutSetColor(white, 1.0, 1.0, 1.0);  /* White. */
 			////////		glutOverlayDisplayFunc(redrawOverlay);
 			////////			glutReshapeFunc(reshape);
 			cOverlayOpen = GL_TRUE;

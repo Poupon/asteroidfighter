@@ -98,7 +98,8 @@ Help::AfficheLine( int pX, int pY, const char* pStr ){
 	O3dObjPLibFont* lObjText2 = new O3dObjPLibFont( *sTimesRoman, 4, pStr );
 
 	//	O3dObjText2d* lObjText = new O3dObjText2d( WorldControler::sCurrentFont, 16, 3, pStr );
-	Sprite3dObj* lText2 = new  Sprite3dObj( lObjText2 );
+	Sprite3dObj* lText2 = new  Sprite3dObj( lObjText2 );yes
+
 
 	Double3 lPos2( pX-30, pY, 0.0 );
 	lText2->getTransf().TransfDouble3::set( POS, lPos2 );
@@ -112,14 +113,10 @@ Help::AfficheLine( int pX, int pY, const char* pStr ){
 void
 Help::AfficheLine( int pX, int pY, const char* pStr ){
 
-	static fntTexFont  *sFont = NULL;
-	std::string lName;
-
-	if( sFont == NULL )
-		//		sFont = new fntTexFont( "Times-Roman.txf" );
-		sFont = new fntTexFont( WorldGame::GetPathConfig( lName, WorldGame::PathType::FONT, "Fonts.FontDefault" ));
-
-	O3dObjPLibFont* lObjText = new O3dObjPLibFont( *sFont, 5, pStr );
+	//	std::string lName
+ 
+	
+	O3dObjPLibFont* lObjText = new O3dObjPLibFont(FL_HELVETICA_BOLD, 12, pStr );
 
 	//	O3dObjText2d* lObjText = new O3dObjText2d( WorldControler::sCurrentFont, 16, 3, pStr );
 	Sprite3dObj* lText = new  Sprite3dObj( lObjText );
@@ -130,6 +127,7 @@ Help::AfficheLine( int pX, int pY, const char* pStr ){
 	cPropsTextNormal.ObjPropsFloat4::set( MATERIAL, cColorTextNormal );
 	lText->setObjProps( &cPropsTextNormal );
 	add( lText );
+	
 }
 //-----------------------------
 void

@@ -7,7 +7,7 @@
 /*---------------------------------------------------------------------*/
 
 #if defined(_WIN32)
-#include <GL/glut.h>
+#include <FL/glut.h>
 #else
 #include <GL/gl.h>
 #include <GL/glx.h>

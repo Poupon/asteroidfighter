@@ -1,3 +1,5 @@
+include ${FLTK_PATH}/makeinclude
+
 TARGET=libSprite3d.a
 
 SRCS = \
@@ -26,11 +28,11 @@ HDRS = $(SRCS:.cc=.h)
 
 # ---------------------------------------------------
 
-CFLAGS=  -DUSE_SOUND -DPUI_WIN  ${CC_DEBUG} -g -std=c++11 -Wall  -O3  -m64 -pthread -D_POSIX_PTHREAD_SEMANTICS -m64  ${CC_PROFILING}
+CFLAGS=  -DUSE_SOUND  ${CC_DEBUG} -g -std=c++11  -O3 -Wall  -m64 -pthread -D_POSIX_PTHREAD_SEMANTICS -m64  ${CC_PROFILING}
+CFLAGS =  -DXXXXUSE_SOUND  ${CC_DEBUG} -g -std=c++17 -O3 -Wall  -m64 -pthread -D_POSIX_PTHREAD_SEMANTICS  -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT -I${FLTK_PATH} -I/usr/include/freetype2 ${CC_PROFILING}
 
 CINCLUDE=-I. -I.. -DLINUX
 
-#  -I/usr/openwin/include  -I${DIR_OPENGL_INC} -I${DIR_GLUT_INC} -I${DIR_PLIB_INC}
 
 
 # ---------------------------------------------------

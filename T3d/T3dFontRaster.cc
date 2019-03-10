@@ -26,11 +26,11 @@ T3dFontRaster::T3dFontRaster()
 /*    T3dFontRaster::T3dFontRaster ...                                 */
 /*---------------------------------------------------------------------*/
 T3dFontRaster::T3dFontRaster( GLubyte pRaster[][13], int pW, int pH, int pBegin, int pEnd )
-:cBegin( 0 ),
- cEnd( 0 ),
- cWidth( pW ),
- cHeight( pH ),
- cFontOffset(0)
+	: cFontOffset(0),
+		cBegin( 0 ),
+		cEnd( 0 ),
+		cWidth( pW ),
+		cHeight( pH )
 {
  init( pRaster, pW, pH, pBegin, pEnd );
 }
@@ -52,7 +52,7 @@ void
 T3dFontRaster::init(  GLubyte pRaster[][13], int pW, int pH, int pBegin, int pEnd )
 {
 	cBegin = pBegin;
-	cEnd = pEnd;
+	cEnd   = pEnd;
 	cWidth = pW;
 	cHeight = pH;
 

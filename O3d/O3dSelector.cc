@@ -72,8 +72,8 @@ O3dSelector::finish()
 		printf( " Select %d %d\n", i, *ptr) ;
 		ptr++;
 
-		 *ptr++; // z1
-		 *ptr++; //z2
+		//		 *ptr++; // z1
+		 //	 *ptr++; //z2
 
 //		GLuint mem = SELECT_NONE;
 

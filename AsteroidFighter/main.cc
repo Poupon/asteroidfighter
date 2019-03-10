@@ -6,7 +6,7 @@
 #include <math.h>
 
 
-#include <GL/glut.h>
+#include <FL/glut.H>
 
 #include <O3d/O3dObjProps.h>
 #include <O3d/O3dKamera.h>
@@ -32,14 +32,6 @@
 
 #include <Space/WorldGame.h>
 
-#include <plib/ul.h>
-
-#ifdef  PUI_WIN
-#include <plib/pu.h>
-#endif
-
-#include <plib/fnt.h>
-
 //#include <boost/property_tree/ptree.hpp>
 //#include <boost/property_tree/ini_parser.hpp>
 
@@ -58,10 +50,10 @@ StrStrip( char* pStr )
 	char *s = pStr;
 
 	do{
-		while( isspace( *s )  ) s++;
-		*t++ = *s;
+		while( isspace( *s )  ) s++; 
+		*t++ = *s;  
 	}while( *s++ != '\0');
-
+ 
 	return pStr;
 }
 //------------------------------------------------
@@ -358,14 +350,23 @@ slScheduler sched ( 8000 ) ;
 	WorldGame::sIniFile="AsteroidFighter.ini";
 	ReadFileIni( WorldGame::sIniFile, WorldGame::sConfig);
 
+	//=====================================
+	Fl::use_high_res_GL(1);
+  Fl_Window window( 80*lSize+10, 60*lSize+10 );
 
+	window.show(argc,argv);
+		window.begin();
 	Utils3d::Init( "AsteroidFighter 1.0", argc, argv, 80*lSize, 60*lSize);
+	
+	window.end();
+ 	
+	//=====================================
+	
 
 	GameWorldControler lWControl( lTest, lSize, 80*lSize, 60*lSize, lFullScreen );
 	WorldControler::SetRate( lRate );
 
 
-	fntInit(); // PLIB pour les fonts !!!
 
 		//	InitWorld(lSize, lTest);
 
@@ -392,37 +393,8 @@ slScheduler sched ( 8000 ) ;
 				}
 		}
 
-	///// A VOIR     ulSleep ( 1 ) ;
 
 
-		/*
-		slSample* lSound ;
-SoundLibrary sLib(200, "Data/Douteux");
-//sLib.loadSample("alternative_001.wav");
-sLib.loadSample("explo1.wav");
-sLib.loadSample("explo2.wav");
-//sLib.loadSample("WHOOSH.WAV.wav");
-
-ulSleep(3);
-for(int i=0; i<50; i++)
-{
-lSound = sLib.getSample(i);
-if( lSound == NULL)
-    break;
-SoundControler::sTheSoundControler->playSample( lSound);
-for( int t=0; t<20; t++)
-{
-  SoundControler::sTheSoundControler->process();
-    ulMilliSecondSleep(100);
-}
-ulSleep(3);
-}
-*/
-
-
-//slSample* lSoundExplosion = SoundControler::sTheSoundControler->loadSample( "Data/sound/Warp.wav" );
-//SoundControler::sTheSoundControler->playSample( lSoundExplosion );
-//    ulSleep ( 5 ) ;
 	Utils3d::Loop();
 
 	return 0;

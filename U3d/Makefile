@@ -8,7 +8,7 @@ SRCS = Banniere.cc \
 		 SpriteExplosion.cc \
 		 Tourelle.cc \
 		 WeaponsMaker.cc \
-		 
+
 
 
 OBJS =  $(SRCS:.cc=.o)
@@ -24,7 +24,6 @@ CFLAGS=  -DPUI_WIN  ${CC_DEBUG}
 
 CINCLUDE=-I. -I.. -DLINUX -g -std=c++11 -Wall  -O3  -m64 -pthread -D_POSIX_PTHREAD_SEMANTICS -m64  ${CC_PROFILING}
 
-#  -I/usr/openwin/include  -I${DIR_OPENGL_INC} -I${DIR_GLUT_INC} -I${DIR_PLIB_INC}
 
 
 # ---------------------------------------------------

@@ -130,7 +130,7 @@ public:
 
 	virtual int userEvent( void* pUserData ) { return 0; }
 
-	virtual void enterWorld(){;}
+	virtual void enterWorld( int pWidth, int pHeight){;}
 	virtual void leaveWorld(){;}
 	virtual void reshapeWorld(int pWidth, int pHeight);
 

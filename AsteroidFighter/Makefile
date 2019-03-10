@@ -1,10 +1,11 @@
+include ${FLTK_PATH}/makeinclude
+
+
 TARGET=AsteroidFighter
 # TARGET=TestDev
 
 SRCS = \
-	MainMenu.cc \
-	Help.cc \
-	main.cc
+	MySlider.cc MainMenu.cc	Help.cc	main.cc 
 
 
 OBJS =  $(SRCS:.cc=.o)
@@ -16,18 +17,18 @@ HDRS = $(SRCS:.cc=.h)
 # ---------------------------------------------------
 # -lboost_system -lboost_program_options-mt 
 
-LDFLAGS=   -pthread 
 
-LIBPATHS=  -L../T3d -L../O3d -L../Sprite3d -L../U3d -L../Space  -L. -L../plib/libs \
-					  -L${DIR_AL}/lib  -L${DIR_SNDFILE}/lib  -L${DIR_PLIB}/lib  -L${DIR_OPENGL}/lib -L${DIR_GLUT_LIB} -L${DIR_X11_LIB}
+LIBPATHS=  -L../T3d -L../O3d -L../Sprite3d -L../U3d -L../Space  -L.  -L${DIR_AL}/lib   -L${FLTK_PATH}/lib
 
-LIBS=  -lSpace -lU3d -lSprite3d -lO3d -lT3d   -lplibpuaux -lplibpu -lplibul  -lplibpw -lplibfnt -lplibsg -lplibul -lplibsl -lsndfile -lopenal  -lGL -lGLU -lglut  -lstdc++ -lpthread   -lstdc++ -lrt -lXext -lX11  -lnsl -lm 
+LIBS=  -lSpace -lU3d -lSprite3d -lO3d -lT3d  -lopenal -lfltk_gl -lfltk $(GLDLIBS)  -lXinerama -lpthread -ldl -lm  -lpthread   -lstdc++ -lrt -lXext -lX11  -lnsl -lm 
+
+
 
 # LIBS=  -lSpace -lU3d -lSprite3d -lO3d -lT3d   -lplibpuaux -lplibpu -lplibul  -lplibpw -lplibfnt -lplibsg -lplibul  -lplibsl -lsndfile   -lGL -lGLU -lglut   -lstdc++ -lpthread   -lrt  -lXmu -lXext -lXi -lX11  -lnsl -mt -lm 
 
 
 # ---------------------------------------------------
-CFLAGS=  -DPUI_WIN  ${CC_DEBUG} -g -std=c++11 -Wall -O3  -m64 -pthread -D_POSIX_PTHREAD_SEMANTICS -m64 ${CC_PROFILING}
+CFLAGS=  -DPUI_WIN  ${CC_DEBUG} -g -std=c++11 -Wall -O3  -m64 -pthread -D_POSIX_PTHREAD_SEMANTICS -m64 ${CC_PROFILING} -I${FLTK_PATH}
 
 CINCLUDE=-I. -I.. -I../plib/include
 
@@ -68,9 +69,9 @@ LINKER=gcc
 
 $(TARGET):
 		rm -f $(TARGET)
-	  $(LINKER) -o $(TARGET) $(LDFLAGS) $(LIBPATHS) $(OBJS)  $(LIBS)
+	  $(LINKER) -o $(TARGET) $(LDFLAGS) $(OBJS)  $(LIBPATHS)  $(LIBS)
 
-#	 	/tools/public/pure/purify/purify -best-effort gcc -o $(TARGET) $(LDFLAGS) $(LIBPATHS) $(OBJS)  $(LIBS) 
+#	 	/tools/public/pure/purify/purify -best-effort gcc -o $(TARGET) $(LDFLAGS) $(OBJS)  $(LIBPATHS) $(LIBS) 
 
 
 # ---------------------------------------------------

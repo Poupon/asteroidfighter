@@ -1,3 +1,5 @@
+include ${FLTK_PATH}/makeinclude
+
 TARGET=libT3d.a
 
 SRCS = \
@@ -26,7 +28,7 @@ CFLAGS=  ${CC_DEBUG} -g -std=c++11 -Wall  -m64  -O3 -pthread -D_POSIX_PTHREAD_SE
 
 CINCLUDE= -I. -I..
 
-# -I/usr/openwin/include   -I${DIR_OPENGL_INC} -I${DIR_GLUT_INC} -I${DIR_PLIB_INC}
+# -I/usr/openwin/include  
 
 COMPILO=gcc
 

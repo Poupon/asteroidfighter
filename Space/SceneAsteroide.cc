@@ -65,12 +65,12 @@ GLboolean SceneAsteroide::animate()
 {
    Sprite3d::animate();
 
-	std::cout << "SceneAsteroide::animate " << 0 << std::endl;
+	 //	std::cout << "SceneAsteroide::animate " << 0 << std::endl;
 
   if( ( WorldControler::GetTime()-SpriteFloat::get( SPRITE_TIMER1)) < cInterval )
 	  return GL_FALSE;
 
-	std::cout << "SceneAsteroide::animate " << 1111 << std::endl;
+	//	std::cout << "SceneAsteroide::animate " << 1111 << std::endl;
 
 	 
   SpriteFloat::set( SPRITE_TIMER1,  WorldControler::GetTime());
@@ -90,7 +90,7 @@ GLboolean SceneAsteroide::animate()
 
   float lProba = randp( 100 );
 
-	std::cout << "*** SceneAsteroide::animate " << lProba << std::endl;
+	//	std::cout << "*** SceneAsteroide::animate " << lProba << std::endl;
 
 
   if( lProba <= 2 )

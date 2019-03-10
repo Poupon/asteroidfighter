@@ -99,7 +99,7 @@ int LoadBMP(T3dLoadImage& context, const char* pStr)
   }
 
   DEBUG {
-    fprintf(stderr,"\nLoadBMP:\tbfSize=%ld, bfOffBits=%ld\n",bfSize,bfOffBits);
+    fprintf(stderr,"\nLoadBMP:\tbfSize=%d, bfOffBits=%d\n",bfSize,bfOffBits);
     fprintf(stderr,"\t\tbiSize=%d, biWidth=%d, biHeight=%d, biPlanes=%d\n",
 	    biSize, biWidth, biHeight, biPlanes);
     fprintf(stderr,"\t\tbiBitCount=%d, biCompression=%d, biSizeImage=%d\n",
