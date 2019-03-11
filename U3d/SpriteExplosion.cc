@@ -1,4 +1,4 @@
-#include <GL/glut.h>
+#include <FL/glut.H>
 
 #include <Sprite3d/World.h>
 #include <Sprite3d/ObjOdron.h>

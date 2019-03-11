@@ -1,3 +1,4 @@
+include ${FLTK_PATH}/makeinclude
 TARGET=libU3d.a
 
 SRCS = Banniere.cc \
