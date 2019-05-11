@@ -6,7 +6,7 @@
 #include <math.h>
 
 
-#include <FL/glut.H>
+#include <GL/glut.H>
 
 #include <O3d/O3dObjProps.h>
 #include <O3d/O3dKamera.h>

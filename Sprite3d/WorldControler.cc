@@ -88,8 +88,8 @@ WorldControler::WorldControler(int pWidth, int pHeight, bool pFullScreen)
 	sCurrentFont = T3dFont::DefaultFont;
 	WC = this;
 
-	if(cFullScreen);
-	glutFullScreen(	);
+	if(cFullScreen)
+		glutFullScreen(	);
 }
 //--------------------------------
 WorldControler::~WorldControler()

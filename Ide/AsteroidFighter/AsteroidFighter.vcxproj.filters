@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Fichiers sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Fichiers de ressources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\T3d">
+      <UniqueIdentifier>{5191d1c5-e2e9-4064-a026-c3fd3820b377}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\O3d">
+      <UniqueIdentifier>{fd5df849-1f0b-4d7c-8203-1e441ae6a06a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\AsteroidFighter">
+      <UniqueIdentifier>{c327df0e-4a9f-4d85-92ee-e2375853d303}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Space">
+      <UniqueIdentifier>{3b9c7072-b33a-469c-9abd-41a395bdb411}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Sprite3d">
+      <UniqueIdentifier>{54dc7aaf-0969-4c01-9c7f-6573ca928248}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\U3d">
+      <UniqueIdentifier>{748b80fd-7561-4138-a954-7dca7d84831c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\T3d">
+      <UniqueIdentifier>{85eac81a-ffaf-42fe-9817-fbc761192a94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\AsteroidFighter">
+      <UniqueIdentifier>{4621871d-a100-4141-98e2-7158f7af099c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\O3d">
+      <UniqueIdentifier>{81aa1db3-b914-4031-ace2-1eecdda0bcca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Space">
+      <UniqueIdentifier>{dbac146b-67ba-4591-a113-f3def4345b75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Sprite3d">
+      <UniqueIdentifier>{2c69af09-b229-4acf-84b2-bcc8dba2f22e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\U3d">
+      <UniqueIdentifier>{9ffa611c-a7dd-4677-b823-d06caee1b5e0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\T3d\T3dBox.cc">
+      <Filter>Fichiers sources\T3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\T3d\T3dCalcul.cc">
+      <Filter>Fichiers sources\T3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\T3d\T3dColor.cc">
+      <Filter>Fichiers sources\T3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\T3d\T3dFontRaster.cc">
+      <Filter>Fichiers sources\T3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\T3d\T3dLoadBmp.cc">
+      <Filter>Fichiers sources\T3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\T3d\T3dLoadGif.cc">
+      <Filter>Fichiers sources\T3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\T3d\T3dLoadImg.cc">
+      <Filter>Fichiers sources\T3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\T3d\T3dPrimitiv.cc">
+      <Filter>Fichiers sources\T3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\T3d\T3dTexture.cc">
+      <Filter>Fichiers sources\T3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\T3d\T3dTransf.cc">
+      <Filter>Fichiers sources\T3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\T3d\T3dVect3D.cc">
+      <Filter>Fichiers sources\T3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\T3d\trackball.cc">
+      <Filter>Fichiers sources\T3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\U3d\Banniere.cc">
+      <Filter>Fichiers sources\U3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\U3d\BonusMaker.cc">
+      <Filter>Fichiers sources\U3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\U3d\ContainersMaker.cc">
+      <Filter>Fichiers sources\U3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\U3d\ObjPrimPart.cc">
+      <Filter>Fichiers sources\U3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\U3d\Sky.cc">
+      <Filter>Fichiers sources\U3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\U3d\SpriteExplosion.cc">
+      <Filter>Fichiers sources\U3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\U3d\Tourelle.cc">
+      <Filter>Fichiers sources\U3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\U3d\WeaponsMaker.cc">
+      <Filter>Fichiers sources\U3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sprite3d\AnimatObj.cc">
+      <Filter>Fichiers sources\Sprite3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sprite3d\Collision.cc">
+      <Filter>Fichiers sources\Sprite3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sprite3d\ObjOdron.cc">
+      <Filter>Fichiers sources\Sprite3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sprite3d\ObjPrim.cc">
+      <Filter>Fichiers sources\Sprite3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sprite3d\ObjText2d.cc">
+      <Filter>Fichiers sources\Sprite3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sprite3d\ObjVect.cc">
+      <Filter>Fichiers sources\Sprite3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sprite3d\Random.cc">
+      <Filter>Fichiers sources\Sprite3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sprite3d\SceneManager.cc">
+      <Filter>Fichiers sources\Sprite3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sprite3d\SoundControler.cc">
+      <Filter>Fichiers sources\Sprite3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sprite3d\Sprite3d.cc">
+      <Filter>Fichiers sources\Sprite3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sprite3d\Sprite3dObj.cc">
+      <Filter>Fichiers sources\Sprite3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sprite3d\Sprite3dPilot.cc">
+      <Filter>Fichiers sources\Sprite3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sprite3d\Text2d.cc">
+      <Filter>Fichiers sources\Sprite3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sprite3d\Utils3d.cc">
+      <Filter>Fichiers sources\Sprite3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sprite3d\World.cc">
+      <Filter>Fichiers sources\Sprite3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sprite3d\WorldControler.cc">
+      <Filter>Fichiers sources\Sprite3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Space\WorldGame.cc">
+      <Filter>Fichiers sources\Space</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Space\ActionsShip.cc">
+      <Filter>Fichiers sources\Space</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Space\AsteroidesMaker.cc">
+      <Filter>Fichiers sources\Space</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Space\MinesMaker.cc">
+      <Filter>Fichiers sources\Space</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Space\Pilot.cc">
+      <Filter>Fichiers sources\Space</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Space\Scene.cc">
+      <Filter>Fichiers sources\Space</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Space\SceneArtifice.cc">
+      <Filter>Fichiers sources\Space</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Space\SceneAsteroide.cc">
+      <Filter>Fichiers sources\Space</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Space\SceneAttack.cc">
+      <Filter>Fichiers sources\Space</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Space\SceneAttackCroisseur.cc">
+      <Filter>Fichiers sources\Space</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Space\SceneBase.cc">
+      <Filter>Fichiers sources\Space</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Space\SceneChaos.cc">
+      <Filter>Fichiers sources\Space</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Space\SceneGrotte.cc">
+      <Filter>Fichiers sources\Space</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Space\SceneHammerAnvil.cc">
+      <Filter>Fichiers sources\Space</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Space\SceneLife.cc">
+      <Filter>Fichiers sources\Space</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Space\ShipsMaker.cc">
+      <Filter>Fichiers sources\Space</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\O3d\PToken.cc">
+      <Filter>Fichiers sources\O3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\O3d\O3dKamera.cc">
+      <Filter>Fichiers sources\O3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\O3d\O3dObj.cc">
+      <Filter>Fichiers sources\O3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\O3d\O3dObjFacet.cc">
+      <Filter>Fichiers sources\O3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\O3d\O3dObjLight.cc">
+      <Filter>Fichiers sources\O3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\O3d\O3dObjLine.cc">
+      <Filter>Fichiers sources\O3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\O3d\O3dObjPLibFont.cc">
+      <Filter>Fichiers sources\O3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\O3d\O3dObjPoint.cc">
+      <Filter>Fichiers sources\O3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\O3d\O3dObjPrim.cc">
+      <Filter>Fichiers sources\O3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\O3d\O3dObjProps.cc">
+      <Filter>Fichiers sources\O3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\O3d\O3dObjShape.cc">
+      <Filter>Fichiers sources\O3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\O3d\O3dObjText.cc">
+      <Filter>Fichiers sources\O3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\O3d\O3dSelector.cc">
+      <Filter>Fichiers sources\O3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\O3d\O3dViewProps.cc">
+      <Filter>Fichiers sources\O3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AsteroidFighter\Help.cc">
+      <Filter>Fichiers sources\AsteroidFighter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AsteroidFighter\main.cc">
+      <Filter>Fichiers sources\AsteroidFighter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AsteroidFighter\MainMenu.cc">
+      <Filter>Fichiers sources\AsteroidFighter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AsteroidFighter\MySlider.cc">
+      <Filter>Fichiers sources\AsteroidFighter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sprite3d\ObjPart.cc">
+      <Filter>Fichiers sources\O3d</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\T3d\T3dBox.h">
+      <Filter>Fichiers d%27en-tête\T3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\T3d\T3dCalcul.h">
+      <Filter>Fichiers d%27en-tête\T3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\T3d\T3dColor.h">
+      <Filter>Fichiers d%27en-tête\T3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\T3d\T3dFont.h">
+      <Filter>Fichiers d%27en-tête\T3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\T3d\T3dFontRaster.h">
+      <Filter>Fichiers d%27en-tête\T3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\T3d\T3dLoadImg.h">
+      <Filter>Fichiers d%27en-tête\T3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\T3d\T3dPrimitiv.h">
+      <Filter>Fichiers d%27en-tête\T3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\T3d\T3dTab.h">
+      <Filter>Fichiers d%27en-tête\T3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\T3d\T3dTexture.h">
+      <Filter>Fichiers d%27en-tête\T3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\T3d\T3dTransf.h">
+      <Filter>Fichiers d%27en-tête\T3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\T3d\T3dType.h">
+      <Filter>Fichiers d%27en-tête\T3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\T3d\T3dVect3D.h">
+      <Filter>Fichiers d%27en-tête\T3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\T3d\TVectType.h">
+      <Filter>Fichiers d%27en-tête\T3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\O3d\O3dKamera.h">
+      <Filter>Fichiers d%27en-tête\O3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\O3d\O3dObj.h">
+      <Filter>Fichiers d%27en-tête\O3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\O3d\O3dObjBezier.h">
+      <Filter>Fichiers d%27en-tête\O3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\O3d\O3dObjBSpline.h">
+      <Filter>Fichiers d%27en-tête\O3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\O3d\O3dObjBSplineSurf.h">
+      <Filter>Fichiers d%27en-tête\O3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\O3d\O3dObjFacet.h">
+      <Filter>Fichiers d%27en-tête\O3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\O3d\O3dObjLight.h">
+      <Filter>Fichiers d%27en-tête\O3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\O3d\O3dObjLine.h">
+      <Filter>Fichiers d%27en-tête\O3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\O3d\O3dObjNurbs.h">
+      <Filter>Fichiers d%27en-tête\O3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\O3d\O3dObjPLibFont.h">
+      <Filter>Fichiers d%27en-tête\O3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\O3d\O3dObjPoint.h">
+      <Filter>Fichiers d%27en-tête\O3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\O3d\O3dObjPrim.h">
+      <Filter>Fichiers d%27en-tête\O3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\O3d\O3dObjProps.h">
+      <Filter>Fichiers d%27en-tête\O3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\O3d\O3dObjShape.h">
+      <Filter>Fichiers d%27en-tête\O3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\O3d\O3dObjText.h">
+      <Filter>Fichiers d%27en-tête\O3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\O3d\O3dSelector.h">
+      <Filter>Fichiers d%27en-tête\O3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\O3d\O3dViewProps.h">
+      <Filter>Fichiers d%27en-tête\O3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\O3d\PToken.h">
+      <Filter>Fichiers d%27en-tête\O3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Space\ActionsShip.h">
+      <Filter>Fichiers d%27en-tête\Space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Space\AsteroidesMaker.h">
+      <Filter>Fichiers d%27en-tête\Space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Space\Def.h">
+      <Filter>Fichiers d%27en-tête\Space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Space\MinesMaker.h">
+      <Filter>Fichiers d%27en-tête\Space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Space\Pilot.h">
+      <Filter>Fichiers d%27en-tête\Space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Space\Scene.h">
+      <Filter>Fichiers d%27en-tête\Space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Space\SceneArtifice.h">
+      <Filter>Fichiers d%27en-tête\Space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Space\SceneAsteroide.h">
+      <Filter>Fichiers d%27en-tête\Space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Space\SceneAttack.h">
+      <Filter>Fichiers d%27en-tête\Space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Space\SceneAttackCroisseur.h">
+      <Filter>Fichiers d%27en-tête\Space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Space\SceneBase.h">
+      <Filter>Fichiers d%27en-tête\Space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Space\SceneChaos.h">
+      <Filter>Fichiers d%27en-tête\Space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Space\SceneGrotte.h">
+      <Filter>Fichiers d%27en-tête\Space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Space\SceneHammerAnvil.h">
+      <Filter>Fichiers d%27en-tête\Space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Space\SceneLife.h">
+      <Filter>Fichiers d%27en-tête\Space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Space\ShipsMaker.h">
+      <Filter>Fichiers d%27en-tête\Space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Space\WorldGame.h">
+      <Filter>Fichiers d%27en-tête\Space</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\Action.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\AnimatObj.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\Array3d.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\AutoPtr.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\Collision.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\MinMaxBox.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\ObjOdron.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\ObjPrim.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\ObjText.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\ObjText2d.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\ObjVect.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\Random.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\Scene.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\SceneManager.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\SoundControler.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\Sprite3d.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\Sprite3dObj.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\Sprite3dPilot.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\Text2d.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\TVectPtr2.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\Utils3d.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\World.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\WorldControler.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\U3d\Banniere.h">
+      <Filter>Fichiers d%27en-tête\U3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\U3d\BonusMaker.h">
+      <Filter>Fichiers d%27en-tête\U3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\U3d\ContainersMaker.h">
+      <Filter>Fichiers d%27en-tête\U3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\U3d\ObjPrimPart.h">
+      <Filter>Fichiers d%27en-tête\U3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\U3d\Sky.h">
+      <Filter>Fichiers d%27en-tête\U3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\U3d\SpriteExplosion.h">
+      <Filter>Fichiers d%27en-tête\U3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\U3d\Tourelle.h">
+      <Filter>Fichiers d%27en-tête\U3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\U3d\WeaponsMaker.h">
+      <Filter>Fichiers d%27en-tête\U3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\AsteroidFighter\Dialogs.h">
+      <Filter>Fichiers d%27en-tête\AsteroidFighter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\AsteroidFighter\Help.h">
+      <Filter>Fichiers d%27en-tête\AsteroidFighter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\AsteroidFighter\MainMenu.h">
+      <Filter>Fichiers d%27en-tête\AsteroidFighter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\AsteroidFighter\MyFlCallback.h">
+      <Filter>Fichiers d%27en-tête\AsteroidFighter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\AsteroidFighter\MyFloatInput.h">
+      <Filter>Fichiers d%27en-tête\AsteroidFighter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\AsteroidFighter\MyFlWidget.h">
+      <Filter>Fichiers d%27en-tête\AsteroidFighter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\AsteroidFighter\MySlider.h">
+      <Filter>Fichiers d%27en-tête\AsteroidFighter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sprite3d\ObjPart.h">
+      <Filter>Fichiers d%27en-tête\Sprite3d</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -95,19 +95,19 @@ for( int i=0; i< pZones.getSizeGen(); i++)
 }
 //--------------------------------
 
-long lNbCalcul=0;
+//long lNbCalcul=0;
 
 
 inline 
 GLboolean Collision::DetectCollision( Sprite3d &A, Sprite3d &B )
 {
-	lNbCalcul++;
+//	lNbCalcul++;
 
 	Double3 lDist( A.getTransf().get( POS ));
 	lDist -= B.getTransf().get( POS );
 
 
-	float lRadius = A.getRadius() + B.getRadius();
+	double lRadius = A.getRadius() + (double)B.getRadius();
 	if( (lDist[ 0 ]*lDist[ 0 ] + lDist[ 1 ]*lDist[ 1 ] + lDist[ 2 ]*lDist[ 2 ]) < (lRadius *lRadius) )
 		return GL_TRUE;
 
@@ -122,7 +122,7 @@ Collision::SpatialDetection3D( VSprite3d& pSprites,  Array3d< std::vector<Sprite
 	int lNbSpritesZones=0;
 
 	//	std::cout << "*********************************************************" <<  std::endl;
-	lNbCalcul = 0;
+	//lNbCalcul = 0;
 
   // on dispatche les sprites dans les differente zones
 	for( VSprite3d::iterator iter = pSprites.begin(); iter != pSprites.end(); ++iter )
@@ -241,7 +241,7 @@ Collision::SimpleDetection(VSprite3d& pVSprite)
 {
 	int lCpt=0;
 	int lCpt2=0;
-	lNbCalcul = 0;
+	//lNbCalcul = 0;
 
 	for( VSprite3d::iterator iter = pVSprite.begin(); iter != pVSprite.end(); ++iter )
 		{

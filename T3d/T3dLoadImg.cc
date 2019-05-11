@@ -34,7 +34,7 @@ static ldimagic mnos[] = {
 int T3dLoadImage::GetImageType( const char * filename )
 {
   char magicno[8];
-  FILE *fp=fopen( filename,  "r");
+  FILE* fp = fopen( filename, "r");
   if (!fp) {
     std::cerr <<  "Can't open file " << filename << "." << std::endl;
     return T3dLoadImage::T3D_IMG_ERROR;

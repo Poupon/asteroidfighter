@@ -435,7 +435,7 @@ Pilot::Pilot( )
 
 
 
-	// =========== FIRE ==========
+	// =========== FIRE ========== 
 	caObjFire = new ObjPart( 1 );
 
 	Double3 pos(5, 3, 3);

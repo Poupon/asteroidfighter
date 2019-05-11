@@ -144,7 +144,7 @@ Sprite3d::intersect( Double3 pPos, float pRadius )
 	lDist -= pPos;
 
 
-	float lRadius = getRadius() + pRadius;
+	double lRadius = getRadius() + pRadius;
 
 
 	//	std::cout << lDist[ 0 ]*lDist[ 0 ] + lDist[ 1 ]*lDist[ 1 ] + lDist[ 2 ]*lDist[ 2 ] << std::endl;

@@ -90,7 +90,7 @@ O3dObjPoint::drawId( O3dViewProps& pVProps, O3dObjProps* pObjProps)
 		return;
 
 	char tmp[33];
-	sprintf( tmp, "%ld", cId );
+	sprintf( tmp,   "%ld", cId );
 
 	Double3 & lData = cData.get( 0 );
 	if( lData == NULL )

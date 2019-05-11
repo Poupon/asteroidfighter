@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{95468549-7908-4206-BA33-7C656E54E6B6}</ProjectGuid>
+    <RootNamespace>AsteroidFighter</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\Ide\fltk;..\Ide;fltk;../;../../;../../../;../fltk;../../fltk;../../AsteroidFighter;../../O3d;../../Space;../../T3d;../../Sprite3d;../../U3D;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <EnableModules>true</EnableModules>
+      <DisableSpecificWarnings>4996;4244;26495;4305;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <OmitDefaultLibName>true</OmitDefaultLibName>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableParallelCodeGeneration>true</EnableParallelCodeGeneration>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>../;../fltk/lib;../../fltk;fltk/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>fltkd.lib;fltkgld.lib;fltkimagesd.lib;fltkjpegd.lib;fltkpngd.lib;fltkzlibd.lib;glu32.lib;opengl32.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\AsteroidFighter\Help.cc" />
+    <ClCompile Include="..\..\AsteroidFighter\main.cc" />
+    <ClCompile Include="..\..\AsteroidFighter\MainMenu.cc" />
+    <ClCompile Include="..\..\AsteroidFighter\MySlider.cc" />
+    <ClCompile Include="..\..\O3d\O3dKamera.cc" />
+    <ClCompile Include="..\..\O3d\O3dObj.cc" />
+    <ClCompile Include="..\..\O3d\O3dObjFacet.cc" />
+    <ClCompile Include="..\..\O3d\O3dObjLight.cc" />
+    <ClCompile Include="..\..\O3d\O3dObjLine.cc" />
+    <ClCompile Include="..\..\O3d\O3dObjPLibFont.cc" />
+    <ClCompile Include="..\..\O3d\O3dObjPoint.cc" />
+    <ClCompile Include="..\..\O3d\O3dObjPrim.cc" />
+    <ClCompile Include="..\..\O3d\O3dObjProps.cc" />
+    <ClCompile Include="..\..\O3d\O3dObjShape.cc" />
+    <ClCompile Include="..\..\O3d\O3dObjText.cc" />
+    <ClCompile Include="..\..\O3d\O3dSelector.cc" />
+    <ClCompile Include="..\..\O3d\O3dViewProps.cc" />
+    <ClCompile Include="..\..\O3d\PToken.cc" />
+    <ClCompile Include="..\..\Space\ActionsShip.cc" />
+    <ClCompile Include="..\..\Space\AsteroidesMaker.cc" />
+    <ClCompile Include="..\..\Space\MinesMaker.cc" />
+    <ClCompile Include="..\..\Space\Pilot.cc" />
+    <ClCompile Include="..\..\Space\Scene.cc" />
+    <ClCompile Include="..\..\Space\SceneArtifice.cc" />
+    <ClCompile Include="..\..\Space\SceneAsteroide.cc" />
+    <ClCompile Include="..\..\Space\SceneAttack.cc" />
+    <ClCompile Include="..\..\Space\SceneAttackCroisseur.cc" />
+    <ClCompile Include="..\..\Space\SceneBase.cc" />
+    <ClCompile Include="..\..\Space\SceneChaos.cc" />
+    <ClCompile Include="..\..\Space\SceneGrotte.cc" />
+    <ClCompile Include="..\..\Space\SceneHammerAnvil.cc" />
+    <ClCompile Include="..\..\Space\SceneLife.cc" />
+    <ClCompile Include="..\..\Space\ShipsMaker.cc" />
+    <ClCompile Include="..\..\Space\WorldGame.cc" />
+    <ClCompile Include="..\..\Sprite3d\AnimatObj.cc" />
+    <ClCompile Include="..\..\Sprite3d\Collision.cc" />
+    <ClCompile Include="..\..\Sprite3d\ObjOdron.cc" />
+    <ClCompile Include="..\..\Sprite3d\ObjPart.cc" />
+    <ClCompile Include="..\..\Sprite3d\ObjPrim.cc" />
+    <ClCompile Include="..\..\Sprite3d\ObjText2d.cc" />
+    <ClCompile Include="..\..\Sprite3d\ObjVect.cc" />
+    <ClCompile Include="..\..\Sprite3d\Random.cc" />
+    <ClCompile Include="..\..\Sprite3d\SceneManager.cc" />
+    <ClCompile Include="..\..\Sprite3d\SoundControler.cc" />
+    <ClCompile Include="..\..\Sprite3d\Sprite3d.cc" />
+    <ClCompile Include="..\..\Sprite3d\Sprite3dObj.cc" />
+    <ClCompile Include="..\..\Sprite3d\Sprite3dPilot.cc" />
+    <ClCompile Include="..\..\Sprite3d\Text2d.cc" />
+    <ClCompile Include="..\..\Sprite3d\Utils3d.cc" />
+    <ClCompile Include="..\..\Sprite3d\World.cc" />
+    <ClCompile Include="..\..\Sprite3d\WorldControler.cc" />
+    <ClCompile Include="..\..\T3d\T3dBox.cc" />
+    <ClCompile Include="..\..\T3d\T3dCalcul.cc" />
+    <ClCompile Include="..\..\T3d\T3dColor.cc" />
+    <ClCompile Include="..\..\T3d\T3dFontRaster.cc" />
+    <ClCompile Include="..\..\T3d\T3dLoadBmp.cc" />
+    <ClCompile Include="..\..\T3d\T3dLoadGif.cc" />
+    <ClCompile Include="..\..\T3d\T3dLoadImg.cc" />
+    <ClCompile Include="..\..\T3d\T3dPrimitiv.cc" />
+    <ClCompile Include="..\..\T3d\T3dTexture.cc" />
+    <ClCompile Include="..\..\T3d\T3dTransf.cc" />
+    <ClCompile Include="..\..\T3d\T3dVect3D.cc" />
+    <ClCompile Include="..\..\T3d\trackball.cc" />
+    <ClCompile Include="..\..\U3d\Banniere.cc" />
+    <ClCompile Include="..\..\U3d\BonusMaker.cc" />
+    <ClCompile Include="..\..\U3d\ContainersMaker.cc" />
+    <ClCompile Include="..\..\U3d\ObjPrimPart.cc" />
+    <ClCompile Include="..\..\U3d\Sky.cc" />
+    <ClCompile Include="..\..\U3d\SpriteExplosion.cc" />
+    <ClCompile Include="..\..\U3d\Tourelle.cc" />
+    <ClCompile Include="..\..\U3d\WeaponsMaker.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\AsteroidFighter\Dialogs.h" />
+    <ClInclude Include="..\..\AsteroidFighter\Help.h" />
+    <ClInclude Include="..\..\AsteroidFighter\MainMenu.h" />
+    <ClInclude Include="..\..\AsteroidFighter\MyFlCallback.h" />
+    <ClInclude Include="..\..\AsteroidFighter\MyFloatInput.h" />
+    <ClInclude Include="..\..\AsteroidFighter\MyFlWidget.h" />
+    <ClInclude Include="..\..\AsteroidFighter\MySlider.h" />
+    <ClInclude Include="..\..\O3d\O3dKamera.h" />
+    <ClInclude Include="..\..\O3d\O3dObj.h" />
+    <ClInclude Include="..\..\O3d\O3dObjBezier.h" />
+    <ClInclude Include="..\..\O3d\O3dObjBSpline.h" />
+    <ClInclude Include="..\..\O3d\O3dObjBSplineSurf.h" />
+    <ClInclude Include="..\..\O3d\O3dObjFacet.h" />
+    <ClInclude Include="..\..\O3d\O3dObjLight.h" />
+    <ClInclude Include="..\..\O3d\O3dObjLine.h" />
+    <ClInclude Include="..\..\O3d\O3dObjNurbs.h" />
+    <ClInclude Include="..\..\O3d\O3dObjPLibFont.h" />
+    <ClInclude Include="..\..\O3d\O3dObjPoint.h" />
+    <ClInclude Include="..\..\O3d\O3dObjPrim.h" />
+    <ClInclude Include="..\..\O3d\O3dObjProps.h" />
+    <ClInclude Include="..\..\O3d\O3dObjShape.h" />
+    <ClInclude Include="..\..\O3d\O3dObjText.h" />
+    <ClInclude Include="..\..\O3d\O3dSelector.h" />
+    <ClInclude Include="..\..\O3d\O3dViewProps.h" />
+    <ClInclude Include="..\..\O3d\PToken.h" />
+    <ClInclude Include="..\..\Space\ActionsShip.h" />
+    <ClInclude Include="..\..\Space\AsteroidesMaker.h" />
+    <ClInclude Include="..\..\Space\Def.h" />
+    <ClInclude Include="..\..\Space\MinesMaker.h" />
+    <ClInclude Include="..\..\Space\Pilot.h" />
+    <ClInclude Include="..\..\Space\Scene.h" />
+    <ClInclude Include="..\..\Space\SceneArtifice.h" />
+    <ClInclude Include="..\..\Space\SceneAsteroide.h" />
+    <ClInclude Include="..\..\Space\SceneAttack.h" />
+    <ClInclude Include="..\..\Space\SceneAttackCroisseur.h" />
+    <ClInclude Include="..\..\Space\SceneBase.h" />
+    <ClInclude Include="..\..\Space\SceneChaos.h" />
+    <ClInclude Include="..\..\Space\SceneGrotte.h" />
+    <ClInclude Include="..\..\Space\SceneHammerAnvil.h" />
+    <ClInclude Include="..\..\Space\SceneLife.h" />
+    <ClInclude Include="..\..\Space\ShipsMaker.h" />
+    <ClInclude Include="..\..\Space\WorldGame.h" />
+    <ClInclude Include="..\..\Sprite3d\Action.h" />
+    <ClInclude Include="..\..\Sprite3d\AnimatObj.h" />
+    <ClInclude Include="..\..\Sprite3d\Array3d.h" />
+    <ClInclude Include="..\..\Sprite3d\AutoPtr.h" />
+    <ClInclude Include="..\..\Sprite3d\Collision.h" />
+    <ClInclude Include="..\..\Sprite3d\MinMaxBox.h" />
+    <ClInclude Include="..\..\Sprite3d\ObjOdron.h" />
+    <ClInclude Include="..\..\Sprite3d\ObjPart.h" />
+    <ClInclude Include="..\..\Sprite3d\ObjPrim.h" />
+    <ClInclude Include="..\..\Sprite3d\ObjText.h" />
+    <ClInclude Include="..\..\Sprite3d\ObjText2d.h" />
+    <ClInclude Include="..\..\Sprite3d\ObjVect.h" />
+    <ClInclude Include="..\..\Sprite3d\Random.h" />
+    <ClInclude Include="..\..\Sprite3d\Scene.h" />
+    <ClInclude Include="..\..\Sprite3d\SceneManager.h" />
+    <ClInclude Include="..\..\Sprite3d\SoundControler.h" />
+    <ClInclude Include="..\..\Sprite3d\Sprite3d.h" />
+    <ClInclude Include="..\..\Sprite3d\Sprite3dObj.h" />
+    <ClInclude Include="..\..\Sprite3d\Sprite3dPilot.h" />
+    <ClInclude Include="..\..\Sprite3d\Text2d.h" />
+    <ClInclude Include="..\..\Sprite3d\TVectPtr2.h" />
+    <ClInclude Include="..\..\Sprite3d\Utils3d.h" />
+    <ClInclude Include="..\..\Sprite3d\World.h" />
+    <ClInclude Include="..\..\Sprite3d\WorldControler.h" />
+    <ClInclude Include="..\..\T3d\T3dBox.h" />
+    <ClInclude Include="..\..\T3d\T3dCalcul.h" />
+    <ClInclude Include="..\..\T3d\T3dColor.h" />
+    <ClInclude Include="..\..\T3d\T3dFont.h" />
+    <ClInclude Include="..\..\T3d\T3dFontRaster.h" />
+    <ClInclude Include="..\..\T3d\T3dLoadImg.h" />
+    <ClInclude Include="..\..\T3d\T3dPrimitiv.h" />
+    <ClInclude Include="..\..\T3d\T3dTab.h" />
+    <ClInclude Include="..\..\T3d\T3dTexture.h" />
+    <ClInclude Include="..\..\T3d\T3dTransf.h" />
+    <ClInclude Include="..\..\T3d\T3dType.h" />
+    <ClInclude Include="..\..\T3d\T3dVect3D.h" />
+    <ClInclude Include="..\..\T3d\TVectType.h" />
+    <ClInclude Include="..\..\U3d\Banniere.h" />
+    <ClInclude Include="..\..\U3d\BonusMaker.h" />
+    <ClInclude Include="..\..\U3d\ContainersMaker.h" />
+    <ClInclude Include="..\..\U3d\ObjPrimPart.h" />
+    <ClInclude Include="..\..\U3d\Sky.h" />
+    <ClInclude Include="..\..\U3d\SpriteExplosion.h" />
+    <ClInclude Include="..\..\U3d\Tourelle.h" />
+    <ClInclude Include="..\..\U3d\WeaponsMaker.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -321,12 +321,12 @@ GLboolean SceneManager::kill( Sprite3d &pMySprite, void *pParam )
 	switch( static_cast<int>(pMySprite.MkGetUSER5())  )
 		{
 		case GameOver:
-			sprintf( cStrInfo, "Game Over" );
+			::strcpy( cStrInfo, "Game Over" );
 			WorldControler::GameOver();
 			return GL_TRUE;
 
 		case GameWinner:
-			sprintf( cStrInfo, "Win " );
+			::strcpy( cStrInfo, "Win " );
 			WorldControler::GameWinner();
 			return GL_TRUE;
 		}

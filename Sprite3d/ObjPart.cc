@@ -9,6 +9,8 @@
 
 #include <Random.h>
 
+#include <FL/glu.h>
+
 //------------------------------------------------
 // Optimisation posible : definir un allocateur pour
 // ObjPart (redefinir new/delete)

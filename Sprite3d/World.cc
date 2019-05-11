@@ -241,7 +241,7 @@ World::isSpriteIntersectXY( Double3 pPos, float pRadius, unsigned int pMmask_Att
 //--------------------------------
 //----------- ANIMATE ------------
 //--------------------------------
-extern int lNbCalcul;
+//extern int lNbCalcul;
 
 void World::animateLiveSprite()
 {
@@ -315,7 +315,7 @@ void World::animateLiveSprite()
 
 
 
-	lNbCalcul = 0;
+	//lNbCalcul = 0;
 
 	// Detection et resolution des collisions
 	//	  sNbDetect =  Collision::SimpleDetection( cLiveSprite  );
