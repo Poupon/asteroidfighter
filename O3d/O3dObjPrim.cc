@@ -1,9 +1,11 @@
 #include <O3dObjPrim.h>
 #include <math.h>
 
+#ifdef WIN32
 #include <FL/gl.H>
 #include <FL/glu.h>
-#include <GL/glut.h>
+#endif
+#include <FL/glut.H>
 
 /*---------------------------------------------------------------------*/
 /*    doughnut ...                                                     */

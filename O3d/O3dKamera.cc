@@ -1,7 +1,9 @@
 
 #include <O3dKamera.h>
 
+#ifdef WIN32
 #include <FL/glu.H>
+#endif
 
 /*---------------------------------------------------------------------*/
 /*    O3dKamera::O3dKamera ...                                         */

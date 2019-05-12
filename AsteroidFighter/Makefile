@@ -20,7 +20,7 @@ HDRS = $(SRCS:.cc=.h)
 
 LIBPATHS=  -L../T3d -L../O3d -L../Sprite3d -L../U3d -L../Space  -L.  -L${DIR_AL}/lib   -L${FLTK_PATH}/lib
 
-LIBS=  -lSpace -lU3d -lSprite3d -lO3d -lT3d  -lopenal  -lfltk  $(GLDLIBS)  -lXinerama -lpthread -ldl -lm  -lpthread   -lstdc++ -lrt -lXext -lX11  -lnsl -lm 
+LIBS=  -lSpace -lU3d -lSprite3d -lO3d -lT3d  -lopenal  -lfltk_gl -lfltk   -lfltk_images $(GLDLIBS)  -lXinerama -lpthread -ldl -lm  -lpthread   -lstdc++ -lrt -lXext -lX11  -lnsl -lm 
 
 # LIBS=  -lSpace -lU3d -lSprite3d -lO3d -lT3d  -lopenal -lfltk_gl -lfltk $(GLDLIBS)  -lXinerama -lpthread -ldl -lm  -lpthread   -lstdc++ -lrt -lXext -lX11  -lnsl -lm 
 

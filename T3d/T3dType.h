@@ -7,11 +7,11 @@
 /*---------------------------------------------------------------------*/
 
 #if defined(_WIN32)
-#include <GL/glut.h>
+#include <FL/glut.H>
 #else
-#include <GL/gl.h>
-#include <GL/glx.h>
-#include <GL/glu.h>
+#include <FL/gl.h>
+//#include <GL/glx.h>
+#include <FL/glu.h>
 #endif
 
 #include <string.h>

@@ -1,6 +1,6 @@
 #include <ObjPrim.h>
 
-#include <GL/glut.h>
+#include <FL/glut.H>
 #include <Utils3d.h>
 
 #include <iostream>

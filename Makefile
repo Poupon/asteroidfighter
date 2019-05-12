@@ -2,7 +2,7 @@ all::
 	cd T3d; make ;cd ..;\
 	cd O3d; make ;cd ..;\
 	cd Sprite3d; make ;cd ..;\
-	cd U3d; make -f ;cd ..;\
+	cd U3d; make ;cd ..;\
 	cd Space; make ;cd ..;\
 	cd AsteroidFighter; make ;cd ..;\
 

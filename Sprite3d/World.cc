@@ -1,4 +1,4 @@
-#include <GL/glut.h>
+#include <FL/glut.H>
 
 #include <O3d/O3dKamera.h>
 #include <T3d/T3dPrimitiv.h>

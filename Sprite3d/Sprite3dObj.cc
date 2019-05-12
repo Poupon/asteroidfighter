@@ -1,5 +1,5 @@
 #include <Sprite3dObj.h>
-#include <GL/glut.h>
+#include <FL/glut.H>
 
 std::vector<Sprite3dObj*> Sprite3dObj::sFreeSpriteVect;
 
