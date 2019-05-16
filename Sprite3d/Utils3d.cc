@@ -74,6 +74,7 @@ void Utils3d::Init(const char *pName, int argc, char **argv, int pWidth, int pHe
 
 
   glutReshapeFunc(Reshape);
+  
 
 }
 //--------------------------------
@@ -81,13 +82,16 @@ void Utils3d::Reshape( int pWidth, int pHeight )
 {
  // int size = (pWidth < pHeight?pWidth:pHeight);
 
+  //  std::cout << "Utils3d::Reshape" << std::endl;
+  
+  //glViewport((width - size) / 2, (height - size) / 2, size, size);
+  glViewport( 0, 0, pWidth, pHeight);
+
+  if( WorldControler::WC == nullptr )
+    return ;
+  
   WorldControler::WC->setSize( pWidth, pHeight );
 
-
-  //glViewport((width - size) / 2, (height - size) / 2, size, size);
-
-
-  glViewport( 0, 0, pWidth, pHeight);
   if(	WorldControler::WC->getFullScreen() == 0 ) // suite bug FullScreen sur windows
   {
       glutReshapeWindow( pWidth, pHeight);
@@ -97,7 +101,7 @@ void Utils3d::Reshape( int pWidth, int pHeight )
 //--------------------------------
 void Utils3d::Loop()
 {
- 	glutMainLoop();
+  glutMainLoop();
 }
 //--------------------------------
 void Utils3d::Normal( Float3 &p1, Float3 &p2, Float3 &p3, Float3 & pNorm )

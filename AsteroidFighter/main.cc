@@ -178,8 +178,22 @@ public:
 
 
 		World *lWorld = new WorldGame( pSize, WorldControler::WC, new O3dKamera(), cMax,  cGen );
+	       		
 
 		WorldControler::WC->setGame( lWorld );
+
+
+
+
+		// METTRE AILLEURS
+		int W = glutGet(GLUT_WINDOW_WIDTH);
+		int H = glutGet(GLUT_WINDOW_HEIGHT);
+	
+		//		std::cout << " call setSize W:" << W << " H:" << H << std::endl;
+		WorldControler::WC->setSize( W, H );
+
+
+		
 
 		World  *lWorldHelp = new Help( pSize,  WorldControler::WC,new O3dKamera(), cMax,  cGen );
 		lWorldHelp->initStart(sStartNiveau);
@@ -284,7 +298,7 @@ int main(int argc, char **argv)
 					WorldControler::sDebug =1;
 					break;
 
-        case 'f' :
+			        case 'f' :
 					lFullScreen = false;
 					break;
 
@@ -331,6 +345,9 @@ int main(int argc, char **argv)
 				break;
 			}
 	}
+
+	//	std::cout << "fullscreen: " << lFullScreen << " Size:" << lSize << std::endl;
+
 	/*
 slScheduler sched ( 8000 ) ;
  sched . setSafetyMargin ( 0.128f ) ;
@@ -352,7 +369,7 @@ slScheduler sched ( 8000 ) ;
 
 	//=====================================
 	Fl::use_high_res_GL(1);
-  Fl_Window window( 80*lSize+10, 60*lSize+10 );
+	Fl_Window window( 80*lSize+10, 60*lSize+10 );
 
 	window.show(argc,argv);
 		window.begin();
@@ -364,6 +381,8 @@ slScheduler sched ( 8000 ) ;
 	
 
 	GameWorldControler lWControl( lTest, lSize, 80*lSize, 60*lSize, lFullScreen );
+	
+
 	WorldControler::SetRate( lRate );
 
 

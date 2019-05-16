@@ -50,6 +50,7 @@ WorldGame::WorldGame( int pSize, WorldControler* pControl, O3dKamera* pKamera, D
 {
 	TheWorldGame = this;
 	cInfoLevel[0]='\0';
+	
 }
 //---------------------------------------------------
 WorldGame::~WorldGame()

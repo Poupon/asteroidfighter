@@ -48,18 +48,9 @@ public:
 	virtual void openWindows() {;}
     void setSize( int pWidth, int pHeight);
 //private:
-	 void setCurrent( World*pCurrent)
-	 {
-		 if( cCurrentWorld )
-			 cCurrentWorld->leaveWorld();
+  void setCurrent( World*pCurrent);
 
-		 cCurrentWorld =	pCurrent;
-
-		 if( cCurrentWorld )
-			 cCurrentWorld->enterWorld( cWidth, cHeight);
-		 cCurrentWorld->getKamera()->setAspectRatio(  cWidth, cHeight );
-	 }
-	World* getCurrentWorld() { return  cCurrentWorld; }
+  World* getCurrentWorld() { return  cCurrentWorld; }
 
 protected:
 	GLboolean cLeftButtonDown;

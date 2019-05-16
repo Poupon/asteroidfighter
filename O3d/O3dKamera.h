@@ -59,11 +59,7 @@ public:
 	GLboolean getUnProject( const Double3 & pPos, Double3 &pPtResult );
 	GLboolean getProject( const Double3& pPos, Double3 & pPtResult );
 	void setPick( int pX, int pY, float pWidht, float pHeight );
-	void setAspectRatio( int pWidth, int pHeight)
-	{
-		KameraDouble::set( PERS_ASPECT, pWidth/pHeight);
-	}
-
+        void setAspectRatio( int pWidth, int pHeight);
 	void setFrom( const O3dKamera & pKam )
 	{
 		T3dTransf::setFrom( pKam );

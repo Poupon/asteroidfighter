@@ -34,6 +34,15 @@ O3dKamera::reset()
 
 //////////T3dTransf::get( POS)[ 2 ] = -100;
 }
+void O3dKamera::setAspectRatio( int pWidth, int pHeight)
+{
+  double lRatio = ((double)pWidth)/((double)pHeight);
+  //  std::cout << "************************** setAspectRatio W:" << pWidth << " H:" << pHeight << " R:" <<  lRatio << std::endl;
+  KameraDouble::set( PERS_ASPECT, lRatio);
+  //  std::cout << "************************** KameraDouble : " <<  KameraDouble::get( PERS_ASPECT );
+
+  
+}
 
 /*---------------------------------------------------------------------*/
 /*    O3dKamera::exec ...                                              */
@@ -45,12 +54,24 @@ O3dKamera::exec()
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 
+
+	static int i=0;
+  
+  double cRatioWH = KameraDouble::get( PERS_ASPECT );
+ 
+  /*  if(i++ %1000 == 0 )
+  {
+	std::cout << "RatioWH="<<  cRatioWH<< std::endl;
+  }
+  */
 	if( cPersFlag == GL_TRUE )
 	{
 		gluPerspective( KameraDouble::get( PERS_FOVY), KameraDouble::get(PERS_ASPECT), KameraDouble::get(PERS_ZNEAR), KameraDouble::get(PERS_ZFAR) );
 	}
 	else		
-		glOrtho( -1000,  + 1000, -1000,  +1000, -100000, 100000 );//KameraDouble::get(PERS_ZNEAR), KameraDouble::get(PERS_ZFAR));
+	  //		glOrtho( -1000,  + 1000, -1000,  +1000, -100000, 100000 );//KameraDouble::get(PERS_ZNEAR), KameraDouble::get(PERS_ZFAR));
+		glOrtho( -cRatioWH*1000,  + cRatioWH*1000, -1000,  +1000, -100000, 100000 );//KameraDouble::get(PERS_ZNEAR), KameraDouble::get(PERS_ZFAR));
+		
 
 
 // Inversion car c est l utilisteur 
