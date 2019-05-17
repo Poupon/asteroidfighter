@@ -54,6 +54,9 @@ World::World( WorldControler *pControl, O3dKamera* pKamera, Double3& pMax, O3dOb
 		cBox.getMin()[i] = -cBox.getMax()[i] ;
 	}
 
+	
+	std::cout << "============= World::World " << (*pMax) << std::endl;
+
 	sTheWorld = this;
 
 
@@ -529,7 +532,8 @@ World::GetDistPilot( Sprite3d *pSprite,  Double3 & pDist )
 GLboolean
 World::GetPositionWithoutCollision( int pInteract, Double3& pPos, int pSize, int pLimitX, int pLimitY, int pLimitZ, int pNbTry, float pMarge ){
 
-	int i;
+  
+  int i;
   for( i = 0; i < pNbTry; i++ ) {
 		if( pLimitX != 0 )
 			pPos[ 0 ] = (rand()%(pLimitX << 1))-pLimitX;

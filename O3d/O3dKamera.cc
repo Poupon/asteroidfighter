@@ -5,18 +5,14 @@
 #include <FL/glu.H>
 #endif
 
-/*---------------------------------------------------------------------*/
-/*    O3dKamera::O3dKamera ...                                         */
-/*---------------------------------------------------------------------*/
+//---------------------------------------------------------------------
 
 O3dKamera::O3dKamera()
 :cPersFlag(GL_TRUE)
 {
 	O3dKamera::reset();
 }		
-/*---------------------------------------------------------------------*/
-/*    O3dKamera::reset ...                                             */
-/*---------------------------------------------------------------------*/
+//---------------------------------------------------------------------
 void
 O3dKamera::reset()
 {
@@ -34,20 +30,20 @@ O3dKamera::reset()
 
 //////////T3dTransf::get( POS)[ 2 ] = -100;
 }
+//---------------------------------------------------------------------
 void O3dKamera::setAspectRatio( int pWidth, int pHeight)
 {
   double lRatio = ((double)pWidth)/((double)pHeight);
-  //  std::cout << "************************** setAspectRatio W:" << pWidth << " H:" << pHeight << " R:" <<  lRatio << std::endl;
+  std::cout << "************************** setAspectRatio W:" << pWidth << " H:" << pHeight << " R:" <<  lRatio << std::endl;
   KameraDouble::set( PERS_ASPECT, lRatio);
-  //  std::cout << "************************** KameraDouble : " <<  KameraDouble::get( PERS_ASPECT );
+  std::cout << "************************** KameraDouble : " <<  KameraDouble::get( PERS_ASPECT );
 
+  double lVal = pWidth/1280.0f;
   
+  Double3 lTmp( 0.1*lVal, 0.1*lVal, 0.1*lVal);
+  T3dTransf::set( SCALE, lTmp );
 }
-
-/*---------------------------------------------------------------------*/
-/*    O3dKamera::exec ...                                              */
-/*---------------------------------------------------------------------*/
-
+//---------------------------------------------------------------------
 void
 O3dKamera::exec()
 {
@@ -55,11 +51,12 @@ O3dKamera::exec()
 	glLoadIdentity();
 
 
-	static int i=0;
   
   double cRatioWH = KameraDouble::get( PERS_ASPECT );
  
-  /*  if(i++ %1000 == 0 )
+  /* 
+     static int i=0;
+ if(i++ %1000 == 0 )
   {
 	std::cout << "RatioWH="<<  cRatioWH<< std::endl;
   }

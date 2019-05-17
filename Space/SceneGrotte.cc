@@ -43,7 +43,7 @@ SceneGrotte::SceneGrotte( const char* pName, EnumAsteroides pTypeAsteroide, int 
   caPropsGen->ObjPropsFloat4::set( MATERIAL, mat1 );
 
 
-	caGenTexture = WorldGame::LoadTextureConfig( "Asteroids.Texture1"  );
+  caGenTexture = WorldGame::LoadTextureConfig( "Asteroids.Texture1"  );
   caPropsGen->setTexture( caGenTexture );
   setObjProps( caPropsGen );
 

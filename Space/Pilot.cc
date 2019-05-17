@@ -1624,7 +1624,7 @@ Pilot::drawControl()
 	lY -= 8;
 	lX = -120;
 	T3dColor::Green();
-	sprintf(tmp,"Sprite:%d %d", WorldGame::TheWorldGame->getSizeLiveSprite(), WorldGame::TheWorldGame->getNbLiveSprite() );
+	///////// DEBUG 	sprintf(tmp,"Sprite:%d %d", WorldGame::TheWorldGame->getSizeLiveSprite(), WorldGame::TheWorldGame->getNbLiveSprite() );
 
 	//	std::cout << "Sprite:" <<   WorldGame::TheWorldGame->getNbLiveSprite()
 	//						<<  " " <<  WorldGame::TheWorldGame->getNbRealLiveSprite() << std::endl;
