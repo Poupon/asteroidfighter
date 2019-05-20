@@ -19,36 +19,11 @@
 #include <iostream>
 
 //*****************************************
-SceneArtifice::SceneArtifice( int pHardness,  Double3& lPos, 
-								float pInterval, float  pH, float pV )
-:Sprite3dObj(  new ObjOdron( 10, 0)),
- cInterval( pInterval ),
- cH( pH ),
- cV( pV ), 
- cHardness( pHardness ) 
+SceneArtifice::SceneArtifice(  const char* pName, EnumAsteroides pTypeAsteroide, int pHardness, Double3& lPos,
+																float pInterval, float  pH, float pV )
+:SceneSprite( pName, pTypeAsteroide, pHardness, lPos, pInterval, pH, pV )
 {
-
-  //===== Initialisation des props du generateur =====
-  Float4 mat1(   0.8, 0.4, 0.5, 1.0 );
-
-  caPropsGen = new O3dObjProps;
-  caPropsGen->ObjPropsFloat4::set( MATERIAL, mat1 );
- 
-  setObjProps( caPropsGen );
-
-  //=============================================
-
-
-  //======= Positionnement spacial du Generateur ====
-	//	Double3 lPos( 0, -20, 0 );
-  getTransf().TransfDouble3::set( POS, lPos );
-  SpriteFloat::set( SPRITE_TIMER1, WorldControler::GetTime());
-
-  Double3 spin( 5.0, 8.0, 10.0 );
-  SpriteDouble3::set( SPRITE_SPIN, spin );
-
-  cInteractDef = cInteractAtt = 0;
-  
+  TheSceneArtifice = this;
 }
 //------------------------
 SceneArtifice::~SceneArtifice()
@@ -60,7 +35,7 @@ GLboolean SceneArtifice::animate()
   Sprite3d::animate();
 
 	
-  static GLboolean	sFirst=GL_TRUE;
+  static GLboolean  sFirst=GL_TRUE;
 
 
 	if( ( WorldControler::GetTime()-SpriteFloat::get( SPRITE_TIMER1)) < cInterval+randp(cInterval) )
@@ -102,17 +77,16 @@ GLboolean SceneArtifice::animate()
   lSp->getTransf().TransfDouble3::set( POS, lPos );
 
 
-	lSp->setAction( SPRITE_ACTION_KILL, this );
+  lSp->setAction( SPRITE_ACTION_KILL, this );
 	
-	//		Double3 lSpeed2( 0, -20, 0);
-	lSpeed.inverse();
-	lSpeed *=2;
+  //		Double3 lSpeed2( 0, -20, 0);
+  lSpeed.inverse();
+  lSpeed *=2;
 
 
 
 
-
-	ObjPart *lTraine = new ObjPart( 1 );
+  ObjPart *lTraine = new ObjPart( 1 );
 
 	Double3 pos(5, 3, 3);
 	lTraine->ObjPartDouble3::set( PART_POSITION_RAND, pos );
@@ -154,11 +128,6 @@ GLboolean SceneArtifice::animate()
 	}
 	*/
   return GL_FALSE;
-}
-//------------------------
-GLboolean SceneArtifice::leaveWorld()
-{
-	return GL_FALSE; 
 }
 //------------------------
 GLboolean SceneArtifice::kill( Sprite3d &pMySprite, void*pParam )

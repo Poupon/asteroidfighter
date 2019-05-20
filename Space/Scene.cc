@@ -33,7 +33,8 @@ Scene::Scene( const char* pName, int pHardness,
  cV( pV ),
  cName(pName)
 {
-	sprintf( cStrInfo, "Hard:%d Time:%5.2f %s", cHardness, cInterval, cName.data() );
+  sprintf( cStrInfo, "Hard:%d Time:%5.2f %s", cHardness, cInterval, cName.data() );
+  
 }
 //------------------------
 GLboolean

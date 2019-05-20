@@ -4,10 +4,11 @@ TARGET=libSpace.a
 
 SRCS = \
 	Scene.cc \
-  SceneArtifice.cc	\
+	SceneSprite.cc \
 	AsteroidesMaker.cc \
 	ShipsMaker.cc \
 	MinesMaker.cc \
+	SceneSprite.cc \
 	SceneAsteroide.cc \
 	SceneAttack.cc \
 	SceneAttackCroisseur.cc \
@@ -19,6 +20,7 @@ SRCS = \
 	ActionsShip.cc \
 	WorldGame.cc \
 	Pilot.cc
+#        SceneArtifice.cc \
 
 OBJS =  $(SRCS:.cc=.o)
 

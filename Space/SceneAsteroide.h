@@ -8,22 +8,17 @@
 
 #include <Space/AsteroidesMaker.h>
 
-#include <Space/Scene.h>
+#include <Space/SceneSprite.h>
 
 //**************************************
-class SceneAsteroide : public Scene
+class SceneAsteroide : public SceneSprite
 {
-	EnumAsteroides cTypeAsteroide;
-	
-	AutoPtr<O3dObjProps> caPropsGen;
-	AutoPtr<T3dTexture>  caGenTexture;
 
 public:
 	SceneAsteroide(const char* pName,  EnumAsteroides pTypeAsteroide, int pHardness, Double3 & lPos, float  pInterval, float pH, float pV);
 	virtual~SceneAsteroide();
 
 	virtual GLboolean animate();
-	virtual GLboolean leaveWorld();
 
 	static SceneAsteroide *TheSceneAsteroide;
 };

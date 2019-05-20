@@ -8,15 +8,11 @@
 #include <Space/AsteroidesMaker.h>
 
 
-#include <Space/Scene.h>
+#include <Space/SceneSprite.h>
 
 //**************************************
-class SceneHammerAnvil : public Scene
+class SceneHammerAnvil : public SceneSprite
 {
-	EnumAsteroides cTypeAsteroide;
-
-	AutoPtr<O3dObjProps> caPropsGen;
-	AutoPtr<T3dTexture>  caGenTexture;
 
 public:
 	SceneHammerAnvil(const char* pName,  EnumAsteroides pTypeHammerAnvil, int pHardness, Double3 & lPos, float  pInterval, float pH, float pV);
@@ -24,7 +20,6 @@ public:
 
 	virtual GLboolean animate();
 	virtual GLboolean subAnimate(int pSens);
-	virtual GLboolean leaveWorld();
 
 	static SceneHammerAnvil *TheSceneHammerAnvil;
 };

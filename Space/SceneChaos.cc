@@ -198,8 +198,6 @@ GLboolean
 SceneChaos::animate() {
 
 	Scene::animate();
-
-	Sprite3d *sp;
 	
 	float lCurrentTime = WorldControler::GetTime();
 	
@@ -255,7 +253,7 @@ SceneChaos::animate() {
 GLboolean SceneChaos::leaveWorld()
 {
 		makeWall(  ((int) cH)>>2+cSizeParoi, (int)cH, 6, -1, 2 );
-		makeWall( -((int) cH)>>2-cSizeParoi, (int)-cH, 6, -1, 2 );
+		makeWall( -(((int) cH)>>2-cSizeParoi), (int)-cH, 6, -1, 2 );
 
 	return GL_FALSE;
 }

@@ -8,24 +8,21 @@
 #include <Sprite3d/Sprite3dObj.h>
 #include <Sprite3d/Action.h>
 
+#include <SceneSprite.h>
 
 //**************************************
-class SceneArtifice : public Sprite3dObj, public Action
+class SceneArtifice : SceneSprite
 {
-	float cInterval;
-	int   cH;
-	float cV;
-	
-	AutoPtr<O3dObjProps> caPropsGen;
-	AutoPtr<T3dTexture>  caGenTexture;
-	int cHardness;
+ 
+  
 public:
-	SceneArtifice( int pHardness, Double3 & lPos, float  pInterval, float pH, float pV);
-	virtual~SceneArtifice();
+  SceneArtifice( const char* pName,  EnumAsteroides pTypeHammerAnvil, int pHardness, Double3 & lPos, float  pInterval, float pH, float pV);
+  virtual~SceneArtifice();
+  
+  virtual GLboolean animate();
+  virtual GLboolean kill( Sprite3d &pMySprite, void*pParam );
 
-	virtual GLboolean animate();
-	virtual GLboolean leaveWorld();
-    virtual GLboolean kill( Sprite3d &pMySprite, void*pParam );
+  static SceneArtifice * TheSceneArtifice;
 };
 //**************************************
 
