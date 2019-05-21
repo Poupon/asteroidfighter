@@ -16,7 +16,6 @@ class SceneHammerAnvil : public SceneSprite
 
 public:
 	SceneHammerAnvil(const char* pName,  EnumAsteroides pTypeHammerAnvil, int pHardness, Double3 & lPos, float  pInterval, float pH, float pV);
-	virtual~SceneHammerAnvil();
 
 	virtual GLboolean animate();
 	virtual GLboolean subAnimate(int pSens);

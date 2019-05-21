@@ -31,10 +31,7 @@ SceneHammerAnvil::SceneHammerAnvil( const char* pName, EnumAsteroides pTypeAster
 {
   TheSceneHammerAnvil = this;
 }
-//------------------------
-SceneHammerAnvil::~SceneHammerAnvil()
-{
-}
+
 //------------------------
 GLboolean SceneHammerAnvil::animate(){
 

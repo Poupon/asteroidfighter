@@ -21,7 +21,6 @@ protected:
 
 public:
 	SceneSprite(const char* pName,  EnumAsteroides pTypeHammerAnvil, int pHardness, Double3 & lPos, float  pInterval, float pH, float pV);
-	virtual~SceneSprite();
 
 	virtual GLboolean animate() =0;
         virtual GLboolean subAnimate(int pSens){ return GL_FALSE;}

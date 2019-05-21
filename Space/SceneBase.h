@@ -7,22 +7,18 @@
 
 #include <Sprite3d/Sprite3dObj.h>
 
-#include <Space/Scene.h>
+#include <Space/SceneSprite.h>
 
 
 //**************************************
-class SceneBase : public Scene
+class SceneBase : public SceneSprite
 {	
-	AutoPtr<O3dObjProps> caPropsGen;
-	AutoPtr<T3dTexture>  caGenTexture;
     int cShipType;
 public:
 	SceneBase( const char* pName, int pHardness, Double3 & lPos, float  pInterval, float pH, float pV,
                int pShipType);
-	virtual~SceneBase();
 
 	virtual GLboolean animate();
-	virtual GLboolean leaveWorld();
 };
 //**************************************
 

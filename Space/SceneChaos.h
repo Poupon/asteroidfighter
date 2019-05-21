@@ -7,20 +7,16 @@
 
 #include <Space/AsteroidesMaker.h>
 
-#include <Space/Scene.h>
+#include <Space/SceneSprite.h>
 
 //**************************************
-class SceneChaos : public Scene
+class SceneChaos : public SceneSprite
 {
 	float cIntervalParoi;
 	int   cSizeParoi;
 
 	GLboolean cFirstTime;
 
-	EnumAsteroides cTypeAsteroide;
-	
-	AutoPtr<O3dObjProps> caPropsGen;
-	AutoPtr<T3dTexture>  caGenTexture;
 
 	void makeFloor( int pH );
 	void makeArtefact();
@@ -29,7 +25,6 @@ class SceneChaos : public Scene
 
 public:
 	SceneChaos( const char* pName, EnumAsteroides pTypeAsteroide, int pHardness, Double3 & lPos, float  pInterval, float  pIntervalParoi, int pSizeParoi, float pH, float pV);
-	virtual~SceneChaos();
 
 	virtual GLboolean animate();
 	virtual GLboolean leaveWorld();

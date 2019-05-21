@@ -7,16 +7,13 @@
 
 #include <Sprite3d/Sprite3dObj.h>
  
-#include <Space/Scene.h>
+#include <Space/SceneSprite.h>
 
 
 //**************************************
-class SceneAttackCroisseur : public Scene
+class SceneAttackCroisseur : public SceneSprite
 {
-	
-	AutoPtr<O3dObjProps> caPropsGen;
-	AutoPtr<T3dTexture>  caGenTexture;
-
+       
 public:
 	SceneAttackCroisseur( const char* pName, int pHardness, Double3 & lPos, float  pInterval, float pH, float pV);
 	virtual ~SceneAttackCroisseur();

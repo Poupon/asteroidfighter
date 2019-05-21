@@ -27,43 +27,16 @@ SceneGrotte *SceneGrotte::TheSceneGrotte = NULL;
 //**************************************
 SceneGrotte::SceneGrotte( const char* pName, EnumAsteroides pTypeAsteroide, int pHardness, Double3& lPos,
 								float pInterval, float pIntervalParoi, int pSizeParoi, float  pH, float pV )
-:Scene( pName, pHardness, pInterval, pH, pV ),
+  :SceneSprite( pName, pTypeAsteroide, pHardness, lPos, pInterval, pH, pV ),
  cIntervalParoi( pIntervalParoi ),
  cSizeParoi( pSizeParoi),
- cTypeAsteroide(pTypeAsteroide),
  cFirstTime(GL_TRUE)
 {
   TheSceneGrotte = this;
 
 
-  //===== Initialisation des props du generateur =====
-  Float4 mat1(   0.8, 0.4, 0.5, 1.0 );
-
-  caPropsGen = new O3dObjProps;
-  caPropsGen->ObjPropsFloat4::set( MATERIAL, mat1 );
-
-
-  caGenTexture = WorldGame::LoadTextureConfig( "Asteroids.Texture1"  );
-  caPropsGen->setTexture( caGenTexture );
-  setObjProps( caPropsGen );
-
-  //=============================================
-
-
-  //======= Positionnement spacial du Generateur ====
-  getTransf().TransfDouble3::set( POS, lPos );
-  SpriteFloat::set( SPRITE_TIMER1, WorldControler::GetTime());
-  SpriteFloat::set( SPRITE_TIMER2, WorldControler::GetTime());
-
-  Double3 spin( 5.0, 8.0, 10.0 );
-  SpriteDouble3::set( SPRITE_SPIN, spin );
 
    cInteractDef = cInteractAtt = 0;
-
-}
-//------------------------
-SceneGrotte::~SceneGrotte()
-{
 }
 
 //------------------------
@@ -216,7 +189,6 @@ SceneGrotte::animate() {
 
 	Scene::animate();
 
-	Sprite3d *sp;
 
 	float lCurrentTime = WorldControler::GetTime();
 
