@@ -32,7 +32,7 @@
 
 #include <Space/WorldGame.h>
 
-#include <Invaders/WorldInvaders.h>
+////// #include <Invaders/WorldInvaders.h>
 
 //#include <boost/property_tree/ptree.hpp>
 //#include <boost/property_tree/ini_parser.hpp>
