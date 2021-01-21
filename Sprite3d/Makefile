@@ -56,7 +56,7 @@ start:
 # Compilation
 .cc.o:
 		gcc $(CFLAGS) $(CINCLUDE) -c  $*.cc 
- 
+
 
 # ---------------------------------------------------
 # Library

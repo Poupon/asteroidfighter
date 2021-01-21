@@ -32,6 +32,8 @@
 
 #include <Space/WorldGame.h>
 
+#include <Invaders/WorldInvaders.h>
+
 //#include <boost/property_tree/ptree.hpp>
 //#include <boost/property_tree/ini_parser.hpp>
 
@@ -177,6 +179,7 @@ public:
 		WorldControler::InitCallback();
 
 
+		// Here, the game
 		World *lWorld = new WorldGame( pSize, WorldControler::WC, new O3dKamera(), cMax,  cGen );
 	       		
 
@@ -199,9 +202,13 @@ public:
 		lWorldHelp->initStart(sStartNiveau);
 		WorldControler::WC->setHelpWorld( lWorldHelp );
 
+		//	World  *lWorldMainMenu = new WorldInvaders( pSize,  WorldControler::WC,new O3dKamera(), cMax,  cGen );
 		World  *lWorldMainMenu = new MainMenu( pSize,  WorldControler::WC,new O3dKamera(), cMax,  cGen );
 		lWorldMainMenu->initStart( sStartNiveau );
 		WorldControler::WC->setMainWorld( lWorldMainMenu );
+
+
+
 	}
 
 

@@ -55,7 +55,7 @@ clean::
 
 # ---------------------------------------------------
 # Compilation
-.cc.o:
+.c.o:
 		gcc  -pipe $(CFLAGS) $(CINCLUDE) -c  $*.cc 
  
 
@@ -64,7 +64,7 @@ clean::
 
 $(TARGET):
 		rm -f $(TARGET)
-	  $(LINKER) -o $(TARGET) $(LDFLAGS) $(LIBPATHS) $(OBJS)  $(LIBS) 	
+	  gcc -o $(TARGET) $(LDFLAGS) $(LIBPATHS) $(OBJS)  $(LIBS) 	
 #	 	/tools/public/pure/purify/purify -best-effort gcc -o $(TARGET) $(LDFLAGS) $(LIBPATHS) $(OBJS)  $(LIBS) 
 
 
