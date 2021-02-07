@@ -4,6 +4,7 @@
 #ifdef USE_SOUND
 #include <AL/al.h>
 #include <AL/alc.h>
+#include <sndfile.h>
 
 #endif
 

@@ -1619,7 +1619,7 @@ Pilot::drawControl()
 	//	lY -= 10;
 
 
-
+	/*
 	lY -= 10;
 	lY -= 8;
 	lX = -120;
@@ -1631,6 +1631,7 @@ Pilot::drawControl()
 
 	WorldControler::sCurrentFont->displayAt( lX, lY, lZ, tmp);
 
+	*/
 	lY -= 10;
 
 

@@ -25,8 +25,7 @@
 SceneAsteroide *SceneAsteroide::TheSceneAsteroide = NULL;
 
 //**************************************
-SceneAsteroide::SceneAsteroide( const char* pName, EnumAsteroides pTypeAsteroide, int pHardness, Double3& lPos, 
-																float pInterval, float  pH, float pV )
+SceneAsteroide::SceneAsteroide( const char* pName, EnumAsteroides pTypeAsteroide, int pHardness, Double3& lPos, float pInterval, float  pH, float pV )
 :SceneSprite( pName, pTypeAsteroide, pHardness, lPos, pInterval, pH, pV )
 {
   TheSceneAsteroide = this;

@@ -81,6 +81,7 @@ protected:
 	static void StartGentileCB( Fl_Widget*, void*pUserData );
 
 	static void ReadSavedLevelCB( Fl_Widget*, void*pUserData );
+        static void ReadSaveFileCB ( Fl_File_Chooser *cFc,  void  *cData);
 	static void QuitAll( Fl_Widget*, void* pUserData );
 
 	static void CheckCB( Fl_Widget*, void*pUserData );
@@ -240,34 +241,42 @@ void MyDialog::QuitAll( Fl_Widget*, void* pUserData ) {
 	::exit(0);
 }
 //----------------------------------------
+void  MyDialog::ReadSaveFileCB ( Fl_File_Chooser *iFc,  void  *iUserData)
+{
+  if( iFc->value()  )
+    {
+      std::string lFilename = iFc->value();
+      MyDialog* lDialog = reinterpret_cast<MyDialog*>(iUserData);
+      
+      if( lFilename.length() > 0)
+	{
+	  std::cout << lFilename << std::endl;
+	  lDialog->cExecSavLevel = lFilename;
+	  
+	  //	  Fl::delete_widget( lDialog->myWindow );
+	  lDialog->cContinue = false;		 
+	}
+    }
+}
+//----------------------------------------
 void MyDialog::ReadSavedLevelCB( Fl_Widget*, void* pUserData ) {
 	std::cout << "ReadSavedLevelCB" << std::endl;
   MyDialog* lDialog = reinterpret_cast<MyDialog*>(pUserData);
 
+	Fl_File_Chooser* lFc = new Fl_File_Chooser("Sav", "*.sav",
+						   Fl_File_Chooser::SINGLE,
+						   "Open save file");
+	lFc->type(FL_HOLD_BROWSER);
+	//	lFc->filetype(Fl_File_Browser::FILES);
+	lFc->filter("*.sav");
 
-	Fl_Native_File_Chooser fnfc;
-	fnfc.title("Pick a file for read");
-	fnfc.type(Fl_Native_File_Chooser::BROWSE_FILE);
-	fnfc.filter("3D\t*.pp3\n"
-							"3D Files\t*.{pp3}");
-	fnfc.directory(".");           // default directory to use
-	// Show native chooser
-	switch ( fnfc.show() ) {
-	case -1: printf(">>>>>>>>>>>>>>ERROR: %s\n", fnfc.errmsg());    break;  // ERROR
-	case  1: printf(">>>>>>>>>>>>>>CANCEL\n");                      break;  // CANCEL
-
-	default:
-		{			
-			std::cout << "PICKED: " << fnfc.filename() << std::endl;
-			if(  fnfc.filename() != nullptr && strlen( fnfc.filename()) >0 )
-				{
-					lDialog->cExecSavLevel = fnfc.filename();
+	lFc->callback( ReadSaveFileCB, pUserData );			 
+	lFc->show();
+	while (lFc->visible()) {
+	  Fl::wait();
+	}
+	Fl::delete_widget( lDialog->myWindow );
 					
-					Fl::delete_widget( lDialog->myWindow );
-					lDialog->cContinue = false;		 
-				}
-		}
-	}	
 }
 //----------------------------------------
 void MyDialog::CheckCB( Fl_Widget*, void*pUserData )
